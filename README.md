@@ -35,7 +35,7 @@ Change `caldera-whatever` to package name.
 #### Step 1: Install
 * Clone:
 ```
-git clone git@github.com:calderawp/npm-module-boilerplate.git ## Clone boilerplate
+git clone git@github.com:CalderaWP/caldera-npm-module-boilerplate.git ## Clone boilerplate
 mv npm-module-boilerplate caldera-whatever ## change name of directory
 cd caldera-whatever   # Change current directory to the newly created one
 yarn install          # Install dependencies
