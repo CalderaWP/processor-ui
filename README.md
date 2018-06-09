@@ -56,8 +56,7 @@ git push --set-upstream origin master
 Go to Settings in Github repo.
 
 Enable Github pages for master branch /docs dir
-
-
+<a href="https://ibb.co/bTSUv8"><img src="https://preview.ibb.co/hsXwa8/Screen_Shot_2018_06_09_at_3_41_30_PM.png" alt="Screen_Shot_2018_06_09_at_3_41_30_PM" border="0"></a>
 
 * Step 2: Rename Stuff
 Replace 'caldera-whatever' with package name.
