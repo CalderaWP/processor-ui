@@ -1,8 +1,8 @@
-# caldera-api-client
-Description of package
+# Caldera Processor UI
+Caldera Forms processor user interface generator and components.
 
-[![Build Status](https://travis-ci.org/calderawp/caldera-npm-module-boilerplate.svg?branch=master)](https://travis-ci.org/calderawp/caldera-npm-module-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/calderawp/caldera-npm-module-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/calderawp/caldera-npm-module-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/calderawp/processor-ui.svg?branch=master)](https://travis-ci.org/calderawp/processor-ui)
+[![Coverage Status](https://coveralls.io/repos/github/calderawp/processor-ui/badge.svg?branch=master)](https://coveralls.io/github/calderawp/processor-ui?branch=master)
 
 🌋 👀 [Documentation](https://calderalabs.org/caldera-npm-module-boilerplate/)
 
@@ -23,10 +23,14 @@ See: [http://calderalabs.org/caldera-npm-module-boilerplate/manual/overview.html
 * [npm](https://www.npmjs.com/get-npm)
 * [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
 * [Git]()
-* [Flow](https://flow.org/en/docs/install/)
 
 
 ## Scripts
+
+### Develop
+* `yarn start`
+    - Runs linter and compiles for development
+    - Starts test app server
 
 ### Build for release
 This script is run as part of release commands. There is no need to run it manually most of the time.

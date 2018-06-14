@@ -9,11 +9,16 @@
   ],
   "presets": [
     "stage-3",
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"]
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "safari >= 7"]
+        }
       }
-    }]
+
+    ]
 
   ]
 }

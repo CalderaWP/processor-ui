@@ -1,8 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "@caldera-labs/whatever/src/index.js~sayhi",
+    "@caldera-labs/processor-ui/src/index.js~sayhi",
     "function/index.html#static-function-sayHi",
-    "<span>sayHi</span> <span class=\"search-result-import-path\">@caldera-labs/whatever/src/index.js</span>",
+    "<span>sayHi</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/index.js</span>",
     "function"
   ],
   [

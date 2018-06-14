@@ -58,7 +58,7 @@ Short version of [the docs](https://www.npmjs.com/docs/orgs/publishing-an-org-sc
 Make sure in package.json:
 
 * That `private` is not set to true.
-* That the name of the package is `@caldera-labs/whatever` where `whatever` describes the modules job. For example, `@caldera-labs/mailchimp-client` if you're building a Mailchimp client. Note that "caldera" was not used on the right side of the slash.
+* That the name of the package is `@caldera-labs/processor-ui` where `whatever` describes the modules job. For example, `@caldera-labs/mailchimp-client` if you're building a Mailchimp client. Note that "caldera" was not used on the right side of the slash.
 * That you have specified at least one entry point and defined a module export for it.
 * You have authorization to publish in `@caldera-labs` org scope.
 * You are logged in as that user via the npm cli

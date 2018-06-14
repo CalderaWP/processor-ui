@@ -1,14 +1,15 @@
 {
-  "name": "@caldera-labs/whatever",
+  "name": "@caldera-labs/processor-ui",
   "version": "0.1.0",
   "description": "Does whatever for Caldeera Forms",
   "main": "./dist/index.js",
   "scripts": {
+    "start": "react-wp-scripts start",
     "build": "npm run build:pre && npm run build:compile && npm run build:post",
     "build:pre": "npm run test:once",
     "build:compile": "./node_modules/.bin/babel -d dist src/",
     "build:post": "npm run document",
-    "test": "jest --watch",
+    "test": "react-scripts test --env=jsdom",
     "test:once": "jest",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "document": "./node_modules/.bin/esdoc",
@@ -18,7 +19,6 @@
     "release:minor": "npm version minor -m \"version %s\" && npm publish",
     "release:major": "npm version major -m \"version %s\" && npm publish",
     "release:patch": "npm version patch -m \"version %s\" && npm publish"
-
   },
   "repository": {
     "type": "git",
@@ -38,29 +38,33 @@
   },
   "homepage": "https://github.com/calderawp/caldera-whatever/#readme",
   "dependencies": {
-
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-wp-scripts": "0.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "jest": "^20.0.4",
-    "uglify-js": "^3.4.0",
+    "@caldera-labs/components": "^0.1.1",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
-    "coveralls": "^2.13.1",
+    "coveralls": "^2.13.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "esdoc": "^1.1.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-jsx-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jest": "^21.17.0",
-    "eslint-plugin-react": "^7.9.1"
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "jest": "^20.0.4",
+    "uglify-js": "^3.4.0"
   },
   "jest": {
     "collectCoverageFrom": [

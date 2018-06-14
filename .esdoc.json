@@ -7,10 +7,10 @@
       "option": {
         "brand": {
           "logo": "./globe.svg",
-          "title": "Caldera Whatever",
-          "description": "Does whatever for Caldera Forms",
-          "repository": "https://github.com/calderawp/caldera-whatever",
-          "site": "http://calderalabs.org/caldera-npm-module-boilerplate/",
+          "title": "Caldera Processor UI",
+          "description": "Caldera Forms processor user interface generator and components.",
+          "repository": "https://github.com/calderawp/processor-ui",
+          "site": "http://calderalabs.org/processor-ui",
           "author": "http://calderalabs.org",
           "image": "https://calderaforms.com/wp-content/themes/caldera-forms-dot-com/img/caldera-forms-logo.svg"
         },

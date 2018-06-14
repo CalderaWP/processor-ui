@@ -1,9 +1,8 @@
-/**
- * Say Hi to (optionally) someone or by default, Roy
- *
- * @param {String} who
- * @returns {String}
- */
-export default function sayHi(who ='Roy') {
-	return `Hi ${who}`;
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import {App} from './App';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
