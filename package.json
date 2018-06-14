@@ -13,7 +13,7 @@
     "test:once": "jest",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "document": "./node_modules/.bin/esdoc",
-    "lint": "eslint src/**",
+    "lint": "eslint src/**/*.js",
     "prepublish": "npm run build",
     "release": "npm run release:patch",
     "release:minor": "npm version minor -m \"version %s\" && npm publish",
@@ -38,13 +38,16 @@
   },
   "homepage": "https://github.com/calderawp/caldera-whatever/#readme",
   "dependencies": {
+    "@caldera-labs/components": "^0.1.1",
+    "@caldera-labs/state": "^0.7.0",
+    "@wordpress/data": "^1.0.0-alpha.1",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
+    "react-compose": "^2.0.0",
     "react-dom": "^16.4.0",
     "react-wp-scripts": "0.2.0"
   },
   "devDependencies": {
-    "@caldera-labs/components": "^0.1.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
@@ -64,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "jest": "^20.0.4",
+    "react-redux": "^5.0.7",
     "uglify-js": "^3.4.0"
   },
   "jest": {
