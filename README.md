@@ -26,24 +26,20 @@ See: [http://calderalabs.org/caldera-npm-module-boilerplate/manual/overview.html
 * [Flow](https://flow.org/en/docs/install/)
 
 
-## Testing
-
-We use [Facebook Jest](https://facebook.github.io/jest/) for unit tests. Test go in the directory `__tests__`.
-
-* Run test watcher
-```
-yarn test
-```
-
 ## Scripts
 
 ### Build for release
-* `yarn build`
-    - Runs tests, and flow type checks and Babel compiles with minification and source map.
+This script is run as part of release commands. There is no need to run it manually most of the time.
 
 This script calls a pre, compile, and post subcommands.  For consistency, please call other scripts at those three events.
 
+* `yarn build`
+    - Runs tests and compiles.
+    
+
 ### Tests
+We use [Facebook Jest](https://facebook.github.io/jest/) for unit tests. Test go in the directory `__tests__`.
+
 * `yarn test`
     - Run test watcher
 * `yarn test:once` 
@@ -51,6 +47,8 @@ This script calls a pre, compile, and post subcommands.  For consistency, please
 
 
 ### Lint Code
+Code style is enforced using [eslint](https://eslint.org/)
+
 * `yarn lint`
     - Run linter and fixer watch
 * `yarn lint:fix`
@@ -68,3 +66,13 @@ This script calls a pre, compile, and post subcommands.  For consistency, please
 Must be [logged in as project maintainer via npm cli](https://docs.npmjs.com/cli/adduser)
 
 * `yarn release`
+    - Release a patch update
+    - Increments third position of a version. 1.0.1 -> 1.0.2
+* `yarn release:minor`
+    - Release a minor update
+    - Increments second position of a version. 1.0.1 -> 1.1.0 
+* `yarn release:major`
+    - Release a major update
+    - Increments second position of a version. 1.0.1 -> 2.0.0 
+    
+These commands run the tests and linter, and if they pass, re-compiles source, rebuilds docs, updates the version using [npm version](https://docs.npmjs.com/cli/version), adds a git tag, makes a git commit for the version change and updates the module on npm.

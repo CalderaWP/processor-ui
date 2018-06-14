@@ -5,16 +5,20 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "npm run build:pre && npm run build:compile && npm run build:post",
-    "build:pre": "npm run test:once && yarn run flow",
+    "build:pre": "npm run test:once",
     "build:compile": "./node_modules/.bin/babel -d dist src/",
-    "build:post": "npm run compress",
-    "compress": "uglifyjs dist/index.js -c -m --source-map -o dist/index.min.js",
+    "build:post": "npm run document",
     "test": "jest --watch",
     "test:once": "jest",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "prepublish": "npm run test && npm run build",
     "document": "./node_modules/.bin/esdoc",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "prepublish": "npm run build",
+    "release": "npm run release:patch",
+    "release:minor": "npm version minor -m \"version %s\" && npm publish",
+    "release:major": "npm version major -m \"version %s\" && npm publish",
+    "release:patch": "npm version patch -m \"version %s\" && npm publish"
+
   },
   "repository": {
     "type": "git",
@@ -42,7 +46,6 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1",
     "jest": "^20.0.4",
     "uglify-js": "^3.4.0",
     "babel-cli": "^6.26.0",
