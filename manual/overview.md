@@ -32,6 +32,40 @@ Enable Github pages for master branch /docs dir
 ### Using For React Components
 
 ### Creating Exports
+This boilerplate compiles code with babel to the `/dist` directory. One or more module exports must be created and identified in package.json.
 
+For example:
+```json
+{
+"main": "./dist/index.js",
+  "files" : [
+      "./dist/index.js",
+      "./dist/fields/index.js",
+      "./dist/fields/factories/index.js"
+  ]
+}
+```
+
+See:
+* https://docs.npmjs.com/files/package.json#files
+* https://docs.npmjs.com/files/package.json#main
 
 ### Publishing To NPM
+All Caldera libraries should be published as [org scoped packages](https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html) in the [@caldera-labs](https://www.npmjs.com/search?q=%40caldera-labs) organization.
+
+Short version of [the docs](https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html)
+
+Make sure in package.json:
+
+* That `private` is not set to true.
+* That the name of the package is `@caldera-labs/whatever` where `whatever` describes the modules job. For example, `@caldera-labs/mailchimp-client` if you're building a Mailchimp client. Note that "caldera" was not used on the right side of the slash.
+* That you have specified at least one entry point and defined a module export for it.
+* You have authorization to publish in `@caldera-labs` org scope.
+* You are logged in as that user via the npm cli
+    - https://docs.npmjs.com/cli/adduser
+
+Once you're ready to publish, commit everything and do the first release manually:
+
+`npm publish`
+
+After that, the documented scripts for automated update publishing apply for future updates.

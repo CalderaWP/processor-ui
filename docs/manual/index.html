@@ -60,7 +60,27 @@ console.log(sayHi()); //Hi Roy</code>
 </code></pre><pre><code class="lang-js"><code class="source-code prettyprint">//Say Hi to Someone else
 console.log(sayHi(&apos;Mike&apos;)); //Hi Mike</code>
 </code></pre><h2>Using This Boilerplate</h2><h3>Enable Github Pages For Docs</h3><p>Go to Settings in Github repo.</p><p>Enable Github pages for master branch /docs dir
-<a href="https://ibb.co/bTSUv8"><img src="https://preview.ibb.co/hsXwa8/Screen_Shot_2018_06_09_at_3_41_30_PM.png"></a></p><h3>Adding State Management</h3><h3>Using For React Components</h3><h3>Creating Exports</h3><h3>Publishing To NPM</h3></div>
+<a href="https://ibb.co/bTSUv8"><img src="https://preview.ibb.co/hsXwa8/Screen_Shot_2018_06_09_at_3_41_30_PM.png"></a></p><h3>Adding State Management</h3><h3>Using For React Components</h3><h3>Creating Exports</h3><p>This boilerplate compiles code with babel to the <code>/dist</code> directory. One or more module exports must be created and identified in package.json.</p><p>For example:</p><pre><code class="lang-json"><code class="source-code prettyprint">{
+&quot;main&quot;: &quot;./dist/index.js&quot;,
+  &quot;files&quot; : [
+      &quot;./dist/index.js&quot;,
+      &quot;./dist/fields/index.js&quot;,
+      &quot;./dist/fields/factories/index.js&quot;
+  ]
+}</code>
+</code></pre><p>See:</p><ul>
+<li><a href="https://docs.npmjs.com/files/package.json#files">https://docs.npmjs.com/files/package.json#files</a></li>
+<li><a href="https://docs.npmjs.com/files/package.json#main">https://docs.npmjs.com/files/package.json#main</a></li>
+</ul><h3>Publishing To NPM</h3><p>All Caldera libraries should be published as <a href="https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html">org scoped packages</a> in the <a href="https://www.npmjs.com/search?q=%40caldera-labs">@caldera-labs</a> organization.</p><p>Short version of <a href="https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html">the docs</a></p><p>Make sure in package.json:</p><ul>
+<li>That <code>private</code> is not set to true.</li>
+<li>That the name of the package is <code>@caldera-labs/whatever</code> where <code>whatever</code> describes the modules job. For example, <code>@caldera-labs/mailchimp-client</code> if you&apos;re building a Mailchimp client. Note that &quot;caldera&quot; was not used on the right side of the slash.</li>
+<li>That you have specified at least one entry point and defined a module export for it.</li>
+<li>You have authorization to publish in <code>@caldera-labs</code> org scope.</li>
+<li>You are logged in as that user via the npm cli<ul>
+<li><a href="https://docs.npmjs.com/cli/adduser">https://docs.npmjs.com/cli/adduser</a></li>
+</ul>
+</li>
+</ul><p>Once you&apos;re ready to publish, commit everything and do the first release manually:</p><p><code>npm publish</code></p><p>After that, the documented scripts for automated update publishing apply for future updates.</p></div>
         <a data-ice="link" href="manual/overview.html"></a>
       </div>
     </div>

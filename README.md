@@ -10,21 +10,9 @@ Description of package
 Example of how to use module:
 
 ```js
-import * as calderaApiClient from '@caldera-labs/api-client';
-const formsAdminApiClient = calderaApiClient.wpClientFactory(
-	'https://hiroy.club/wp-json/cf-api/v2', //root of Caldera Forms REST API namespace
-    '12345', //the nonce for REST API cookie authentication
-    'forms' //type of client to get
-);
-let forms = [];
-formsAdminApiClient(page).then(r => {
-	forms = r;
-}).catch(error => {
-	console.log(error);
-	throw error;
-});
+import * as calderaWhatever from '@caldera-labs/caldera-npm-module-boilerplate';
+console.log( calderaWhatever.hiRoy() );
 ```
-
 
 See: [http://calderalabs.org/caldera-npm-module-boilerplate/manual/overview.html#usage](http://calderalabs.org/caldera-npm-module-boilerplatw/manual/overview.html#usage)
 
