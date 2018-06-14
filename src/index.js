@@ -1,10 +1,9 @@
-//@flow
 /**
  * Say Hi to (optionally) someone or by default, Roy
  *
- * @param who
- * @returns {string}
+ * @param {String} who
+ * @returns {String}
  */
-export default function sayHi(who: string = 'Roy'): string {
+export default function sayHi(who ='Roy') {
 	return `Hi ${who}`;
 }
