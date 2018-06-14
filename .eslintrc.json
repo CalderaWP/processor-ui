@@ -1,11 +1,12 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest/globals": true
     },
     "extends": [
         "eslint:recommended",
-        "plugin:flowtype/recommended"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -16,8 +17,8 @@
     },
     "parser": "babel-eslint",
     "plugins": [
-        "flowtype",
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
         "indent": [
@@ -35,6 +36,11 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
     }
 }

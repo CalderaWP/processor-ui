@@ -14,7 +14,6 @@ Forked from: [https://www.npmjs.com/package/npm-module-es6-boilerplate](https://
 - [Jest](https://facebook.github.io/jest/) - Tests, includes coverage report
 - [Coveralls](https://coveralls.io/) - Ensure that all your new code is fully covered, and see coverage trends emerge.
 - [Travis](https://travis-ci.org) - Deploy and test.
-- [Flow](https://flow.org/en/docs/types/primitives/) - Type Checking
 - [esDoc](https://esdoc.org/) - Documentation
 - [esLint](https://eslint.org/) - Enforces tabs over spaces and other lints.
 
@@ -25,7 +24,6 @@ Forked from: [https://www.npmjs.com/package/npm-module-es6-boilerplate](https://
 ### Dependencies
 * Yarn
 * Git
-* Flow
 * npm
 * Node
 
@@ -84,9 +82,6 @@ This script calls a pre, compile, and post subcommands.  For consistency, please
 ### Tests
 * `yarn test` : Test Watcher
 * `npm test:once` : Run Tests once
-
-### Type-checking With Flow
-* `yarn flow`
 
 ### Lint Code
 * `yarn lint`
