@@ -87,6 +87,6 @@ This script calls a pre, compile, and post subcommands.  For consistency, please
 * `yarn lint`
 
 ### Generate Documentation
-* `npm run documentation`
+* `yarn documentation`
 - Generates documentation from inline docs
 - Generates documentation from markdown files in /manual

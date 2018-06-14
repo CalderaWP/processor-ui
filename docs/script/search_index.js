@@ -1,11 +1,5 @@
 window.esdocSearchIndex = [
   [
-    "@caldera-labs/whatever/src/index.js~sayhi",
-    "function/index.html#static-function-sayHi",
-    "<span>sayHi</span> <span class=\"search-result-import-path\">@caldera-labs/whatever/src/index.js</span>",
-    "function"
-  ],
-  [
     "src/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "src/.external-ecmascript.js~Array",
@@ -286,11 +280,5 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "src/.external-ecmascript.js~undefined",
     "external"
-  ],
-  [
-    "src/index.js",
-    "file/src/index.js.html",
-    "src/index.js",
-    "file"
   ]
 ]
