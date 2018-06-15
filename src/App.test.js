@@ -11,7 +11,7 @@ describe( 'App component', () => {
 		const div = document.createElement('div');
 		ReactDOM.render(<App/>, div);
 	});
-	it.only('renders with state without crashing', () => {
+	it('renders with state without crashing', () => {
 		ReactDOM.render(
 			<Provider store={store}>
 				<AppWithState />
