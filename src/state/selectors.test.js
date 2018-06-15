@@ -1,7 +1,9 @@
 import {
 	getFormForProcessor,
 	getProcessor,
-	getProcessorFromCollection
+	getProcessorFromCollection,
+	getProcessorValues,
+	getProcessorValue
 } from './selectors';
 
 describe('selector functions',  () =>{
@@ -16,6 +18,11 @@ describe('selector functions',  () =>{
 		type: 'email'
 	});
 
+	const form = {
+		ID: 'cf1',
+		name: 'tacos'
+	};
+
 	collection.set(processorId, processor );
 
 	describe( 'collection selectors', () => {
@@ -28,10 +35,7 @@ describe('selector functions',  () =>{
 	});
 
 	describe( 'single processor selectors', () => {
-		const form = {
-			ID: 'cf1',
-			name: 'tacos'
-		};
+
 		const mockState = {
 			processor,
 			form
@@ -43,6 +47,38 @@ describe('selector functions',  () =>{
 
 		it( 'finds processor by ID', () =>{
 			expect(getProcessor(mockState) ).toEqual(processor);
+		});
+	});
+
+	describe( 'values selectors', () => {
+		it( 'Returns the values',() => {
+			const values = new Map().set( 'field1', 'too many 5s' );
+			const thisMockState = {
+				processor,
+				form,
+				configValues: values
+			};
+			expect( getProcessorValues( thisMockState)).toEqual(values);
+		});
+
+		it( 'Returns one value',() => {
+			const values = new Map().set( 'field1', 'rs3' );
+			const thisMockState = {
+				processor,
+				form,
+				configValues: values
+			};
+			expect( getProcessorValue( thisMockState,'field1')).toEqual('rs3');
+		});
+
+		it( 'Returns null for invalid config field value',() => {
+			const values = new Map().set( 'field1', 'rs3' );
+			const thisMockState = {
+				processor,
+				form,
+				configValues: values
+			};
+			expect( getProcessorValue( thisMockState,'field2')).toEqual(null);
 		});
 	});
 

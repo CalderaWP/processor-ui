@@ -28,3 +28,23 @@ export const getProcessor = (state ) => {
 export const getFormForProcessor = ( state ) => {
 	return state.form;
 };
+
+/**
+ * Get the values from the single processor reducer processorReducer
+ * @param state
+ * @returns {Object}
+ */
+export const getProcessorValues  = (state) => {
+	return state.configValues;
+};
+
+/**
+ * Get the values from the single processor reducer processorReducer
+ * @param {Object} state
+ * @returns {Object}
+ */
+export const getProcessorValue  = (state,configFieldId) => {
+	return state.configValues.has(configFieldId)
+		? state.configValues.get(configFieldId)
+		: null;
+};

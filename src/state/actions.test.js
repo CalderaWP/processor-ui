@@ -4,11 +4,13 @@ import {
 	removeProcessor,
 	setFormForProcessor,
 	updateProcessor,
+	updateProcessorValues,
 	ADD_PROCESSOR,
 	NEW_PROCESSOR,
 	REMOVE_PROCESSOR,
 	SET_FORM_FOR_PROCESSOR,
-	UPDATE_PROCESSOR
+	UPDATE_PROCESSOR,
+	UPDATE_PROCESSOR_VALUES
 } from './actions';
 
 describe( 'action creators', () => {
@@ -27,7 +29,7 @@ describe( 'action creators', () => {
 			expect( action.type ).toBe( ADD_PROCESSOR );
 		});
 
-		it( 'addProcessor action creator create the right paylod', () =>{
+		it( 'addProcessor action creator create the right payload', () =>{
 			const action = addProcessor(processor);
 			expect( action.processor ).toBe( processor );
 		});
@@ -42,7 +44,7 @@ describe( 'action creators', () => {
 			expect( action.type ).toBe( REMOVE_PROCESSOR );
 		});
 
-		it( 'removeProcessor action creator create the right paylod', () =>{
+		it( 'removeProcessor action creator create the right payload', () =>{
 			const action = removeProcessor(processorId);
 			expect( action.processorId ).toBe( processorId );
 		});
@@ -52,7 +54,7 @@ describe( 'action creators', () => {
 			expect( action.type ).toBe( SET_FORM_FOR_PROCESSOR );
 		});
 
-		it( 'setFormForProcessor action creator create the right paylod', () =>{
+		it( 'setFormForProcessor action creator create the right payload', () =>{
 			const action = setFormForProcessor(form);
 			expect( action.form ).toBe( form );
 		});
@@ -63,9 +65,19 @@ describe( 'action creators', () => {
 			expect( action.type ).toBe( UPDATE_PROCESSOR );
 		});
 
-		it( 'updateProcessor action creator create the right paylod', () =>{
+		it( 'updateProcessor action creator create the right payload', () =>{
 			const action = updateProcessor(processor);
 			expect( action.processor ).toBe( processor );
+		});
+
+		it( 'updateProcessorValues action creator create the right type of action', () =>{
+			const action = updateProcessorValues(processor);
+			expect( action.type ).toBe( UPDATE_PROCESSOR_VALUES );
+		});
+
+		it( 'updateProcessorValues action creator create the right paylaod', () =>{
+			const action = updateProcessorValues(processor);
+			expect( action.configValues ).toBe( processor );
 		});
 	});
 });

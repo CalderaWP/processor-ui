@@ -5,7 +5,8 @@ import {
 	ADD_PROCESSOR,
 	//processor
 	UPDATE_PROCESSOR,
-	SET_FORM_FOR_PROCESSOR
+	SET_FORM_FOR_PROCESSOR,
+	UPDATE_PROCESSOR_VALUES
 } from './actions';
 
 /**
@@ -73,7 +74,8 @@ export const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();
 export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
 	form: {},
 	processor:  new Map(),
-	processorConfig: {}
+	processorConfig: {},
+	configValues: new Map()
 	/* @TODO conditionals for processors */
 };
 
@@ -132,11 +134,16 @@ export const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_S
 			processor:action.processor
 		};
 
-	case  SET_FORM_FOR_PROCESSOR:
+	case SET_FORM_FOR_PROCESSOR:
 		return {
 			...state,
 			form: action.form
 		};
+		case  UPDATE_PROCESSOR_VALUES:
+			return {
+				...state,
+				configValues: action.configValues
+			};
 	default:
 		return state;
 	}

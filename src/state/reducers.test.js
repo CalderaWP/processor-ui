@@ -11,6 +11,7 @@ import {
 	removeProcessor,
 	setFormForProcessor,
 	updateProcessor,
+	updateProcessorValues
 } from './actions';
 
 describe( 'reducers', () => {
@@ -103,6 +104,13 @@ describe( 'reducers', () => {
 				processor: new Map().set( processorId, processor )
 			}, action);
 			expect(store.form).toEqual(form);
+		});
+
+		it( 'Sets the processor values', () => {
+			const values = new  Map( ).set( '1', 1 );
+			const action = updateProcessorValues(values);
+			const store =  processorReducer(CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE,action);
+			expect( store.configValues ).toEqual( values );
 		});
 
 

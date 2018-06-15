@@ -29,7 +29,14 @@ export const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/SET
  *
  * @type {string}
  */
-export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UDPDATE_PROCESSOR`;
+export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR`;
+
+/**
+ * The name of the action to update the processor values in the single processor store
+ *
+ * @type {string}
+ */
+export const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_VALUES`;
 
 /**
  * Creates an action to add a processor with config to the collection
@@ -91,3 +98,16 @@ export const updateProcessor = (processor ) => {
 		processor
 	};
 };
+
+/**
+ * Creates an action to update the processor values of the single processor store.
+ * @param {Map} configValues New config values
+ * @returns {{type: string, processor: *}}
+ */
+export const updateProcessorValues = (configValues ) => {
+	return {
+		type: UPDATE_PROCESSOR_VALUES,
+		configValues
+	};
+};
+
