@@ -73,6 +73,7 @@ export const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();
 export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
 	form: {},
 	processor:  new Map(),
+	processorConfig: {}
 	/* @TODO conditionals for processors */
 };
 
