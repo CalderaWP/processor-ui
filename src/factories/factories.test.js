@@ -1,5 +1,6 @@
 import {configFieldFactory} from "./configFieldFactory";
 import {configFieldsFactory} from "./configFieldsFactory";
+import {getConfigFieldDefaultValue, getConfigFieldValueOrDefault} from "./util";
 
 describe( 'Processor factories', () => {
 	//A mock library is needed!
@@ -10,10 +11,11 @@ describe( 'Processor factories', () => {
 		'default': false
 	};
 
+	const defaultSequenceId = 42;
 	const hiddenFieldConfig = {
 		'type': 'hidden',
 		'label': 'Sequence ID',
-		'default': 42
+		'default': defaultSequenceId
 	};
 
 	const configFields = {
@@ -26,6 +28,12 @@ describe( 'Processor factories', () => {
 			expect(configFieldFactory({
 				description: 'Hi Roy'
 			},hiddenFieldConfig).description).toEqual( 'Hi Roy');
+		});
+
+		it( 'Sets value from default', () => {
+			expect(configFieldFactory({
+				description: 'Hi Roy'
+			},hiddenFieldConfig).value).toEqual( defaultSequenceId);
 		});
 	});
 
@@ -87,6 +95,92 @@ describe( 'Processor factories', () => {
 			},configFields, new Map().set( 'tags', 'roy'));
 			expect( processorConfigFields.get( 'tags'  ).value ).toEqual( 'roy' );
 
+		});
+
+		describe( 'Priority of setting value', () =>{
+			const defaultConfigFieldValue = 'mike';
+			const defaultsForThisTest = Object.assign({},{
+				tags: {
+					default: 'mike',
+				},
+				sequenceId: hiddenFieldConfig
+			});
+
+			it( 'is testing with a valid mock for defaults', () => {
+				expect( defaultsForThisTest.tags.default ).toEqual( 'mike' );
+			});
+
+			describe( 'Gives top priority to fieldValues[configFieldId]',() => {
+				const processorConfigFields = configFieldsFactory(
+					{
+						tags: textFieldConfig,
+						sequenceId: hiddenFieldConfig
+					},
+					Object.create(defaultsForThisTest),
+					new Map().set( 'tags', 'roy')
+				);
+				expect( processorConfigFields.get( 'tags' ).value ).not.toEqual(  defaultConfigFieldValue );
+			});
+
+			describe( 'Uses config.Value as 2nd priority for setting value',() => {
+				const processorConfigFields = configFieldsFactory(
+					{
+						tags: {
+							default: 't1',
+							label: 'Tags2'
+						},
+						sequenceId: hiddenFieldConfig
+					},
+					Object.create(defaultsForThisTest),
+					new Map() //no values
+				);
+
+				it( 'Sets the value on fieldConfig from configFields', () => {
+					expect( processorConfigFields.get( 'tags' ).value ).toEqual(  't1' );
+				});
+			});
+
+			describe( 'Uses configField.default as 3rd priority for setting value',() => {
+				const processorConfigFields = configFieldsFactory(
+					{
+						tags: {
+							label: 'Tags3',
+							default: 'torpedo'
+						},
+						sequenceId: hiddenFieldConfig
+					},
+					Object.create(defaultsForThisTest),
+					new Map() //no values
+				);
+
+				it( 'Sets the default on fieldConfig from defaultConfigFieldValue', () => {
+					expect( processorConfigFields.get( 'tags' ).value ).toEqual(  'torpedo' );
+				});
+			});
+
+			describe( 'Uses defaultConfigField.default as 4th priority for setting value',() => {
+				const processorConfigFields = configFieldsFactory(
+					{
+						tags: {
+							label: 'Tags4',
+						},
+						sequenceId: hiddenFieldConfig
+					},
+					Object.create(defaultsForThisTest),
+					new Map() //no values
+				);
+				it( 'Has the right default in mock', () => {
+					expect( defaultsForThisTest.tags.default ).toEqual( 'mike' );
+				});
+				it( 'Uses getConfigFieldValueOrDefault as intended', () => {
+					expect( getConfigFieldDefaultValue({default:'mike'}) ).toEqual( 'mike' );
+					expect( getConfigFieldValueOrDefault({default:'mike'}) ).toEqual( 'mike' );
+				});
+
+				it( 'Sets the default on fieldConfig from defaultConfigFieldValue', () => {
+					expect( processorConfigFields.get( 'tags' ).value ).toEqual(  defaultsForThisTest.tags.default );
+				});
+			});
 		});
 	});
 });

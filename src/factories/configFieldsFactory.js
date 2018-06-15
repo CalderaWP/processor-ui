@@ -1,4 +1,8 @@
 import {configFieldFactory} from "./configFieldFactory";
+import {
+	getConfigFieldValueOrDefault,
+	getConfigFieldDefaultValue
+} from "./util";
 
 /**
  * Prepare a collection of config fields
@@ -13,7 +17,29 @@ import {configFieldFactory} from "./configFieldFactory";
  */
 export const configFieldsFactory = (configFields, configFieldsDefaults = {},configValues = new Map()  ) => {
 	const configFieldsMap = new Map(  );
+	const clonedConfigFieldsDefaults = Object.assign({},configFieldsDefaults);
 
+	/**
+	 * Check if a configField's has a corresponding default config
+	 *
+	 * @param {String} configFieldId Id of config field to search for
+	 * @returns {boolean}
+	 */
+	function hasConfigFieldDefault(configFieldId) {
+		return clonedConfigFieldsDefaults.hasOwnProperty(configFieldId);
+	}
+
+	function getDefaultConfigObject(configFieldId) {
+		return clonedConfigFieldsDefaults[configFieldId];
+	}
+
+
+	/**
+	 * Set a config field into the Map that will be returned
+	 *
+	 * @param {String} configFieldId Config field ID
+	 * @param {String|Number|Array} value Config field value
+	 */
 	function setConfigInMap(configFieldId, value) {
 		let configField = {
 			...configFields[configFieldId],
@@ -21,35 +47,48 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {},conf
 			value: value
 		};
 
-		if( configFieldsDefaults.hasOwnProperty(configFieldId)) {
-			configField = configFieldFactory(configField,configFieldsDefaults[configFieldId]);
+
+		if( hasConfigFieldDefault(configFieldId)) {
+			configField = configFieldFactory(configField,getDefaultConfigObject(configFieldId));
 		}
+
 		configFieldsMap.set(configFieldId, configField);
 	}
 
-	function getConfigFieldValue(configFieldId){
+	/**
+	 * Get the value from the config field if possible
+	 * @param {String} configFieldId Config field ID to search fo
+	 * @returns {String|Number|Array|null} Returns null if not found
+	 */
+	function getFieldValue(configFieldId){
 		return configValues.has( configFieldId )
 			? configValues.get( configFieldId )
 			: null;
 	}
 
+	//Priority for setting value:
+	// fieldValues[configFieldId]
+	// configField.value
+	// configField.default
+	// defaultConfigField.default
 
-
+	//Collect config fields, adding values as needed
 	Object.keys(configFields).map(configFieldId => {
-		const value = null !== getConfigFieldValue(configFieldId)
-			? getConfigFieldValue(configFieldId)
-			: configFields[configFieldId].hasOwnProperty( 'default' )
-				? configFields[configFieldId].default
-				: '';
+		const value =  null !== getFieldValue(configFieldId)
+			? getFieldValue(configFieldId)
+			: null !== getConfigFieldValueOrDefault(configFields[configFieldId])
+				? getConfigFieldValueOrDefault(configFields[configFieldId])
+				: null
+		//Add to map
 		setConfigInMap(configFieldId, value);
 	});
 
-	Object.keys( configFieldsDefaults ).map( configFieldDefaultId => {
+	//Add in any missing fields.
+	Object.keys( clonedConfigFieldsDefaults ).map( configFieldDefaultId => {
 		if( ! configFields.hasOwnProperty(configFieldDefaultId )){
-			configFieldsMap.set(configFieldDefaultId, configFieldsDefaults[configFieldDefaultId]);
+			configFieldsMap.set(configFieldDefaultId, clonedConfigFieldsDefaults[configFieldDefaultId]);
 		}
 	});
 
-	//It would probably be good to freeze this Map or use immutable.js Map.
 	return configFieldsMap;
 };
