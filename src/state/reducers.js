@@ -104,6 +104,8 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 				case ADD_PROCESSOR:
 					state.set( action.processor.ID, action.processor);
 					break;
+				default:
+					break;
 			}
 
 			return clone(state);

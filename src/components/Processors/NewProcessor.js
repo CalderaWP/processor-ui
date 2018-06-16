@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
  * @returns {*}
  * @constructor
  */
-export  const Add = (props) => {
+export  const NewProcessor = (props) => {
 	function handler(event){
-		props.onAdd(event.target.value);
+		props.onNewProcessor(event.target.value);
 	}
 
 	return(
@@ -23,11 +23,11 @@ export  const Add = (props) => {
 	)
 };
 
-Add.propTypes = {
-	onAdd: PropTypes.func.isRequired,
+NewProcessor.propTypes = {
+	onNewProcessor: PropTypes.func.isRequired,
 	label: PropTypes.string
 };
 
-Add.defaultProps = {
-	label: 'Add Processor'
+NewProcessor.defaultProps = {
+	label: 'NewProcessor Processor'
 };

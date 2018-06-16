@@ -15,7 +15,7 @@ exports[`Processor UI components Processor add button Renders with default label
   <button
     onClick={[Function]}
   >
-    Add Processor
+    NewProcessor Processor
   </button>
 </div>
 `;
@@ -23,6 +23,9 @@ exports[`Processor UI components Processor add button Renders with default label
 exports[`Processor UI components Processors list component renders with 1 processor 1`] = `
 <div>
   <div>
+    <p>
+      p1
+    </p>
     <p>
       Main Email
     </p>
@@ -36,6 +39,9 @@ exports[`Processor UI components Processors list component renders with 1 proces
 exports[`Processor UI components Processors list component renders with 2 processors 1`] = `
 <div>
   <div>
+    <p>
+      p1
+    </p>
     <p>
       Main Email
     </p>

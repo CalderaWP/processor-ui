@@ -15,8 +15,9 @@ export const List = (props) => {
 			{processors.map(processor => {
 				return (
 					<div
-						key={processor.ID}
+						key={`${processor.ID}${processor.type}`}
 					>
+						<p>{processor.ID}</p>
 						<p>{processor.label}</p>
 						<p>{processor.type}</p>
 					</div>

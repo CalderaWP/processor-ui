@@ -79,11 +79,11 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {},conf
 			: null !== getConfigFieldValueOrDefault(configFields[configFieldId])
 				? getConfigFieldValueOrDefault(configFields[configFieldId])
 				: null
-		//Add to map
+		//NewProcessor to map
 		setConfigInMap(configFieldId, value);
 	});
 
-	//Add in any missing fields.
+	//NewProcessor in any missing fields.
 	Object.keys( clonedConfigFieldsDefaults ).map( configFieldDefaultId => {
 		if( ! configFields.hasOwnProperty(configFieldDefaultId )){
 			configFieldsMap.set(configFieldDefaultId, clonedConfigFieldsDefaults[configFieldDefaultId]);

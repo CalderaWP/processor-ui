@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {List} from "./components/Processors/List";
-import {Add} from "./components/Processors/Add";
+import {NewProcessor} from "./components/Processors/NewProcessor";
 
 
 /**
@@ -11,11 +11,16 @@ import {Add} from "./components/Processors/Add";
  * @returns {*}
  * @constructor
  */
-class App extends React.Component {
+class App extends React.PureComponent {
 	render() {
 		return(
 			<div className="App">
-
+				<List
+					processors={this.props.processors}
+				/>
+				<NewProcessor
+					onNewProcessor={this.props.onNewProcessor}
+				/>
 			</div>
 		);
 	}
@@ -28,7 +33,11 @@ class App extends React.Component {
  */
 App.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
-	form: PropTypes.object.isRequired
+	form: PropTypes.object.isRequired,
+	onAddProcessor: PropTypes.func.isRequired,
+	onRemoveProcessor: PropTypes.func.isRequired,
+	onNewProcessor: PropTypes.func.isRequired,
+	onUpdateProcessor: PropTypes.func.isRequired
 };
 
 /**

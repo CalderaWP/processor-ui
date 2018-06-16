@@ -1,40 +1,48 @@
 import { registerStore } from '@wordpress/data';
 
-
 import {
 	CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,
-	processorsReducer,
+	//processorsReducer,
 	clone
 } from "./reducers";
 
 import {
 	ADD_PROCESSOR,
-	addProcessor, NEW_PROCESSOR,
-	newProcessor, REMOVE_PROCESSOR,
-	removeProcessor, UPDATE_PROCESSOR,
+	addProcessor,
+	NEW_PROCESSOR,
+	newProcessor,
+	REMOVE_PROCESSOR,
+	removeProcessor,
+	UPDATE_PROCESSOR,
 } from "./actions";
 
 import {
+	getProcessorsCollection,
 	getProcessorFromCollection,
 } from "./selectors";
 
 
 const config = {
 	reducer(state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,action){
-		//copypasta of processorsReducer, no errros though.
+		//copypasta of processorsReducer, should be using processorsReducer, but it is undefined in this closure.
 		switch( action.type ){
 			case NEW_PROCESSOR:
 			case ADD_PROCESSOR:
+
 				switch( action.type ) {
 					case NEW_PROCESSOR:
+						const ID = 'p_' + Math.random().toString(36).substring(7);
 						//@TODO replace with generateId util function
-						state.set( 'p_' + Math.random().toString(36).substring(7), {} );
+						state.set( ID, {
+							ID
+						} );
 						break;
 					case ADD_PROCESSOR:
 						state.set( action.processor.ID, action.processor);
 						break;
+					default:
+						break;
 				}
-
 				return clone(state);
 			case UPDATE_PROCESSOR:
 				state.set( action.processor.ID, action.processor);
@@ -53,6 +61,7 @@ const config = {
 	},
 
 	selectors: {
+		getProcessorsCollection,
 		getProcessorFromCollection
 	},
 

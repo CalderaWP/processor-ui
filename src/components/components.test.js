@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {List} from "./Processors/List";
-import {Add} from "./Processors/Add";
+import {NewProcessor} from "./Processors/NewProcessor";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -46,16 +46,16 @@ describe( 'Processor UI components', () => {
 		describe( 'Renders with default label', () => {
 			it( 'matches snapshot', () => {
 				const component = renderer.create(
-					<Add onAdd={()=>{}}/>
+					<NewProcessor onNewProcessor={()=>{}}/>
 				);
 				expect( component.toJSON( ) ).toMatchSnapshot();
 			});
 
 			it( 'Has the default label', () => {
 				const wrapper = shallow(
-					<Add onAdd={()=>{}}/>
+					<NewProcessor onNewProcessor={()=>{}}/>
 				);
-				expect( wrapper.text( ) ).toEqual( Add.defaultProps.label );
+				expect( wrapper.text( ) ).toEqual( NewProcessor.defaultProps.label );
 			});
 
 		});
@@ -63,8 +63,8 @@ describe( 'Processor UI components', () => {
 		describe( 'Renders with  label prop', () => {
 			it( 'matches snapshot', () => {
 				const component = renderer.create(
-					<Add
-						onAdd={()=>{}}
+					<NewProcessor
+						onNewProcessor={()=>{}}
 						label={'Hi Roy'}
 					/>
 				);
@@ -73,8 +73,8 @@ describe( 'Processor UI components', () => {
 
 			it( 'Has the default label', () => {
 				const wrapper = shallow(
-					<Add
-						onAdd={()=>{}}
+					<NewProcessor
+						onNewProcessor={()=>{}}
 						label={'Hi Roy'}
 					/>
 				);
