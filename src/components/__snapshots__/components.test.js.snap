@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Processor UI components Processor add button Renders with  label prop matches snapshot 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Hi Roy
+  </button>
+</div>
+`;
+
+exports[`Processor UI components Processor add button Renders with default label matches snapshot 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Add Processor
+  </button>
+</div>
+`;
+
+exports[`Processor UI components Processors list component renders with 1 processor 1`] = `
+<div>
+  <div>
+    <p>
+      Main Email
+    </p>
+    <p>
+      email
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Processor UI components Processors list component renders with 2 processors 1`] = `
+<div>
+  <div>
+    <p>
+      Main Email
+    </p>
+    <p>
+      email
+    </p>
+  </div>
+</div>
+`;

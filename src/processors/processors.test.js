@@ -1,5 +1,4 @@
 import {Processor} from "./Processor";
-import {Email} from "./Email";
 
 describe( 'Processor classes', () => {
 	//A mock library is needed!
@@ -54,16 +53,6 @@ describe( 'Processor classes', () => {
 			it( 'Will set config fields through constructor', () => {
 				const processor = new Processor(configFields);
 				expect( processor.getConfigFields() ).toEqual(configFields);
-			});
-
-			it( 'Knows it does not have default config fields', () => {
-				const processor = new Processor();
-				expect( processor.hasDefaultConfigFields() ).toEqual(false);
-			});
-
-			it( 'Knows it does have default config fields', () => {
-				const processor = new Email();
-				expect( processor.hasDefaultConfigFields() ).toEqual(true);
 			});
 
 		});

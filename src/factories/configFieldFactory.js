@@ -11,10 +11,11 @@ import {
  */
 export const configFieldFactory = (configField, configFieldDefaults = {} ) => {
 	configField.value = getConfigFieldValueOrDefault(configField);
-	configField.default = getConfigFieldDefaultValue(configField);
-	configFieldDefaults.default = getConfigFieldDefaultValue(configFieldDefaults);
+	configField.default = null !== getConfigFieldDefaultValue(configField)
+		?  getConfigFieldDefaultValue(configField)
+		: getConfigFieldDefaultValue(configFieldDefaults);
 	if( null === configField.value ){
-		configField.value = configFieldDefaults.default;
+		configField.value = configField.default;
 	}
 	return {
 		...configFieldDefaults,

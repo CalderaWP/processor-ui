@@ -50,14 +50,4 @@ export class Processor {
 	setConfigValues(configValues){
 		this.configValues = configValues;
 	}
-
-	/**
-	 * Checks if default config fields are available for class instance.
-	 *
-	 * Specifically checks if a static property defaultConfigFields of class instance default is an object.
-	 * @returns {boolean}
-	 */
-	hasDefaultConfigFields(){
-		return 'object' === typeof this.constructor.defaultConfigFields;
-	}
 }

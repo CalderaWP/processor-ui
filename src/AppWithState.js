@@ -1,24 +1,20 @@
 import App from './App';
 import {withSelect,withDispatch} from '@wordpress/data';
-import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from './state/state';
+import {CALDERA_FORMS_PROCESSORS_STORE_SLUG } from "./state/processorsStore";
+import {CALDERA_FORMS_PROCESSOR_STORE_SLUG } from "./state/processorStore";
 
 /**
  * Main processors UI container wrapped with Redux(-like) state management
  */
 const AppWithState =  withSelect( ( select, ownProps ) => {
-	const { getCount } = select( CALDERA_FORMS_PROCESSORS_STORE_SLUG );
 
 	return {
-		quote: ownProps.quote,
+		processors: ownProps.quote,
 		cite:getCount()
 	};
 } )( withDispatch( ( dispatch ) => {
-	const { setCount } = dispatch( CALDERA_FORMS_PROCESSORS_STORE_SLUG );
-
 	return {
-		setCount(newCount) {
-			setCount( newCount );
-		},
+
 	};
 } )( App ) );
 

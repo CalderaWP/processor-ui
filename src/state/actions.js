@@ -1,4 +1,5 @@
-import {CALDERA_FORMS_PROCESSORS_STORE_SLUG,CALDERA_FORMS_PROCESSOR_STORE_SLUG} from './state';
+import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from "./processorsStore";
+import {CALDERA_FORMS_PROCESSOR_STORE_SLUG} from "./processorStore";
 
 /**
  * The name of the action to add a processor to collection
