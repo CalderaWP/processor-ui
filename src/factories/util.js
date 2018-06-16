@@ -28,7 +28,7 @@ export const getConfigFieldDefaultValue = (configField) => {
 export const getConfigFieldValueOrDefault = (configField ) => {
 	return null !== getConfigFieldValue(configField)
 		? getConfigFieldValue(configField)
-			: null !== getConfigFieldDefaultValue(configField)
-				? getConfigFieldDefaultValue(configField)
-				: null;
+		: null !== getConfigFieldDefaultValue(configField)
+			? getConfigFieldDefaultValue(configField)
+			: null;
 };

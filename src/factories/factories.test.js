@@ -1,8 +1,8 @@
-import {configFieldFactory} from "./configFieldFactory";
-import {configFieldsFactory} from "./configFieldsFactory";
-import {processorFactory} from "./processorFactory";
-import {getConfigFieldDefaultValue, getConfigFieldValueOrDefault} from "./util";
-import {Processor} from "../processors/Processor";
+import {configFieldFactory} from './configFieldFactory';
+import {configFieldsFactory} from './configFieldsFactory';
+import {processorFactory} from './processorFactory';
+import {getConfigFieldDefaultValue, getConfigFieldValueOrDefault} from './util';
+import {Processor} from '../processors/Processor';
 
 describe('Processor factories', () => {
 	//A mock library is needed!

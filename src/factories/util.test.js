@@ -2,7 +2,7 @@ import {
 	getConfigFieldValue,
 	getConfigFieldDefaultValue,
 	getConfigFieldValueOrDefault,
-} from "./util";
+} from './util';
 
 describe( 'Util functions for factories', () => {
 	describe( 'Config default find function', () => {
@@ -43,6 +43,6 @@ describe( 'Util functions for factories', () => {
 				value: 5,
 				default:2
 			})).toEqual(5);
-		})
+		});
 	});
-})
+});

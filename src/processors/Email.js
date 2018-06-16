@@ -1,4 +1,4 @@
-import {Processor} from "./Processor";
+import {Processor} from './Processor';
 
 export  class Email extends Processor {
 

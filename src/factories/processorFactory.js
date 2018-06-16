@@ -1,6 +1,6 @@
-import {emailDefaultConfigFields} from "../processors/emailDefaultConfigFields";
-import {Processor} from "../processors/Processor";
-import {configFieldsFactory} from "./configFieldsFactory";
+import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
+import {Processor} from '../processors/Processor';
+import {configFieldsFactory} from './configFieldsFactory';
 
 export const processorTypes = new Map()
 	.set('email', {
@@ -12,7 +12,7 @@ export const processorFactory = (type,configFields,configValues) =>  {
 	if( processorTypes.has( type ) ){
 		const configFieldDefaults = processorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )
 			? processorTypes.get( type ).defaultConfigFields
-				: {};
+			: {};
 		processor.setConfigFields( configFieldsFactory(configFields,configFieldDefaults));
 
 	}else{

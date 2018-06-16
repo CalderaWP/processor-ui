@@ -1,8 +1,7 @@
-import {configFieldFactory} from "./configFieldFactory";
+import {configFieldFactory} from './configFieldFactory';
 import {
 	getConfigFieldValueOrDefault,
-	getConfigFieldDefaultValue
-} from "./util";
+} from './util';
 
 /**
  * Prepare a collection of config fields
@@ -78,7 +77,7 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {},conf
 			? getFieldValue(configFieldId)
 			: null !== getConfigFieldValueOrDefault(configFields[configFieldId])
 				? getConfigFieldValueOrDefault(configFields[configFieldId])
-				: null
+				: null;
 		//NewProcessor to map
 		setConfigInMap(configFieldId, value);
 	});

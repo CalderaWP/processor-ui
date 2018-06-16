@@ -94,29 +94,29 @@ export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
  */
 export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) => {
 	switch( action.type ){
+	case NEW_PROCESSOR:
+	case ADD_PROCESSOR:
+		switch( action.type ) {
 		case NEW_PROCESSOR:
+			//@TODO replace with generateId util function
+			state.set( 'p_' + Math.random().toString(36).substring(7), {} );
+			break;
 		case ADD_PROCESSOR:
-			switch( action.type ) {
-				case NEW_PROCESSOR:
-					//@TODO replace with generateId util function
-					state.set( 'p_' + Math.random().toString(36).substring(7), {} );
-					break;
-				case ADD_PROCESSOR:
-					state.set( action.processor.ID, action.processor);
-					break;
-				default:
-					break;
-			}
-
-			return clone(state);
-		case UPDATE_PROCESSOR:
 			state.set( action.processor.ID, action.processor);
-			return clone(state);
-		case  REMOVE_PROCESSOR:
-			state.delete(action.processorId);
-			return clone(state);
+			break;
 		default:
-			return state;
+			break;
+		}
+
+		return clone(state);
+	case UPDATE_PROCESSOR:
+		state.set( action.processor.ID, action.processor);
+		return clone(state);
+	case  REMOVE_PROCESSOR:
+		state.delete(action.processorId);
+		return clone(state);
+	default:
+		return state;
 	}
 
 };

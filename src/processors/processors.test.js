@@ -1,4 +1,4 @@
-import {Processor} from "./Processor";
+import {Processor} from './Processor';
 
 describe( 'Processor classes', () => {
 	//A mock library is needed!

@@ -1,7 +1,7 @@
-import {processorsStore} from "./processorsStore";
+import {processorsStore} from './processorsStore';
 import {
 	newProcessor,
-} from "./actions";
+} from './actions';
 
 
 

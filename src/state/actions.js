@@ -1,5 +1,5 @@
 //import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from "./processorsStore";
-import {CALDERA_FORMS_PROCESSOR_STORE_SLUG} from "./processorStore";
+import {CALDERA_FORMS_PROCESSOR_STORE_SLUG} from './processorStore';
 
 const CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';
 
