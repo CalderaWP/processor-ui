@@ -1,4 +1,5 @@
 import {
+	getProcessorsCollection,
 	getFormForProcessor,
 	getProcessor,
 	getProcessorFromCollection,
@@ -31,6 +32,9 @@ describe('selector functions',  () =>{
 		});
 		it( 'returns null when getProcessorFromCollection selector is passed an invalid processor ID',() =>{
 			expect( getProcessorFromCollection(collection,'p45') ).toEqual( null );
+		});
+		it( 'returns all of the processors in the collection',() =>{
+			expect( getProcessorsCollection(collection)).toEqual( collection );
 		});
 	});
 

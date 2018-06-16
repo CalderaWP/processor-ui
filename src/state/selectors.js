@@ -1,3 +1,14 @@
+
+/**
+ * Get all of the procesors in collection
+ *
+ * @param {Map} state
+ * @param {String} processorId
+ */
+export const getProcessorsCollection = (state) => {
+	return state;
+};
+
 /**
  * Get one processor from the processors collection reducer processorsReducer
  * @param {Map} state
