@@ -1,7 +1,7 @@
 import {
 	getConfigFieldValue,
 	getConfigFieldDefaultValue,
-	getConfigFieldValueOrDefault,
+	getConfigFieldValueOrDefault, objectToMap,
 } from './util';
 
 describe( 'Util functions for factories', () => {
@@ -44,5 +44,24 @@ describe( 'Util functions for factories', () => {
 				default:2
 			})).toEqual(5);
 		});
+	});
+
+	describe( 'object to map conversion', () => {
+		const field2 = {
+			ID: 'fld2',
+			type: 'email'
+		};
+		const fields = {
+			fld1: {
+				ID: 'fld1',
+				type: 'text'
+			},
+			fld2: field2
+		};
+
+		const map = objectToMap( fields );
+		expect( map.has( 'fld2' ) ).toBe(true);
+		expect( map.get( 'fld2' ) ).toEqual(field2);
+		expect( map.has( 'fld1' ) ).toBe(true);
 	});
 });

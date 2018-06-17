@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Processor components Editor renders with props 1`] = `
+<div
+  className={undefined}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div />
+  <div>
+    Type: 
+    <span
+      className="processor-type"
+    >
+      email
+    </span>
+  </div>
+  <p
+    className="processor-editor"
+  >
+    Editor
+  </p>
+</div>
+`;
+
+exports[`Processor components OpenEditorButton renders with label props 1`] = `
+<button
+  className={undefined}
+  onClick={[Function]}
+  style={undefined}
+>
+  <span>
+    Open!
+  </span>
+</button>
+`;
+
+exports[`Processor components OpenEditorButton renders with out the non-required props 1`] = `
+<button
+  className={undefined}
+  onClick={[Function]}
+  style={undefined}
+>
+  <span>
+    Edit Settings
+  </span>
+</button>
+`;
+
+exports[`Processor components Processor Config fields component Renders 1`] = `
+<div
+  className={undefined}
+/>
+`;
+
+exports[`Processor components Remove Processor Button Renders with label props 1`] = `
+<button
+  className={undefined}
+  onClick={[Function]}
+  style={undefined}
+>
+  <span>
+    R2
+  </span>
+</button>
+`;
+
+exports[`Processor components Remove Processor Button Renders without label props 1`] = `
+<button
+  className={undefined}
+  onClick={[Function]}
+  style={undefined}
+>
+  <span>
+    Remove Processor
+  </span>
+</button>
+`;

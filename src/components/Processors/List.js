@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {ProcessorContainer} from "../Processor/ProcessorContainer";
 
 /**
  * Displays list of processors
@@ -15,11 +16,15 @@ export const List = (props) => {
 			{processors.map(processor => {
 				return (
 					<div
-						key={`${processor.ID}${processor.type}`}
+						key={`${processor.ID}`}
 					>
-						<p>{processor.ID}</p>
-						<p>{processor.label}</p>
-						<p>{processor.type}</p>
+						<em>{processor.ID}</em>
+						<ProcessorContainer
+							form={props.form}
+							processor={processor}
+							onUpdateProcessor={props.onUpdateProcessor}
+							onRemoveProcessor={props.onRemoveProcessor}
+						/>
 					</div>
 				);
 			})}
@@ -29,5 +34,8 @@ export const List = (props) => {
 };
 
 List.propTypes = {
-	processors: PropTypes.instanceOf(Map).isRequired
+	form: PropTypes.object.isRequired,
+	processors: PropTypes.instanceOf(Map).isRequired,
+	onRemoveProcessor: PropTypes.func.isRequired,
+	onUpdateProcessor: PropTypes.func.isRequired
 };

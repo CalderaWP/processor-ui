@@ -14,6 +14,7 @@ import {
 	REMOVE_PROCESSOR,
 	removeProcessor,
 	UPDATE_PROCESSOR,
+	updateProcessor,
 } from './actions';
 
 import {
@@ -57,7 +58,8 @@ const config = {
 	actions: {
 		addProcessor,
 		newProcessor,
-		removeProcessor
+		removeProcessor,
+		updateProcessor
 	},
 
 	selectors: {

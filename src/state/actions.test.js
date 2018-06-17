@@ -5,12 +5,14 @@ import {
 	setFormForProcessor,
 	updateProcessor,
 	updateProcessorValues,
+	updateProcessorConfigFields,
 	ADD_PROCESSOR,
 	NEW_PROCESSOR,
 	REMOVE_PROCESSOR,
 	SET_FORM_FOR_PROCESSOR,
 	UPDATE_PROCESSOR,
-	UPDATE_PROCESSOR_VALUES
+	UPDATE_PROCESSOR_VALUES,
+	UPDATE_PROCESSOR_CONFIG_FIELDS
 } from './actions';
 
 describe( 'action creators', () => {
@@ -75,9 +77,24 @@ describe( 'action creators', () => {
 			expect( action.type ).toBe( UPDATE_PROCESSOR_VALUES );
 		});
 
-		it( 'updateProcessorValues action creator create the right paylaod', () =>{
+		it( 'updateProcessorValues action creator create the right payload', () =>{
 			const action = updateProcessorValues(processor);
 			expect( action.configValues ).toBe( processor );
+		});
+
+		const configFields = {
+			email: {
+				type: 'email'
+			}
+		};
+		it( 'updateProcessorValues action creator create the right type of action', () =>{
+			const action = updateProcessorConfigFields(configFields);
+			expect( action.type ).toBe( UPDATE_PROCESSOR_CONFIG_FIELDS );
+		});
+
+		it( 'updateProcessorValues action creator create the right payload', () =>{
+			const action = updateProcessorConfigFields(configFields);
+			expect( action.configFields ).toBe( configFields );
 		});
 	});
 });

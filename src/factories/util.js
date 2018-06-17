@@ -32,3 +32,16 @@ export const getConfigFieldValueOrDefault = (configField ) => {
 			? getConfigFieldDefaultValue(configField)
 			: null;
 };
+
+/**
+ * Convert an object (should have meaningful indexes) to a map
+ * @param {Object} object Object to convert
+ * @return {Map<any, any>}
+ */
+export const objectToMap = (object) => {
+	const map = new Map();
+	Object.keys(object).forEach(key => {
+		map.set(key, object[key]);
+	});
+	return map;
+}

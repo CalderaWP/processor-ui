@@ -4,7 +4,7 @@ import {
 	getProcessor,
 	getProcessorFromCollection,
 	getProcessorValues,
-	getProcessorValue
+	getProcessorValue,
 } from './selectors';
 
 describe('selector functions',  () =>{

@@ -4,6 +4,8 @@ import {processorFactory} from './processorFactory';
 import {getConfigFieldDefaultValue, getConfigFieldValueOrDefault} from './util';
 import {Processor} from '../processors/Processor';
 
+
+
 describe('Processor factories', () => {
 	//A mock library is needed!
 	const textFieldConfig = {
@@ -255,4 +257,6 @@ describe('Processor factories', () => {
 			});
 		});
 	});
+
+
 });

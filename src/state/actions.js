@@ -23,17 +23,17 @@ export const NEW_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/NEW_PROCESS
 export const REMOVE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/REMOVE_PROCESSOR`;
 
 /**
- * The name of the action to set the form in the single processor store
+ * The name of the action to set the form in the processor collection
  *
  * @type {string}
  */
 export const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/SET_FORM_FOR_PROCESSOR`;
 /**
- * The name of the action to update the processor in the single processor store
+ * The name of the action to update the processor in collection.
  *
  * @type {string}
  */
-export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR`;
+export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR`;
 
 /**
  * The name of the action to update the processor values in the single processor store
@@ -41,6 +41,13 @@ export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PR
  * @type {string}
  */
 export const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_VALUES`;
+
+/**
+ * The name of the action to update the processor values in the single processor store
+ *
+ * @type {string}
+ */
+export const UPDATE_PROCESSOR_CONFIG_FIELDS = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_CONFIG_FIELDS`;
 
 /**
  * Creates an action to add a processor with config to the collection
@@ -92,7 +99,7 @@ export const setFormForProcessor = (form) => {
 };
 
 /**
- * Creates an action to update the processor of the single processor store.
+ * Creates an action to update the processor in collection.
  * @param {Map} processor Processor config
  * @returns {{type: string, processor: *}}
  */
@@ -106,12 +113,24 @@ export const updateProcessor = (processor ) => {
 /**
  * Creates an action to update the processor values of the single processor store.
  * @param {Map} configValues New config values
- * @returns {{type: string, processor: *}}
+ * @returns {{type: string, configValues: *}}
  */
 export const updateProcessorValues = (configValues ) => {
 	return {
 		type: UPDATE_PROCESSOR_VALUES,
 		configValues
+	};
+};
+
+/**
+ * Creates an action to update the processor configFields single processor store.
+ * @param {Map} configFields New config fields
+ * @return {{type: string, configFields: *}}
+ */
+export const updateProcessorConfigFields = (configFields ) => {
+	return {
+		type: UPDATE_PROCESSOR_CONFIG_FIELDS,
+		configFields
 	};
 };
 

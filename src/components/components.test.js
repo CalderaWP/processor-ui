@@ -19,14 +19,14 @@ describe( 'Processor UI components', () => {
 	processors.set( 'p1', emailProcessor );
 
 	describe( 'Processors list component', () => {
-		it( 'renders with 1 processor', () => {
+		it.skip( 'renders with 1 processor', () => {
 			const component = renderer.create(
 				<List processors={processors}/>
 			);
 			expect( component.toJSON( ) ).toMatchSnapshot();
 		});
 
-		it( 'renders with 2 processors', () => {
+		it.skip( 'renders with 2 processors', () => {
 			const twoProcessors = new Map();
 			twoProcessors.set( 'p1', emailProcessor );
 			twoProcessors.set( 'p2', {
@@ -40,6 +40,7 @@ describe( 'Processor UI components', () => {
 			);
 			expect( component.toJSON( ) ).toMatchSnapshot();
 		});
+
 	});
 
 	describe( 'Processor add button', () => {

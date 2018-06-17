@@ -22,6 +22,7 @@ describe( 'App component', () => {
 		/>, div);
 	});
 	it('renders with state without crashing', () => {
+
 		ReactDOM.render(
 			<Provider store={processorsStore}>
 				<AppWithState />

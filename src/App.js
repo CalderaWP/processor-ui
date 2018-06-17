@@ -16,7 +16,10 @@ class App extends React.PureComponent {
 		return(
 			<div className="App">
 				<List
+					form={this.props.form}
 					processors={this.props.processors}
+					onUpdateProcessor={this.props.onUpdateProcessor}
+					onRemoveProcessor={this.props.onRemoveProcessor}
 				/>
 				<NewProcessor
 					onNewProcessor={this.props.onNewProcessor}
@@ -35,8 +38,8 @@ App.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
 	form: PropTypes.object.isRequired,
 	onAddProcessor: PropTypes.func.isRequired,
-	onRemoveProcessor: PropTypes.func.isRequired,
 	onNewProcessor: PropTypes.func.isRequired,
+	onRemoveProcessor: PropTypes.func.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired
 };
 

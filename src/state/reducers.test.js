@@ -11,14 +11,17 @@ import {
 	removeProcessor,
 	setFormForProcessor,
 	updateProcessor,
-	updateProcessorValues
+	updateProcessorValues,
+	updateProcessorConfigFields
 } from './actions';
+
+import {emailDefaultConfigFields} from "../processors/emailDefaultConfigFields";
 
 describe( 'reducers', () => {
 	const initAction = {type: 'init'};
-	const processorId = 'p11';
-	const processor = {
-		ID: processorId,
+	const emailProcessorId = 'p11';
+	const emailProcessor = {
+		ID: emailProcessorId,
 		type: 'email'
 	};
 	const form = {
@@ -39,15 +42,15 @@ describe( 'reducers', () => {
 		});
 
 		it( 'Returns a map when adding new processor to the collection', () => {
-			const action = addProcessor(processor);
+			const action = addProcessor(emailProcessor);
 			const store = processorsReducer(new Map(), action);
 			expect(store instanceof Map).toBeTruthy();
 		});
 
 		it( 'Adds a processor to the collection', () => {
-			const action = addProcessor(processor);
+			const action = addProcessor(emailProcessor);
 			const store = processorsReducer(new Map(), action);
-			expect(store.has(processorId)).toEqual(true);
+			expect(store.has(emailProcessorId)).toEqual(true);
 		});
 
 		it( 'Returns a map when adding a processor to the collection', () => {
@@ -62,17 +65,83 @@ describe( 'reducers', () => {
 			expect(store.size).toEqual(1);
 		});
 
+		it( 'New processors have ID', () => {
+			const action = newProcessor();
+			const store = processorsReducer(new Map(), action);
+			expect(typeof store.values().next().value.ID).toEqual( 'string');
+		});
+
+		it( 'New processors have empty configFields', () => {
+			const action = newProcessor();
+			const store = processorsReducer(new Map(), action);
+			expect(typeof store.values().next().value.configFields).toEqual( 'object');
+		});
+
+		it( 'New processors have empty configValues', () => {
+			const action = newProcessor();
+			const store = processorsReducer(new Map(), action);
+			expect(typeof store.values().next().value.configValues).toEqual( 'object');
+			expect( store.values().next().value.configValues.size).toEqual( 0);
+		});
+
 		it( 'Returns a map when removing a processor from the collection', () => {
-			const action = removeProcessor(processorId);
-			const store = processorsReducer(new Map().set(processorId,processor), action);
+			const action = removeProcessor(emailProcessorId);
+			const store = processorsReducer(new Map().set(emailProcessorId,emailProcessor), action);
 			expect(store instanceof Map).toBeTruthy();
 		});
 
 		it( 'Removes a processor from collection', () => {
-			const action = removeProcessor(processorId);
-			const store = processorsReducer(new Map().set(processorId,processor), action);
+			const action = removeProcessor(emailProcessorId);
+			const store = processorsReducer(new Map().set(emailProcessorId,emailProcessor), action);
 			expect(store.size).toEqual(0);
 		});
+
+		it( 'Updates the right processor in processors collection', () => {
+			const action = updateProcessor({
+				ID: emailProcessorId,
+				type: 'redirect'
+			});
+
+			const processors = new Map();
+			processors.set( 'p22', {
+
+				type: 'email'
+			});
+			processors.set( emailProcessorId, emailProcessor );
+			processors.set( 'p222', {
+				type: 'email'
+			});
+			const store = processorsReducer(processors, action );
+			expect(store.get(emailProcessorId).type).toEqual('redirect');
+		});
+
+
+		it( 'Updates the config fields to match the type of processor', () => {
+			const action = updateProcessor({
+				ID: emailProcessorId,
+				type: 'email'
+			});
+
+			const processors = new Map();
+			processors.set( 'p22', {
+				type: 'email'
+			});
+			processors.set( emailProcessorId, {
+				ID: emailProcessorId,
+				type: 'redirect'
+			} );
+			processors.set( 'p222', {
+				type: 'email'
+			});
+			const store = processorsReducer(processors, action );
+			expect(store.get(emailProcessorId).type).toEqual('email');
+			expect(store.get(emailProcessorId).configFields.has( 'fromName')).toBe(true);
+			Object.keys( emailDefaultConfigFields ).map( fieldIndex => {
+				expect(store.get(emailProcessorId).configFields.has( fieldIndex )).toBe(true);
+			} );
+		});
+
+
 	});
 
 	describe( 'Processor reducer', () => {
@@ -89,19 +158,20 @@ describe( 'reducers', () => {
 
 		it( 'Updates processor', () => {
 			const action = updateProcessor({
-				ID: processorId,
+				ID: emailProcessorId,
 				type: 'redirect'
 			});
 			const store = processorReducer({
-				processor: new Map().set( processorId, processor )
+				processor: {}
 			}, action);
-			expect(store.processor.type).toEqual('redirect');
+			expect(store.processor.type).toEqual('redirect' );
 		});
+
 
 		it( 'Sets the processor\'s form', () => {
 			const action = setFormForProcessor(form);
 			const store = processorReducer({
-				processor: new Map().set( processorId, processor )
+				processor: new Map().set( emailProcessorId, emailProcessor )
 			}, action);
 			expect(store.form).toEqual(form);
 		});
@@ -112,6 +182,34 @@ describe( 'reducers', () => {
 			const store =  processorReducer(CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE,action);
 			expect( store.configValues ).toEqual( values );
 		});
+
+		it( 'Updates processor configFields', () => {
+			//A mock library is needed!
+			const textFieldConfig = {
+				'label': 'Tags',
+				'description': 'Comma separated list of tags.',
+				'type': 'text',
+				'default': false
+			};
+
+			const defaultSequenceId = 42;
+			const hiddenFieldConfig = {
+				'type': 'hidden',
+				'label': 'Sequence ID',
+				'default': defaultSequenceId
+			};
+
+			const configFields = {
+				tags: textFieldConfig,
+				sequenceId: hiddenFieldConfig
+			};
+
+			const action = updateProcessorConfigFields(configFields);
+			const store =  processorReducer(CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE,action);
+			expect( store.configFields ).toEqual( configFields );
+
+		});
+
 
 
 	});

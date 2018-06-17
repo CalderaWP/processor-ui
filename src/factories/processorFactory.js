@@ -7,7 +7,15 @@ export const processorTypes = new Map()
 		defaultConfigFields: emailDefaultConfigFields
 	} );
 
-export const processorFactory = (type,configFields,configValues) =>  {
+processorTypes.set( 'redirect', {
+	url: {
+		'label': 'Redirect Url',
+		'desc': 'URL to redirect to',
+		'type': 'text',
+	},
+});
+
+export const processorFactory = (type,configFields,configValues ) =>  {
 	let processor = new Processor();
 	if( processorTypes.has( type ) ){
 		const configFieldDefaults = processorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )
