@@ -1,5 +1,4 @@
 import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
-import {Processor} from '../processors/Processor';
 import {configFieldsFactory} from './configFieldsFactory';
 
 export const processorTypes = new Map()
@@ -15,20 +14,32 @@ processorTypes.set( 'redirect', {
 	},
 });
 
-export const processorFactory = (type,configFields,configValues ) =>  {
-	let processor = new Processor();
+/**
+ * Get the configuration for a processor
+ *
+ * This will merge in defaults, and set values from supplied configValues.
+ * Does not provide callback functions for updating those values.
+ * Those callback functions MUST get added before they are used in the default manner.
+ *
+ * @param type
+ * @param {Object} configFields Config fields for processor. Indexed by config ID.
+ * @return {Processor}
+ */
+export const processorFactory = ( ID, type, configFields ) =>  {
+	let processor = {
+		ID,
+		type,
+		configFields
+	};
 	if( processorTypes.has( type ) ){
-		const configFieldDefaults = processorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )
-			? processorTypes.get( type ).defaultConfigFields
-			: {};
-		processor.setConfigFields( configFieldsFactory(configFields,configFieldDefaults));
+		const configFieldDefaults =
+			processorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )
+				? processorTypes.get( type ).defaultConfigFields
+				: {};
 
-	}else{
-		processor.setConfigFields( configFields );
+		processor.configFields = configFieldsFactory(configFields,configFieldDefaults);
+
 	}
-
-
-	processor.setConfigValues( configValues);
 	return processor;
 
 };

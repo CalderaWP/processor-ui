@@ -1,7 +1,3 @@
-import {
-	getConfigFieldValueOrDefault,
-	getConfigFieldDefaultValue
-} from './util';
 
 /**
  * Factory for single processor configs
@@ -11,15 +7,9 @@ import {
  * @returns {{}}
  */
 export const configFieldFactory = (configField, configFieldDefaults = {} ) => {
-	configField.value = getConfigFieldValueOrDefault(configField);
-	configField.default = null !== getConfigFieldDefaultValue(configField)
-		?  getConfigFieldDefaultValue(configField)
-		: getConfigFieldDefaultValue(configFieldDefaults);
-	if( null === configField.value ){
-		configField.value = configField.default;
-	}
 	return {
 		...configFieldDefaults,
 		...configField,
 	};
+
 };

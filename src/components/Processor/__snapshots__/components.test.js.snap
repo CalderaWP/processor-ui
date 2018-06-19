@@ -13,6 +13,103 @@ exports[`Processor components Editor renders with props 1`] = `
       email
     </span>
   </div>
+  <select
+    className="processor-type-chooser"
+    onChange={[Function]}
+    value={undefined}
+  >
+    <option />
+    <option
+      value="email"
+    >
+      Email
+    </option>
+    <option
+      value="redirect"
+    >
+      Redirect
+    </option>
+  </select>
+  <div
+    className="processor-editor"
+  >
+    <div
+      className="caldera-forms-processor-config"
+    >
+      <div
+        className="caldera-config-group"
+      >
+        <label
+          htmlFor="fromName"
+        >
+          From Name
+        </label>
+        <input
+          aria-describedby="fromName-description"
+          className="field-config"
+          id="fromName"
+          onChange={[Function]}
+          required={false}
+          type="text"
+          value={undefined}
+        />
+        <p
+          className="description"
+          id="fromName-description"
+        >
+          Who the email is from
+        </p>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <label
+          htmlFor="fromEmail"
+        >
+          From Email
+        </label>
+        <input
+          aria-describedby="fromEmail-description"
+          className="field-config"
+          id="fromEmail"
+          onChange={[Function]}
+          required={false}
+          type="email"
+          value={undefined}
+        />
+        <p
+          className="description"
+          id="fromEmail-description"
+        >
+          Who the email is from
+        </p>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <label
+          htmlFor="contentType"
+        >
+          Content type
+        </label>
+        <input
+          aria-describedby="contentType-description"
+          className="field-config"
+          id="contentType"
+          onChange={[Function]}
+          required={false}
+          type="text"
+          value={undefined}
+        />
+        <p
+          className="description"
+          id="contentType-description"
+        >
+          HTML or plain text?
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 

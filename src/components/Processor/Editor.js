@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as CalderaComponents from '@caldera-labs/components';
-import {mapKeysToIdProperty} from "../../factories/util";
 
 export class Editor extends React.PureComponent {
 	constructor(props) {
@@ -38,31 +37,39 @@ export class Editor extends React.PureComponent {
 	 * @return {Array}
 	 */
 	configFields(){
-		if( Array.isArray( this.props.processor.configFields ) ){
+		if( Array.isArray( this.props.processor.configFields ) ) {
 			return this.props.processor.configFields;
 		}
+
 		let fields = [];
-		if( this.props.processor.configFields instanceof Map ){
-			fields = mapKeysToIdProperty(this.props.processor.configFields);
-			fields = Array.from( fields );
-			fields.forEach( (field, i) => {
-				fields[i]= field[1];
+		if ( 'object' === typeof this.props.processor.configFields ) {
+			Object.keys(this.props.processor.configFields).forEach(configFieldId => {
+				fields[configFieldId] = this.props.processor.configFields[configFieldId];
+				fields[configFieldId].onValueChange = (newValue) => {
+					this.handleChange(configFieldId, newValue);
+				};
 			});
 		}
-
 		return fields;
 	}
 
-
-	handleChange(fieldId,newValue){
-		console.log(fieldId,newValue);
+	handleChange(configFieldId,newValue){
+		let configFields = this.props.processor.configFields;
+		configFields[configFieldId] = {
+			...configFields[configFieldId],
+			value:newValue
+		};
+		this.props.onUpdateProcessor({
+			...this.props.processor,
+			configFields
+		});
 	}
 
 	changeType(event){
 		this.props.onUpdateProcessor({
 			...this.props.processor,
 			type: event.target.value
-		})
+		});
 	}
 
 
@@ -96,33 +103,31 @@ export class Editor extends React.PureComponent {
 				<div>
 					Type: <span className={'processor-type'}>{this.props.processor.type}</span>
 				</div>
-				{ ! this.props.processor.type &&
-					<select
-						className={'processor-type-chooser'}
-						onChange={this.changeType}
-						value={this.props.type}
-					>
-						<option>---</option>
-						{options.map(option => {
-								return (
-									<option
-										key={option.value}
-										value={option.value}
-									>
-										{option.label}
-									</option>
-								);
+				<select
+					className={'processor-type-chooser'}
+					onChange={this.changeType}
+					value={this.props.type}
+				>
+					<option/>
+					{options.map(option => {
+							return (
+								<option
+									key={option.value}
+									value={option.value}
+								>
+									{option.label}
+								</option>
+							);
+						}
+					)}
+				</select>
 
-							}
-						)}
-					</select>
-				}
-				{this.props.processor.configFields &&
+				{this.props.processor.type &&
 					<div
 						className={'processor-editor'}
 					>
 						<CalderaComponents.RenderGroup
-							className={'cf-something-config'}
+							className={'caldera-forms-processor-config'}
 							configFields={this.configFields()}
 						/>
 					</div>

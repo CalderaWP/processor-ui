@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ProcessorContainer} from "../Processor/ProcessorContainer";
+import {RemoveProcessorButton} from "../Processor/RemoveProcessorButton";
+import {Editor} from "../Processor/Editor";
 
 /**
  * Displays list of processors
@@ -19,12 +20,12 @@ export const List = (props) => {
 						key={`${processor.ID}`}
 					>
 						<em>{processor.ID}</em>
-						<ProcessorContainer
-							form={props.form}
+						<Editor
 							processor={processor}
 							onUpdateProcessor={props.onUpdateProcessor}
-							onRemoveProcessor={props.onRemoveProcessor}
+							form={props.form}
 						/>
+						<RemoveProcessorButton onClick={props.onRemoveProcessor}/>
 					</div>
 				);
 			})}

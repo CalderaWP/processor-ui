@@ -1,8 +1,4 @@
 import {configFieldFactory} from './configFieldFactory';
-import {
-	getConfigFieldValueOrDefault,
-} from './util';
-
 /**
  * Prepare a collection of config fields
  *
@@ -11,83 +7,29 @@ import {
  *
  * @param {Object} configFields Config fields for processor. Indexed by config ID.
  * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.
- * @param {Map} configValues Optional. A Map of config Values. Indexed by config ID.
- * @returns {Map}
+ * @returns {Object}
  */
-export const configFieldsFactory = (configFields, configFieldsDefaults = {},configValues = new Map()  ) => {
-	const configFieldsMap = new Map(  );
-	const clonedConfigFieldsDefaults = Object.assign({},configFieldsDefaults);
+export const configFieldsFactory = (configFields, configFieldsDefaults = {}  ) => {
+	Object.keys( configFields ).forEach( configFieldId => {
+		if( configFieldsDefaults.hasOwnProperty(configFieldId)){
+			configFields[configFieldId] = configFieldFactory(
+				configFields[configFieldId],
+				configFieldsDefaults[configFieldId]
+			);
 
-	/**
-	 * Check if a configField's has a corresponding default config
-	 *
-	 * @param {String} configFieldId Id of config field to search for
-	 * @returns {boolean}
-	 */
-	function hasConfigFieldDefault(configFieldId) {
-		return clonedConfigFieldsDefaults.hasOwnProperty(configFieldId);
-	}
-
-	function getDefaultConfigObject(configFieldId) {
-		return clonedConfigFieldsDefaults[configFieldId];
-	}
-
-
-	/**
-	 * Set a config field into the Map that will be returned
-	 *
-	 * @param {String} configFieldId Config field ID
-	 * @param {String|Number|Array} value Config field value
-	 */
-	function setConfigInMap(configFieldId, value) {
-		let configField = {
-			...configFields[configFieldId],
-			ID: configFieldId,
-			value: value
-		};
-
-
-		if( hasConfigFieldDefault(configFieldId)) {
-			configField = configFieldFactory(configField,getDefaultConfigObject(configFieldId));
-		}
-
-		configFieldsMap.set(configFieldId, configField);
-	}
-
-	/**
-	 * Get the value from the config field if possible
-	 * @param {String} configFieldId Config field ID to search fo
-	 * @returns {String|Number|Array|null} Returns null if not found
-	 */
-	function getFieldValue(configFieldId){
-		return configValues.has( configFieldId )
-			? configValues.get( configFieldId )
-			: null;
-	}
-
-	//Priority for setting value:
-	// fieldValues[configFieldId]
-	// configField.value
-	// configField.default
-	// defaultConfigField.default
-
-	//Collect config fields, adding values as needed
-	Object.keys(configFields).forEach(configFieldId => {
-		const value =  null !== getFieldValue(configFieldId)
-			? getFieldValue(configFieldId)
-			: null !== getConfigFieldValueOrDefault(configFields[configFieldId])
-				? getConfigFieldValueOrDefault(configFields[configFieldId])
-				: null;
-		//NewProcessor to map
-		setConfigInMap(configFieldId, value);
-	});
-
-	//NewProcessor in any missing fields.
-	Object.keys( clonedConfigFieldsDefaults ).forEach( configFieldDefaultId => {
-		if( ! configFields.hasOwnProperty(configFieldDefaultId )){
-			configFieldsMap.set(configFieldDefaultId, clonedConfigFieldsDefaults[configFieldDefaultId]);
 		}
 	});
 
-	return configFieldsMap;
+	Object.keys( configFieldsDefaults ).forEach( configDefaultId => {
+		if( ! configFields.hasOwnProperty(configDefaultId)){
+			configFields[configDefaultId] = configFieldsDefaults[configDefaultId];
+		}
+	});
+
+	Object.keys( configFields ).forEach(configFieldId  => {
+		configFields[configFieldId].id = configFieldId;
+		configFields[configFieldId].ID = configFieldId;
+	});
+
+	return configFields;
 };

@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import {List} from "./components/Processors/List";
 import {NewProcessor} from "./components/Processors/NewProcessor";
 
-
 /**
- * Main App container
+ * Encapsulates the entire processor UI
  *
  * @param {Object}props
  * @returns {*}
@@ -14,7 +13,7 @@ import {NewProcessor} from "./components/Processors/NewProcessor";
 class App extends React.PureComponent {
 	render() {
 		return(
-			<div className="App">
+			<div className="caldera-forms-processors">
 				<List
 					form={this.props.form}
 					processors={this.props.processors}

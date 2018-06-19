@@ -36,8 +36,7 @@ const config = {
 				//@TODO replace with generateId util function
 				state.set( ID, {
 					ID,
-					configFields: [],
-					configValues: new Map()
+					configFields: {}
 				} );
 				break;
 			case ADD_PROCESSOR:
@@ -49,19 +48,12 @@ const config = {
 
 			return clone(state);
 		case UPDATE_PROCESSOR:
-			const processor = processorFactory(
+			state = state.set( action.processor.ID, processorFactory(
+				action.processor.ID,
 				action.processor.type,
-				'object' === typeof  action.processor.configFields
-					? action.processor.configFields
-					: {},
-				action.processor.configValues,
-			);
-			state.set( action.processor.ID, {
-				ID: action.processor.ID,
-				type: action.processor.type,
-				configFields: processor.getConfigFields(),
-				configValues: processor.getConfigValues()
-			});
+				action.processor.configFields,
+			));
+
 			return clone(state);
 		case  REMOVE_PROCESSOR:
 			state.delete(action.processorId);
@@ -69,6 +61,7 @@ const config = {
 		default:
 			return state;
 		}
+
 	},
 	actions: {
 		addProcessor,

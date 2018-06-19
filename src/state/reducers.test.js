@@ -15,18 +15,18 @@ import {
 	updateProcessorConfigFields
 } from './actions';
 
-import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
-
 describe( 'reducers', () => {
 	const initAction = {type: 'init'};
 	const emailProcessorId = 'p11';
 	const emailProcessor = {
 		ID: emailProcessorId,
-		type: 'email'
+		type: 'email',
+		configFields: {}
 	};
 	const form = {
 		ID: 'CF1',
-		name: 'Contact Form'
+		name: 'Contact Form',
+		fields: {}
 	};
 
 
@@ -77,12 +77,7 @@ describe( 'reducers', () => {
 			expect(typeof store.values().next().value.configFields).toEqual( 'object');
 		});
 
-		it( 'New processors have empty configValues', () => {
-			const action = newProcessor();
-			const store = processorsReducer(new Map(), action);
-			expect(typeof store.values().next().value.configValues).toEqual( 'object');
-			expect( store.values().next().value.configValues.size).toEqual( 0);
-		});
+
 
 		it( 'Returns a map when removing a processor from the collection', () => {
 			const action = removeProcessor(emailProcessorId);
@@ -99,17 +94,17 @@ describe( 'reducers', () => {
 		it( 'Updates the right processor in processors collection', () => {
 			const action = updateProcessor({
 				ID: emailProcessorId,
-				type: 'redirect'
+				type: 'redirect',
+				configFields : {}
+
 			});
 
 			const processors = new Map();
-			processors.set( 'p22', {
 
-				type: 'email'
-			});
 			processors.set( emailProcessorId, emailProcessor );
 			processors.set( 'p222', {
-				type: 'email'
+				type: 'email',
+				configFields : {}
 			});
 			const store = processorsReducer(processors, action );
 			expect(store.get(emailProcessorId).type).toEqual('redirect');
@@ -119,26 +114,31 @@ describe( 'reducers', () => {
 		it( 'Updates the config fields to match the type of processor', () => {
 			const action = updateProcessor({
 				ID: emailProcessorId,
-				type: 'email'
+				type: 'email',
+				configFields : {}
+
 			});
 
 			const processors = new Map();
-			processors.set( 'p22', {
-				type: 'email'
+			processors.set( 'p23', {
+				type: 'email',
+				configFields : {}
+
 			});
 			processors.set( emailProcessorId, {
 				ID: emailProcessorId,
-				type: 'redirect'
+				type: 'redirect',
+				configFields : {}
 			} );
-			processors.set( 'p222', {
-				type: 'email'
+			processors.set( 'p2111', {
+				type: 'email',
+				configFields : {}
+
 			});
 			const store = processorsReducer(processors, action );
 			expect(store.get(emailProcessorId).type).toEqual('email');
-			expect(store.get(emailProcessorId).configFields.has( 'fromName')).toBe(true);
-			Object.keys( emailDefaultConfigFields ).map( fieldIndex => {
-				expect(store.get(emailProcessorId).configFields.has( fieldIndex )).toBe(true);
-			} );
+			expect( store.get(emailProcessorId).configFields.hasOwnProperty('fromName')).toBe(true);
+
 		});
 
 
