@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/calderawp/caldera-whatever/#readme",
   "dependencies": {
-    "@caldera-labs/components": "^0.2",
+    "@caldera-labs/components": "^0.3",
     "@caldera-labs/state": "^0.7.0",
     "@wordpress/data": "^1.0.0-alpha.1",
     "prop-types": "^15.6.1",

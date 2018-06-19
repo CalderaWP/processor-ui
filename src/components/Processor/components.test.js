@@ -6,8 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import {OpenEditorButton} from "./OpenEditorButton";
 import {RemoveProcessorButton} from "./RemoveProcessorButton";
 import {Editor} from "./Editor";
-import {mapKeysToIdProperty, objectToMap} from "../../factories/util";
-import {emailDefaultConfigFields} from "../../processors/emailDefaultConfigFields";
+
 
 import * as CalderaComponents from '@caldera-labs/components';
 
@@ -265,6 +264,19 @@ describe( 'Processor components', () =>{
 				/>
 			);
 			expect( wrapper.find( '.processor-type').length).toBe(1);
+		});
+
+		it( 'Shows the right type',  () =>{
+			const wrapper = shallow(
+				<Editor
+					processor={{
+						ID: 'p122',
+						type: 'redirect'
+					}}
+					onUpdateProcessor={handler}
+					form={form}
+				/>
+			);
 			expect( wrapper.find( '.processor-type').text()).toBe('redirect');
 		});
 
@@ -288,6 +300,133 @@ describe( 'Processor components', () =>{
 			expect( type).toBe('email');
 		});
 
+		it( 'Updates to the right type',  () =>{
+			let type = 'redirect';
+			function changeHandler(updateProcessor){
+
+				type = updateProcessor.type;
+			}
+			const wrapper = shallow(
+				<Editor
+					processor={{
+						ID: 'p122',
+					}}
+					onUpdateProcessor={changeHandler}
+					form={form}
+				/>
+			);
+			wrapper.find( '.processor-type-chooser' ).simulate('change', {target: { value : 'email'}});
+			expect( type).toBe('email');
+		});
+
+		describe( 'Preparing config fields', () => {
+			it( 'Is an empty array if no configFields', () => {
+
+				const component = new Editor({
+					processor: {
+						ID: 'p122',
+					},
+					onUpdateProcessor: function(updateProcessor){
+
+					},
+					form: form
+				});
+
+				expect( component.configFields() ).toEqual([])
+
+			});
+
+			it( 'It converts configFields Map to array', () => {
+				const theseConfigFields = new Map();
+				const fieldConfig = {
+					'type': 'dropdown',
+					'label': 'Content type',
+					'description': 'Choose content type, default is HTML',
+					options: [
+						{
+							label: 'HTML',
+							value: 'html'
+						},
+						{
+							label: 'Plain Text',
+							value: 'plain'
+						}
+					],
+					value: 'html',
+					onValueChange: (newValue) =>{
+						console.log(newValue)
+					}
+				};
+
+
+				theseConfigFields.set( 'cf-x',fieldConfig );
+				const component = new Editor({
+					processor: {
+						ID: 'p122',
+						configFields: theseConfigFields
+					},
+					onUpdateProcessor: function(updateProcessor){
+
+					},
+					form: form
+				});
+
+				expect( Array.isArray(component.configFields() ) ).toEqual( true );
+				expect( component.configFields() ).toEqual([
+					{
+						...fieldConfig,
+						id: 'cf-x',
+						ID: 'cf-x'
+					}
+				]);
+
+			});
+
+			it( 'It converts configFields Map to array and sets Map key in the object of the array', () => {
+				const theseConfigFields = new Map();
+				const fieldConfig = {
+					'type': 'dropdown',
+					'label': 'Content type',
+					'description': 'Choose content type, default is HTML',
+					options: [
+						{
+							label: 'HTML',
+							value: 'html'
+						},
+						{
+							label: 'Plain Text',
+							value: 'plain'
+						}
+					],
+					value: 'html',
+					onValueChange: (newValue) =>{
+						console.log(newValue)
+					}
+				};
+
+
+				theseConfigFields.set( 'cf-x',fieldConfig );
+				const component = new Editor({
+					processor: {
+						ID: 'p122',
+						configFields: theseConfigFields
+					},
+					onUpdateProcessor: function(updateProcessor){
+
+					},
+					form: form
+				});
+
+				expect( component.configFields() ).toEqual([
+					{
+						...fieldConfig,
+						id: 'cf-x',
+						ID: 'cf-x'
+					}
+				]);
+
+			});
+		});
 	});
 
 });

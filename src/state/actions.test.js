@@ -87,12 +87,12 @@ describe( 'action creators', () => {
 				type: 'email'
 			}
 		};
-		it( 'updateProcessorValues action creator create the right type of action', () =>{
+		it( 'updateProcessorConfigFields action creator create the right type of action', () =>{
 			const action = updateProcessorConfigFields(configFields);
 			expect( action.type ).toBe( UPDATE_PROCESSOR_CONFIG_FIELDS );
 		});
 
-		it( 'updateProcessorValues action creator create the right payload', () =>{
+		it( 'updateProcessorConfigFields action creator create the right payload', () =>{
 			const action = updateProcessorConfigFields(configFields);
 			expect( action.configFields ).toBe( configFields );
 		});

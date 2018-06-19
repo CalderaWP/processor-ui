@@ -3,8 +3,6 @@
 exports[`Processor components Editor renders with props 1`] = `
 <div
   className={undefined}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   <div />
   <div>

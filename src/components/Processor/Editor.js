@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as CalderaComponents from '@caldera-labs/components';
+import {mapKeysToIdProperty} from "../../factories/util";
 
 export class Editor extends React.PureComponent {
 	constructor(props) {
@@ -12,6 +14,7 @@ export class Editor extends React.PureComponent {
 		this.mouseLeave = this.mouseLeave.bind(this);
 		this.changeType = this.changeType.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.configFields = this.configFields.bind(this);
 
 	}
 
@@ -29,9 +32,27 @@ export class Editor extends React.PureComponent {
 		this.setState({hovered: false})
 	}
 
+	/**
+	 * Prepares config fields for CalderaComponents.RenderGroup
+	 *
+	 * @return {Array}
+	 */
 	configFields(){
+		if( Array.isArray( this.props.processor.configFields ) ){
+			return this.props.processor.configFields;
+		}
+		let fields = [];
+		if( this.props.processor.configFields instanceof Map ){
+			fields = mapKeysToIdProperty(this.props.processor.configFields);
+			fields = Array.from( fields );
+			fields.forEach( (field, i) => {
+				fields[i]= field[1];
+			});
+		}
 
+		return fields;
 	}
+
 
 	handleChange(fieldId,newValue){
 		console.log(fieldId,newValue);
@@ -47,7 +68,8 @@ export class Editor extends React.PureComponent {
 
 	render() {
 		let removeStyle = {
-			opacity: 0.1
+			//opacity: 0.1
+			opacity: 1
 		};
 		if ( this.state.hovered){
 			removeStyle.opacity = 1
@@ -67,8 +89,8 @@ export class Editor extends React.PureComponent {
 		return (
 			<div
 				className={this.props.className}
-				onMouseEnter={this.mouseEnter}
-				onMouseLeave={this.mouseLeave}
+				//onMouseEnter={this.mouseEnter}
+				//onMouseLeave={this.mouseLeave}
 			>
 				<div>{labelAs}</div>
 				<div>
@@ -99,7 +121,10 @@ export class Editor extends React.PureComponent {
 					<div
 						className={'processor-editor'}
 					>
-						<p>Processor Config</p>
+						<CalderaComponents.RenderGroup
+							className={'cf-something-config'}
+							configFields={this.configFields()}
+						/>
 					</div>
 				}
 
@@ -111,5 +136,6 @@ export class Editor extends React.PureComponent {
 Editor.propTypes = {
 	processor: PropTypes.object.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired,
-	form: PropTypes.object.isRequired
+	form: PropTypes.object.isRequired,
+	configFields: PropTypes.array
 };

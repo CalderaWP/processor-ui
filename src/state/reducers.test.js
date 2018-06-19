@@ -15,7 +15,7 @@ import {
 	updateProcessorConfigFields
 } from './actions';
 
-import {emailDefaultConfigFields} from "../processors/emailDefaultConfigFields";
+import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
 
 describe( 'reducers', () => {
 	const initAction = {type: 'init'};
