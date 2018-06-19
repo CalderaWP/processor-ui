@@ -3,8 +3,6 @@
 exports[`Processor Container component Passes snapshot test 1`] = `
 <div
   className={undefined}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   <div />
   <div

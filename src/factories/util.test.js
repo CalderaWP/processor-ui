@@ -1,7 +1,9 @@
 import {
 	getConfigFieldValue,
 	getConfigFieldDefaultValue,
-	getConfigFieldValueOrDefault, objectToMap,
+	getConfigFieldValueOrDefault,
+	objectToMap,
+	mapKeysToIdProperty
 } from './util';
 
 describe( 'Util functions for factories', () => {
@@ -63,5 +65,22 @@ describe( 'Util functions for factories', () => {
 		expect( map.has( 'fld2' ) ).toBe(true);
 		expect( map.get( 'fld2' ) ).toEqual(field2);
 		expect( map.has( 'fld1' ) ).toBe(true);
+	});
+
+
+	describe( 'Adding ID props to map', () => {
+		const fields = {
+			fld1: {
+				type: 'text'
+			},
+			fld2: {
+				type: 'email'
+			}
+		};
+
+		const map = mapKeysToIdProperty( objectToMap( fields ) );
+
+		expect( map.get( 'fld1' ).ID ).toBe('fld1');
+		expect( map.get( 'fld2' ).ID ).toEqual('fld2');
 	});
 });

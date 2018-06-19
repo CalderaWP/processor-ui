@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 export class Editor extends React.PureComponent {
 	constructor(props) {
 		super(props);
@@ -10,6 +11,7 @@ export class Editor extends React.PureComponent {
 		this.mouseEnter = this.mouseEnter.bind(this);
 		this.mouseLeave = this.mouseLeave.bind(this);
 		this.changeType = this.changeType.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 
 	}
 
@@ -31,8 +33,8 @@ export class Editor extends React.PureComponent {
 
 	}
 
-	handleChange(fieldId,event){
-
+	handleChange(fieldId,newValue){
+		console.log(fieldId,newValue);
 	}
 
 	changeType(event){
@@ -93,10 +95,12 @@ export class Editor extends React.PureComponent {
 						)}
 					</select>
 				}
-				{this.props.processor.type &&
-					<p
+				{this.props.processor.configFields &&
+					<div
 						className={'processor-editor'}
-					>Editor</p>
+					>
+						<p>Processor Config</p>
+					</div>
 				}
 
 			</div>

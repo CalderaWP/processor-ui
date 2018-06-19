@@ -15,11 +15,6 @@ exports[`Processor components Editor renders with props 1`] = `
       email
     </span>
   </div>
-  <p
-    className="processor-editor"
-  >
-    Editor
-  </p>
 </div>
 `;
 
@@ -47,12 +42,6 @@ exports[`Processor components OpenEditorButton renders with out the non-required
 </button>
 `;
 
-exports[`Processor components Processor Config fields component Renders 1`] = `
-<div
-  className={undefined}
-/>
-`;
-
 exports[`Processor components Remove Processor Button Renders with label props 1`] = `
 <button
   className={undefined}
@@ -75,4 +64,35 @@ exports[`Processor components Remove Processor Button Renders without label prop
     Remove Processor
   </span>
 </button>
+`;
+
+exports[`Using RenderGroup RenderGroup snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="caldera-config-group"
+  >
+    <label
+      htmlFor="cf-something-select-id"
+    >
+      Content type
+    </label>
+    <input
+      aria-describedby="cf-something-select-id-description"
+      className="field-config"
+      id="cf-something-select-id"
+      onChange={[Function]}
+      required={false}
+      type="text"
+      value="html"
+    />
+    <p
+      className="description"
+      id="cf-something-select-id-description"
+    >
+      Choose content type, default is HTML
+    </p>
+  </div>
+</div>
 `;

@@ -24,14 +24,14 @@ export class ProcessorContainer extends React.PureComponent {
 	 * Handler for the mouse enter event
 	 */
 	mouseEnter() {
-		this.setState({hovered: true})
+		//this.setState({hovered: true})
 	}
 
 	/**
 	 * Handler for the mouse leave event
 	 */
 	mouseLeave() {
-		this.setState({hovered: false})
+		//this.setState({hovered: false})
 	}
 
 	/**
@@ -80,8 +80,8 @@ export class ProcessorContainer extends React.PureComponent {
 		return (
 			<div
 				className={this.props.className}
-				onMouseEnter={this.mouseEnter}
-				onMouseLeave={this.mouseLeave}
+				//onMouseEnter={this.mouseEnter}
+				//onMouseLeave={this.mouseLeave}
 			>
 
 				<div>{labelAs}</div>

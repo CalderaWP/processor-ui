@@ -28,3 +28,7 @@ export const emailDefaultConfigFields = {
 		default: 'HTML'
 	}
 };
+
+Object.keys( emailDefaultConfigFields ).forEach( key => {
+	emailDefaultConfigFields[key].id = key;
+});

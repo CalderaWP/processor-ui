@@ -6,9 +6,73 @@ import Adapter from 'enzyme-adapter-react-16';
 import {OpenEditorButton} from "./OpenEditorButton";
 import {RemoveProcessorButton} from "./RemoveProcessorButton";
 import {Editor} from "./Editor";
-import {ProcessorConfig} from "./ProcessorConfig";
-import {objectToMap} from "../../factories/util";
+import {mapKeysToIdProperty, objectToMap} from "../../factories/util";
 import {emailDefaultConfigFields} from "../../processors/emailDefaultConfigFields";
+
+import * as CalderaComponents from '@caldera-labs/components';
+
+describe( 'Using RenderGroup', () => {
+	it( 'RenderGroup snapshot', () => {
+		const component = renderer.create(
+			<CalderaComponents.RenderGroup configFields={[
+				{
+					'id': 'cf-something-select-id',
+					'type': 'dropdown',
+					'label': 'Content type',
+					'description': 'Choose content type, default is HTML',
+					options: [
+						{
+							label: 'HTML',
+							value: 'html'
+						},
+						{
+							label: 'Plain Text',
+							value: 'plain'
+						}
+					],
+					value: 'html',
+					onValueChange: (newValue) =>{
+						console.log(newValue)
+					}
+				}
+			]} />
+		);
+		expect( component.toJSON() ).toMatchSnapshot();
+	});
+
+	it( 'RenderGroup adds our wrapper className', () => {
+		const wrapper = shallow(
+			<CalderaComponents.RenderGroup
+				className={'cf-something-config'}
+				configFields={[
+				{
+					'id': 'cf-something-select-id',
+					'type': 'dropdown',
+					'label': 'Content type',
+					'description': 'Choose content type, default is HTML',
+					options: [
+						{
+							label: 'HTML',
+							value: 'html'
+						},
+						{
+							label: 'Plain Text',
+							value: 'plain'
+						}
+					],
+					value: 'html',
+					onValueChange: (newValue) =>{
+						console.log(newValue)
+					}
+				}
+			]} />
+		);
+		expect( wrapper.find('.cf-something-config').length ).toBe(1);
+	});
+});
+
+
+
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -226,16 +290,4 @@ describe( 'Processor components', () =>{
 
 	});
 
-	describe( 'Processor Config fields component', () => {
-		it( 'Renders', () => {
-			const component = renderer.create(
-				<ProcessorConfig
-					configFields={objectToMap(emailDefaultConfigFields)}
-					onUpdate={handler}
-				/>
-			);
-			expect( component.toJSON() ).toMatchSnapshot();
-		});
-
-	});
 });

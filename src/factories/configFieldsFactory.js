@@ -72,7 +72,7 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {},conf
 	// defaultConfigField.default
 
 	//Collect config fields, adding values as needed
-	Object.keys(configFields).map(configFieldId => {
+	Object.keys(configFields).forEach(configFieldId => {
 		const value =  null !== getFieldValue(configFieldId)
 			? getFieldValue(configFieldId)
 			: null !== getConfigFieldValueOrDefault(configFields[configFieldId])
@@ -83,7 +83,7 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {},conf
 	});
 
 	//NewProcessor in any missing fields.
-	Object.keys( clonedConfigFieldsDefaults ).map( configFieldDefaultId => {
+	Object.keys( clonedConfigFieldsDefaults ).forEach( configFieldDefaultId => {
 		if( ! configFields.hasOwnProperty(configFieldDefaultId )){
 			configFieldsMap.set(configFieldDefaultId, clonedConfigFieldsDefaults[configFieldDefaultId]);
 		}

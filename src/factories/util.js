@@ -44,4 +44,28 @@ export const objectToMap = (object) => {
 		map.set(key, object[key]);
 	});
 	return map;
-}
+};
+
+/**
+ * Add an ID prop, to all objects of a Map, using map's key.
+ * @param {Map} theMap The map to add key as ID property to values of
+ */
+export const mapKeysToIdProperty = (theMap) => {
+	theMap
+		.forEach((value, key, map) => {
+			if( 'object' === typeof  value ){
+				map.set( key, {
+					...value,
+					ID: key,
+					id: key
+				});
+			}
+
+		});
+	return theMap;
+
+};
+
+
+
+
