@@ -4,6 +4,7 @@ import {RemoveProcessorButton} from "../Processor/RemoveProcessorButton";
 import {Editor} from "../Processor/Editor";
 import {OpenEditorButton} from "../Processor/OpenEditorButton";
 import {TypeChooser} from "../Processor/TypeChooser";
+import {ProcessorLabel} from "../Processor/ProcessorLabel";
 
 /**
  * Displays list of processors
@@ -22,6 +23,13 @@ export class List extends React.Component{
 		this.onUpdateProcessor = this.onUpdateProcessor.bind(this);
 
 	}
+
+	/**
+	 * When processors is updated, do stuff
+	 *
+	 * @todo animations
+	 * @param {Object} updatedProcessor The processor config that has been updated
+	 */
 	onUpdateProcessor(updatedProcessor){
 		let opened = this.state.opened;
 		opened[updatedProcessor.ID]=false;
@@ -48,15 +56,23 @@ export class List extends React.Component{
 						<div
 							key={key}
 						>
-							<em>{processor.ID}</em>
 							{isOpen &&
 								<Editor
 									ID={processor.ID}
 									type={processor.type}
+									label={processor.label}
 									configFields={processor.configFields}
 									onUpdateProcessor={this.onUpdateProcessor}
 									form={this.props.form}
 									isOpen={isOpen}
+								/>
+							}
+
+							{!isOpen &&
+								<ProcessorLabel
+									ID={processor.ID}
+									label={processor.label}
+
 								/>
 							}
 

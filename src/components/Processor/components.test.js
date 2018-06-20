@@ -13,6 +13,7 @@ import * as CalderaComponents from '@caldera-labs/components';
 import {processorFactory} from "../../factories/processorFactory";
 import emailProcessorType from "../../processors/emailProcessorType";
 import redirectProcessorType from "../../processors/redirectProcessorType";
+import {ProcessorLabel} from "./ProcessorLabel";
 
 describe('Using RenderGroup', () => {
 	it('RenderGroup snapshot', () => {
@@ -254,7 +255,7 @@ describe('Processor components', () => {
 			});
 
 			it( 'It  labels by ID if that is all it has', () => {
-				const component = new Editor({
+				const component = new ProcessorLabel({
 
 					ID: 'p23',
 
@@ -279,7 +280,7 @@ describe('Processor components', () => {
 			});
 
 			it( 'It  labels by type - ID if has type, but no label', () => {
-				const component = new Editor({
+				const component = new ProcessorLabel({
 					ID: 'p29',
 					type: 'email',
 					configFields: {},
