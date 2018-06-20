@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | Caldera Whatever</title>
+  <title data-ice="title">Manual | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="Does whatever for Caldera Forms"><meta property="og:type" content="website"><meta property="og:url" content="http://calderalabs.org/caldera-npm-module-boilerplate/"><meta property="og:site_name" content="Caldera Whatever"><meta property="og:title" content="Caldera Whatever"><meta property="og:image" content="https://calderaforms.com/wp-content/themes/caldera-forms-dot-com/img/caldera-forms-logo.svg"><meta property="og:description" content="Does whatever for Caldera Forms"><meta property="og:author" content="http://calderalabs.org"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Caldera Whatever"><meta property="twitter:description" content="Does whatever for Caldera Forms"><meta property="twitter:image" content="https://calderaforms.com/wp-content/themes/caldera-forms-dot-com/img/caldera-forms-logo.svg"></head>
+<meta name="description" content="Caldera Forms processor user interface generator and components."><meta property="og:type" content="website"><meta property="og:url" content="http://calderalabs.org/processor-ui"><meta property="og:site_name" content="Caldera Processor UI"><meta property="og:title" content="Caldera Processor UI"><meta property="og:image" content="https://calderaforms.com/wp-content/themes/caldera-forms-dot-com/img/caldera-forms-logo.svg"><meta property="og:description" content="Caldera Forms processor user interface generator and components."><meta property="og:author" content="http://calderalabs.org"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Caldera Processor UI"><meta property="twitter:description" content="Caldera Forms processor user interface generator and components."><meta property="twitter:image" content="https://calderaforms.com/wp-content/themes/caldera-forms-dot-com/img/caldera-forms-logo.svg"></head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
@@ -24,70 +24,46 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/calderawp/caldera-whatever"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
 <div data-ice="manual">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Caldera Whatever API</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#documentation-of-the-example-module" data-ice="link">Documentation Of the Example Module</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/overview.html"><a href="manual/overview.html#-code-sayhi--code-" data-ice="link">sayHi</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#using-this-boilerplate" data-ice="link">Using This Boilerplate</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/overview.html"><a href="manual/overview.html#enable-github-pages-for-docs" data-ice="link">Enable Github Pages For Docs</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/overview.html"><a href="manual/overview.html#adding-state-management" data-ice="link">Adding State Management</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/overview.html"><a href="manual/overview.html#using-for-react-components" data-ice="link">Using For React Components</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/overview.html"><a href="manual/overview.html#creating-exports" data-ice="link">Creating Exports</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/overview.html"><a href="manual/overview.html#publishing-to-npm" data-ice="link">Publishing To NPM</a></li>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Caldera Processors UI</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#shape-of-a-processor" data-ice="link">Shape Of A Processor</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#configfields-vs-configvalues" data-ice="link">configFields vs configValues</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#container" data-ice="link">Container</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="caldera-whatever-api">Caldera Whatever API</h1><h2 id="documentation-of-the-example-module">Documentation Of the Example Module</h2><p>This is a guide for documenting how to use your actual module.</p>
-<h3 id="-code-sayhi--code-"><code>sayHi</code></h3><pre><code class="lang-js"><code class="source-code prettyprint">//Say Hi to Roy
-console.log(sayHi()); //Hi Roy</code>
-</code></pre>
-<pre><code class="lang-js"><code class="source-code prettyprint">//Say Hi to Someone else
-console.log(sayHi(&apos;Mike&apos;)); //Hi Mike</code>
-</code></pre>
-<h2 id="using-this-boilerplate">Using This Boilerplate</h2><h3 id="enable-github-pages-for-docs">Enable Github Pages For Docs</h3><p>Go to Settings in Github repo.</p>
-<p>Enable Github pages for master branch /docs dir
-<a href="https://ibb.co/bTSUv8"><img src="https://preview.ibb.co/hsXwa8/Screen_Shot_2018_06_09_at_3_41_30_PM.png"></a></p>
-<h3 id="adding-state-management">Adding State Management</h3><h3 id="using-for-react-components">Using For React Components</h3><h3 id="creating-exports">Creating Exports</h3><p>This boilerplate compiles code with babel to the <code>/dist</code> directory. One or more module exports must be created and identified in package.json.</p>
-<p>For example:</p>
-<pre><code class="lang-json"><code class="source-code prettyprint">{
-&quot;main&quot;: &quot;./dist/index.js&quot;,
-  &quot;files&quot; : [
-      &quot;./dist/index.js&quot;,
-      &quot;./dist/fields/index.js&quot;,
-      &quot;./dist/fields/factories/index.js&quot;
-  ]
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="caldera-processors-ui">Caldera Processors UI</h1><h2 id="shape-of-a-processor">Shape Of A Processor</h2><pre><code><code class="source-code prettyprint">{
+    ID: String,
+    type: String,
+    label: String
+    configFields: Array,
+    configValues: Map
 }</code>
-</code></pre>
-<p>See:</p>
-<ul>
-<li><a href="https://docs.npmjs.com/files/package.json#files">https://docs.npmjs.com/files/package.json#files</a></li>
-<li><a href="https://docs.npmjs.com/files/package.json#main">https://docs.npmjs.com/files/package.json#main</a></li>
-</ul>
-<h3 id="publishing-to-npm">Publishing To NPM</h3><p>All Caldera libraries should be published as <a href="https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html">org scoped packages</a> in the <a href="https://www.npmjs.com/search?q=%40caldera-labs">@caldera-labs</a> organization.</p>
-<p>Short version of <a href="https://www.npmjs.com/docs/orgs/publishing-an-org-scoped-package.html">the docs</a></p>
-<p>Make sure in package.json:</p>
-<ul>
-<li>That <code>private</code> is not set to true.</li>
-<li>That the name of the package is <code>@caldera-labs/processor-ui</code> where <code>whatever</code> describes the modules job. For example, <code>@caldera-labs/mailchimp-client</code> if you&apos;re building a Mailchimp client. Note that &quot;caldera&quot; was not used on the right side of the slash.</li>
-<li>That you have specified at least one entry point and defined a module export for it.</li>
-<li>You have authorization to publish in <code>@caldera-labs</code> org scope.</li>
-<li>You are logged in as that user via the npm cli<ul>
-<li><a href="https://docs.npmjs.com/cli/adduser">https://docs.npmjs.com/cli/adduser</a></li>
+</code></pre><ul>
+<li>ID: Alphanumeric ID for config field<ul>
+<li>Example: For the list ID of an email marketting processor&apos;s settings: <code>cf-fancyemails-list-id</code></li>
 </ul>
 </li>
+<li>type: String. The type of processors<ul>
+<li>Examples: <code>email</code> or <code>redirect</code></li>
 </ul>
-<p>Once you&apos;re ready to publish, commit everything and do the first release manually:</p>
-<p><code>npm publish</code></p>
-<p>After that, the documented scripts for automated update publishing apply for future updates.</p>
-</div>
+</li>
+<li>label: Optional String. A user supplied label unique to the processor.</li>
+<li>configFields: Array of config fields as expected by <a href="https://calderalabs.org/caldera-components/manual/components.html#rendergroup">Caldera Components&apos; <code>RenderGroup</code> component</a></li>
+<li>configValues: A map of the current field values.</li>
+</ul>
+<h2 id="configfields-vs-configvalues">configFields vs configValues</h2><p><code>configFields</code> should represent what has been stored for this processor&apos;s settings. It contains the saved value and the processor configuration, since configuration is itself dynamic. For example, your options for list to subscribe to may change after the value of a separate field for entering an API key has changed.</p>
+<p>Because the <code>configFieldsFactory</code> can add in missing values from configFields, it makes sense to remove non-standard values from these objects before persisting them.</p>
+<p><code>configValues</code> is a <code>Map</code>, indexed by <code>configField.ID</code> with the current value of the field. Seperating these values out from <code>configValues</code></p>
+<h2 id="container">Container</h2></div>
 </div>
 
 <footer class="footer">

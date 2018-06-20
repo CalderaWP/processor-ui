@@ -31,7 +31,8 @@ class App extends React.PureComponent {
 /**
  * Prop definitions for App component
  * @see https://www.npmjs.com/package/prop-types
- * @type {{quote: shim, cite: shim}}
+ *
+ * @type {{processors: (shim|*), form: *, onAddProcessor: *, onNewProcessor: *, onRemoveProcessor: *, onUpdateProcessor: *}}
  */
 App.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
@@ -44,7 +45,8 @@ App.propTypes = {
 
 /**
  * Default props for App component
- * @type {{quote: string, cite: string}}
+ *
+ * @type {{processors: Map<any, any>, form: {ID: string, name: string, fields: {fld12: {ID: string, label: string, type: string}, fld22: {ID: string, label: string, type: string}, fld3: {ID: string, label: string, type: string}}}}}
  */
 App.defaultProps = {
 	processors: new Map(),

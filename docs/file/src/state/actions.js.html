@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | Caldera Processor UI</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/state/actions.js | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -78,21 +78,142 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import ReactDOM from &apos;react-dom&apos;;
-import &apos;./index.scss&apos;;
-import AppWithState from &apos;./AppWithState&apos;;
-import { Provider } from &apos;react-redux&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/state/actions.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">//import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from &quot;./processorsStore&quot;;
+import {CALDERA_FORMS_PROCESSOR_STORE_SLUG} from &apos;./processorStore&apos;;
+
+const CALDERA_FORMS_PROCESSORS_STORE_SLUG = &apos;CALDERA_FORMS_PROCESSORS_STORE&apos;;
 
 
-ReactDOM.render(
-	&lt;Provider store={processorsStore}&gt;
-		&lt;AppWithState /&gt;
-	&lt;/Provider&gt;,
-	document.getElementById(&apos;root&apos;)
-);
+/**
+ * The name of the action to add a processor to collection
+ * @type {string}
+ */
+export const ADD_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/ADD_PROCESSOR`;
+
+/**
+ * The name of the action to create a new, empty processor and add it to the collection
+ * @type {string}
+ */
+export const NEW_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/NEW_PROCESSOR`;
+
+/**
+ * The name of the action to remove a processor from the collection
+ * @type {string}
+ */
+export const REMOVE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/REMOVE_PROCESSOR`;
+
+/**
+ * The name of the action to set the form in the processor collection
+ *
+ * @type {string}
+ */
+export const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/SET_FORM_FOR_PROCESSOR`;
+/**
+ * The name of the action to update the processor in collection.
+ *
+ * @type {string}
+ */
+export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR`;
+
+/**
+ * The name of the action to update the processor values in the single processor store
+ *
+ * @type {string}
+ */
+export const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_VALUES`;
+
+/**
+ * The name of the action to update the processor values in the single processor store
+ *
+ * @type {string}
+ */
+export const UPDATE_PROCESSOR_CONFIG_FIELDS = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_CONFIG_FIELDS`;
+
+/**
+ * Creates an action to add a processor with config to the collection
+ *
+ * Use for copying processors or presets.
+ * To add a new empty processor use newProcessor action creator.
+ * @param {Map} processor Processor config
+ * @returns {{type: string, processor: *}}
+ */
+export const addProcessor = (processor) =&gt; {
+	return {
+		type: ADD_PROCESSOR,
+		processor
+	};
+};
+
+/**
+ * Creates an action to create a new, empty processor and add it to the collection
+ * @returns {{type: string}}
+ */
+export const newProcessor = () =&gt; {
+	return {
+		type: NEW_PROCESSOR,
+	};
+};
+
+/**
+ * Creates an action to remove a processor from the collection
+ * @param {String} processorId Id of processor to remove
+ * @returns {{type: string, processorId: *}}
+ */
+export const removeProcessor = (processorId) =&gt; {
+	return {
+		type: REMOVE_PROCESSOR,
+		processorId
+	};
+};
+
+/**
+ * Creates an action to set the form in the single processor store.
+ * @param {Object} form
+ * @returns {{type: string, form: *}}
+ */
+export const setFormForProcessor = (form) =&gt; {
+	return {
+		type: SET_FORM_FOR_PROCESSOR,
+		form
+	};
+};
+
+/**
+ * Creates an action to update the processor in collection.
+ * @param {Map} processor Processor config
+ * @returns {{type: string, processor: *}}
+ */
+export const updateProcessor = (processor ) =&gt; {
+	return {
+		type: UPDATE_PROCESSOR,
+		processor
+	};
+};
+
+/**
+ * Creates an action to update the processor values of the single processor store.
+ * @param {Map} configValues New config values
+ * @returns {{type: string, configValues: *}}
+ */
+export const updateProcessorValues = (configValues ) =&gt; {
+	return {
+		type: UPDATE_PROCESSOR_VALUES,
+		configValues
+	};
+};
+
+/**
+ * Creates an action to update the processor configFields single processor store.
+ * @param {Map} configFields New config fields
+ * @return {{type: string, configFields: *}}
+ */
+export const updateProcessorConfigFields = (configFields ) =&gt; {
+	return {
+		type: UPDATE_PROCESSOR_CONFIG_FIELDS,
+		configFields
+	};
+};
 
 </code></pre>
 

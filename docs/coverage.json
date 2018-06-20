@@ -1,11 +1,112 @@
 {
-  "coverage": "100%",
-  "expectCount": 1,
-  "actualCount": 1,
+  "coverage": "78.33%",
+  "expectCount": 60,
+  "actualCount": 47,
   "files": {
-    "src/index.js": {
+    "src/App.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        14
+      ]
+    },
+    "src/AppWithState.js": {
       "expectCount": 1,
       "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/components/Processor/Editor.js": {
+      "expectCount": 9,
+      "actualCount": 5,
+      "undocumentLines": [
+        5,
+        6,
+        8,
+        87
+      ]
+    },
+    "src/components/Processor/OpenEditorButton.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/components/Processor/RemoveProcessorButton.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        20
+      ]
+    },
+    "src/components/Processors/List.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/components/Processors/NewProcessor.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/factories/configFieldFactory.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/factories/configFieldsFactory.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/factories/processorFactory.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/factories/util.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/processors/emailDefaultConfigFields.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/state/actions.js": {
+      "expectCount": 15,
+      "actualCount": 14,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/state/processorStore.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/state/processorsStore.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        27,
+        82,
+        83
+      ]
+    },
+    "src/state/reducers.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/state/selectors.js": {
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     }
   }

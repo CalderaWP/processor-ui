@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | Caldera Processor UI</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/state/processorStore.js | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -78,23 +78,8 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import ReactDOM from &apos;react-dom&apos;;
-import &apos;./index.scss&apos;;
-import AppWithState from &apos;./AppWithState&apos;;
-import { Provider } from &apos;react-redux&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
-
-
-ReactDOM.render(
-	&lt;Provider store={processorsStore}&gt;
-		&lt;AppWithState /&gt;
-	&lt;/Provider&gt;,
-	document.getElementById(&apos;root&apos;)
-);
-
-</code></pre>
+<div class="content" data-ice="content"><h1 data-ice="title">src/state/processorStore.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export const CALDERA_FORMS_PROCESSOR_STORE_SLUG = &apos;CALDERA_FORMS_PROCESSOR_STORE&apos;;</code></pre>
 
 </div>
 

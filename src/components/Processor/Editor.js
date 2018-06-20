@@ -53,6 +53,12 @@ export class Editor extends React.PureComponent {
 		return fields;
 	}
 
+	/**
+	 * Updates the processor config fields and dispatches the change handler
+	 *
+	 * @param {String} configFieldId Id of configuration field to update.
+	 * @param {String|Array|Number} newValue The new value
+	 */
 	handleChange(configFieldId,newValue){
 		let configFields = this.props.processor.configFields;
 		configFields[configFieldId] = {
@@ -65,6 +71,11 @@ export class Editor extends React.PureComponent {
 		});
 	}
 
+	/**
+	 * Dispatch a change in processor type
+	 *
+	 * @param {*} event
+	 */
 	changeType(event){
 		this.props.onUpdateProcessor({
 			...this.props.processor,
@@ -138,6 +149,10 @@ export class Editor extends React.PureComponent {
 	}
 }
 
+/**
+ * Prop definitions for Editor Property
+ * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}
+ */
 Editor.propTypes = {
 	processor: PropTypes.object.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired,

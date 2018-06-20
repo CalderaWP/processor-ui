@@ -1,8 +1,272 @@
 window.esdocSearchIndex = [
   [
-    "@caldera-labs/processor-ui/src/index.js~sayhi",
-    "function/index.html#static-function-sayHi",
-    "<span>sayHi</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/index.js</span>",
+    "@caldera-labs/processor-ui/src/state/actions.js~add_processor",
+    "variable/index.html#static-variable-ADD_PROCESSOR",
+    "<span>ADD_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/app.js~app",
+    "class/src/App.js~App.html",
+    "<span>App</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/App.js</span>",
+    "class"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/appwithstate.js~appwithstate",
+    "variable/index.html#static-variable-AppWithState",
+    "<span>AppWithState</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/AppWithState.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/reducers.js~caldera_forms_processors_store_default_state",
+    "variable/index.html#static-variable-CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE",
+    "<span>CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/processorsstore.js~caldera_forms_processors_store_slug",
+    "variable/index.html#static-variable-CALDERA_FORMS_PROCESSORS_STORE_SLUG",
+    "<span>CALDERA_FORMS_PROCESSORS_STORE_SLUG</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorsStore.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/reducers.js~caldera_forms_processor_store_default_state",
+    "variable/index.html#static-variable-CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE",
+    "<span>CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/processorstore.js~caldera_forms_processor_store_slug",
+    "variable/index.html#static-variable-CALDERA_FORMS_PROCESSOR_STORE_SLUG",
+    "<span>CALDERA_FORMS_PROCESSOR_STORE_SLUG</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorStore.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/components/processor/editor.js~editor",
+    "class/src/components/Processor/Editor.js~Editor.html",
+    "<span>Editor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processor/Editor.js</span>",
+    "class"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/components/processors/list.js~list",
+    "function/index.html#static-function-List",
+    "<span>List</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processors/List.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~new_processor",
+    "variable/index.html#static-variable-NEW_PROCESSOR",
+    "<span>NEW_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/components/processors/newprocessor.js~newprocessor",
+    "function/index.html#static-function-NewProcessor",
+    "<span>NewProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processors/NewProcessor.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/components/processor/openeditorbutton.js~openeditorbutton",
+    "function/index.html#static-function-OpenEditorButton",
+    "<span>OpenEditorButton</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processor/OpenEditorButton.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~remove_processor",
+    "variable/index.html#static-variable-REMOVE_PROCESSOR",
+    "<span>REMOVE_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/components/processor/removeprocessorbutton.js~removeprocessorbutton",
+    "class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html",
+    "<span>RemoveProcessorButton</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processor/RemoveProcessorButton.js</span>",
+    "class"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~set_form_for_processor",
+    "variable/index.html#static-variable-SET_FORM_FOR_PROCESSOR",
+    "<span>SET_FORM_FOR_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~update_processor",
+    "variable/index.html#static-variable-UPDATE_PROCESSOR",
+    "<span>UPDATE_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~update_processor_config_fields",
+    "variable/index.html#static-variable-UPDATE_PROCESSOR_CONFIG_FIELDS",
+    "<span>UPDATE_PROCESSOR_CONFIG_FIELDS</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~update_processor_values",
+    "variable/index.html#static-variable-UPDATE_PROCESSOR_VALUES",
+    "<span>UPDATE_PROCESSOR_VALUES</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~addprocessor",
+    "function/index.html#static-function-addProcessor",
+    "<span>addProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/reducers.js~clone",
+    "function/index.html#static-function-clone",
+    "<span>clone</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/configfieldfactory.js~configfieldfactory",
+    "function/index.html#static-function-configFieldFactory",
+    "<span>configFieldFactory</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/configFieldFactory.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/configfieldsfactory.js~configfieldsfactory",
+    "function/index.html#static-function-configFieldsFactory",
+    "<span>configFieldsFactory</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/configFieldsFactory.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/processors/emaildefaultconfigfields.js~emaildefaultconfigfields",
+    "variable/index.html#static-variable-emailDefaultConfigFields",
+    "<span>emailDefaultConfigFields</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/processors/emailDefaultConfigFields.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~getconfigfielddefaultvalue",
+    "function/index.html#static-function-getConfigFieldDefaultValue",
+    "<span>getConfigFieldDefaultValue</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~getconfigfieldvalue",
+    "function/index.html#static-function-getConfigFieldValue",
+    "<span>getConfigFieldValue</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~getconfigfieldvalueordefault",
+    "function/index.html#static-function-getConfigFieldValueOrDefault",
+    "<span>getConfigFieldValueOrDefault</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getformforprocessor",
+    "function/index.html#static-function-getFormForProcessor",
+    "<span>getFormForProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getprocessor",
+    "function/index.html#static-function-getProcessor",
+    "<span>getProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getprocessorfromcollection",
+    "function/index.html#static-function-getProcessorFromCollection",
+    "<span>getProcessorFromCollection</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getprocessorvalue",
+    "function/index.html#static-function-getProcessorValue",
+    "<span>getProcessorValue</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getprocessorvalues",
+    "function/index.html#static-function-getProcessorValues",
+    "<span>getProcessorValues</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getprocessorscollection",
+    "function/index.html#static-function-getProcessorsCollection",
+    "<span>getProcessorsCollection</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~mapkeystoidproperty",
+    "function/index.html#static-function-mapKeysToIdProperty",
+    "<span>mapKeysToIdProperty</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~newprocessor",
+    "function/index.html#static-function-newProcessor",
+    "<span>newProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~objecttomap",
+    "function/index.html#static-function-objectToMap",
+    "<span>objectToMap</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/processorfactory.js~processorfactory",
+    "function/index.html#static-function-processorFactory",
+    "<span>processorFactory</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/processorFactory.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/reducers.js~processorreducer",
+    "function/index.html#static-function-processorReducer",
+    "<span>processorReducer</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/processorfactory.js~processortypes",
+    "variable/index.html#static-variable-processorTypes",
+    "<span>processorTypes</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/processorFactory.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/reducers.js~processorsreducer",
+    "function/index.html#static-function-processorsReducer",
+    "<span>processorsReducer</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/processorsstore.js~processorsstore",
+    "variable/index.html#static-variable-processorsStore",
+    "<span>processorsStore</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorsStore.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~removeprocessor",
+    "function/index.html#static-function-removeProcessor",
+    "<span>removeProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~setformforprocessor",
+    "function/index.html#static-function-setFormForProcessor",
+    "<span>setFormForProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~updateprocessor",
+    "function/index.html#static-function-updateProcessor",
+    "<span>updateProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~updateprocessorconfigfields",
+    "function/index.html#static-function-updateProcessorConfigFields",
+    "<span>updateProcessorConfigFields</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~updateprocessorvalues",
+    "function/index.html#static-function-updateProcessorValues",
+    "<span>updateProcessorValues</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
     "function"
   ],
   [
@@ -288,9 +552,189 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/app.js",
+    "file/src/App.js.html",
+    "src/App.js",
+    "file"
+  ],
+  [
+    "src/app.js~app#render",
+    "class/src/App.js~App.html#instance-method-render",
+    "src/App.js~App#render",
+    "method"
+  ],
+  [
+    "src/appwithstate.js",
+    "file/src/AppWithState.js.html",
+    "src/AppWithState.js",
+    "file"
+  ],
+  [
+    "src/components/processor/editor.js",
+    "file/src/components/Processor/Editor.js.html",
+    "src/components/Processor/Editor.js",
+    "file"
+  ],
+  [
+    "src/components/processor/editor.js~editor#changetype",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-changeType",
+    "src/components/Processor/Editor.js~Editor#changeType",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#configfields",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-configFields",
+    "src/components/Processor/Editor.js~Editor#configFields",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#constructor",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-constructor-constructor",
+    "src/components/Processor/Editor.js~Editor#constructor",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#handlechange",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-handleChange",
+    "src/components/Processor/Editor.js~Editor#handleChange",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#mouseenter",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-mouseEnter",
+    "src/components/Processor/Editor.js~Editor#mouseEnter",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#mouseleave",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-mouseLeave",
+    "src/components/Processor/Editor.js~Editor#mouseLeave",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#render",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-render",
+    "src/components/Processor/Editor.js~Editor#render",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#state",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-member-state",
+    "src/components/Processor/Editor.js~Editor#state",
+    "member"
+  ],
+  [
+    "src/components/processor/openeditorbutton.js",
+    "file/src/components/Processor/OpenEditorButton.js.html",
+    "src/components/Processor/OpenEditorButton.js",
+    "file"
+  ],
+  [
+    "src/components/processor/removeprocessorbutton.js",
+    "file/src/components/Processor/RemoveProcessorButton.js.html",
+    "src/components/Processor/RemoveProcessorButton.js",
+    "file"
+  ],
+  [
+    "src/components/processor/removeprocessorbutton.js~removeprocessorbutton#constructor",
+    "class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html#instance-constructor-constructor",
+    "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton#constructor",
+    "method"
+  ],
+  [
+    "src/components/processor/removeprocessorbutton.js~removeprocessorbutton#handleclick",
+    "class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html#instance-method-handleClick",
+    "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton#handleClick",
+    "method"
+  ],
+  [
+    "src/components/processor/removeprocessorbutton.js~removeprocessorbutton#render",
+    "class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html#instance-method-render",
+    "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton#render",
+    "method"
+  ],
+  [
+    "src/components/processor/removeprocessorbutton.js~removeprocessorbutton#state",
+    "class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html#instance-member-state",
+    "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton#state",
+    "member"
+  ],
+  [
+    "src/components/processors/list.js",
+    "file/src/components/Processors/List.js.html",
+    "src/components/Processors/List.js",
+    "file"
+  ],
+  [
+    "src/components/processors/newprocessor.js",
+    "file/src/components/Processors/NewProcessor.js.html",
+    "src/components/Processors/NewProcessor.js",
+    "file"
+  ],
+  [
+    "src/factories/configfieldfactory.js",
+    "file/src/factories/configFieldFactory.js.html",
+    "src/factories/configFieldFactory.js",
+    "file"
+  ],
+  [
+    "src/factories/configfieldsfactory.js",
+    "file/src/factories/configFieldsFactory.js.html",
+    "src/factories/configFieldsFactory.js",
+    "file"
+  ],
+  [
+    "src/factories/processorfactory.js",
+    "file/src/factories/processorFactory.js.html",
+    "src/factories/processorFactory.js",
+    "file"
+  ],
+  [
+    "src/factories/util.js",
+    "file/src/factories/util.js.html",
+    "src/factories/util.js",
+    "file"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
+    "file"
+  ],
+  [
+    "src/processors/emaildefaultconfigfields.js",
+    "file/src/processors/emailDefaultConfigFields.js.html",
+    "src/processors/emailDefaultConfigFields.js",
+    "file"
+  ],
+  [
+    "src/state/actions.js",
+    "file/src/state/actions.js.html",
+    "src/state/actions.js",
+    "file"
+  ],
+  [
+    "src/state/processorstore.js",
+    "file/src/state/processorStore.js.html",
+    "src/state/processorStore.js",
+    "file"
+  ],
+  [
+    "src/state/processorsstore.js",
+    "file/src/state/processorsStore.js.html",
+    "src/state/processorsStore.js",
+    "file"
+  ],
+  [
+    "src/state/reducers.js",
+    "file/src/state/reducers.js.html",
+    "src/state/reducers.js",
+    "file"
+  ],
+  [
+    "src/state/selectors.js",
+    "file/src/state/selectors.js.html",
+    "src/state/selectors.js",
     "file"
   ]
 ]

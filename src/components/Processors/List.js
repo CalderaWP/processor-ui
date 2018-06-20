@@ -25,7 +25,11 @@ export const List = (props) => {
 							onUpdateProcessor={props.onUpdateProcessor}
 							form={props.form}
 						/>
-						<RemoveProcessorButton onClick={props.onRemoveProcessor}/>
+						<RemoveProcessorButton
+							onClick={() => {
+								props.onRemoveProcessor(processor.ID);
+							}}
+						/>
 					</div>
 				);
 			})}

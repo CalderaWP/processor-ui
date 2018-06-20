@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | Caldera Processor UI</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/state/processorsStore.js | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -78,23 +78,94 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import ReactDOM from &apos;react-dom&apos;;
-import &apos;./index.scss&apos;;
-import AppWithState from &apos;./AppWithState&apos;;
-import { Provider } from &apos;react-redux&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/state/processorsStore.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { registerStore } from &apos;@wordpress/data&apos;;
+
+import {
+	CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,
+	//processorsReducer,
+	clone
+} from &apos;./reducers&apos;;
+
+import {
+	ADD_PROCESSOR,
+	addProcessor,
+	NEW_PROCESSOR,
+	newProcessor,
+	REMOVE_PROCESSOR,
+	removeProcessor,
+	UPDATE_PROCESSOR,
+	updateProcessor,
+} from &apos;./actions&apos;;
+
+import {
+	getProcessorsCollection,
+	getProcessorFromCollection,
+} from &apos;./selectors&apos;;
+import {processorFactory} from &apos;../factories/processorFactory&apos;;
 
 
-ReactDOM.render(
-	&lt;Provider store={processorsStore}&gt;
-		&lt;AppWithState /&gt;
-	&lt;/Provider&gt;,
-	document.getElementById(&apos;root&apos;)
-);
+const config = {
+	reducer(state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,action){
+		//copypasta of processorsReducer, should be using processorsReducer, but it is undefined in this closure.
+		switch( action.type ){
+		case NEW_PROCESSOR:
+		case ADD_PROCESSOR:
+			switch( action.type ) {
+			case NEW_PROCESSOR:
+				const ID = &apos;p_&apos; + Math.random().toString(36).substring(7);
+				//@TODO replace with generateId util function
+				state.set( ID, {
+					ID,
+					configFields: {}
+				} );
+				break;
+			case ADD_PROCESSOR:
+				state.set( action.processor.ID, action.processor);
+				break;
+			default:
+				break;
+			}
 
-</code></pre>
+			return clone(state);
+		case UPDATE_PROCESSOR:
+			state = state.set( action.processor.ID, processorFactory(
+				action.processor.ID,
+				action.processor.type,
+				action.processor.configFields,
+			));
+
+			return clone(state);
+		case  REMOVE_PROCESSOR:
+			state.delete(action.processorId);
+			return clone(state);
+		default:
+			return state;
+		}
+
+	},
+	actions: {
+		addProcessor,
+		newProcessor,
+		removeProcessor,
+		updateProcessor
+	},
+
+	selectors: {
+		getProcessorsCollection,
+		getProcessorFromCollection
+	},
+
+	resolvers: {
+
+	},
+};
+export const CALDERA_FORMS_PROCESSORS_STORE_SLUG = &apos;CALDERA_FORMS_PROCESSORS_STORE&apos;;
+export const processorsStore = registerStore(
+	CALDERA_FORMS_PROCESSORS_STORE_SLUG,
+	config
+
+);</code></pre>
 
 </div>
 

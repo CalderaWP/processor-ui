@@ -1,1 +1,201 @@
-[]
+[
+  {
+    "name": "processorFactory",
+    "filePath": "src/factories/processorFactory.js",
+    "lines": [
+      {
+        "lineNumber": 16,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * Get the configuration for a processor"
+      },
+      {
+        "lineNumber": 18,
+        "line": " *"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * This will merge in defaults, and set values from supplied configValues."
+      },
+      {
+        "lineNumber": 20,
+        "line": " * Does not provide callback functions for updating those values."
+      },
+      {
+        "lineNumber": 21,
+        "line": " * Those callback functions MUST get added before they are used in the default manner."
+      },
+      {
+        "lineNumber": 22,
+        "line": " *"
+      },
+      {
+        "lineNumber": 23,
+        "line": " * @param type"
+      },
+      {
+        "lineNumber": 24,
+        "line": " * @param {Object} configFields Config fields for processor. Indexed by config ID."
+      },
+      {
+        "lineNumber": 25,
+        "line": " * @return {Processor}"
+      },
+      {
+        "lineNumber": 26,
+        "line": " */"
+      },
+      {
+        "lineNumber": 27,
+        "line": "export const processorFactory = ( ID, type, configFields ) =>  {"
+      }
+    ],
+    "codeParams": [
+      "ID",
+      "type",
+      "configFields"
+    ],
+    "docParams": [
+      "type",
+      "configFields"
+    ]
+  },
+  {
+    "name": "processorsReducer",
+    "filePath": "src/state/reducers.js",
+    "lines": [
+      {
+        "lineNumber": 69,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 70,
+        "line": " * Reducer for managing a collection of processors"
+      },
+      {
+        "lineNumber": 71,
+        "line": " *"
+      },
+      {
+        "lineNumber": 72,
+        "line": " * State is the processors collection, as a map."
+      },
+      {
+        "lineNumber": 73,
+        "line": " * ^^ Might be a mistake."
+      },
+      {
+        "lineNumber": 74,
+        "line": " *"
+      },
+      {
+        "lineNumber": 75,
+        "line": " * @param {Map}state"
+      },
+      {
+        "lineNumber": 76,
+        "line": " * @param {Object} action"
+      },
+      {
+        "lineNumber": 77,
+        "line": " * @returns {Map<any, any>}"
+      },
+      {
+        "lineNumber": 78,
+        "line": " */"
+      },
+      {
+        "lineNumber": 79,
+        "line": "export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) => {"
+      }
+    ],
+    "codeParams": [
+      "state",
+      "action"
+    ],
+    "docParams": [
+      "{Map}state",
+      "action"
+    ]
+  },
+  {
+    "name": "getProcessorsCollection",
+    "filePath": "src/state/selectors.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 2,
+        "line": " * Get all of the procesors in collection"
+      },
+      {
+        "lineNumber": 3,
+        "line": " *"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * @param {Map} state"
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @param {String} processorId"
+      },
+      {
+        "lineNumber": 6,
+        "line": " */"
+      },
+      {
+        "lineNumber": 7,
+        "line": "export const getProcessorsCollection = (state) => {"
+      }
+    ],
+    "codeParams": [
+      "state"
+    ],
+    "docParams": [
+      "state",
+      "processorId"
+    ]
+  },
+  {
+    "name": "getProcessorValue",
+    "filePath": "src/state/selectors.js",
+    "lines": [
+      {
+        "lineNumber": 51,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 52,
+        "line": " * Get the values from the single processor reducer processorReducer"
+      },
+      {
+        "lineNumber": 53,
+        "line": " * @param {Object} state"
+      },
+      {
+        "lineNumber": 54,
+        "line": " * @returns {Object}"
+      },
+      {
+        "lineNumber": 55,
+        "line": " */"
+      },
+      {
+        "lineNumber": 56,
+        "line": "export const getProcessorValue  = (state,configFieldId) => {"
+      }
+    ],
+    "codeParams": [
+      "state",
+      "configFieldId"
+    ],
+    "docParams": [
+      "state"
+    ]
+  }
+]

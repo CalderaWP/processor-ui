@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | Caldera Processor UI</title>
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/components/Processor/RemoveProcessorButton.js | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -78,22 +78,92 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/components/Processor/RemoveProcessorButton.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import ReactDOM from &apos;react-dom&apos;;
-import &apos;./index.scss&apos;;
-import AppWithState from &apos;./AppWithState&apos;;
-import { Provider } from &apos;react-redux&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
+import PropTypes from &apos;prop-types&apos;;
+
+/**
+ * Displays button to open or close processor editor
+ *
+ * @param {Object} props
+ * @returns {*}
+ * @constructor
+ */
+export class  RemoveProcessorButton extends React.PureComponent {
+
+	/**
+	 * Constructor for RemoveProcessorButton
+	 *
+	 * @param {object} props
+	 */
+	constructor(props){
+		super(props);
+		this.state = {
+			message: props.label,
+			inConfirm: false
+		};
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	/**
+	 * Handle button clicks
+	 *
+	 * On first click, change to confirm message,
+	 * On second click, call onClick prop
+	 */
+	handleClick(){
+		if (false === this.state.inConfirm) {
+			this.setState({
+				message: this.props.labelToConfirm,
+				inConfirm:true
+			})
+		} else {
+			this.props.onClick();
+		}
+	}
+
+	/**
+	 * Render the RemoveProcessorButton component
+	 * @returns {*}
+	 */
+	render(){
+		return (
+
+			&lt;button
+				style={this.props.style}
+				className={this.props.className}
+				onClick={this.handleClick}
+			&gt;
+				&lt;span&gt;{this.state.message}&lt;/span&gt;
+			&lt;/button&gt;
+
+		)
+	}
 
 
-ReactDOM.render(
-	&lt;Provider store={processorsStore}&gt;
-		&lt;AppWithState /&gt;
-	&lt;/Provider&gt;,
-	document.getElementById(&apos;root&apos;)
-);
+};
 
+/**
+ * Props requirements for RemoveProcessorButton component
+ *
+ *
+ * @type {{label: shim, labelToConfirm: shim, onClick: *}}
+ */
+RemoveProcessorButton.propTypes = {
+	label: PropTypes.string,
+	labelToConfirm: PropTypes.string,
+	onClick: PropTypes.func.isRequired,
+};
+
+/**
+ * Default props for RemoveProcessorButton
+ *
+ * @type {{labelToOpen: string, labelToConfirm: string}}
+ */
+RemoveProcessorButton.defaultProps = {
+	label: &apos;Remove Processor&apos;,
+	labelToConfirm: &apos;Are you sure?&apos;,
+};
 </code></pre>
 
 </div>

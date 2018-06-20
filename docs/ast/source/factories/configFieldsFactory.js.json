@@ -1,0 +1,5558 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 1164,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 36,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 1164,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 36,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "ImportDeclaration",
+        "start": 0,
+        "end": 56,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 1,
+            "column": 56
+          }
+        },
+        "specifiers": [
+          {
+            "type": "ImportSpecifier",
+            "start": 8,
+            "end": 26,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 8
+              },
+              "end": {
+                "line": 1,
+                "column": 26
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 8,
+              "end": 26,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 26
+                },
+                "identifierName": "configFieldFactory"
+              },
+              "name": "configFieldFactory"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 8,
+              "end": 26,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 26
+                },
+                "identifierName": "configFieldFactory"
+              },
+              "name": "configFieldFactory"
+            }
+          }
+        ],
+        "source": {
+          "type": "StringLiteral",
+          "start": 33,
+          "end": 55,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 33
+            },
+            "end": {
+              "line": 1,
+              "column": 55
+            }
+          },
+          "extra": {
+            "rawValue": "./configFieldFactory",
+            "raw": "'./configFieldFactory'"
+          },
+          "value": "./configFieldFactory"
+        },
+        "trailingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * Prepare a collection of config fields\n *\n * Optionally merges with default config fields\n * Optionally sets values from a Map of config values\n *\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.\n * @returns {Object}\n ",
+            "start": 57,
+            "end": 426,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 11,
+                "column": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 427,
+        "end": 1163,
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 0
+          },
+          "end": {
+            "line": 35,
+            "column": 2
+          }
+        },
+        "specifiers": [],
+        "source": null,
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 434,
+          "end": 1163,
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 7
+            },
+            "end": {
+              "line": 35,
+              "column": 2
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 440,
+              "end": 1162,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 13
+                },
+                "end": {
+                  "line": 35,
+                  "column": 1
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 440,
+                "end": 459,
+                "loc": {
+                  "start": {
+                    "line": 12,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 12,
+                    "column": 32
+                  },
+                  "identifierName": "configFieldsFactory"
+                },
+                "name": "configFieldsFactory",
+                "leadingComments": null
+              },
+              "init": {
+                "type": "ArrowFunctionExpression",
+                "start": 462,
+                "end": 1162,
+                "loc": {
+                  "start": {
+                    "line": 12,
+                    "column": 35
+                  },
+                  "end": {
+                    "line": 35,
+                    "column": 1
+                  }
+                },
+                "id": {
+                  "type": "Identifier",
+                  "start": 440,
+                  "end": 459,
+                  "loc": {
+                    "start": {
+                      "line": 12,
+                      "column": 13
+                    },
+                    "end": {
+                      "line": 12,
+                      "column": 32
+                    },
+                    "identifierName": "configFieldsFactory"
+                  },
+                  "name": "configFieldsFactory",
+                  "leadingComments": null
+                },
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 463,
+                    "end": 475,
+                    "loc": {
+                      "start": {
+                        "line": 12,
+                        "column": 36
+                      },
+                      "end": {
+                        "line": 12,
+                        "column": 48
+                      },
+                      "identifierName": "configFields"
+                    },
+                    "name": "configFields"
+                  },
+                  {
+                    "type": "AssignmentPattern",
+                    "start": 477,
+                    "end": 502,
+                    "loc": {
+                      "start": {
+                        "line": 12,
+                        "column": 50
+                      },
+                      "end": {
+                        "line": 12,
+                        "column": 75
+                      }
+                    },
+                    "left": {
+                      "type": "Identifier",
+                      "start": 477,
+                      "end": 497,
+                      "loc": {
+                        "start": {
+                          "line": 12,
+                          "column": 50
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 70
+                        },
+                        "identifierName": "configFieldsDefaults"
+                      },
+                      "name": "configFieldsDefaults"
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "start": 500,
+                      "end": 502,
+                      "loc": {
+                        "start": {
+                          "line": 12,
+                          "column": 73
+                        },
+                        "end": {
+                          "line": 12,
+                          "column": 75
+                        }
+                      },
+                      "properties": []
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 509,
+                  "end": 1162,
+                  "loc": {
+                    "start": {
+                      "line": 12,
+                      "column": 82
+                    },
+                    "end": {
+                      "line": 35,
+                      "column": 1
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "start": 512,
+                      "end": 768,
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 21,
+                          "column": 4
+                        }
+                      },
+                      "expression": {
+                        "type": "CallExpression",
+                        "start": 512,
+                        "end": 767,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 21,
+                            "column": 3
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 512,
+                          "end": 547,
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 13,
+                              "column": 36
+                            }
+                          },
+                          "object": {
+                            "type": "CallExpression",
+                            "start": 512,
+                            "end": 539,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 1
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 28
+                              }
+                            },
+                            "callee": {
+                              "type": "MemberExpression",
+                              "start": 512,
+                              "end": 523,
+                              "loc": {
+                                "start": {
+                                  "line": 13,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 13,
+                                  "column": 12
+                                }
+                              },
+                              "object": {
+                                "type": "Identifier",
+                                "start": 512,
+                                "end": 518,
+                                "loc": {
+                                  "start": {
+                                    "line": 13,
+                                    "column": 1
+                                  },
+                                  "end": {
+                                    "line": 13,
+                                    "column": 7
+                                  },
+                                  "identifierName": "Object"
+                                },
+                                "name": "Object"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "start": 519,
+                                "end": 523,
+                                "loc": {
+                                  "start": {
+                                    "line": 13,
+                                    "column": 8
+                                  },
+                                  "end": {
+                                    "line": 13,
+                                    "column": 12
+                                  },
+                                  "identifierName": "keys"
+                                },
+                                "name": "keys"
+                              },
+                              "computed": false
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "start": 525,
+                                "end": 537,
+                                "loc": {
+                                  "start": {
+                                    "line": 13,
+                                    "column": 14
+                                  },
+                                  "end": {
+                                    "line": 13,
+                                    "column": 26
+                                  },
+                                  "identifierName": "configFields"
+                                },
+                                "name": "configFields"
+                              }
+                            ]
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 540,
+                            "end": 547,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 29
+                              },
+                              "end": {
+                                "line": 13,
+                                "column": 36
+                              },
+                              "identifierName": "forEach"
+                            },
+                            "name": "forEach"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "ArrowFunctionExpression",
+                            "start": 549,
+                            "end": 766,
+                            "loc": {
+                              "start": {
+                                "line": 13,
+                                "column": 38
+                              },
+                              "end": {
+                                "line": 21,
+                                "column": 2
+                              }
+                            },
+                            "id": null,
+                            "generator": false,
+                            "expression": false,
+                            "async": false,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "start": 549,
+                                "end": 562,
+                                "loc": {
+                                  "start": {
+                                    "line": 13,
+                                    "column": 38
+                                  },
+                                  "end": {
+                                    "line": 13,
+                                    "column": 51
+                                  },
+                                  "identifierName": "configFieldId"
+                                },
+                                "name": "configFieldId"
+                              }
+                            ],
+                            "body": {
+                              "type": "BlockStatement",
+                              "start": 566,
+                              "end": 766,
+                              "loc": {
+                                "start": {
+                                  "line": 13,
+                                  "column": 55
+                                },
+                                "end": {
+                                  "line": 21,
+                                  "column": 2
+                                }
+                              },
+                              "body": [
+                                {
+                                  "type": "IfStatement",
+                                  "start": 570,
+                                  "end": 763,
+                                  "loc": {
+                                    "start": {
+                                      "line": 14,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 20,
+                                      "column": 3
+                                    }
+                                  },
+                                  "test": {
+                                    "type": "CallExpression",
+                                    "start": 574,
+                                    "end": 624,
+                                    "loc": {
+                                      "start": {
+                                        "line": 14,
+                                        "column": 6
+                                      },
+                                      "end": {
+                                        "line": 14,
+                                        "column": 56
+                                      }
+                                    },
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "start": 574,
+                                      "end": 609,
+                                      "loc": {
+                                        "start": {
+                                          "line": 14,
+                                          "column": 6
+                                        },
+                                        "end": {
+                                          "line": 14,
+                                          "column": 41
+                                        }
+                                      },
+                                      "object": {
+                                        "type": "Identifier",
+                                        "start": 574,
+                                        "end": 594,
+                                        "loc": {
+                                          "start": {
+                                            "line": 14,
+                                            "column": 6
+                                          },
+                                          "end": {
+                                            "line": 14,
+                                            "column": 26
+                                          },
+                                          "identifierName": "configFieldsDefaults"
+                                        },
+                                        "name": "configFieldsDefaults"
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "start": 595,
+                                        "end": 609,
+                                        "loc": {
+                                          "start": {
+                                            "line": 14,
+                                            "column": 27
+                                          },
+                                          "end": {
+                                            "line": 14,
+                                            "column": 41
+                                          },
+                                          "identifierName": "hasOwnProperty"
+                                        },
+                                        "name": "hasOwnProperty"
+                                      },
+                                      "computed": false
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Identifier",
+                                        "start": 610,
+                                        "end": 623,
+                                        "loc": {
+                                          "start": {
+                                            "line": 14,
+                                            "column": 42
+                                          },
+                                          "end": {
+                                            "line": 14,
+                                            "column": 55
+                                          },
+                                          "identifierName": "configFieldId"
+                                        },
+                                        "name": "configFieldId"
+                                      }
+                                    ]
+                                  },
+                                  "consequent": {
+                                    "type": "BlockStatement",
+                                    "start": 625,
+                                    "end": 763,
+                                    "loc": {
+                                      "start": {
+                                        "line": 14,
+                                        "column": 57
+                                      },
+                                      "end": {
+                                        "line": 20,
+                                        "column": 3
+                                      }
+                                    },
+                                    "body": [
+                                      {
+                                        "type": "ExpressionStatement",
+                                        "start": 630,
+                                        "end": 758,
+                                        "loc": {
+                                          "start": {
+                                            "line": 15,
+                                            "column": 3
+                                          },
+                                          "end": {
+                                            "line": 18,
+                                            "column": 5
+                                          }
+                                        },
+                                        "expression": {
+                                          "type": "AssignmentExpression",
+                                          "start": 630,
+                                          "end": 757,
+                                          "loc": {
+                                            "start": {
+                                              "line": 15,
+                                              "column": 3
+                                            },
+                                            "end": {
+                                              "line": 18,
+                                              "column": 4
+                                            }
+                                          },
+                                          "operator": "=",
+                                          "left": {
+                                            "type": "MemberExpression",
+                                            "start": 630,
+                                            "end": 657,
+                                            "loc": {
+                                              "start": {
+                                                "line": 15,
+                                                "column": 3
+                                              },
+                                              "end": {
+                                                "line": 15,
+                                                "column": 30
+                                              }
+                                            },
+                                            "object": {
+                                              "type": "Identifier",
+                                              "start": 630,
+                                              "end": 642,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 15,
+                                                  "column": 3
+                                                },
+                                                "end": {
+                                                  "line": 15,
+                                                  "column": 15
+                                                },
+                                                "identifierName": "configFields"
+                                              },
+                                              "name": "configFields"
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "start": 643,
+                                              "end": 656,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 15,
+                                                  "column": 16
+                                                },
+                                                "end": {
+                                                  "line": 15,
+                                                  "column": 29
+                                                },
+                                                "identifierName": "configFieldId"
+                                              },
+                                              "name": "configFieldId"
+                                            },
+                                            "computed": true
+                                          },
+                                          "right": {
+                                            "type": "CallExpression",
+                                            "start": 660,
+                                            "end": 757,
+                                            "loc": {
+                                              "start": {
+                                                "line": 15,
+                                                "column": 33
+                                              },
+                                              "end": {
+                                                "line": 18,
+                                                "column": 4
+                                              }
+                                            },
+                                            "callee": {
+                                              "type": "Identifier",
+                                              "start": 660,
+                                              "end": 678,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 15,
+                                                  "column": 33
+                                                },
+                                                "end": {
+                                                  "line": 15,
+                                                  "column": 51
+                                                },
+                                                "identifierName": "configFieldFactory"
+                                              },
+                                              "name": "configFieldFactory"
+                                            },
+                                            "arguments": [
+                                              {
+                                                "type": "MemberExpression",
+                                                "start": 684,
+                                                "end": 711,
+                                                "loc": {
+                                                  "start": {
+                                                    "line": 16,
+                                                    "column": 4
+                                                  },
+                                                  "end": {
+                                                    "line": 16,
+                                                    "column": 31
+                                                  }
+                                                },
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "start": 684,
+                                                  "end": 696,
+                                                  "loc": {
+                                                    "start": {
+                                                      "line": 16,
+                                                      "column": 4
+                                                    },
+                                                    "end": {
+                                                      "line": 16,
+                                                      "column": 16
+                                                    },
+                                                    "identifierName": "configFields"
+                                                  },
+                                                  "name": "configFields"
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "start": 697,
+                                                  "end": 710,
+                                                  "loc": {
+                                                    "start": {
+                                                      "line": 16,
+                                                      "column": 17
+                                                    },
+                                                    "end": {
+                                                      "line": 16,
+                                                      "column": 30
+                                                    },
+                                                    "identifierName": "configFieldId"
+                                                  },
+                                                  "name": "configFieldId"
+                                                },
+                                                "computed": true
+                                              },
+                                              {
+                                                "type": "MemberExpression",
+                                                "start": 717,
+                                                "end": 752,
+                                                "loc": {
+                                                  "start": {
+                                                    "line": 17,
+                                                    "column": 4
+                                                  },
+                                                  "end": {
+                                                    "line": 17,
+                                                    "column": 39
+                                                  }
+                                                },
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "start": 717,
+                                                  "end": 737,
+                                                  "loc": {
+                                                    "start": {
+                                                      "line": 17,
+                                                      "column": 4
+                                                    },
+                                                    "end": {
+                                                      "line": 17,
+                                                      "column": 24
+                                                    },
+                                                    "identifierName": "configFieldsDefaults"
+                                                  },
+                                                  "name": "configFieldsDefaults"
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "start": 738,
+                                                  "end": 751,
+                                                  "loc": {
+                                                    "start": {
+                                                      "line": 17,
+                                                      "column": 25
+                                                    },
+                                                    "end": {
+                                                      "line": 17,
+                                                      "column": 38
+                                                    },
+                                                    "identifierName": "configFieldId"
+                                                  },
+                                                  "name": "configFieldId"
+                                                },
+                                                "computed": true
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "directives": []
+                                  },
+                                  "alternate": null
+                                }
+                              ],
+                              "directives": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "start": 771,
+                      "end": 974,
+                      "loc": {
+                        "start": {
+                          "line": 23,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 27,
+                          "column": 4
+                        }
+                      },
+                      "expression": {
+                        "type": "CallExpression",
+                        "start": 771,
+                        "end": 973,
+                        "loc": {
+                          "start": {
+                            "line": 23,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 27,
+                            "column": 3
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 771,
+                          "end": 814,
+                          "loc": {
+                            "start": {
+                              "line": 23,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 23,
+                              "column": 44
+                            }
+                          },
+                          "object": {
+                            "type": "CallExpression",
+                            "start": 771,
+                            "end": 806,
+                            "loc": {
+                              "start": {
+                                "line": 23,
+                                "column": 1
+                              },
+                              "end": {
+                                "line": 23,
+                                "column": 36
+                              }
+                            },
+                            "callee": {
+                              "type": "MemberExpression",
+                              "start": 771,
+                              "end": 782,
+                              "loc": {
+                                "start": {
+                                  "line": 23,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 23,
+                                  "column": 12
+                                }
+                              },
+                              "object": {
+                                "type": "Identifier",
+                                "start": 771,
+                                "end": 777,
+                                "loc": {
+                                  "start": {
+                                    "line": 23,
+                                    "column": 1
+                                  },
+                                  "end": {
+                                    "line": 23,
+                                    "column": 7
+                                  },
+                                  "identifierName": "Object"
+                                },
+                                "name": "Object"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "start": 778,
+                                "end": 782,
+                                "loc": {
+                                  "start": {
+                                    "line": 23,
+                                    "column": 8
+                                  },
+                                  "end": {
+                                    "line": 23,
+                                    "column": 12
+                                  },
+                                  "identifierName": "keys"
+                                },
+                                "name": "keys"
+                              },
+                              "computed": false
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "start": 784,
+                                "end": 804,
+                                "loc": {
+                                  "start": {
+                                    "line": 23,
+                                    "column": 14
+                                  },
+                                  "end": {
+                                    "line": 23,
+                                    "column": 34
+                                  },
+                                  "identifierName": "configFieldsDefaults"
+                                },
+                                "name": "configFieldsDefaults"
+                              }
+                            ]
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 807,
+                            "end": 814,
+                            "loc": {
+                              "start": {
+                                "line": 23,
+                                "column": 37
+                              },
+                              "end": {
+                                "line": 23,
+                                "column": 44
+                              },
+                              "identifierName": "forEach"
+                            },
+                            "name": "forEach"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "ArrowFunctionExpression",
+                            "start": 816,
+                            "end": 972,
+                            "loc": {
+                              "start": {
+                                "line": 23,
+                                "column": 46
+                              },
+                              "end": {
+                                "line": 27,
+                                "column": 2
+                              }
+                            },
+                            "id": null,
+                            "generator": false,
+                            "expression": false,
+                            "async": false,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "start": 816,
+                                "end": 831,
+                                "loc": {
+                                  "start": {
+                                    "line": 23,
+                                    "column": 46
+                                  },
+                                  "end": {
+                                    "line": 23,
+                                    "column": 61
+                                  },
+                                  "identifierName": "configDefaultId"
+                                },
+                                "name": "configDefaultId"
+                              }
+                            ],
+                            "body": {
+                              "type": "BlockStatement",
+                              "start": 835,
+                              "end": 972,
+                              "loc": {
+                                "start": {
+                                  "line": 23,
+                                  "column": 65
+                                },
+                                "end": {
+                                  "line": 27,
+                                  "column": 2
+                                }
+                              },
+                              "body": [
+                                {
+                                  "type": "IfStatement",
+                                  "start": 839,
+                                  "end": 969,
+                                  "loc": {
+                                    "start": {
+                                      "line": 24,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 26,
+                                      "column": 3
+                                    }
+                                  },
+                                  "test": {
+                                    "type": "UnaryExpression",
+                                    "start": 843,
+                                    "end": 889,
+                                    "loc": {
+                                      "start": {
+                                        "line": 24,
+                                        "column": 6
+                                      },
+                                      "end": {
+                                        "line": 24,
+                                        "column": 52
+                                      }
+                                    },
+                                    "operator": "!",
+                                    "prefix": true,
+                                    "argument": {
+                                      "type": "CallExpression",
+                                      "start": 845,
+                                      "end": 889,
+                                      "loc": {
+                                        "start": {
+                                          "line": 24,
+                                          "column": 8
+                                        },
+                                        "end": {
+                                          "line": 24,
+                                          "column": 52
+                                        }
+                                      },
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "start": 845,
+                                        "end": 872,
+                                        "loc": {
+                                          "start": {
+                                            "line": 24,
+                                            "column": 8
+                                          },
+                                          "end": {
+                                            "line": 24,
+                                            "column": 35
+                                          }
+                                        },
+                                        "object": {
+                                          "type": "Identifier",
+                                          "start": 845,
+                                          "end": 857,
+                                          "loc": {
+                                            "start": {
+                                              "line": 24,
+                                              "column": 8
+                                            },
+                                            "end": {
+                                              "line": 24,
+                                              "column": 20
+                                            },
+                                            "identifierName": "configFields"
+                                          },
+                                          "name": "configFields"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "start": 858,
+                                          "end": 872,
+                                          "loc": {
+                                            "start": {
+                                              "line": 24,
+                                              "column": 21
+                                            },
+                                            "end": {
+                                              "line": 24,
+                                              "column": 35
+                                            },
+                                            "identifierName": "hasOwnProperty"
+                                          },
+                                          "name": "hasOwnProperty"
+                                        },
+                                        "computed": false
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Identifier",
+                                          "start": 873,
+                                          "end": 888,
+                                          "loc": {
+                                            "start": {
+                                              "line": 24,
+                                              "column": 36
+                                            },
+                                            "end": {
+                                              "line": 24,
+                                              "column": 51
+                                            },
+                                            "identifierName": "configDefaultId"
+                                          },
+                                          "name": "configDefaultId"
+                                        }
+                                      ]
+                                    },
+                                    "extra": {
+                                      "parenthesizedArgument": false
+                                    }
+                                  },
+                                  "consequent": {
+                                    "type": "BlockStatement",
+                                    "start": 890,
+                                    "end": 969,
+                                    "loc": {
+                                      "start": {
+                                        "line": 24,
+                                        "column": 53
+                                      },
+                                      "end": {
+                                        "line": 26,
+                                        "column": 3
+                                      }
+                                    },
+                                    "body": [
+                                      {
+                                        "type": "ExpressionStatement",
+                                        "start": 895,
+                                        "end": 965,
+                                        "loc": {
+                                          "start": {
+                                            "line": 25,
+                                            "column": 3
+                                          },
+                                          "end": {
+                                            "line": 25,
+                                            "column": 73
+                                          }
+                                        },
+                                        "expression": {
+                                          "type": "AssignmentExpression",
+                                          "start": 895,
+                                          "end": 964,
+                                          "loc": {
+                                            "start": {
+                                              "line": 25,
+                                              "column": 3
+                                            },
+                                            "end": {
+                                              "line": 25,
+                                              "column": 72
+                                            }
+                                          },
+                                          "operator": "=",
+                                          "left": {
+                                            "type": "MemberExpression",
+                                            "start": 895,
+                                            "end": 924,
+                                            "loc": {
+                                              "start": {
+                                                "line": 25,
+                                                "column": 3
+                                              },
+                                              "end": {
+                                                "line": 25,
+                                                "column": 32
+                                              }
+                                            },
+                                            "object": {
+                                              "type": "Identifier",
+                                              "start": 895,
+                                              "end": 907,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 25,
+                                                  "column": 3
+                                                },
+                                                "end": {
+                                                  "line": 25,
+                                                  "column": 15
+                                                },
+                                                "identifierName": "configFields"
+                                              },
+                                              "name": "configFields"
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "start": 908,
+                                              "end": 923,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 25,
+                                                  "column": 16
+                                                },
+                                                "end": {
+                                                  "line": 25,
+                                                  "column": 31
+                                                },
+                                                "identifierName": "configDefaultId"
+                                              },
+                                              "name": "configDefaultId"
+                                            },
+                                            "computed": true
+                                          },
+                                          "right": {
+                                            "type": "MemberExpression",
+                                            "start": 927,
+                                            "end": 964,
+                                            "loc": {
+                                              "start": {
+                                                "line": 25,
+                                                "column": 35
+                                              },
+                                              "end": {
+                                                "line": 25,
+                                                "column": 72
+                                              }
+                                            },
+                                            "object": {
+                                              "type": "Identifier",
+                                              "start": 927,
+                                              "end": 947,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 25,
+                                                  "column": 35
+                                                },
+                                                "end": {
+                                                  "line": 25,
+                                                  "column": 55
+                                                },
+                                                "identifierName": "configFieldsDefaults"
+                                              },
+                                              "name": "configFieldsDefaults"
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "start": 948,
+                                              "end": 963,
+                                              "loc": {
+                                                "start": {
+                                                  "line": 25,
+                                                  "column": 56
+                                                },
+                                                "end": {
+                                                  "line": 25,
+                                                  "column": 71
+                                                },
+                                                "identifierName": "configDefaultId"
+                                              },
+                                              "name": "configDefaultId"
+                                            },
+                                            "computed": true
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "directives": []
+                                  },
+                                  "alternate": null
+                                }
+                              ],
+                              "directives": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "start": 977,
+                      "end": 1137,
+                      "loc": {
+                        "start": {
+                          "line": 29,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 32,
+                          "column": 4
+                        }
+                      },
+                      "expression": {
+                        "type": "CallExpression",
+                        "start": 977,
+                        "end": 1136,
+                        "loc": {
+                          "start": {
+                            "line": 29,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 32,
+                            "column": 3
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 977,
+                          "end": 1012,
+                          "loc": {
+                            "start": {
+                              "line": 29,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 29,
+                              "column": 36
+                            }
+                          },
+                          "object": {
+                            "type": "CallExpression",
+                            "start": 977,
+                            "end": 1004,
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 1
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 28
+                              }
+                            },
+                            "callee": {
+                              "type": "MemberExpression",
+                              "start": 977,
+                              "end": 988,
+                              "loc": {
+                                "start": {
+                                  "line": 29,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 29,
+                                  "column": 12
+                                }
+                              },
+                              "object": {
+                                "type": "Identifier",
+                                "start": 977,
+                                "end": 983,
+                                "loc": {
+                                  "start": {
+                                    "line": 29,
+                                    "column": 1
+                                  },
+                                  "end": {
+                                    "line": 29,
+                                    "column": 7
+                                  },
+                                  "identifierName": "Object"
+                                },
+                                "name": "Object"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "start": 984,
+                                "end": 988,
+                                "loc": {
+                                  "start": {
+                                    "line": 29,
+                                    "column": 8
+                                  },
+                                  "end": {
+                                    "line": 29,
+                                    "column": 12
+                                  },
+                                  "identifierName": "keys"
+                                },
+                                "name": "keys"
+                              },
+                              "computed": false
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "start": 990,
+                                "end": 1002,
+                                "loc": {
+                                  "start": {
+                                    "line": 29,
+                                    "column": 14
+                                  },
+                                  "end": {
+                                    "line": 29,
+                                    "column": 26
+                                  },
+                                  "identifierName": "configFields"
+                                },
+                                "name": "configFields"
+                              }
+                            ]
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 1005,
+                            "end": 1012,
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 29
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 36
+                              },
+                              "identifierName": "forEach"
+                            },
+                            "name": "forEach"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "ArrowFunctionExpression",
+                            "start": 1013,
+                            "end": 1135,
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 37
+                              },
+                              "end": {
+                                "line": 32,
+                                "column": 2
+                              }
+                            },
+                            "id": null,
+                            "generator": false,
+                            "expression": false,
+                            "async": false,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "start": 1013,
+                                "end": 1026,
+                                "loc": {
+                                  "start": {
+                                    "line": 29,
+                                    "column": 37
+                                  },
+                                  "end": {
+                                    "line": 29,
+                                    "column": 50
+                                  },
+                                  "identifierName": "configFieldId"
+                                },
+                                "name": "configFieldId"
+                              }
+                            ],
+                            "body": {
+                              "type": "BlockStatement",
+                              "start": 1031,
+                              "end": 1135,
+                              "loc": {
+                                "start": {
+                                  "line": 29,
+                                  "column": 55
+                                },
+                                "end": {
+                                  "line": 32,
+                                  "column": 2
+                                }
+                              },
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "start": 1035,
+                                  "end": 1082,
+                                  "loc": {
+                                    "start": {
+                                      "line": 30,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 30,
+                                      "column": 49
+                                    }
+                                  },
+                                  "expression": {
+                                    "type": "AssignmentExpression",
+                                    "start": 1035,
+                                    "end": 1081,
+                                    "loc": {
+                                      "start": {
+                                        "line": 30,
+                                        "column": 2
+                                      },
+                                      "end": {
+                                        "line": 30,
+                                        "column": 48
+                                      }
+                                    },
+                                    "operator": "=",
+                                    "left": {
+                                      "type": "MemberExpression",
+                                      "start": 1035,
+                                      "end": 1065,
+                                      "loc": {
+                                        "start": {
+                                          "line": 30,
+                                          "column": 2
+                                        },
+                                        "end": {
+                                          "line": 30,
+                                          "column": 32
+                                        }
+                                      },
+                                      "object": {
+                                        "type": "MemberExpression",
+                                        "start": 1035,
+                                        "end": 1062,
+                                        "loc": {
+                                          "start": {
+                                            "line": 30,
+                                            "column": 2
+                                          },
+                                          "end": {
+                                            "line": 30,
+                                            "column": 29
+                                          }
+                                        },
+                                        "object": {
+                                          "type": "Identifier",
+                                          "start": 1035,
+                                          "end": 1047,
+                                          "loc": {
+                                            "start": {
+                                              "line": 30,
+                                              "column": 2
+                                            },
+                                            "end": {
+                                              "line": 30,
+                                              "column": 14
+                                            },
+                                            "identifierName": "configFields"
+                                          },
+                                          "name": "configFields"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "start": 1048,
+                                          "end": 1061,
+                                          "loc": {
+                                            "start": {
+                                              "line": 30,
+                                              "column": 15
+                                            },
+                                            "end": {
+                                              "line": 30,
+                                              "column": 28
+                                            },
+                                            "identifierName": "configFieldId"
+                                          },
+                                          "name": "configFieldId"
+                                        },
+                                        "computed": true
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "start": 1063,
+                                        "end": 1065,
+                                        "loc": {
+                                          "start": {
+                                            "line": 30,
+                                            "column": 30
+                                          },
+                                          "end": {
+                                            "line": 30,
+                                            "column": 32
+                                          },
+                                          "identifierName": "id"
+                                        },
+                                        "name": "id"
+                                      },
+                                      "computed": false
+                                    },
+                                    "right": {
+                                      "type": "Identifier",
+                                      "start": 1068,
+                                      "end": 1081,
+                                      "loc": {
+                                        "start": {
+                                          "line": 30,
+                                          "column": 35
+                                        },
+                                        "end": {
+                                          "line": 30,
+                                          "column": 48
+                                        },
+                                        "identifierName": "configFieldId"
+                                      },
+                                      "name": "configFieldId"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "start": 1085,
+                                  "end": 1132,
+                                  "loc": {
+                                    "start": {
+                                      "line": 31,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 31,
+                                      "column": 49
+                                    }
+                                  },
+                                  "expression": {
+                                    "type": "AssignmentExpression",
+                                    "start": 1085,
+                                    "end": 1131,
+                                    "loc": {
+                                      "start": {
+                                        "line": 31,
+                                        "column": 2
+                                      },
+                                      "end": {
+                                        "line": 31,
+                                        "column": 48
+                                      }
+                                    },
+                                    "operator": "=",
+                                    "left": {
+                                      "type": "MemberExpression",
+                                      "start": 1085,
+                                      "end": 1115,
+                                      "loc": {
+                                        "start": {
+                                          "line": 31,
+                                          "column": 2
+                                        },
+                                        "end": {
+                                          "line": 31,
+                                          "column": 32
+                                        }
+                                      },
+                                      "object": {
+                                        "type": "MemberExpression",
+                                        "start": 1085,
+                                        "end": 1112,
+                                        "loc": {
+                                          "start": {
+                                            "line": 31,
+                                            "column": 2
+                                          },
+                                          "end": {
+                                            "line": 31,
+                                            "column": 29
+                                          }
+                                        },
+                                        "object": {
+                                          "type": "Identifier",
+                                          "start": 1085,
+                                          "end": 1097,
+                                          "loc": {
+                                            "start": {
+                                              "line": 31,
+                                              "column": 2
+                                            },
+                                            "end": {
+                                              "line": 31,
+                                              "column": 14
+                                            },
+                                            "identifierName": "configFields"
+                                          },
+                                          "name": "configFields"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "start": 1098,
+                                          "end": 1111,
+                                          "loc": {
+                                            "start": {
+                                              "line": 31,
+                                              "column": 15
+                                            },
+                                            "end": {
+                                              "line": 31,
+                                              "column": 28
+                                            },
+                                            "identifierName": "configFieldId"
+                                          },
+                                          "name": "configFieldId"
+                                        },
+                                        "computed": true
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "start": 1113,
+                                        "end": 1115,
+                                        "loc": {
+                                          "start": {
+                                            "line": 31,
+                                            "column": 30
+                                          },
+                                          "end": {
+                                            "line": 31,
+                                            "column": 32
+                                          },
+                                          "identifierName": "ID"
+                                        },
+                                        "name": "ID"
+                                      },
+                                      "computed": false
+                                    },
+                                    "right": {
+                                      "type": "Identifier",
+                                      "start": 1118,
+                                      "end": 1131,
+                                      "loc": {
+                                        "start": {
+                                          "line": 31,
+                                          "column": 35
+                                        },
+                                        "end": {
+                                          "line": 31,
+                                          "column": 48
+                                        },
+                                        "identifierName": "configFieldId"
+                                      },
+                                      "name": "configFieldId"
+                                    }
+                                  }
+                                }
+                              ],
+                              "directives": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "ReturnStatement",
+                      "start": 1140,
+                      "end": 1160,
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 21
+                        }
+                      },
+                      "argument": {
+                        "type": "Identifier",
+                        "start": 1147,
+                        "end": 1159,
+                        "loc": {
+                          "start": {
+                            "line": 34,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 34,
+                            "column": 20
+                          },
+                          "identifierName": "configFields"
+                        },
+                        "name": "configFields"
+                      }
+                    }
+                  ],
+                  "directives": []
+                }
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * Prepare a collection of config fields\n *\n * Optionally merges with default config fields\n * Optionally sets values from a Map of config values\n *\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.\n * @returns {Object}\n ",
+              "start": 57,
+              "end": 426,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 0
+                },
+                "end": {
+                  "line": 11,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "trailingComments": []
+        },
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * Prepare a collection of config fields\n *\n * Optionally merges with default config fields\n * Optionally sets values from a Map of config values\n *\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.\n * @returns {Object}\n ",
+            "start": 57,
+            "end": 426,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 11,
+                "column": 3
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "directives": []
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Prepare a collection of config fields\n *\n * Optionally merges with default config fields\n * Optionally sets values from a Map of config values\n *\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.\n * @returns {Object}\n ",
+      "start": 57,
+      "end": 426,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": {
+        "label": "import",
+        "keyword": "import",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "import",
+      "start": 0,
+      "end": 6,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 7,
+      "end": 8,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 7
+        },
+        "end": {
+          "line": 1,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldFactory",
+      "start": 8,
+      "end": 26,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 8
+        },
+        "end": {
+          "line": 1,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 26,
+      "end": 27,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 26
+        },
+        "end": {
+          "line": 1,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 28,
+      "end": 32,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 28
+        },
+        "end": {
+          "line": 1,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./configFieldFactory",
+      "start": 33,
+      "end": 55,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 33
+        },
+        "end": {
+          "line": 1,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 55,
+      "end": 56,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 55
+        },
+        "end": {
+          "line": 1,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Prepare a collection of config fields\n *\n * Optionally merges with default config fields\n * Optionally sets values from a Map of config values\n *\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.\n * @returns {Object}\n ",
+      "start": 57,
+      "end": 426,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 427,
+      "end": 433,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "const",
+        "keyword": "const",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "const",
+      "start": 434,
+      "end": 439,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 7
+        },
+        "end": {
+          "line": 12,
+          "column": 12
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldsFactory",
+      "start": 440,
+      "end": 459,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 13
+        },
+        "end": {
+          "line": 12,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 460,
+      "end": 461,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 33
+        },
+        "end": {
+          "line": 12,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 462,
+      "end": 463,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 35
+        },
+        "end": {
+          "line": 12,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 463,
+      "end": 475,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 36
+        },
+        "end": {
+          "line": 12,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 475,
+      "end": 476,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 48
+        },
+        "end": {
+          "line": 12,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldsDefaults",
+      "start": 477,
+      "end": 497,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 50
+        },
+        "end": {
+          "line": 12,
+          "column": 70
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 498,
+      "end": 499,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 71
+        },
+        "end": {
+          "line": 12,
+          "column": 72
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 500,
+      "end": 501,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 73
+        },
+        "end": {
+          "line": 12,
+          "column": 74
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 501,
+      "end": 502,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 74
+        },
+        "end": {
+          "line": 12,
+          "column": 75
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 504,
+      "end": 505,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 77
+        },
+        "end": {
+          "line": 12,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=>",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 506,
+      "end": 508,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 79
+        },
+        "end": {
+          "line": 12,
+          "column": 81
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 509,
+      "end": 510,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 82
+        },
+        "end": {
+          "line": 12,
+          "column": 83
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "Object",
+      "start": 512,
+      "end": 518,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 518,
+      "end": 519,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 7
+        },
+        "end": {
+          "line": 13,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "keys",
+      "start": 519,
+      "end": 523,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 8
+        },
+        "end": {
+          "line": 13,
+          "column": 12
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 523,
+      "end": 524,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 12
+        },
+        "end": {
+          "line": 13,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 525,
+      "end": 537,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 14
+        },
+        "end": {
+          "line": 13,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 538,
+      "end": 539,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 27
+        },
+        "end": {
+          "line": 13,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 539,
+      "end": 540,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 28
+        },
+        "end": {
+          "line": 13,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "forEach",
+      "start": 540,
+      "end": 547,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 29
+        },
+        "end": {
+          "line": 13,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 547,
+      "end": 548,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 36
+        },
+        "end": {
+          "line": 13,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 549,
+      "end": 562,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 38
+        },
+        "end": {
+          "line": 13,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=>",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 563,
+      "end": 565,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 52
+        },
+        "end": {
+          "line": 13,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 566,
+      "end": 567,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 55
+        },
+        "end": {
+          "line": 13,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "if",
+        "keyword": "if",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "if",
+      "start": 570,
+      "end": 572,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 14,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 572,
+      "end": 573,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 4
+        },
+        "end": {
+          "line": 14,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldsDefaults",
+      "start": 574,
+      "end": 594,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 6
+        },
+        "end": {
+          "line": 14,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 594,
+      "end": 595,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 26
+        },
+        "end": {
+          "line": 14,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "hasOwnProperty",
+      "start": 595,
+      "end": 609,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 27
+        },
+        "end": {
+          "line": 14,
+          "column": 41
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 609,
+      "end": 610,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 41
+        },
+        "end": {
+          "line": 14,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 610,
+      "end": 623,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 42
+        },
+        "end": {
+          "line": 14,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 623,
+      "end": 624,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 55
+        },
+        "end": {
+          "line": 14,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 624,
+      "end": 625,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 56
+        },
+        "end": {
+          "line": 14,
+          "column": 57
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 625,
+      "end": 626,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 57
+        },
+        "end": {
+          "line": 14,
+          "column": 58
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 630,
+      "end": 642,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 3
+        },
+        "end": {
+          "line": 15,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 642,
+      "end": 643,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 15
+        },
+        "end": {
+          "line": 15,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 643,
+      "end": 656,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 16
+        },
+        "end": {
+          "line": 15,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 656,
+      "end": 657,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 29
+        },
+        "end": {
+          "line": 15,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 658,
+      "end": 659,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 31
+        },
+        "end": {
+          "line": 15,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldFactory",
+      "start": 660,
+      "end": 678,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 33
+        },
+        "end": {
+          "line": 15,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 678,
+      "end": 679,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 51
+        },
+        "end": {
+          "line": 15,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 684,
+      "end": 696,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 4
+        },
+        "end": {
+          "line": 16,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 696,
+      "end": 697,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 16
+        },
+        "end": {
+          "line": 16,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 697,
+      "end": 710,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 17
+        },
+        "end": {
+          "line": 16,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 710,
+      "end": 711,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 30
+        },
+        "end": {
+          "line": 16,
+          "column": 31
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 711,
+      "end": 712,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 31
+        },
+        "end": {
+          "line": 16,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldsDefaults",
+      "start": 717,
+      "end": 737,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 4
+        },
+        "end": {
+          "line": 17,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 737,
+      "end": 738,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 24
+        },
+        "end": {
+          "line": 17,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 738,
+      "end": 751,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 25
+        },
+        "end": {
+          "line": 17,
+          "column": 38
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 751,
+      "end": 752,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 38
+        },
+        "end": {
+          "line": 17,
+          "column": 39
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 756,
+      "end": 757,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 3
+        },
+        "end": {
+          "line": 18,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 757,
+      "end": 758,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 4
+        },
+        "end": {
+          "line": 18,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 762,
+      "end": 763,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 2
+        },
+        "end": {
+          "line": 20,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 765,
+      "end": 766,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 1
+        },
+        "end": {
+          "line": 21,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 766,
+      "end": 767,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 2
+        },
+        "end": {
+          "line": 21,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 767,
+      "end": 768,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 3
+        },
+        "end": {
+          "line": 21,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "Object",
+      "start": 771,
+      "end": 777,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 1
+        },
+        "end": {
+          "line": 23,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 777,
+      "end": 778,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 7
+        },
+        "end": {
+          "line": 23,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "keys",
+      "start": 778,
+      "end": 782,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 8
+        },
+        "end": {
+          "line": 23,
+          "column": 12
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 782,
+      "end": 783,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 12
+        },
+        "end": {
+          "line": 23,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldsDefaults",
+      "start": 784,
+      "end": 804,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 14
+        },
+        "end": {
+          "line": 23,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 805,
+      "end": 806,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 35
+        },
+        "end": {
+          "line": 23,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 806,
+      "end": 807,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 36
+        },
+        "end": {
+          "line": 23,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "forEach",
+      "start": 807,
+      "end": 814,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 37
+        },
+        "end": {
+          "line": 23,
+          "column": 44
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 814,
+      "end": 815,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 44
+        },
+        "end": {
+          "line": 23,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configDefaultId",
+      "start": 816,
+      "end": 831,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 46
+        },
+        "end": {
+          "line": 23,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=>",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 832,
+      "end": 834,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 62
+        },
+        "end": {
+          "line": 23,
+          "column": 64
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 835,
+      "end": 836,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 65
+        },
+        "end": {
+          "line": 23,
+          "column": 66
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "if",
+        "keyword": "if",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "if",
+      "start": 839,
+      "end": 841,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 2
+        },
+        "end": {
+          "line": 24,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 841,
+      "end": 842,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 4
+        },
+        "end": {
+          "line": 24,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "prefix",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": true,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "!",
+      "start": 843,
+      "end": 844,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 6
+        },
+        "end": {
+          "line": 24,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 845,
+      "end": 857,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 8
+        },
+        "end": {
+          "line": 24,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 857,
+      "end": 858,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 20
+        },
+        "end": {
+          "line": 24,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "hasOwnProperty",
+      "start": 858,
+      "end": 872,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 21
+        },
+        "end": {
+          "line": 24,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 872,
+      "end": 873,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 35
+        },
+        "end": {
+          "line": 24,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configDefaultId",
+      "start": 873,
+      "end": 888,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 36
+        },
+        "end": {
+          "line": 24,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 888,
+      "end": 889,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 51
+        },
+        "end": {
+          "line": 24,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 889,
+      "end": 890,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 52
+        },
+        "end": {
+          "line": 24,
+          "column": 53
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 890,
+      "end": 891,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 53
+        },
+        "end": {
+          "line": 24,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 895,
+      "end": 907,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 3
+        },
+        "end": {
+          "line": 25,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 907,
+      "end": 908,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 15
+        },
+        "end": {
+          "line": 25,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configDefaultId",
+      "start": 908,
+      "end": 923,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 16
+        },
+        "end": {
+          "line": 25,
+          "column": 31
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 923,
+      "end": 924,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 31
+        },
+        "end": {
+          "line": 25,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 925,
+      "end": 926,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 33
+        },
+        "end": {
+          "line": 25,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldsDefaults",
+      "start": 927,
+      "end": 947,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 35
+        },
+        "end": {
+          "line": 25,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 947,
+      "end": 948,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 55
+        },
+        "end": {
+          "line": 25,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configDefaultId",
+      "start": 948,
+      "end": 963,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 56
+        },
+        "end": {
+          "line": 25,
+          "column": 71
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 963,
+      "end": 964,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 71
+        },
+        "end": {
+          "line": 25,
+          "column": 72
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 964,
+      "end": 965,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 72
+        },
+        "end": {
+          "line": 25,
+          "column": 73
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 968,
+      "end": 969,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 2
+        },
+        "end": {
+          "line": 26,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 971,
+      "end": 972,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 1
+        },
+        "end": {
+          "line": 27,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 972,
+      "end": 973,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 2
+        },
+        "end": {
+          "line": 27,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 973,
+      "end": 974,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 3
+        },
+        "end": {
+          "line": 27,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "Object",
+      "start": 977,
+      "end": 983,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 1
+        },
+        "end": {
+          "line": 29,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 983,
+      "end": 984,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 7
+        },
+        "end": {
+          "line": 29,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "keys",
+      "start": 984,
+      "end": 988,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 8
+        },
+        "end": {
+          "line": 29,
+          "column": 12
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 988,
+      "end": 989,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 12
+        },
+        "end": {
+          "line": 29,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 990,
+      "end": 1002,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 14
+        },
+        "end": {
+          "line": 29,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1003,
+      "end": 1004,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 27
+        },
+        "end": {
+          "line": 29,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1004,
+      "end": 1005,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 28
+        },
+        "end": {
+          "line": 29,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "forEach",
+      "start": 1005,
+      "end": 1012,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 29
+        },
+        "end": {
+          "line": 29,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1012,
+      "end": 1013,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 36
+        },
+        "end": {
+          "line": 29,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 1013,
+      "end": 1026,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 37
+        },
+        "end": {
+          "line": 29,
+          "column": 50
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=>",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1028,
+      "end": 1030,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 52
+        },
+        "end": {
+          "line": 29,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1031,
+      "end": 1032,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 55
+        },
+        "end": {
+          "line": 29,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 1035,
+      "end": 1047,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 2
+        },
+        "end": {
+          "line": 30,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1047,
+      "end": 1048,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 14
+        },
+        "end": {
+          "line": 30,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 1048,
+      "end": 1061,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 15
+        },
+        "end": {
+          "line": 30,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1061,
+      "end": 1062,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 28
+        },
+        "end": {
+          "line": 30,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1062,
+      "end": 1063,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 29
+        },
+        "end": {
+          "line": 30,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "id",
+      "start": 1063,
+      "end": 1065,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 30
+        },
+        "end": {
+          "line": 30,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 1066,
+      "end": 1067,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 33
+        },
+        "end": {
+          "line": 30,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 1068,
+      "end": 1081,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 35
+        },
+        "end": {
+          "line": 30,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1081,
+      "end": 1082,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 48
+        },
+        "end": {
+          "line": 30,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 1085,
+      "end": 1097,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 2
+        },
+        "end": {
+          "line": 31,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1097,
+      "end": 1098,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 14
+        },
+        "end": {
+          "line": 31,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 1098,
+      "end": 1111,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 15
+        },
+        "end": {
+          "line": 31,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1111,
+      "end": 1112,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 28
+        },
+        "end": {
+          "line": 31,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1112,
+      "end": 1113,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 29
+        },
+        "end": {
+          "line": 31,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "ID",
+      "start": 1113,
+      "end": 1115,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 30
+        },
+        "end": {
+          "line": 31,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 1116,
+      "end": 1117,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 33
+        },
+        "end": {
+          "line": 31,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFieldId",
+      "start": 1118,
+      "end": 1131,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 35
+        },
+        "end": {
+          "line": 31,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1131,
+      "end": 1132,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 48
+        },
+        "end": {
+          "line": 31,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1134,
+      "end": 1135,
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 1
+        },
+        "end": {
+          "line": 32,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1135,
+      "end": 1136,
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 2
+        },
+        "end": {
+          "line": 32,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1136,
+      "end": 1137,
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 3
+        },
+        "end": {
+          "line": 32,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "return",
+        "keyword": "return",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "return",
+      "start": 1140,
+      "end": 1146,
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 1
+        },
+        "end": {
+          "line": 34,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "configFields",
+      "start": 1147,
+      "end": 1159,
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 8
+        },
+        "end": {
+          "line": 34,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1159,
+      "end": 1160,
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 20
+        },
+        "end": {
+          "line": 34,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1161,
+      "end": 1162,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 0
+        },
+        "end": {
+          "line": 35,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1162,
+      "end": 1163,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 1
+        },
+        "end": {
+          "line": 35,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1164,
+      "end": 1164,
+      "loc": {
+        "start": {
+          "line": 36,
+          "column": 0
+        },
+        "end": {
+          "line": 36,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

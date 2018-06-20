@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | Caldera Processor UI</title>
+  <title data-ice="title">src/App.js | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -78,23 +78,83 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/App.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import ReactDOM from &apos;react-dom&apos;;
-import &apos;./index.scss&apos;;
-import AppWithState from &apos;./AppWithState&apos;;
-import { Provider } from &apos;react-redux&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
+import PropTypes from &apos;prop-types&apos;;
+import {List} from &quot;./components/Processors/List&quot;;
+import {NewProcessor} from &quot;./components/Processors/NewProcessor&quot;;
 
+/**
+ * Encapsulates the entire processor UI
+ *
+ * @param {Object}props
+ * @returns {*}
+ * @constructor
+ */
+class App extends React.PureComponent {
+	render() {
+		return(
+			&lt;div className=&quot;caldera-forms-processors&quot;&gt;
+				&lt;List
+					form={this.props.form}
+					processors={this.props.processors}
+					onUpdateProcessor={this.props.onUpdateProcessor}
+					onRemoveProcessor={this.props.onRemoveProcessor}
+				/&gt;
+				&lt;NewProcessor
+					onNewProcessor={this.props.onNewProcessor}
+				/&gt;
+			&lt;/div&gt;
+		);
+	}
+}
 
-ReactDOM.render(
-	&lt;Provider store={processorsStore}&gt;
-		&lt;AppWithState /&gt;
-	&lt;/Provider&gt;,
-	document.getElementById(&apos;root&apos;)
-);
+/**
+ * Prop definitions for App component
+ * @see https://www.npmjs.com/package/prop-types
+ *
+ * @type {{processors: (shim|*), form: *, onAddProcessor: *, onNewProcessor: *, onRemoveProcessor: *, onUpdateProcessor: *}}
+ */
+App.propTypes = {
+	processors: PropTypes.instanceOf(Map).isRequired,
+	form: PropTypes.object.isRequired,
+	onAddProcessor: PropTypes.func.isRequired,
+	onNewProcessor: PropTypes.func.isRequired,
+	onRemoveProcessor: PropTypes.func.isRequired,
+	onUpdateProcessor: PropTypes.func.isRequired
+};
 
-</code></pre>
+/**
+ * Default props for App component
+ *
+ * @type {{processors: Map&lt;any, any&gt;, form: {ID: string, name: string, fields: {fld12: {ID: string, label: string, type: string}, fld22: {ID: string, label: string, type: string}, fld3: {ID: string, label: string, type: string}}}}}
+ */
+App.defaultProps = {
+	processors: new Map(),
+	form: {
+		ID: &apos;cf1&apos;,
+		name: &apos;Contact Form&apos;,
+		fields :{
+			fld12: {
+				ID: &apos;fld12&apos;,
+				label: &apos;First Name&apos;,
+				type: &apos;text&apos;
+			},
+			fld22: {
+				ID: &apos;fld22&apos;,
+				label: &apos;Last Name&apos;,
+				type: &apos;text&apos;
+			},
+			fld3: {
+				ID: &apos;fld3&apos;,
+				label: &apos;Email&apos;,
+				type: &apos;email&apos;
+			}
+		}
+	}
+};
+
+export default App;</code></pre>
 
 </div>
 
