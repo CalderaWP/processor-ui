@@ -23,15 +23,27 @@ exports[`Processor UI components Processor add button Renders with default label
 exports[`Processor UI components Processors list component renders with 1 processor 1`] = `
 <div>
   <div>
-    <p>
+    <em>
       p1
-    </p>
-    <p>
-      Main Email
-    </p>
-    <p>
-      email
-    </p>
+    </em>
+    <button
+      className={undefined}
+      onClick={[Function]}
+      style={undefined}
+    >
+      <span>
+        Edit Settings
+      </span>
+    </button>
+    <button
+      className={undefined}
+      onClick={[Function]}
+      style={undefined}
+    >
+      <span>
+        Remove Processor
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -39,15 +51,27 @@ exports[`Processor UI components Processors list component renders with 1 proces
 exports[`Processor UI components Processors list component renders with 2 processors 1`] = `
 <div>
   <div>
-    <p>
+    <em>
       p1
-    </p>
-    <p>
-      Main Email
-    </p>
-    <p>
-      email
-    </p>
+    </em>
+    <button
+      className={undefined}
+      onClick={[Function]}
+      style={undefined}
+    >
+      <span>
+        Edit Settings
+      </span>
+    </button>
+    <button
+      className={undefined}
+      onClick={[Function]}
+      style={undefined}
+    >
+      <span>
+        Remove Processor
+      </span>
+    </button>
   </div>
 </div>
 `;

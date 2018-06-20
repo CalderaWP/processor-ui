@@ -17,16 +17,26 @@ describe( 'Processor UI components', () => {
 	};
 	const processors = new Map();
 	processors.set( 'p1', emailProcessor );
+const form = {
+	ID: 'CF1',
+	fields: {
 
+	}
+}
 	describe( 'Processors list component', () => {
-		it.skip( 'renders with 1 processor', () => {
+		it( 'renders with 1 processor', () => {
 			const component = renderer.create(
-				<List processors={processors}/>
+				<List
+					form={form}
+					processors={processors}
+					onRemoveProcessor={() => {}}
+					onUpdateProcessor={() => {}}
+				/>
 			);
 			expect( component.toJSON( ) ).toMatchSnapshot();
 		});
 
-		it.skip( 'renders with 2 processors', () => {
+		it( 'renders with 2 processors', () => {
 			const twoProcessors = new Map();
 			twoProcessors.set( 'p1', emailProcessor );
 			twoProcessors.set( 'p2', {
@@ -36,7 +46,12 @@ describe( 'Processor UI components', () => {
 			} );
 
 			const component = renderer.create(
-				<List processors={processors}/>
+				<List
+					form={form}
+					processors={processors}
+					onRemoveProcessor={() => {}}
+					onUpdateProcessor={() => {}}
+				/>
 			);
 			expect( component.toJSON( ) ).toMatchSnapshot();
 		});
