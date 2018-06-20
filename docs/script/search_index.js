@@ -49,9 +49,9 @@ window.esdocSearchIndex = [
   ],
   [
     "@caldera-labs/processor-ui/src/components/processors/list.js~list",
-    "function/index.html#static-function-List",
+    "class/src/components/Processors/List.js~List.html",
     "<span>List</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processors/List.js</span>",
-    "function"
+    "class"
   ],
   [
     "@caldera-labs/processor-ui/src/state/actions.js~new_processor",
@@ -664,6 +664,24 @@ window.esdocSearchIndex = [
     "file/src/components/Processors/List.js.html",
     "src/components/Processors/List.js",
     "file"
+  ],
+  [
+    "src/components/processors/list.js~list#constructor",
+    "class/src/components/Processors/List.js~List.html#instance-constructor-constructor",
+    "src/components/Processors/List.js~List#constructor",
+    "method"
+  ],
+  [
+    "src/components/processors/list.js~list#render",
+    "class/src/components/Processors/List.js~List.html#instance-method-render",
+    "src/components/Processors/List.js~List#render",
+    "method"
+  ],
+  [
+    "src/components/processors/list.js~list#state",
+    "class/src/components/Processors/List.js~List.html#instance-member-state",
+    "src/components/Processors/List.js~List#state",
+    "member"
   ],
   [
     "src/components/processors/newprocessor.js",

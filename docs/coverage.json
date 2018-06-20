@@ -1,6 +1,6 @@
 {
-  "coverage": "78.33%",
-  "expectCount": 60,
+  "coverage": "74.6%",
+  "expectCount": 63,
   "actualCount": 47,
   "files": {
     "src/App.js": {
@@ -38,9 +38,13 @@
       ]
     },
     "src/components/Processors/List.js": {
-      "expectCount": 1,
+      "expectCount": 4,
       "actualCount": 1,
-      "undocumentLines": []
+      "undocumentLines": [
+        16,
+        18,
+        25
+      ]
     },
     "src/components/Processors/NewProcessor.js": {
       "expectCount": 1,
