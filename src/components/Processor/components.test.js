@@ -224,6 +224,97 @@ describe('Processor components', () => {
 			}
 		};
 
+		it( 'Renders with props', () => {
+			const component = renderer.create(
+				<Editor
+					processor={emailProcessor}
+					onUpdateProcessor={() => {}}
+					form={form}
+				/>
+			);
+			expect( component.toJSON() ).toMatchSnapshot();
+		});
+
+		describe( 'Processor Label', () => {
+			it( 'It set the label in the .processor-label div by ID if that is all it has', () => {
+				const wrapper = shallow(
+					<Editor
+						processor={{
+							ID: 'p22'
+						}}
+						onUpdateProcessor={() => {}}
+						form={form}
+					/>
+				);
+				expect( wrapper.find( '.processor-label').text() ).toBe('p22');
+			});
+
+			it( 'It  labels by ID if that is all it has', () => {
+				const component = new Editor({
+					processor: {
+						ID: 'p22'
+					},
+					form: form,
+					onUpdateProcessor: () => {}
+				});
+				expect( component.labelAs() ).toBe('p22');
+			});
+
+			it( 'If no label in .processor-label see type - ID ', () => {
+				const wrapper = shallow(
+					<Editor
+						processor={{
+							ID: 'p28',
+							type: 'email'
+						}}
+						onUpdateProcessor={() => {}}
+						form={form}
+					/>
+				);
+				expect( wrapper.find( '.processor-label').text() ).toBe('email - p28');
+			});
+
+			it( 'It  labels by type - ID if has type, but no label', () => {
+				const component = new Editor({
+					processor: {
+						ID: 'p29',
+						type: 'email'
+					},
+					form: form,
+					onUpdateProcessor: () => {}
+				});
+				expect( component.labelAs() ).toBe('email - p29');
+			});
+
+			it( 'If it has label shows it in .processor-label element ', () => {
+				const wrapper = shallow(
+					<Editor
+						processor={{
+							ID: 'p30',
+							type: 'email',
+							label: 'Email To Roy'
+						}}
+						onUpdateProcessor={() => {}}
+						form={form}
+					/>
+				);
+				expect( wrapper.find( '.processor-label').text() ).toBe('Email To Roy');
+			});
+
+			it( 'It  labels by type - ID if has type, but no label', () => {
+				const component = new Editor({
+					processor: {
+						ID: 'p31',
+						type: 'email',
+						label: 'Email To Roy'
+					},
+					form: form,
+					onUpdateProcessor: () => {}
+				});
+				expect( component.labelAs() ).toBe('Email To Roy');
+			});
+		});
+
 		it('renders with props', () => {
 			const component = renderer.create(
 				<Editor
@@ -366,6 +457,8 @@ describe('Processor components', () => {
 			wrapper.find( 'select' ).simulate( 'change', {target: { value: 'html' }})
 			expect( updateValue).toEqual('html');
 		});
+
+
 	});
 
 

@@ -24,7 +24,7 @@ exports[`Processor UI components Processors list component renders with 1 proces
 <div>
   <div>
     <em>
-      p1
+      EmailProcessorId
     </em>
     <button
       className={undefined}
@@ -52,7 +52,7 @@ exports[`Processor UI components Processors list component renders with 2 proces
 <div>
   <div>
     <em>
-      p1
+      EmailProcessorId
     </em>
     <button
       className={undefined}

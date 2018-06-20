@@ -14,6 +14,7 @@ export class Editor extends React.PureComponent {
 		this.changeType = this.changeType.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.configFields = this.configFields.bind(this);
+		this.labelAs = this.labelAs.bind(this);
 
 	}
 
@@ -83,6 +84,14 @@ export class Editor extends React.PureComponent {
 		});
 	}
 
+	labelAs(){
+		return this.props.processor.label
+			? this.props.processor.label
+			: this.props.processor.type
+				? `${this.props.processor.type} - ${this.props.processor.ID}`
+				: this.props.processor.ID;
+	}
+
 
 	render() {
 		let removeStyle = {
@@ -92,7 +101,7 @@ export class Editor extends React.PureComponent {
 		if ( this.state.hovered){
 			removeStyle.opacity = 1
 		}
-		const labelAs = this.props.label ? this.props.label : this.props.ID;
+
 		const options = [
 			{
 				label: 'Email',
@@ -110,7 +119,7 @@ export class Editor extends React.PureComponent {
 				//onMouseEnter={this.mouseEnter}
 				//onMouseLeave={this.mouseLeave}
 			>
-				<div>{labelAs}</div>
+				<div className={'processor-label'}>{this.labelAs()}</div>
 				<div>
 					Type: <span className={'processor-type'}>{this.props.processor.type}</span>
 				</div>
