@@ -10,7 +10,7 @@ import {NewProcessor} from "./components/Processors/NewProcessor";
  * @returns {*}
  * @constructor
  */
-class App extends React.PureComponent {
+class CalderaProcessors extends React.PureComponent {
 	render() {
 		return(
 			<div className="caldera-forms-processors">
@@ -29,12 +29,12 @@ class App extends React.PureComponent {
 }
 
 /**
- * Prop definitions for App component
+ * Prop definitions for CalderaProcessors component
  * @see https://www.npmjs.com/package/prop-types
  *
  * @type {{processors: (shim|*), form: *, onAddProcessor: *, onNewProcessor: *, onRemoveProcessor: *, onUpdateProcessor: *}}
  */
-App.propTypes = {
+CalderaProcessors.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
 	form: PropTypes.object.isRequired,
 	onAddProcessor: PropTypes.func.isRequired,
@@ -44,11 +44,11 @@ App.propTypes = {
 };
 
 /**
- * Default props for App component
+ * Default props for CalderaProcessors component
  *
  * @type {{processors: Map<any, any>, form: {ID: string, name: string, fields: {fld12: {ID: string, label: string, type: string}, fld22: {ID: string, label: string, type: string}, fld3: {ID: string, label: string, type: string}}}}}
  */
-App.defaultProps = {
+CalderaProcessors.defaultProps = {
 	processors: new Map(),
 	form: {
 		ID: 'cf1',
@@ -73,4 +73,4 @@ App.defaultProps = {
 	}
 };
 
-export default App;
+export default CalderaProcessors;

@@ -7,14 +7,14 @@ window.esdocSearchIndex = [
   ],
   [
     "@caldera-labs/processor-ui/src/app.js~app",
-    "class/src/App.js~App.html",
-    "<span>App</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/App.js</span>",
+    "class/src/CalderaProcessors.jsaProcessors.js~CalderaProcessors.html",
+    "<span>CalderaProcessors</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessors.jsaProcessors.js</span>",
     "class"
   ],
   [
     "@caldera-labs/processor-ui/src/appwithstate.js~appwithstate",
-    "variable/index.html#static-variable-AppWithState",
-    "<span>AppWithState</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/AppWithState.js</span>",
+    "variable/index.html#static-variable-CalderaProcessorsWithState",
+    "<span>CalderaProcessorsWithState</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessorsWithStatessorsWithState.js</span>",
     "variable"
   ],
   [
@@ -553,20 +553,20 @@ window.esdocSearchIndex = [
   ],
   [
     "src/app.js",
-    "file/src/App.js.html",
-    "src/App.js",
+    "file/src/CalderaProcessorsderaProcessors.js.html",
+    "src/CalderaProcessorsderaProcessors.js",
     "file"
   ],
   [
     "src/app.js~app#render",
-    "class/src/App.js~App.html#instance-method-render",
-    "src/App.js~App#render",
+    "class/src/CalderaProcessors.jsaProcessors.js~CalderaProcessors.html#instance-method-render",
+    "src/CalderaProcessorsderaProcessors.js~CalderaProcessors#render",
     "method"
   ],
   [
     "src/appwithstate.js",
-    "file/src/AppWithState.js.html",
-    "src/AppWithState.js",
+    "file/src/CalderaProcessorsWithStatessorsWithState.js.html",
+    "src/CalderaProcessorsWithStatessorsWithState.js",
     "file"
   ],
   [

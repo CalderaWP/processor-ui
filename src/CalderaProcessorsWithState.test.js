@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppWrapped} from './App';
-import App from './App';
-import AppWithState from './AppWithState';
+import CalderaProcessors from './CalderaProcessors';
+import CalderaProcessorsWithState from './CalderaProcessorsWithState';
 import { Provider } from 'react-redux';
 import {processorsStore} from './state/processorsStore';
 
-describe( 'App component', () => {
+describe( 'CalderaProcessors component', () => {
 	it('renders without crashing', () => {
 		function handler(){}
 
 		const div = document.createElement('div');
-		ReactDOM.render(<App
+		ReactDOM.render(<CalderaProcessors
 			processors={new Map()}
 			form={{ID: 'cf1', name: 'a', fields: {}}}
 			onAddProcessor={handler}
@@ -25,7 +24,7 @@ describe( 'App component', () => {
 
 		ReactDOM.render(
 			<Provider store={processorsStore}>
-				<AppWithState />
+				<CalderaProcessorsWithState />
 			</Provider>,
 			document.createElement('section')
 		);

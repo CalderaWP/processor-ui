@@ -29,8 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">App</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AppWithState">AppWithState</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">CalderaProcessors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processor">components/Processor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html">RemoveProcessorButton</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OpenEditorButton">OpenEditorButton</a></span></span></li>
@@ -82,14 +82,14 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
 import ReactDOM from &apos;react-dom&apos;;
 import &apos;./index.scss&apos;;
-import AppWithState from &apos;./AppWithState&apos;;
+import CalderaProcessorsWithState from &apos;./CalderaProcessorsWithState&apos;;
 import { Provider } from &apos;react-redux&apos;;
 import {processorsStore} from &apos;./state/processorsStore&apos;;
 
 
 ReactDOM.render(
 	&lt;Provider store={processorsStore}&gt;
-		&lt;AppWithState /&gt;
+		&lt;CalderaProcessorsWithState /&gt;
 	&lt;/Provider&gt;,
 	document.getElementById(&apos;root&apos;)
 );
