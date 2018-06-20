@@ -1,7 +1,7 @@
 import {configFieldFactory} from './configFieldFactory';
 import {configFieldsFactory} from './configFieldsFactory';
 import {processorFactory} from './processorFactory';
-
+import {processorTypes} from '../processors/processorTypes';
 
 
 describe('Processor factories', () => {
@@ -94,7 +94,7 @@ describe('Processor factories', () => {
 		});
 
 		it( 'Add defaults for email processors', () => {
-			const processor = processorFactory('p_l1', 'email',{
+			const processor = processorFactory('p_l1', processorTypes.emailProcessorType.TYPE,{
 				fromName: {
 					'value': 'Josh Pollock'
 				},
@@ -116,7 +116,7 @@ describe('Processor factories', () => {
 
 		it( 'Adds Id to result', () => {
 
-			const processor = processorFactory( 'cf-s-1', 'email', {
+			const processor = processorFactory( 'cf-s-1', processorTypes.emailProcessorType.TYPE, {
 				fromName: {
 					'value': 'Josh Pollock'
 				},
@@ -132,7 +132,7 @@ describe('Processor factories', () => {
 		});
 
 		it( 'Returns object of configFields', () => {
-			const processor = processorFactory( 'cf-s-2', 'email', {
+			const processor = processorFactory( 'cf-s-2', processorTypes.emailProcessorType.TYPE, {
 				fromName: {
 					'value': 'Josh Pollock'
 				},
@@ -150,7 +150,7 @@ describe('Processor factories', () => {
 
 		it( 'adds configDefaults', () => {
 
-			const processor = processorFactory( 'cf-s-3', 'email', {
+			const processor = processorFactory( 'cf-s-3', processorTypes.emailProcessorType.TYPE, {
 				fromName: {
 					'value': 'Josh Pollock'
 				},
@@ -168,7 +168,7 @@ describe('Processor factories', () => {
 
 		it( 'Keeps configField values in results', () => {
 
-			const processor = processorFactory( 'cf-s-1', 'email', {
+			const processor = processorFactory( 'cf-s-1', processorTypes.emailProcessorType.TYPE, {
 				fromName: {
 					'value': 'Josh Pollock'
 				},
@@ -181,7 +181,7 @@ describe('Processor factories', () => {
 				}
 			}  );
 
-			expect( processor.configFields.contentType.value  ).toBe( 'plain');
+			expect( processor.configFields.contentType.value  ).toBe( 'plain' );
 		});
 
 	});

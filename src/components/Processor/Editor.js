@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as CalderaComponents from '@caldera-labs/components';
 import classNames from 'classnames'
+import {processorTypesMap} from "../../factories/processorFactory";
+
 export class Editor extends React.PureComponent {
 	constructor(props) {
 		super(props);
@@ -110,17 +112,7 @@ export class Editor extends React.PureComponent {
 			removeStyle.opacity = 1
 		}
 
-		const options = [
-			{
-				label: 'Email',
-				value: 'email'
-			},
-			{
-				label: 'Redirect',
-				value: 'redirect'
-			}
 
-		];
 		return (
 			<div
 				className={ classNames(this.props.className, {
@@ -137,25 +129,6 @@ export class Editor extends React.PureComponent {
 				<div>
 					Type: <span className={'processor-type'}>{this.props.type}</span>
 				</div>
-				<select
-					className={'processor-type-chooser'}
-					onChange={this.changeType}
-					value={this.props.type}
-				>
-					<option/>
-					{options.map(option => {
-							return (
-								<option
-									key={option.value}
-									value={option.value}
-								>
-									{option.label}
-								</option>
-							);
-						}
-					)}
-				</select>
-
 				{this.props.type &&
 					<div
 						className={'processor-editor'}

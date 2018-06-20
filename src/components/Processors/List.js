@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {RemoveProcessorButton} from "../Processor/RemoveProcessorButton";
 import {Editor} from "../Processor/Editor";
 import {OpenEditorButton} from "../Processor/OpenEditorButton";
+import {TypeChooser} from "../Processor/TypeChooser";
 
 /**
  * Displays list of processors
@@ -28,6 +29,11 @@ export class List extends React.Component{
 			opened
 		});
 		this.props.onUpdateProcessor(updatedProcessor);
+		opened[updatedProcessor.ID]=true;
+
+		this.setState({
+			opened
+		});
 	}
 
 
@@ -54,21 +60,34 @@ export class List extends React.Component{
 								/>
 							}
 
-							<OpenEditorButton
-								isOpen={isOpen}
-								onClick={() =>{
-									let opened = this.state.opened;
-									if( ! opened.hasOwnProperty(processor.ID) ){
-										opened[processor.ID]=true;
-									}else{
-										opened[processor.ID] = !opened[processor.ID];
-									}
+							{processor.type &&
+								<OpenEditorButton
+									isOpen={isOpen}
+									onClick={() =>{
+										let opened = this.state.opened;
+										if( ! opened.hasOwnProperty(processor.ID) ){
+											opened[processor.ID]=true;
+										}else{
+											opened[processor.ID] = !opened[processor.ID];
+										}
 
-									this.setState({
-										opened
-									})
-								}}
-							/>
+										this.setState({
+											opened
+										})
+									}}
+								/>
+
+							}
+
+							{! processor.type &&
+								<TypeChooser
+									onUpdateProcessor={this.onUpdateProcessor}
+									ID={processor.ID}
+								/>
+
+							}
+
+
 							<RemoveProcessorButton
 								onClick={() => {
 									this.props.onRemoveProcessor(processor.ID);

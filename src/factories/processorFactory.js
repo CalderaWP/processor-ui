@@ -1,18 +1,11 @@
-import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
 import {configFieldsFactory} from './configFieldsFactory';
+import {processorTypes} from '../processors/processorTypes';
 
-export const processorTypes = new Map()
-	.set('email', {
-		defaultConfigFields: emailDefaultConfigFields
-	} );
-
-processorTypes.set( 'redirect', {
-	url: {
-		'label': 'Redirect Url',
-		'desc': 'URL to redirect to',
-		'type': 'text',
-	},
+export const processorTypesMap = new Map();
+Object.values(processorTypes).forEach( type =>{
+	processorTypesMap.set(type.TYPE, type);
 });
+
 
 /**
  * Get the configuration for a processor
@@ -31,10 +24,10 @@ export const processorFactory = ( ID, type, configFields = {} ) =>  {
 		type,
 		configFields
 	};
-	if( processorTypes.has( type ) ){
+	if( processorTypesMap.has( type ) ){
 		const configFieldDefaults =
-			processorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )
-				? processorTypes.get( type ).defaultConfigFields
+			processorTypesMap.get( type ).hasOwnProperty( 'defaultConfigFields' )
+				? processorTypesMap.get( type ).defaultConfigFields
 				: {};
 
 		processor.configFields = configFieldsFactory(configFields,configFieldDefaults);

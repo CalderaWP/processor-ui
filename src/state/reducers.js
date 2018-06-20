@@ -99,6 +99,9 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 
 		return clone(state);
 	case UPDATE_PROCESSOR:
+		if( action.processor.type !== state.get( action.processor.ID ).type ){
+			action.processor.configFields = {};
+		}
 		return state.set( action.processor.ID, processorFactory(
 			action.processor.ID,
 			action.processor.type,

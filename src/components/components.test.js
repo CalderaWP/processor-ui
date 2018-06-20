@@ -5,7 +5,7 @@ import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {List} from './Processors/List';
 import {NewProcessor} from './Processors/NewProcessor';
-import {Editor} from "./Processor/Editor";
+import {Editor} from './Processor/Editor';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -7,33 +7,16 @@ exports[`Processor components Editor Renders with props 1`] = `
   <div
     className="processor-label"
   >
-    email - p1
+    caldera-forms/procesor/email - p1
   </div>
   <div>
     Type: 
     <span
       className="processor-type"
     >
-      email
+      caldera-forms/procesor/email
     </span>
   </div>
-  <select
-    className="processor-type-chooser"
-    onChange={[Function]}
-    value="email"
-  >
-    <option />
-    <option
-      value="email"
-    >
-      Email
-    </option>
-    <option
-      value="redirect"
-    >
-      Redirect
-    </option>
-  </select>
   <div
     className="processor-editor"
   >
@@ -124,33 +107,16 @@ exports[`Processor components Editor renders with props 1`] = `
   <div
     className="processor-label"
   >
-    email - p1
+    caldera-forms/procesor/email - p1
   </div>
   <div>
     Type: 
     <span
       className="processor-type"
     >
-      email
+      caldera-forms/procesor/email
     </span>
   </div>
-  <select
-    className="processor-type-chooser"
-    onChange={[Function]}
-    value="email"
-  >
-    <option />
-    <option
-      value="email"
-    >
-      Email
-    </option>
-    <option
-      value="redirect"
-    >
-      Redirect
-    </option>
-  </select>
   <div
     className="processor-editor"
   >
@@ -280,6 +246,26 @@ exports[`Processor components Remove Processor Button Renders without label prop
     Remove Processor
   </span>
 </button>
+`;
+
+exports[`Processor components TypeChooser Renders props 1`] = `
+<select
+  className="processor-type-chooser"
+  onChange={[Function]}
+  value={null}
+>
+  <option />
+  <option
+    value="caldera-forms/procesor/email"
+  >
+    Email
+  </option>
+  <option
+    value="caldera-forms/processor/redirect"
+  >
+    Redirect After Form Submission
+  </option>
+</select>
 `;
 
 exports[`Using RenderGroup RenderGroup snapshot 1`] = `

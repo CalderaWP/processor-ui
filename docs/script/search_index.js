@@ -223,8 +223,8 @@ window.esdocSearchIndex = [
   ],
   [
     "@caldera-labs/processor-ui/src/factories/processorfactory.js~processortypes",
-    "variable/index.html#static-variable-processorTypes",
-    "<span>processorTypes</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/processorFactory.js</span>",
+    "variable/index.html#static-variable-processorTypesMap",
+    "<span>processorTypesMap</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/processorFactory.js</span>",
     "variable"
   ],
   [

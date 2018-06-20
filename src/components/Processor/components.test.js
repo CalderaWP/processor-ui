@@ -6,10 +6,13 @@ import Adapter from 'enzyme-adapter-react-16';
 import {OpenEditorButton} from "./OpenEditorButton";
 import {RemoveProcessorButton} from "./RemoveProcessorButton";
 import {Editor} from "./Editor";
+import {TypeChooser} from "./TypeChooser";
 
 
 import * as CalderaComponents from '@caldera-labs/components';
 import {processorFactory} from "../../factories/processorFactory";
+import emailProcessorType from "../../processors/emailProcessorType";
+import redirectProcessorType from "../../processors/redirectProcessorType";
 
 describe('Using RenderGroup', () => {
 	it('RenderGroup snapshot', () => {
@@ -211,7 +214,7 @@ describe('Processor components', () => {
 	});
 
 	describe('Editor', () => {
-		const emailProcessor = processorFactory( 'p1', 'email', {} );
+		const emailProcessor = processorFactory( 'p1', emailProcessorType.TYPE, {} );
 		const processors = new Map();
 		processors.set('p1', emailProcessor);
 
@@ -315,19 +318,6 @@ describe('Processor components', () => {
 			expect(component.toJSON()).toMatchSnapshot();
 		});
 
-		it('Has chooser if no type', () => {
-			const wrapper = shallow(
-				<Editor
-					ID={emailProcessor.ID}
-					configFields={emailProcessor.configFields}
-					type={emailProcessor.type}
-					form={form}
-					onUpdateProcessor={handler}
-				/>
-			);
-			expect(wrapper.find('.processor-type-chooser').length).toBe(1);
-		});
-
 		it('Shows type', () => {
 			const wrapper = shallow(
 				<Editor
@@ -346,70 +336,27 @@ describe('Processor components', () => {
 				<Editor
 					ID={'p122'}
 					configFields={{}}
-					type={'redirect'}
+					type={redirectProcessorType.TYPE}
 					form={form}
 					onUpdateProcessor={handler}
 				/>
 			);
-			expect(wrapper.find('.processor-type').text()).toBe('redirect');
+			expect(wrapper.find('.processor-type').text()).toBe(redirectProcessorType.TYPE);
 		});
 
-		it('Updates type', () => {
-			let type = 'redirect';
 
-			function changeHandler(updateProcessor) {
-
-				type = updateProcessor.type;
-			}
-
-			const wrapper = shallow(
-				<Editor
-					ID={'p122'}
-					configFields={{}}
-					type={'redirect'}
-					form={form}
-					onUpdateProcessor={changeHandler}
-				/>
-			);
-			expect(wrapper.find('.processor-type-chooser').length).toBe(1);
-			wrapper.find('.processor-type-chooser').simulate('change', {target: {value: 'email'}});
-			expect(type).toBe('email');
-		});
-
-		it('Updates to the right type', () => {
-			let type = 'redirect';
-
-			function changeHandler(updateProcessor) {
-
-				type = updateProcessor.type;
-			}
-
-			const wrapper = shallow(
-				<Editor
-					ID={'p123'}
-					configFields={{}}
-					type={'redirect'}
-					form={form}
-					onUpdateProcessor={changeHandler}
-				/>
-			);
-			wrapper.find('.processor-type-chooser').simulate('change', {target: {value: 'email'}});
-			expect(type).toBe('email');
-		});
 
 		it( 'Outputs the configFields', () => {
-			let type = 'redirect';
 
 			function changeHandler(updateProcessor) {
 
-				type = updateProcessor.type;
 			}
 
 			const wrapper = shallow(
 				<Editor
 					ID={'p129'}
-					configFields={processorFactory('p129','email').configFields}
-					type={'redirect'}
+					configFields={processorFactory('p129',redirectProcessorType.TYPE).configFields}
+					type={redirectProcessorType.TYPE}
 					form={form}
 					onUpdateProcessor={changeHandler}
 				/>
@@ -418,7 +365,7 @@ describe('Processor components', () => {
 		});
 
 		it( 'has the config fields', () => {
-			let type = 'redirect';
+			let type = redirectProcessorType.TYPE;
 
 			function changeHandler(updateProcessor) {
 				type = updateProcessor.type;
@@ -458,29 +405,48 @@ describe('Processor components', () => {
 		};
 
 
-		const theseConfigFields = [
-			fieldConfig
-		];
-
-
-		it('Dispatches field updates', () => {
-			let updateValue = {};
-			const wrapper = mount(
-				<Editor
-					ID={ 'p131'}
-					configFields={theseConfigFields}
-					onUpdateProcessor={(newValue) => {
-						updateValue = newValue.configFields[0].value;
-					}}
-					form={form}
-				/>
-			);
-			wrapper.find( 'select' ).simulate( 'change', {target: { value: 'html' }})
-			expect( updateValue).toEqual('html');
-		});
-
 
 	});
 
+	describe( 'TypeChooser', () => {
+		it( 'Renders props', () => {
+			const component = renderer.create(
+				<TypeChooser
+					onUpdateProcessor={()=>{}}
+					ID={'p12345'}
+					type={null}
+				/>
+			);
+			expect( component.toJSON() ).toMatchSnapshot();
+		});
+		
+		it ( 'Has the right one selected', () => {
+			const wrapper = mount(
+				<TypeChooser
+					onUpdateProcessor={()=>{}}
+					ID={'p12345'}
+					type={emailProcessorType.TYPE}
+				/>
+			);
+			expect( wrapper.prop('type') ).toEqual( emailProcessorType.TYPE);
+			
+		});
+
+		it ( 'Updates type prop', () => {
+			let type = emailProcessorType.TYPE;
+			const wrapper = mount(
+				<TypeChooser
+					onUpdateProcessor={(update)=>{
+						type = update.type;
+					}}
+					ID={'p12345'}
+					type={emailProcessorType.TYPE}
+				/>
+			);
+			wrapper.find( 'select').simulate( 'change', {target: { value: redirectProcessorType.TYPE }})
+			expect(type ).toEqual( redirectProcessorType.TYPE);
+
+		});
+	});
 
 });

@@ -14,13 +14,15 @@ import {
 	updateProcessorValues,
 	updateProcessorConfigFields
 } from './actions';
+import emailProcessorType from '../processors/emailProcessorType';
+import redirectProcessorType from '../processors/redirectProcessorType';
 
 describe( 'reducers', () => {
 	const initAction = {type: 'init'};
 	const emailProcessorId = 'p11';
 	const emailProcessor = {
 		ID: emailProcessorId,
-		type: 'email',
+		type: emailProcessorType.TYPE,
 		configFields: {}
 	};
 	const form = {
@@ -94,7 +96,7 @@ describe( 'reducers', () => {
 		it( 'Updates the right processor in processors collection', () => {
 			const action = updateProcessor({
 				ID: emailProcessorId,
-				type: 'redirect',
+				type: redirectProcessorType.TYPE,
 				configFields : {}
 
 			});
@@ -103,18 +105,18 @@ describe( 'reducers', () => {
 
 			processors.set( emailProcessorId, emailProcessor );
 			processors.set( 'p222', {
-				type: 'email',
+				type: emailProcessorType.TYPE,
 				configFields : {}
 			});
 			const store = processorsReducer(processors, action );
-			expect(store.get(emailProcessorId).type).toEqual('redirect');
+			expect(store.get(emailProcessorId).type).toEqual(redirectProcessorType.TYPE);
 		});
 
 
 		it( 'Updates the config fields to match the type of processor', () => {
 			const action = updateProcessor({
 				ID: emailProcessorId,
-				type: 'email',
+				type: emailProcessorType.TYPE,
 				configFields : {}
 
 			});
@@ -127,16 +129,16 @@ describe( 'reducers', () => {
 			});
 			processors.set( emailProcessorId, {
 				ID: emailProcessorId,
-				type: 'redirect',
+				type: redirectProcessorType.TYPE,
 				configFields : {}
 			} );
 			processors.set( 'p2111', {
-				type: 'email',
+				type: emailProcessorType.TYPE,
 				configFields : {}
 
 			});
 			const store = processorsReducer(processors, action );
-			expect(store.get(emailProcessorId).type).toEqual('email');
+			expect(store.get(emailProcessorId).type).toEqual(emailProcessorType.TYPE);
 			expect( store.get(emailProcessorId).configFields.hasOwnProperty('fromName')).toBe(true);
 
 		});
