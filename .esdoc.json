@@ -9,7 +9,7 @@
           "logo": "./globe.svg",
           "title": "Caldera Processor UI",
           "description": "Caldera Forms processor user interface generator and components.",
-          "repository": "https://github.com/calderawp/processor-ui",
+          "repository": "https://github.com/calderawp/processor-ui/",
           "site": "http://calderalabs.org/processor-ui",
           "author": "http://calderalabs.org",
           "image": "https://calderaforms.com/wp-content/themes/caldera-forms-dot-com/img/caldera-forms-logo.svg"
