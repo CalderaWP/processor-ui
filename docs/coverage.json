@@ -1,34 +1,42 @@
 {
-  "coverage": "74.6%",
-  "expectCount": 63,
-  "actualCount": 47,
+  "coverage": "69.73%",
+  "expectCount": 76,
+  "actualCount": 53,
   "files": {
-    "src/App.js": {
+    "src/CalderaProcessors.js": {
       "expectCount": 2,
       "actualCount": 1,
       "undocumentLines": [
         14
       ]
     },
-    "src/AppWithState.js": {
+    "src/CalderaProcessorsWithState.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
     "src/components/Processor/Editor.js": {
-      "expectCount": 9,
-      "actualCount": 5,
+      "expectCount": 10,
+      "actualCount": 6,
       "undocumentLines": [
-        5,
         6,
-        8,
-        87
+        7,
+        9,
+        105
       ]
     },
     "src/components/Processor/OpenEditorButton.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/components/Processor/ProcessorLabel.js": {
+      "expectCount": 4,
+      "actualCount": 2,
+      "undocumentLines": [
+        9,
+        25
+      ]
     },
     "src/components/Processor/RemoveProcessorButton.js": {
       "expectCount": 5,
@@ -37,13 +45,22 @@
         20
       ]
     },
-    "src/components/Processors/List.js": {
+    "src/components/Processor/TypeChooser.js": {
       "expectCount": 4,
       "actualCount": 1,
       "undocumentLines": [
-        16,
+        6,
+        7,
+        31
+      ]
+    },
+    "src/components/Processors/List.js": {
+      "expectCount": 5,
+      "actualCount": 2,
+      "undocumentLines": [
         18,
-        25
+        20,
+        48
       ]
     },
     "src/components/Processors/NewProcessor.js": {
@@ -80,6 +97,25 @@
         2
       ]
     },
+    "src/processors/emailProcessorType.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "src/processors/processorTypes.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/processors/redirectProcessorType.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
     "src/state/actions.js": {
       "expectCount": 15,
       "actualCount": 14,
@@ -98,9 +134,9 @@
       "expectCount": 3,
       "actualCount": 0,
       "undocumentLines": [
-        27,
-        82,
-        83
+        20,
+        39,
+        40
       ]
     },
     "src/state/reducers.js": {

@@ -24,15 +24,17 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui/"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">CalderaProcessors</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/CalderaProcessors.js~CalderaProcessors.html">CalderaProcessors</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processor">components/Processor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html">ProcessorLabel</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html">RemoveProcessorButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/TypeChooser.js~TypeChooser.html">TypeChooser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OpenEditorButton">OpenEditorButton</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processors">components/Processors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processors/List.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-NewProcessor">NewProcessor</a></span></span></li>
@@ -44,8 +46,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getConfigFieldValueOrDefault">getConfigFieldValueOrDefault</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mapKeysToIdProperty">mapKeysToIdProperty</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-objectToMap">objectToMap</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#processors">processors</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EMAIL_PROCESSOR_TYPE">EMAIL_PROCESSOR_TYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REDIRECT_PROCESSOR_TYPE">REDIRECT_PROCESSOR_TYPE</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#state">state</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addProcessor">addProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-newProcessor">newProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProcessor">removeProcessor</a></span></span></li>
@@ -619,7 +624,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-processorFactory">processorFactory</a></span></span><span class="code" data-ice="signature">(type: <span>*</span>, configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>Processor</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-processorFactory">processorFactory</a></span></span><span class="code" data-ice="signature">(ID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -2170,15 +2175,15 @@ Optionally sets values from a Map of config values</p>
     
     
     
-    <span class="code" data-ice="name">processorFactory</span><span class="code" data-ice="signature">(type: <span>*</span>, configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>Processor</span></span>
+    <span class="code" data-ice="name">processorFactory</span><span class="code" data-ice="signature">(ID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/factories/processorFactory.js.html#lineNumber28">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/factories/processorFactory.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorFactory} from &apos;<span><a href="file/src/factories/processorFactory.js.html#lineNumber28">@caldera-labs/processor-ui/src/factories/processorFactory.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorFactory} from &apos;<span><a href="file/src/factories/processorFactory.js.html#lineNumber21">@caldera-labs/processor-ui/src/factories/processorFactory.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Get the configuration for a processor</p>
@@ -2198,8 +2203,14 @@ Those callback functions MUST get added before they are used in the default mann
     <tbody>
     
     <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">ID</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">type</td>
-      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
@@ -2220,7 +2231,7 @@ Those callback functions MUST get added before they are used in the default mann
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>Processor</span></td>
+          <td class="return-type code" data-ice="returnType"><span>*</span></td>
           
         </tr>
       </tbody>
@@ -2256,11 +2267,11 @@ Those callback functions MUST get added before they are used in the default mann
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/reducers.js.html#lineNumber145">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/reducers.js.html#lineNumber148">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorReducer} from &apos;<span><a href="file/src/state/reducers.js.html#lineNumber145">@caldera-labs/processor-ui/src/state/reducers.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorReducer} from &apos;<span><a href="file/src/state/reducers.js.html#lineNumber148">@caldera-labs/processor-ui/src/state/reducers.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Reducer for managing one processor as it is being editted/</p>

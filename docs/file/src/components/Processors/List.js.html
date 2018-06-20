@@ -24,15 +24,17 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui/"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">CalderaProcessors</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/CalderaProcessors.js~CalderaProcessors.html">CalderaProcessors</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processor">components/Processor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html">ProcessorLabel</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html">RemoveProcessorButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/TypeChooser.js~TypeChooser.html">TypeChooser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OpenEditorButton">OpenEditorButton</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processors">components/Processors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processors/List.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-NewProcessor">NewProcessor</a></span></span></li>
@@ -44,8 +46,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getConfigFieldValueOrDefault">getConfigFieldValueOrDefault</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mapKeysToIdProperty">mapKeysToIdProperty</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-objectToMap">objectToMap</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#processors">processors</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EMAIL_PROCESSOR_TYPE">EMAIL_PROCESSOR_TYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REDIRECT_PROCESSOR_TYPE">REDIRECT_PROCESSOR_TYPE</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#state">state</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addProcessor">addProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-newProcessor">newProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProcessor">removeProcessor</a></span></span></li>
@@ -84,6 +89,8 @@ import PropTypes from &apos;prop-types&apos;;
 import {RemoveProcessorButton} from &quot;../Processor/RemoveProcessorButton&quot;;
 import {Editor} from &quot;../Processor/Editor&quot;;
 import {OpenEditorButton} from &quot;../Processor/OpenEditorButton&quot;;
+import {TypeChooser} from &quot;../Processor/TypeChooser&quot;;
+import {ProcessorLabel} from &quot;../Processor/ProcessorLabel&quot;;
 
 /**
  * Displays list of processors
@@ -98,8 +105,29 @@ export class List extends React.Component{
 		super(props);
 		this.state = {
 			opened: {}
-		}
+		};
+		this.onUpdateProcessor = this.onUpdateProcessor.bind(this);
 
+	}
+
+	/**
+	 * When processors is updated, do stuff
+	 *
+	 * @todo animations
+	 * @param {Object} updatedProcessor The processor config that has been updated
+	 */
+	onUpdateProcessor(updatedProcessor){
+		let opened = this.state.opened;
+		opened[updatedProcessor.ID]=false;
+		this.setState({
+			opened
+		});
+		this.props.onUpdateProcessor(updatedProcessor);
+		opened[updatedProcessor.ID]=true;
+
+		this.setState({
+			opened
+		});
 	}
 
 
@@ -109,34 +137,59 @@ export class List extends React.Component{
 			&lt;div&gt;
 				{processors.map(processor =&gt; {
 					let isOpen = this.state.opened.hasOwnProperty(processor.ID) &amp;&amp; true === this.state.opened[processor.ID];
+					const key = processor.type ? `${processor.type}-${processor.ID}` : processor.ID;
 					return (
 						&lt;div
-							key={`${processor.ID}`}
+							key={key}
 						&gt;
-							&lt;em&gt;{processor.ID}&lt;/em&gt;
 							{isOpen &amp;&amp;
-							&lt;Editor
-								processor={processor}
-								onUpdateProcessor={this.props.onUpdateProcessor}
-								form={this.props.form}
-							/&gt;
+								&lt;Editor
+									ID={processor.ID}
+									type={processor.type}
+									label={processor.label}
+									configFields={processor.configFields}
+									onUpdateProcessor={this.onUpdateProcessor}
+									form={this.props.form}
+									isOpen={isOpen}
+								/&gt;
 							}
 
-							&lt;OpenEditorButton
-								isOpen={isOpen}
-								onClick={() =&gt;{
-									let opened = this.state.opened;
-									if( ! opened.hasOwnProperty(processor.ID) ){
-										opened[processor.ID]=true;
-									}else{
-										opened[processor.ID] = !opened[processor.ID];
-									}
+							{!isOpen &amp;&amp;
+								&lt;ProcessorLabel
+									ID={processor.ID}
+									label={processor.label}
 
-									this.setState({
-										opened
-									})
-								}}
-							/&gt;
+								/&gt;
+							}
+
+							{processor.type &amp;&amp;
+								&lt;OpenEditorButton
+									isOpen={isOpen}
+									onClick={() =&gt;{
+										let opened = this.state.opened;
+										if( ! opened.hasOwnProperty(processor.ID) ){
+											opened[processor.ID]=true;
+										}else{
+											opened[processor.ID] = !opened[processor.ID];
+										}
+
+										this.setState({
+											opened
+										})
+									}}
+								/&gt;
+
+							}
+
+							{! processor.type &amp;&amp;
+								&lt;TypeChooser
+									onUpdateProcessor={this.onUpdateProcessor}
+									ID={processor.ID}
+								/&gt;
+
+							}
+
+
 							&lt;RemoveProcessorButton
 								onClick={() =&gt; {
 									this.props.onRemoveProcessor(processor.ID);
@@ -152,7 +205,7 @@ export class List extends React.Component{
 };
 
 List.propTypes = {
-	form: PropTypes.object.isRequired,
+	form: PropTypes.object,
 	processors: PropTypes.instanceOf(Map).isRequired,
 	onRemoveProcessor: PropTypes.func.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as CalderaComponents from '@caldera-labs/components';
 import classNames from 'classnames'
-import {processorTypesMap} from "../../factories/processorFactory";
 
 export class Editor extends React.PureComponent {
 	constructor(props) {
@@ -151,7 +150,7 @@ export class Editor extends React.PureComponent {
  */
 Editor.propTypes = {
 	onUpdateProcessor: PropTypes.func.isRequired,
-	form: PropTypes.object.isRequired,
+	form: PropTypes.object,
 	configFields: PropTypes.oneOfType([
 			PropTypes.array,
 			PropTypes.object

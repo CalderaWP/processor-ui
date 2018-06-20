@@ -6,18 +6,6 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@caldera-labs/processor-ui/src/app.js~app",
-    "class/src/CalderaProcessors.jsaProcessors.js~CalderaProcessors.html",
-    "<span>CalderaProcessors</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessors.jsaProcessors.js</span>",
-    "class"
-  ],
-  [
-    "@caldera-labs/processor-ui/src/appwithstate.js~appwithstate",
-    "variable/index.html#static-variable-CalderaProcessorsWithState",
-    "<span>CalderaProcessorsWithState</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessorsWithStatessorsWithState.js</span>",
-    "variable"
-  ],
-  [
     "@caldera-labs/processor-ui/src/state/reducers.js~caldera_forms_processors_store_default_state",
     "variable/index.html#static-variable-CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE",
     "<span>CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
@@ -39,6 +27,24 @@ window.esdocSearchIndex = [
     "@caldera-labs/processor-ui/src/state/processorstore.js~caldera_forms_processor_store_slug",
     "variable/index.html#static-variable-CALDERA_FORMS_PROCESSOR_STORE_SLUG",
     "<span>CALDERA_FORMS_PROCESSOR_STORE_SLUG</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorStore.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/calderaprocessors.js~calderaprocessors",
+    "class/src/CalderaProcessors.js~CalderaProcessors.html",
+    "<span>CalderaProcessors</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessors.js</span>",
+    "class"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/calderaprocessorswithstate.js~calderaprocessorswithstate",
+    "variable/index.html#static-variable-CalderaProcessorsWithState",
+    "<span>CalderaProcessorsWithState</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessorsWithState.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/processors/emailprocessortype.js~email_processor_type",
+    "variable/index.html#static-variable-EMAIL_PROCESSOR_TYPE",
+    "<span>EMAIL_PROCESSOR_TYPE</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/processors/emailProcessorType.js</span>",
     "variable"
   ],
   [
@@ -72,6 +78,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@caldera-labs/processor-ui/src/components/processor/processorlabel.js~processorlabel",
+    "class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html",
+    "<span>ProcessorLabel</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processor/ProcessorLabel.js</span>",
+    "class"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/processors/redirectprocessortype.js~redirect_processor_type",
+    "variable/index.html#static-variable-REDIRECT_PROCESSOR_TYPE",
+    "<span>REDIRECT_PROCESSOR_TYPE</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/processors/redirectProcessorType.js</span>",
+    "variable"
+  ],
+  [
     "@caldera-labs/processor-ui/src/state/actions.js~remove_processor",
     "variable/index.html#static-variable-REMOVE_PROCESSOR",
     "<span>REMOVE_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
@@ -88,6 +106,12 @@ window.esdocSearchIndex = [
     "variable/index.html#static-variable-SET_FORM_FOR_PROCESSOR",
     "<span>SET_FORM_FOR_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
     "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/components/processor/typechooser.js~typechooser",
+    "class/src/components/Processor/TypeChooser.js~TypeChooser.html",
+    "<span>TypeChooser</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processor/TypeChooser.js</span>",
+    "class"
   ],
   [
     "@caldera-labs/processor-ui/src/state/actions.js~update_processor",
@@ -222,7 +246,13 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@caldera-labs/processor-ui/src/factories/processorfactory.js~processortypes",
+    "@caldera-labs/processor-ui/src/processors/processortypes.js~processortypes",
+    "variable/index.html#static-variable-processorTypes",
+    "<span>processorTypes</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/processors/processorTypes.js</span>",
+    "variable"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/processorfactory.js~processortypesmap",
     "variable/index.html#static-variable-processorTypesMap",
     "<span>processorTypesMap</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/processorFactory.js</span>",
     "variable"
@@ -552,21 +582,21 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/app.js",
-    "file/src/CalderaProcessorsderaProcessors.js.html",
-    "src/CalderaProcessorsderaProcessors.js",
+    "src/calderaprocessors.js",
+    "file/src/CalderaProcessors.js.html",
+    "src/CalderaProcessors.js",
     "file"
   ],
   [
-    "src/app.js~app#render",
-    "class/src/CalderaProcessors.jsaProcessors.js~CalderaProcessors.html#instance-method-render",
-    "src/CalderaProcessorsderaProcessors.js~CalderaProcessors#render",
+    "src/calderaprocessors.js~calderaprocessors#render",
+    "class/src/CalderaProcessors.js~CalderaProcessors.html#instance-method-render",
+    "src/CalderaProcessors.js~CalderaProcessors#render",
     "method"
   ],
   [
-    "src/appwithstate.js",
-    "file/src/CalderaProcessorsWithStatessorsWithState.js.html",
-    "src/CalderaProcessorsWithStatessorsWithState.js",
+    "src/calderaprocessorswithstate.js",
+    "file/src/CalderaProcessorsWithState.js.html",
+    "src/CalderaProcessorsWithState.js",
     "file"
   ],
   [
@@ -600,6 +630,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/components/processor/editor.js~editor#labelas",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-labelAs",
+    "src/components/Processor/Editor.js~Editor#labelAs",
+    "method"
+  ],
+  [
     "src/components/processor/editor.js~editor#mouseenter",
     "class/src/components/Processor/Editor.js~Editor.html#instance-method-mouseEnter",
     "src/components/Processor/Editor.js~Editor#mouseEnter",
@@ -628,6 +664,30 @@ window.esdocSearchIndex = [
     "file/src/components/Processor/OpenEditorButton.js.html",
     "src/components/Processor/OpenEditorButton.js",
     "file"
+  ],
+  [
+    "src/components/processor/processorlabel.js",
+    "file/src/components/Processor/ProcessorLabel.js.html",
+    "src/components/Processor/ProcessorLabel.js",
+    "file"
+  ],
+  [
+    "src/components/processor/processorlabel.js~processorlabel#constructor",
+    "class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html#instance-constructor-constructor",
+    "src/components/Processor/ProcessorLabel.js~ProcessorLabel#constructor",
+    "method"
+  ],
+  [
+    "src/components/processor/processorlabel.js~processorlabel#labelas",
+    "class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html#instance-method-labelAs",
+    "src/components/Processor/ProcessorLabel.js~ProcessorLabel#labelAs",
+    "method"
+  ],
+  [
+    "src/components/processor/processorlabel.js~processorlabel#render",
+    "class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html#instance-method-render",
+    "src/components/Processor/ProcessorLabel.js~ProcessorLabel#render",
+    "method"
   ],
   [
     "src/components/processor/removeprocessorbutton.js",
@@ -660,6 +720,30 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/components/processor/typechooser.js",
+    "file/src/components/Processor/TypeChooser.js.html",
+    "src/components/Processor/TypeChooser.js",
+    "file"
+  ],
+  [
+    "src/components/processor/typechooser.js~typechooser#changetype",
+    "class/src/components/Processor/TypeChooser.js~TypeChooser.html#instance-method-changeType",
+    "src/components/Processor/TypeChooser.js~TypeChooser#changeType",
+    "method"
+  ],
+  [
+    "src/components/processor/typechooser.js~typechooser#constructor",
+    "class/src/components/Processor/TypeChooser.js~TypeChooser.html#instance-constructor-constructor",
+    "src/components/Processor/TypeChooser.js~TypeChooser#constructor",
+    "method"
+  ],
+  [
+    "src/components/processor/typechooser.js~typechooser#render",
+    "class/src/components/Processor/TypeChooser.js~TypeChooser.html#instance-method-render",
+    "src/components/Processor/TypeChooser.js~TypeChooser#render",
+    "method"
+  ],
+  [
     "src/components/processors/list.js",
     "file/src/components/Processors/List.js.html",
     "src/components/Processors/List.js",
@@ -669,6 +753,12 @@ window.esdocSearchIndex = [
     "src/components/processors/list.js~list#constructor",
     "class/src/components/Processors/List.js~List.html#instance-constructor-constructor",
     "src/components/Processors/List.js~List#constructor",
+    "method"
+  ],
+  [
+    "src/components/processors/list.js~list#onupdateprocessor",
+    "class/src/components/Processors/List.js~List.html#instance-method-onUpdateProcessor",
+    "src/components/Processors/List.js~List#onUpdateProcessor",
     "method"
   ],
   [
@@ -720,9 +810,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/module.js",
+    "file/src/module.js.html",
+    "src/module.js",
+    "file"
+  ],
+  [
     "src/processors/emaildefaultconfigfields.js",
     "file/src/processors/emailDefaultConfigFields.js.html",
     "src/processors/emailDefaultConfigFields.js",
+    "file"
+  ],
+  [
+    "src/processors/emailprocessortype.js",
+    "file/src/processors/emailProcessorType.js.html",
+    "src/processors/emailProcessorType.js",
+    "file"
+  ],
+  [
+    "src/processors/processortypes.js",
+    "file/src/processors/processorTypes.js.html",
+    "src/processors/processorTypes.js",
+    "file"
+  ],
+  [
+    "src/processors/redirectprocessortype.js",
+    "file/src/processors/redirectProcessorType.js.html",
+    "src/processors/redirectProcessorType.js",
     "file"
   ],
   [

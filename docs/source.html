@@ -24,15 +24,17 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui/"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">CalderaProcessors</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AppWithState">CalderaProcessorsWithState</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/CalderaProcessors.js~CalderaProcessors.html">CalderaProcessors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processor">components/Processor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html">ProcessorLabel</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html">RemoveProcessorButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/TypeChooser.js~TypeChooser.html">TypeChooser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OpenEditorButton">OpenEditorButton</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processors">components/Processors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processors/List.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-NewProcessor">NewProcessor</a></span></span></li>
@@ -44,8 +46,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getConfigFieldValueOrDefault">getConfigFieldValueOrDefault</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mapKeysToIdProperty">mapKeysToIdProperty</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-objectToMap">objectToMap</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#processors">processors</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EMAIL_PROCESSOR_TYPE">EMAIL_PROCESSOR_TYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REDIRECT_PROCESSOR_TYPE">REDIRECT_PROCESSOR_TYPE</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#state">state</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addProcessor">addProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-newProcessor">newProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProcessor">removeProcessor</a></span></span></li>
@@ -78,7 +83,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">47/63</span></h1>
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">53/76</span></h1>
 
 <table class="files-summary" data-ice="files" data-use-coverage="true">
   <thead>
@@ -94,28 +99,28 @@
   <tbody>
     
   <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/App.js.html#errorLines=14">src/CalderaProcessorsderaProcessors.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/App.js~App.html">CalderaProcessors</a></span></td>
+      <td data-ice="filePath"><span><a href="file/src/CalderaProcessors.js.html#errorLines=14">src/CalderaProcessors.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/CalderaProcessors.js~CalderaProcessors.html">CalderaProcessors</a></span></td>
       <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
-      <td style="display: none;" data-ice="size">1831 byte</td>
-      <td style="display: none;" data-ice="lines">75</td>
-      <td style="display: none;" data-ice="updated">2018-06-03 23:59:28 (UTC)</td>
+      <td style="display: none;" data-ice="size">1616 byte</td>
+      <td style="display: none;" data-ice="lines">54</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 22:02:17 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/AppWithState.js.html">src/CalderaProcessorsWithState.jsrsWithState.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-AppWithState">CalderaProcessorsWithState</a></span></td>
+      <td data-ice="filePath"><span><a href="file/src/CalderaProcessorsWithState.js.html">src/CalderaProcessorsWithState.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></td>
       <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
-      <td style="display: none;" data-ice="size">1050 byte</td>
-      <td style="display: none;" data-ice="lines">40</td>
-      <td style="display: none;" data-ice="updated">2018-06-03 21:30:32 (UTC)</td>
+      <td style="display: none;" data-ice="size">1018 byte</td>
+      <td style="display: none;" data-ice="lines">38</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 22:02:17 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/components/Processor/Editor.js.html#errorLines=5,6,8,87">src/components/Processor/Editor.js</a></span></td>
+      <td data-ice="filePath"><span><a href="file/src/components/Processor/Editor.js.html#errorLines=105,6,7,9">src/components/Processor/Editor.js</a></span></td>
       <td data-ice="identifier" class="identifiers"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></td>
-      <td class="coverage"><span data-ice="coverage">55 %</span><span data-ice="coverageCount" class="coverage-count">5/9</span></td>
-      <td style="display: none;" data-ice="size">3532 byte</td>
-      <td style="display: none;" data-ice="lines">160</td>
-      <td style="display: none;" data-ice="updated">2018-06-03 23:58:50 (UTC)</td>
+      <td class="coverage"><span data-ice="coverage">60 %</span><span data-ice="coverageCount" class="coverage-count">6/10</span></td>
+      <td style="display: none;" data-ice="size">3742 byte</td>
+      <td style="display: none;" data-ice="lines">169</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 22:19:14 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/components/Processor/OpenEditorButton.js.html">src/components/Processor/OpenEditorButton.js</a></span></td>
@@ -126,6 +131,14 @@
       <td style="display: none;" data-ice="updated">2018-06-07 21:35:10 (UTC)</td>
     </tr>
 <tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/components/Processor/ProcessorLabel.js.html#errorLines=25,9">src/components/Processor/ProcessorLabel.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html">ProcessorLabel</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">2/4</span></td>
+      <td style="display: none;" data-ice="size">1103 byte</td>
+      <td style="display: none;" data-ice="lines">55</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 21:43:01 (UTC)</td>
+    </tr>
+<tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/components/Processor/RemoveProcessorButton.js.html#errorLines=20">src/components/Processor/RemoveProcessorButton.js</a></span></td>
       <td data-ice="identifier" class="identifiers"><span><a href="class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html">RemoveProcessorButton</a></span></td>
       <td class="coverage"><span data-ice="coverage">80 %</span><span data-ice="coverageCount" class="coverage-count">4/5</span></td>
@@ -134,12 +147,20 @@
       <td style="display: none;" data-ice="updated">2018-06-07 21:36:47 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/components/Processors/List.js.html#errorLines=16,18,25">src/components/Processors/List.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/components/Processors/List.js~List.html">List</a></span></td>
+      <td data-ice="filePath"><span><a href="file/src/components/Processor/TypeChooser.js.html#errorLines=31,6,7">src/components/Processor/TypeChooser.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/components/Processor/TypeChooser.js~TypeChooser.html">TypeChooser</a></span></td>
       <td class="coverage"><span data-ice="coverage">25 %</span><span data-ice="coverageCount" class="coverage-count">1/4</span></td>
-      <td style="display: none;" data-ice="size">1723 byte</td>
-      <td style="display: none;" data-ice="lines">78</td>
-      <td style="display: none;" data-ice="updated">2018-06-04 00:23:58 (UTC)</td>
+      <td style="display: none;" data-ice="size">1196 byte</td>
+      <td style="display: none;" data-ice="lines">67</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 21:22:07 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/components/Processors/List.js.html#errorLines=18,20,48">src/components/Processors/List.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/components/Processors/List.js~List.html">List</a></span></td>
+      <td class="coverage"><span data-ice="coverage">40 %</span><span data-ice="coverageCount" class="coverage-count">2/5</span></td>
+      <td style="display: none;" data-ice="size">2812 byte</td>
+      <td style="display: none;" data-ice="lines">126</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 22:12:00 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/components/Processors/NewProcessor.js.html">src/components/Processors/NewProcessor.js</a></span></td>
@@ -168,11 +189,11 @@
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/factories/processorFactory.js.html#errorLines=4">src/factories/processorFactory.js</a></span></td>
       <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-processorFactory">processorFactory</a></span>
-<span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></td>
+<span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></td>
       <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">1/2</span></td>
-      <td style="display: none;" data-ice="size">1209 byte</td>
-      <td style="display: none;" data-ice="lines">44</td>
-      <td style="display: none;" data-ice="updated">2018-06-03 23:44:51 (UTC)</td>
+      <td style="display: none;" data-ice="size">1110 byte</td>
+      <td style="display: none;" data-ice="lines">37</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 21:38:39 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/factories/util.js.html">src/factories/util.js</a></span></td>
@@ -190,9 +211,17 @@
       <td data-ice="filePath"><span><a href="file/src/index.js.html">src/index.js</a></span></td>
       <td data-ice="identifier" class="identifiers">-</td>
       <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">349 byte</td>
-      <td style="display: none;" data-ice="lines">15</td>
-      <td style="display: none;" data-ice="updated">2018-06-07 12:23:41 (UTC)</td>
+      <td style="display: none;" data-ice="size">394 byte</td>
+      <td style="display: none;" data-ice="lines">18</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 22:22:46 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/module.js.html">src/module.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">625 byte</td>
+      <td style="display: none;" data-ice="lines">25</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 22:19:01 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/processors/emailDefaultConfigFields.js.html#errorLines=2">src/processors/emailDefaultConfigFields.js</a></span></td>
@@ -201,6 +230,30 @@
       <td style="display: none;" data-ice="size">606 byte</td>
       <td style="display: none;" data-ice="lines">33</td>
       <td style="display: none;" data-ice="updated">2018-06-01 03:03:41 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/processors/emailProcessorType.js.html#errorLines=2">src/processors/emailProcessorType.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-EMAIL_PROCESSOR_TYPE">EMAIL_PROCESSOR_TYPE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">250 byte</td>
+      <td style="display: none;" data-ice="lines">7</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 21:38:39 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/processors/processorTypes.js.html">src/processors/processorTypes.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
+      <td style="display: none;" data-ice="size">390 byte</td>
+      <td style="display: none;" data-ice="lines">12</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 20:53:34 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/processors/redirectProcessorType.js.html#errorLines=1">src/processors/redirectProcessorType.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-REDIRECT_PROCESSOR_TYPE">REDIRECT_PROCESSOR_TYPE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">290 byte</td>
+      <td style="display: none;" data-ice="lines">12</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 21:38:39 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/state/actions.js.html#errorLines=4">src/state/actions.js</a></span></td>
@@ -232,13 +285,13 @@
       <td style="display: none;" data-ice="updated">2018-06-07 12:26:17 (UTC)</td>
     </tr>
 <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/state/processorsStore.js.html#errorLines=27,82,83">src/state/processorsStore.js</a></span></td>
+      <td data-ice="filePath"><span><a href="file/src/state/processorsStore.js.html#errorLines=20,39,40">src/state/processorsStore.js</a></span></td>
       <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CALDERA_FORMS_PROCESSORS_STORE_SLUG">CALDERA_FORMS_PROCESSORS_STORE_SLUG</a></span>
 <span><a href="variable/index.html#static-variable-processorsStore">processorsStore</a></span></td>
       <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
-      <td style="display: none;" data-ice="size">1809 byte</td>
-      <td style="display: none;" data-ice="lines">86</td>
-      <td style="display: none;" data-ice="updated">2018-06-03 23:44:51 (UTC)</td>
+      <td style="display: none;" data-ice="size">702 byte</td>
+      <td style="display: none;" data-ice="lines">43</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 14:51:59 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/state/reducers.js.html">src/state/reducers.js</a></span></td>
@@ -248,9 +301,9 @@
 <span><a href="function/index.html#static-function-processorReducer">processorReducer</a></span>
 <span><a href="function/index.html#static-function-processorsReducer">processorsReducer</a></span></td>
       <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">5/5</span></td>
-      <td style="display: none;" data-ice="size">3634 byte</td>
-      <td style="display: none;" data-ice="lines">172</td>
-      <td style="display: none;" data-ice="updated">2018-06-03 23:11:39 (UTC)</td>
+      <td style="display: none;" data-ice="size">3750 byte</td>
+      <td style="display: none;" data-ice="lines">175</td>
+      <td style="display: none;" data-ice="updated">2018-06-04 20:45:09 (UTC)</td>
     </tr>
 <tr data-ice="file">
       <td data-ice="filePath"><span><a href="file/src/state/selectors.js.html">src/state/selectors.js</a></span></td>

@@ -24,15 +24,17 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/calderawp/processor-ui/"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/App.js~App.html">CalderaProcessors</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/CalderaProcessors.js~CalderaProcessors.html">CalderaProcessors</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processor">components/Processor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html">ProcessorLabel</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html">RemoveProcessorButton</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/TypeChooser.js~TypeChooser.html">TypeChooser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-OpenEditorButton">OpenEditorButton</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processors">components/Processors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processors/List.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-NewProcessor">NewProcessor</a></span></span></li>
@@ -44,8 +46,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getConfigFieldValueOrDefault">getConfigFieldValueOrDefault</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mapKeysToIdProperty">mapKeysToIdProperty</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-objectToMap">objectToMap</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#processors">processors</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EMAIL_PROCESSOR_TYPE">EMAIL_PROCESSOR_TYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorTypes">processorTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REDIRECT_PROCESSOR_TYPE">REDIRECT_PROCESSOR_TYPE</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#state">state</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addProcessor">addProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-newProcessor">newProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeProcessor">removeProcessor</a></span></span></li>
@@ -82,19 +87,13 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { registerStore } from &apos;@wordpress/data&apos;;
 
 import {
-	CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,
-	//processorsReducer,
-	clone
+	processorsReducer,
 } from &apos;./reducers&apos;;
 
 import {
-	ADD_PROCESSOR,
 	addProcessor,
-	NEW_PROCESSOR,
 	newProcessor,
-	REMOVE_PROCESSOR,
 	removeProcessor,
-	UPDATE_PROCESSOR,
 	updateProcessor,
 } from &apos;./actions&apos;;
 
@@ -102,48 +101,9 @@ import {
 	getProcessorsCollection,
 	getProcessorFromCollection,
 } from &apos;./selectors&apos;;
-import {processorFactory} from &apos;../factories/processorFactory&apos;;
 
 
 const config = {
-	reducer(state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,action){
-		//copypasta of processorsReducer, should be using processorsReducer, but it is undefined in this closure.
-		switch( action.type ){
-		case NEW_PROCESSOR:
-		case ADD_PROCESSOR:
-			switch( action.type ) {
-			case NEW_PROCESSOR:
-				const ID = &apos;p_&apos; + Math.random().toString(36).substring(7);
-				//@TODO replace with generateId util function
-				state.set( ID, {
-					ID,
-					configFields: {}
-				} );
-				break;
-			case ADD_PROCESSOR:
-				state.set( action.processor.ID, action.processor);
-				break;
-			default:
-				break;
-			}
-
-			return clone(state);
-		case UPDATE_PROCESSOR:
-			state = state.set( action.processor.ID, processorFactory(
-				action.processor.ID,
-				action.processor.type,
-				action.processor.configFields,
-			));
-
-			return clone(state);
-		case  REMOVE_PROCESSOR:
-			state.delete(action.processorId);
-			return clone(state);
-		default:
-			return state;
-		}
-
-	},
 	actions: {
 		addProcessor,
 		newProcessor,
@@ -160,6 +120,8 @@ const config = {
 
 	},
 };
+
+config.reducer = processorsReducer;
 export const CALDERA_FORMS_PROCESSORS_STORE_SLUG = &apos;CALDERA_FORMS_PROCESSORS_STORE&apos;;
 export const processorsStore = registerStore(
 	CALDERA_FORMS_PROCESSORS_STORE_SLUG,

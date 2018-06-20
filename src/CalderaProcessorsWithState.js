@@ -7,11 +7,10 @@ import {CALDERA_FORMS_PROCESSORS_STORE_SLUG } from "./state/processorsStore";
  */
 const CalderaProcessorsWithState =  withSelect( (select, ownProps ) => {
 	const {getProcessorsCollection } = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);
-	const state = {
+	return {
 		processors: getProcessorsCollection(),
-		form:ownProps.form
+		form: ownProps.form
 	};
-	return state;
 } )( withDispatch( ( dispatch ) => {
 	const {
 		addProcessor,

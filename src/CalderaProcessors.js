@@ -36,7 +36,7 @@ class CalderaProcessors extends React.PureComponent {
  */
 CalderaProcessors.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
-	form: PropTypes.object.isRequired,
+	form: PropTypes.object,
 	onAddProcessor: PropTypes.func.isRequired,
 	onNewProcessor: PropTypes.func.isRequired,
 	onRemoveProcessor: PropTypes.func.isRequired,
@@ -50,27 +50,6 @@ CalderaProcessors.propTypes = {
  */
 CalderaProcessors.defaultProps = {
 	processors: new Map(),
-	form: {
-		ID: 'cf1',
-		name: 'Contact Form',
-		fields :{
-			fld12: {
-				ID: 'fld12',
-				label: 'First Name',
-				type: 'text'
-			},
-			fld22: {
-				ID: 'fld22',
-				label: 'Last Name',
-				type: 'text'
-			},
-			fld3: {
-				ID: 'fld3',
-				label: 'Email',
-				type: 'email'
-			}
-		}
-	}
 };
 
 export default CalderaProcessors;

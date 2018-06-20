@@ -2,41 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3667fff2-8480-411f-84f9-63b9c6d29702" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/class/src/App.js~App.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/class/src/App.js~App.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/class/src/components/Processor/Editor.js~Editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/class/src/components/Processor/Editor.js~Editor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/class/src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/class/src/components/Processors/List.js~List.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/class/src/components/Processors/List.js~List.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/App.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/App.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/AppWithState.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/AppWithState.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/components/Processor/Editor.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/components/Processor/Editor.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/components/Processor/OpenEditorButton.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/components/Processor/OpenEditorButton.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/components/Processor/RemoveProcessorButton.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/components/Processor/RemoveProcessorButton.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/components/Processors/List.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/components/Processors/List.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/components/Processors/NewProcessor.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/components/Processors/NewProcessor.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/factories/configFieldFactory.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/factories/configFieldFactory.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/factories/configFieldsFactory.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/factories/configFieldsFactory.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/factories/processorFactory.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/factories/processorFactory.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/factories/util.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/factories/util.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/index.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/index.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/processors/emailDefaultConfigFields.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/processors/emailDefaultConfigFields.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/state/actions.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/state/actions.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/state/processorStore.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/state/processorStore.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/state/processorsStore.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/state/processorsStore.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/state/reducers.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/state/reducers.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/file/src/state/selectors.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/file/src/state/selectors.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/function/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/function/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/identifiers.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/identifiers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/script/search_index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/script/search_index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/variable/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/variable/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalderaProcessors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalderaProcessorsWithState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CalderaProcessors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalderaProcessors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CalderaProcessorsWithState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalderaProcessorsWithState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Processor/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Processor/Editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Processors/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Processors/List.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,13 +18,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4377565">
+    <splitter split-orientation="horizontal" split-proportion="0.5766074">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="74">
+                <state relative-caret-position="75">
                   <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
                 </state>
               </provider>
@@ -73,8 +45,8 @@
           <file leaf-file-name="List.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/Processors/List.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="54">
-                  <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+                <state relative-caret-position="358">
+                  <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -82,12 +54,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="210">
+                  <caret line="14" selection-start-line="14" selection-end-line="14" />
                   <folding>
+                    <element signature="e#49#75#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="module.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/module.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret selection-end-line="25" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
                 </state>
@@ -106,8 +91,8 @@
           <file leaf-file-name="CalderaProcessors.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/CalderaProcessors.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="900">
-                  <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -115,18 +100,9 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.css">
               <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/state/actions.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="494">
-                  <caret line="81" column="43" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="43" />
-                </state>
-              </provider>
             </entry>
           </file>
           <file leaf-file-name="OpenEditorButton.js" pinned="false" current-in-tab="false">
@@ -160,8 +136,8 @@
           <file leaf-file-name="RemoveProcessorButton.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/Processor/RemoveProcessorButton.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="485">
-                  <caret line="61" selection-start-line="61" selection-end-line="61" />
+                <state relative-caret-position="206">
+                  <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -172,8 +148,8 @@
           <file leaf-file-name="Editor.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/Processor/Editor.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="422">
-                  <caret line="125" column="48" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -196,8 +172,8 @@
           <file leaf-file-name="CalderaProcessorsWithState.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/CalderaProcessorsWithState.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+                <state relative-caret-position="330">
+                  <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
                   <folding>
                     <element signature="e#0#52#0" expanded="true" />
                   </folding>
@@ -205,11 +181,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="App.test.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/App.test.js">
+          <file leaf-file-name="CalderaProcessorsWithState.test.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/CalderaProcessorsWithState.test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
+                <state relative-caret-position="345">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -243,14 +222,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>UPDATE_PROCESSOR_CONFIG_FIELDS</find>
       <find>It converts configFields Map to array</find>
       <find>Processor</find>
       <find>cf-x</find>
@@ -280,6 +258,7 @@
       <find>Updates type</find>
       <find>Has chooser if no type</find>
       <find>label</find>
+      <find>processorTypesMap</find>
     </findStrings>
     <replaceStrings>
       <replace>calderawp/npm-module-boilerplate</replace>
@@ -302,8 +281,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/state/stores.test.js" />
-        <option value="$PROJECT_DIR$/node_modules/@wordpress/data/build/index.js" />
         <option value="$PROJECT_DIR$/src/state/selectors.js" />
         <option value="$PROJECT_DIR$/src/components/Processors/NewProcessor.js" />
         <option value="$PROJECT_DIR$/src/components/Prcoessors.js" />
@@ -344,15 +321,17 @@
         <option value="$PROJECT_DIR$/src/factories/processorFactory.js" />
         <option value="$PROJECT_DIR$/src/state/reducers.test.js" />
         <option value="$PROJECT_DIR$/src/components/Processor/TypeChooser.js" />
-        <option value="$PROJECT_DIR$/src/components/Processor/Editor.js" />
         <option value="$PROJECT_DIR$/src/components/Processor/components.test.js" />
         <option value="$PROJECT_DIR$/src/components/Processor/ProcessorLabel.js" />
-        <option value="$PROJECT_DIR$/src/components/Processors/List.js" />
-        <option value="$PROJECT_DIR$/src/CalderaProcessors.js" />
         <option value="$PROJECT_DIR$/src/AppWithState.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/CalderaProcessorsWithState.js" />
         <option value="$PROJECT_DIR$/src/App.test.js" />
+        <option value="$PROJECT_DIR$/src/CalderaProcessors.js" />
+        <option value="$PROJECT_DIR$/src/CalderaProcessorsWithState.js" />
+        <option value="$PROJECT_DIR$/src/components/Processors/List.js" />
+        <option value="$PROJECT_DIR$/src/module.js" />
+        <option value="$PROJECT_DIR$/src/components/Processor/Editor.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
       </list>
     </option>
   </component>
@@ -417,7 +396,20 @@
               <item name="processors" type="b2602c69:ProjectViewProjectNode" />
               <item name="processors" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="state" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Processors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="processors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="processors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -472,12 +464,12 @@
       <workItem from="1528567088462" duration="5424000" />
       <workItem from="1528986327693" duration="2492000" />
       <workItem from="1528989378217" duration="60308000" />
-      <workItem from="1529201667576" duration="42040000" />
+      <workItem from="1529201667576" duration="43608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110264000" />
+    <option name="totallyTimeSpent" value="111832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="119" y="23" width="1801" height="1057" extended-state="0" />
@@ -579,7 +571,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Processor/Editor.js</url>
-          <line>64</line>
+          <line>63</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -588,13 +580,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/state/selectors.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@caldera-labs/state/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -772,16 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/state/processorsStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.esdoc.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -864,16 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/factories/processorFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Processor/TypeChooser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -891,16 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Processor/Editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="125" column="48" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Processor/components.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-365">
@@ -911,47 +866,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Processor/RemoveProcessorButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Processors/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -965,33 +883,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CalderaProcessors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+        <state relative-caret-position="180">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CalderaProcessorsWithState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="330">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Processor/RemoveProcessorButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="206">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/factories/processorFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/state/processorsStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Processors/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Processor/Editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CalderaProcessorsWithState.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#49#75#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

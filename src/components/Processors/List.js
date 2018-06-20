@@ -119,7 +119,7 @@ export class List extends React.Component{
 };
 
 List.propTypes = {
-	form: PropTypes.object.isRequired,
+	form: PropTypes.object,
 	processors: PropTypes.instanceOf(Map).isRequired,
 	onRemoveProcessor: PropTypes.func.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired
