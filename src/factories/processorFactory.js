@@ -21,11 +21,11 @@ processorTypes.set( 'redirect', {
  * Does not provide callback functions for updating those values.
  * Those callback functions MUST get added before they are used in the default manner.
  *
- * @param type
+ * @param {String} ID
+ * @param {String} type
  * @param {Object} configFields Config fields for processor. Indexed by config ID.
- * @return {Processor}
  */
-export const processorFactory = ( ID, type, configFields ) =>  {
+export const processorFactory = ( ID, type, configFields = {} ) =>  {
 	let processor = {
 		ID,
 		type,

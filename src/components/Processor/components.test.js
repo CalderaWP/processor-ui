@@ -227,7 +227,9 @@ describe('Processor components', () => {
 		it( 'Renders with props', () => {
 			const component = renderer.create(
 				<Editor
-					processor={emailProcessor}
+					ID={emailProcessor.ID}
+					configFields={emailProcessor.configFields}
+					type={emailProcessor.type}
 					onUpdateProcessor={() => {}}
 					form={form}
 				/>
@@ -239,9 +241,8 @@ describe('Processor components', () => {
 			it( 'It set the label in the .processor-label div by ID if that is all it has', () => {
 				const wrapper = shallow(
 					<Editor
-						processor={{
-							ID: 'p22'
-						}}
+						ID={'p22'}
+						configFields={{}}
 						onUpdateProcessor={() => {}}
 						form={form}
 					/>
@@ -251,22 +252,22 @@ describe('Processor components', () => {
 
 			it( 'It  labels by ID if that is all it has', () => {
 				const component = new Editor({
-					processor: {
-						ID: 'p22'
-					},
+
+					ID: 'p23',
+
+					configFields: {},
 					form: form,
 					onUpdateProcessor: () => {}
 				});
-				expect( component.labelAs() ).toBe('p22');
+				expect( component.labelAs() ).toBe('p23');
 			});
 
 			it( 'If no label in .processor-label see type - ID ', () => {
 				const wrapper = shallow(
 					<Editor
-						processor={{
-							ID: 'p28',
-							type: 'email'
-						}}
+						ID={'p28'}
+						type={'email'}
+						configFields={{}}
 						onUpdateProcessor={() => {}}
 						form={form}
 					/>
@@ -276,10 +277,9 @@ describe('Processor components', () => {
 
 			it( 'It  labels by type - ID if has type, but no label', () => {
 				const component = new Editor({
-					processor: {
-						ID: 'p29',
-						type: 'email'
-					},
+					ID: 'p29',
+					type: 'email',
+					configFields: {},
 					form: form,
 					onUpdateProcessor: () => {}
 				});
@@ -289,11 +289,10 @@ describe('Processor components', () => {
 			it( 'If it has label shows it in .processor-label element ', () => {
 				const wrapper = shallow(
 					<Editor
-						processor={{
-							ID: 'p30',
-							type: 'email',
-							label: 'Email To Roy'
-						}}
+						ID={'p30'}
+						type={'email'}
+						label={'Email To Roy'}
+						configFields={{}}
 						onUpdateProcessor={() => {}}
 						form={form}
 					/>
@@ -301,24 +300,14 @@ describe('Processor components', () => {
 				expect( wrapper.find( '.processor-label').text() ).toBe('Email To Roy');
 			});
 
-			it( 'It  labels by type - ID if has type, but no label', () => {
-				const component = new Editor({
-					processor: {
-						ID: 'p31',
-						type: 'email',
-						label: 'Email To Roy'
-					},
-					form: form,
-					onUpdateProcessor: () => {}
-				});
-				expect( component.labelAs() ).toBe('Email To Roy');
-			});
 		});
 
 		it('renders with props', () => {
 			const component = renderer.create(
 				<Editor
-					processor={emailProcessor}
+					ID={emailProcessor.ID}
+					configFields={emailProcessor.configFields}
+					type={emailProcessor.type}
 					onUpdateProcessor={handler}
 					form={form}
 				/>
@@ -329,11 +318,11 @@ describe('Processor components', () => {
 		it('Has chooser if no type', () => {
 			const wrapper = shallow(
 				<Editor
-					processor={{
-						ID: 'p122'
-					}}
-					onUpdateProcessor={handler}
+					ID={emailProcessor.ID}
+					configFields={emailProcessor.configFields}
+					type={emailProcessor.type}
 					form={form}
+					onUpdateProcessor={handler}
 				/>
 			);
 			expect(wrapper.find('.processor-type-chooser').length).toBe(1);
@@ -342,12 +331,11 @@ describe('Processor components', () => {
 		it('Shows type', () => {
 			const wrapper = shallow(
 				<Editor
-					processor={{
-						ID: 'p122',
-						type: 'redirect'
-					}}
-					onUpdateProcessor={handler}
+					ID={emailProcessor.ID}
+					configFields={emailProcessor.configFields}
+					type={emailProcessor.type}
 					form={form}
+					onUpdateProcessor={handler}
 				/>
 			);
 			expect(wrapper.find('.processor-type').length).toBe(1);
@@ -356,12 +344,11 @@ describe('Processor components', () => {
 		it('Shows the right type', () => {
 			const wrapper = shallow(
 				<Editor
-					processor={{
-						ID: 'p122',
-						type: 'redirect'
-					}}
-					onUpdateProcessor={handler}
+					ID={'p122'}
+					configFields={{}}
+					type={'redirect'}
 					form={form}
+					onUpdateProcessor={handler}
 				/>
 			);
 			expect(wrapper.find('.processor-type').text()).toBe('redirect');
@@ -377,11 +364,11 @@ describe('Processor components', () => {
 
 			const wrapper = shallow(
 				<Editor
-					processor={{
-						ID: 'p122',
-					}}
-					onUpdateProcessor={changeHandler}
+					ID={'p122'}
+					configFields={{}}
+					type={'redirect'}
 					form={form}
+					onUpdateProcessor={changeHandler}
 				/>
 			);
 			expect(wrapper.find('.processor-type-chooser').length).toBe(1);
@@ -399,15 +386,54 @@ describe('Processor components', () => {
 
 			const wrapper = shallow(
 				<Editor
-					processor={{
-						ID: 'p122',
-					}}
-					onUpdateProcessor={changeHandler}
+					ID={'p123'}
+					configFields={{}}
+					type={'redirect'}
 					form={form}
+					onUpdateProcessor={changeHandler}
 				/>
 			);
 			wrapper.find('.processor-type-chooser').simulate('change', {target: {value: 'email'}});
 			expect(type).toBe('email');
+		});
+
+		it( 'Outputs the configFields', () => {
+			let type = 'redirect';
+
+			function changeHandler(updateProcessor) {
+
+				type = updateProcessor.type;
+			}
+
+			const wrapper = shallow(
+				<Editor
+					ID={'p129'}
+					configFields={processorFactory('p129','email').configFields}
+					type={'redirect'}
+					form={form}
+					onUpdateProcessor={changeHandler}
+				/>
+			);
+			expect(wrapper.find('.processor-editor').children().length ).toBe(1);
+		});
+
+		it( 'has the config fields', () => {
+			let type = 'redirect';
+
+			function changeHandler(updateProcessor) {
+				type = updateProcessor.type;
+			}
+
+			const wrapper = shallow(
+				<Editor
+					ID={'p129'}
+					configFields={processorFactory('p129',type).configFields}
+					type={type}
+					form={form}
+					onUpdateProcessor={changeHandler}
+				/>
+			);
+			expect(wrapper.find( '.processor-editor' ).children().find( '.caldera-forms-processor-config').length ).toBe( 1 );
 		});
 
 		const fieldConfig = {
@@ -441,13 +467,8 @@ describe('Processor components', () => {
 			let updateValue = {};
 			const wrapper = mount(
 				<Editor
-					processor={
-						{
-							id: 'p122',
-							configFields: theseConfigFields
-						}
-
-					}
+					ID={ 'p131'}
+					configFields={theseConfigFields}
 					onUpdateProcessor={(newValue) => {
 						updateValue = newValue.configFields[0].value;
 					}}

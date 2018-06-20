@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as CalderaComponents from '@caldera-labs/components';
-
+import classNames from 'classnames'
 export class Editor extends React.PureComponent {
 	constructor(props) {
 		super(props);
@@ -38,14 +38,14 @@ export class Editor extends React.PureComponent {
 	 * @return {Array}
 	 */
 	configFields(){
-		if( Array.isArray( this.props.processor.configFields ) ) {
-			return this.props.processor.configFields;
+		if( Array.isArray( this.props.configFields ) ) {
+			return this.props.configFields;
 		}
 
 		let fields = [];
-		if ( 'object' === typeof this.props.processor.configFields ) {
-			Object.keys(this.props.processor.configFields).forEach(configFieldId => {
-				fields[configFieldId] = this.props.processor.configFields[configFieldId];
+		if ( 'object' === typeof this.props.configFields ) {
+			Object.keys(this.props.configFields).forEach(configFieldId => {
+				fields[configFieldId] = this.props.configFields[configFieldId];
 				fields[configFieldId].onValueChange = (newValue) => {
 					this.handleChange(configFieldId, newValue);
 				};
@@ -61,13 +61,15 @@ export class Editor extends React.PureComponent {
 	 * @param {String|Array|Number} newValue The new value
 	 */
 	handleChange(configFieldId,newValue){
-		let configFields = this.props.processor.configFields;
+		let configFields = this.props.configFields;
 		configFields[configFieldId] = {
 			...configFields[configFieldId],
 			value:newValue
 		};
 		this.props.onUpdateProcessor({
-			...this.props.processor,
+			ID: this.props.ID,
+			type: this.props.type,
+			label: this.props.label,
 			configFields
 		});
 	}
@@ -79,17 +81,23 @@ export class Editor extends React.PureComponent {
 	 */
 	changeType(event){
 		this.props.onUpdateProcessor({
-			...this.props.processor,
-			type: event.target.value
+			ID: this.props.ID,
+			label: this.props.label,
+			type: event.target.value,
+			configFields: this.props.configFields
 		});
 	}
 
+	/**
+	 * Find the label to show for a processor
+	 * @return {string}
+	 */
 	labelAs(){
-		return this.props.processor.label
-			? this.props.processor.label
-			: this.props.processor.type
-				? `${this.props.processor.type} - ${this.props.processor.ID}`
-				: this.props.processor.ID;
+		return this.props.label
+			? this.props.label
+			: this.props.type
+				? `${this.props.type} - ${this.props.ID}`
+				: this.props.ID;
 	}
 
 
@@ -115,13 +123,19 @@ export class Editor extends React.PureComponent {
 		];
 		return (
 			<div
-				className={this.props.className}
+				className={ classNames(this.props.className, {
+						'processor-has-type' : 'string' === typeof this.props.type,
+						'caldera-forms-processor' : true,
+						'not-opened': !this.props.isOpen,
+						'is-opened': this.props.isOpen
+					})
+				}
 				//onMouseEnter={this.mouseEnter}
 				//onMouseLeave={this.mouseLeave}
 			>
 				<div className={'processor-label'}>{this.labelAs()}</div>
 				<div>
-					Type: <span className={'processor-type'}>{this.props.processor.type}</span>
+					Type: <span className={'processor-type'}>{this.props.type}</span>
 				</div>
 				<select
 					className={'processor-type-chooser'}
@@ -142,7 +156,7 @@ export class Editor extends React.PureComponent {
 					)}
 				</select>
 
-				{this.props.processor.type &&
+				{this.props.type &&
 					<div
 						className={'processor-editor'}
 					>
@@ -163,8 +177,22 @@ export class Editor extends React.PureComponent {
  * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}
  */
 Editor.propTypes = {
-	processor: PropTypes.object.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired,
 	form: PropTypes.object.isRequired,
-	configFields: PropTypes.array
+	configFields: PropTypes.oneOfType([
+			PropTypes.array,
+			PropTypes.object
+	]
+
+	),
+	isOpen: PropTypes.bool,
+	ID: PropTypes.string.isRequired,
+	type: PropTypes.string,
+	label: PropTypes.string,
+
+};
+
+Editor.defaultProps = {
+	isOpen: false,
+	configFields: {}
 };

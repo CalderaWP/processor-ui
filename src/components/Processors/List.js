@@ -17,8 +17,17 @@ export class List extends React.Component{
 		super(props);
 		this.state = {
 			opened: {}
-		}
+		};
+		this.onUpdateProcessor = this.onUpdateProcessor.bind(this);
 
+	}
+	onUpdateProcessor(updatedProcessor){
+		let opened = this.state.opened;
+		opened[updatedProcessor.ID]=false;
+		this.setState({
+			opened
+		});
+		this.props.onUpdateProcessor(updatedProcessor);
 	}
 
 
@@ -28,17 +37,21 @@ export class List extends React.Component{
 			<div>
 				{processors.map(processor => {
 					let isOpen = this.state.opened.hasOwnProperty(processor.ID) && true === this.state.opened[processor.ID];
+					const key = processor.type ? `${processor.type}-${processor.ID}` : processor.ID;
 					return (
 						<div
-							key={`${processor.ID}`}
+							key={key}
 						>
 							<em>{processor.ID}</em>
 							{isOpen &&
-							<Editor
-								processor={processor}
-								onUpdateProcessor={this.props.onUpdateProcessor}
-								form={this.props.form}
-							/>
+								<Editor
+									ID={processor.ID}
+									type={processor.type}
+									configFields={processor.configFields}
+									onUpdateProcessor={this.onUpdateProcessor}
+									form={this.props.form}
+									isOpen={isOpen}
+								/>
 							}
 
 							<OpenEditorButton

@@ -10,7 +10,7 @@ const AppWithState =  withSelect( ( select, ownProps ) => {
 	const {getProcessorsCollection } = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);
 	const state = {
 		processors: getProcessorsCollection(),
-		forms:ownProps.forms
+		form:ownProps.form
 	};
 	return state;
 } )( withDispatch( ( dispatch ) => {
