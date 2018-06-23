@@ -26,108 +26,124 @@ exports[`Processor components Editor Renders with props 1`] = `
       <div
         className="caldera-config-group"
       >
-        <label
-          htmlFor="fromName"
+        <div
+          className="caldera-config-field"
         >
-          From Name
-        </label>
-        <input
-          aria-describedby="fromName-description"
-          className="field-config caldera-config-group field-config"
-          id="fromName"
-          onChange={[Function]}
-          required={false}
-          type="text"
-          value={undefined}
-        />
-        <p
-          className="description"
-          id="fromName-description"
-        >
-          Who the email is from
-        </p>
-      </div>
-      <div
-        className="caldera-config-group"
-      >
-        <label
-          htmlFor="fromEmail"
-        >
-          From Email
-        </label>
-        <input
-          aria-describedby="fromEmail-description"
-          className="field-config caldera-config-group field-config"
-          id="fromEmail"
-          onChange={[Function]}
-          required={false}
-          type="email"
-          value={undefined}
-        />
-        <p
-          className="description"
-          id="fromEmail-description"
-        >
-          Who the email is from
-        </p>
-      </div>
-      <div
-        className="caldera-config-group"
-      >
-        <label
-          htmlFor="contentType"
-        >
-          Content type
-        </label>
-        <select
-          className="field-config caldera-config-group field-config"
-          id="contentType"
-          onChange={[Function]}
-          value={undefined}
-        >
-          <option
-            className="caldera-config-option"
-            value="html"
+          <label
+            htmlFor="fromName"
           >
-            HTML
-          </option>
-          <option
-            className="caldera-config-option"
-            value="plain"
+            From Name
+          </label>
+          <input
+            aria-describedby="fromName-description"
+            className="field-config field-config"
+            id="fromName"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromName-description"
           >
-            Plain Text
-          </option>
-        </select>
-        <p
-          className="description"
-          id="contentType-description"
-        >
-          HTML or plain text?
-        </p>
+            Who the email is from
+          </p>
+        </div>
       </div>
       <div
         className="caldera-config-group"
       >
-        <label
-          htmlFor="bodyPadding"
+        <div
+          className="caldera-config-field"
         >
-          Message Body Padding
-        </label>
-        <input
-          aria-describedby="bodyPadding-description"
-          className="field-config caldera-config-group field-config"
-          id="bodyPadding"
-          onChange={[Function]}
-          required={false}
-          type="number"
-          value={undefined}
-        />
-        <p
-          className="description"
-          id="bodyPadding-description"
+          <label
+            htmlFor="fromEmail"
+          >
+            From Email
+          </label>
+          <input
+            aria-describedby="fromEmail-description"
+            className="field-config field-config"
+            id="fromEmail"
+            onChange={[Function]}
+            required={false}
+            type="email"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromEmail-description"
+          >
+            Who the email is from
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
         >
-          How much space to add around message body
-        </p>
+          <label
+            htmlFor="contentType"
+          >
+            Content type
+          </label>
+          <select
+            className="field-config field-config"
+            id="contentType"
+            onChange={[Function]}
+            value={undefined}
+          >
+            <option
+              className="caldera-config-option"
+              value="html"
+            >
+              HTML
+            </option>
+            <option
+              className="caldera-config-option"
+              value="plain"
+            >
+              Plain Text
+            </option>
+          </select>
+          <p
+            className="description"
+            id="contentType-description"
+          >
+            HTML or plain text?
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="bodyPadding"
+          >
+            Message Body Padding
+          </label>
+          <input
+            aria-describedby="bodyPadding-description"
+            className="field-config field-config"
+            id="bodyPadding"
+            onChange={[Function]}
+            required={false}
+            type="number"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="bodyPadding-description"
+          >
+            How much space to add around message body
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -160,108 +176,124 @@ exports[`Processor components Editor renders with props 1`] = `
       <div
         className="caldera-config-group"
       >
-        <label
-          htmlFor="fromName"
+        <div
+          className="caldera-config-field"
         >
-          From Name
-        </label>
-        <input
-          aria-describedby="fromName-description"
-          className="field-config caldera-config-group field-config"
-          id="fromName"
-          onChange={[Function]}
-          required={false}
-          type="text"
-          value={undefined}
-        />
-        <p
-          className="description"
-          id="fromName-description"
-        >
-          Who the email is from
-        </p>
-      </div>
-      <div
-        className="caldera-config-group"
-      >
-        <label
-          htmlFor="fromEmail"
-        >
-          From Email
-        </label>
-        <input
-          aria-describedby="fromEmail-description"
-          className="field-config caldera-config-group field-config"
-          id="fromEmail"
-          onChange={[Function]}
-          required={false}
-          type="text"
-          value={undefined}
-        />
-        <p
-          className="description"
-          id="fromEmail-description"
-        >
-          Who the email is from
-        </p>
-      </div>
-      <div
-        className="caldera-config-group"
-      >
-        <label
-          htmlFor="contentType"
-        >
-          Content type
-        </label>
-        <select
-          className="field-config caldera-config-group field-config"
-          id="contentType"
-          onChange={[Function]}
-          value={undefined}
-        >
-          <option
-            className="caldera-config-option"
-            value="html"
+          <label
+            htmlFor="fromName"
           >
-            HTML
-          </option>
-          <option
-            className="caldera-config-option"
-            value="plain"
+            From Name
+          </label>
+          <input
+            aria-describedby="fromName-description"
+            className="field-config field-config"
+            id="fromName"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromName-description"
           >
-            Plain Text
-          </option>
-        </select>
-        <p
-          className="description"
-          id="contentType-description"
-        >
-          HTML or plain text?
-        </p>
+            Who the email is from
+          </p>
+        </div>
       </div>
       <div
         className="caldera-config-group"
       >
-        <label
-          htmlFor="bodyPadding"
+        <div
+          className="caldera-config-field"
         >
-          Message Body Padding
-        </label>
-        <input
-          aria-describedby="bodyPadding-description"
-          className="field-config caldera-config-group field-config"
-          id="bodyPadding"
-          onChange={[Function]}
-          required={false}
-          type="text"
-          value={undefined}
-        />
-        <p
-          className="description"
-          id="bodyPadding-description"
+          <label
+            htmlFor="fromEmail"
+          >
+            From Email
+          </label>
+          <input
+            aria-describedby="fromEmail-description"
+            className="field-config field-config"
+            id="fromEmail"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromEmail-description"
+          >
+            Who the email is from
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
         >
-          How much space to add around message body
-        </p>
+          <label
+            htmlFor="contentType"
+          >
+            Content type
+          </label>
+          <select
+            className="field-config field-config"
+            id="contentType"
+            onChange={[Function]}
+            value={undefined}
+          >
+            <option
+              className="caldera-config-option"
+              value="html"
+            >
+              HTML
+            </option>
+            <option
+              className="caldera-config-option"
+              value="plain"
+            >
+              Plain Text
+            </option>
+          </select>
+          <p
+            className="description"
+            id="contentType-description"
+          >
+            HTML or plain text?
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="bodyPadding"
+          >
+            Message Body Padding
+          </label>
+          <input
+            aria-describedby="bodyPadding-description"
+            className="field-config field-config"
+            id="bodyPadding"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="bodyPadding-description"
+          >
+            How much space to add around message body
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -343,36 +375,40 @@ exports[`Using RenderGroup RenderGroup snapshot 1`] = `
   <div
     className="caldera-config-group"
   >
-    <label
-      htmlFor="cf-something-select-id"
+    <div
+      className="caldera-config-field"
     >
-      Content type
-    </label>
-    <select
-      className="field-config caldera-config-group field-config"
-      id="cf-something-select-id"
-      onChange={[Function]}
-      value="html"
-    >
-      <option
-        className="caldera-config-option"
+      <label
+        htmlFor="cf-something-select-id"
+      >
+        Content type
+      </label>
+      <select
+        className="field-config field-config"
+        id="cf-something-select-id"
+        onChange={[Function]}
         value="html"
       >
-        HTML
-      </option>
-      <option
-        className="caldera-config-option"
-        value="plain"
+        <option
+          className="caldera-config-option"
+          value="html"
+        >
+          HTML
+        </option>
+        <option
+          className="caldera-config-option"
+          value="plain"
+        >
+          Plain Text
+        </option>
+      </select>
+      <p
+        className="description"
+        id="cf-something-select-id-description"
       >
-        Plain Text
-      </option>
-    </select>
-    <p
-      className="description"
-      id="cf-something-select-id-description"
-    >
-      Choose content type, default is HTML
-    </p>
+        Choose content type, default is HTML
+      </p>
+    </div>
   </div>
 </div>
 `;
