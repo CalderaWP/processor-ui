@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Does whatever for Caldeera Forms",
   "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "react-wp-scripts start",
     "build": "npm run build:pre && npm run build:compile && npm run build:post",
@@ -38,23 +41,23 @@
   },
   "homepage": "https://github.com/calderawp/caldera-whatever/#readme",
   "dependencies": {
-    "@caldera-labs/components": "^0.3",
+    "@caldera-labs/components": "^0.4",
     "@caldera-labs/state": "^0.7.0",
     "@wordpress/data": "^1.0.0-alpha.1",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-compose": "^2.0.0",
-    "react-dom": "^16.4.0",
-    "react-wp-scripts": "0.2.0",
-    "react-redux": "^5.0.7"
+    "react-redux": "^5.0.7",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
+    "react-dom": "^16.4.0",
+    "react-wp-scripts": "0.2.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
-    "classnames": "^2.2.6",
     "coveralls": "^2.13.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -68,7 +71,6 @@
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
-    "jest": "^20.0.4",
     "uglify-js": "^3.4.0"
   },
   "jest": {

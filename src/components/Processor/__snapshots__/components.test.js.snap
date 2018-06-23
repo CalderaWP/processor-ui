@@ -33,7 +33,7 @@ exports[`Processor components Editor Renders with props 1`] = `
         </label>
         <input
           aria-describedby="fromName-description"
-          className="field-config"
+          className="field-config caldera-config-group field-config"
           id="fromName"
           onChange={[Function]}
           required={false}
@@ -57,7 +57,7 @@ exports[`Processor components Editor Renders with props 1`] = `
         </label>
         <input
           aria-describedby="fromEmail-description"
-          className="field-config"
+          className="field-config caldera-config-group field-config"
           id="fromEmail"
           onChange={[Function]}
           required={false}
@@ -79,15 +79,25 @@ exports[`Processor components Editor Renders with props 1`] = `
         >
           Content type
         </label>
-        <input
-          aria-describedby="contentType-description"
-          className="field-config"
+        <select
+          className="field-config caldera-config-group field-config"
           id="contentType"
           onChange={[Function]}
-          required={false}
-          type="text"
           value={undefined}
-        />
+        >
+          <option
+            className="caldera-config-option"
+            value="HTML"
+          >
+            HTML
+          </option>
+          <option
+            className="caldera-config-option"
+            value="plain"
+          >
+            Plain Text
+          </option>
+        </select>
         <p
           className="description"
           id="contentType-description"
@@ -133,7 +143,7 @@ exports[`Processor components Editor renders with props 1`] = `
         </label>
         <input
           aria-describedby="fromName-description"
-          className="field-config"
+          className="field-config caldera-config-group field-config"
           id="fromName"
           onChange={[Function]}
           required={false}
@@ -157,7 +167,7 @@ exports[`Processor components Editor renders with props 1`] = `
         </label>
         <input
           aria-describedby="fromEmail-description"
-          className="field-config"
+          className="field-config caldera-config-group field-config"
           id="fromEmail"
           onChange={[Function]}
           required={false}
@@ -179,15 +189,25 @@ exports[`Processor components Editor renders with props 1`] = `
         >
           Content type
         </label>
-        <input
-          aria-describedby="contentType-description"
-          className="field-config"
+        <select
+          className="field-config caldera-config-group field-config"
           id="contentType"
           onChange={[Function]}
-          required={false}
-          type="text"
           value={undefined}
-        />
+        >
+          <option
+            className="caldera-config-option"
+            value="HTML"
+          >
+            HTML
+          </option>
+          <option
+            className="caldera-config-option"
+            value="plain"
+          >
+            Plain Text
+          </option>
+        </select>
         <p
           className="description"
           id="contentType-description"
@@ -270,7 +290,7 @@ exports[`Processor components TypeChooser Renders props 1`] = `
 
 exports[`Using RenderGroup RenderGroup snapshot 1`] = `
 <div
-  className=""
+  className="caldera-config-field-setup"
 >
   <div
     className="caldera-config-group"
@@ -280,15 +300,25 @@ exports[`Using RenderGroup RenderGroup snapshot 1`] = `
     >
       Content type
     </label>
-    <input
-      aria-describedby="cf-something-select-id-description"
-      className="field-config"
+    <select
+      className="field-config caldera-config-group field-config"
       id="cf-something-select-id"
       onChange={[Function]}
-      required={false}
-      type="text"
       value="html"
-    />
+    >
+      <option
+        className="caldera-config-option"
+        value="html"
+      >
+        HTML
+      </option>
+      <option
+        className="caldera-config-option"
+        value="plain"
+      >
+        Plain Text
+      </option>
+    </select>
     <p
       className="description"
       id="cf-something-select-id-description"
