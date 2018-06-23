@@ -24,12 +24,6 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@caldera-labs/processor-ui/src/state/processorstore.js~caldera_forms_processor_store_slug",
-    "variable/index.html#static-variable-CALDERA_FORMS_PROCESSOR_STORE_SLUG",
-    "<span>CALDERA_FORMS_PROCESSOR_STORE_SLUG</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorStore.js</span>",
-    "variable"
-  ],
-  [
     "@caldera-labs/processor-ui/src/calderaprocessors.js~calderaprocessors",
     "class/src/CalderaProcessors.js~CalderaProcessors.html",
     "<span>CalderaProcessors</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessors.js</span>",
@@ -108,6 +102,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "@caldera-labs/processor-ui/src/state/actions.js~set_processor_type",
+    "variable/index.html#static-variable-SET_PROCESSOR_TYPE",
+    "<span>SET_PROCESSOR_TYPE</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
     "@caldera-labs/processor-ui/src/components/processor/typechooser.js~typechooser",
     "class/src/components/Processor/TypeChooser.js~TypeChooser.html",
     "<span>TypeChooser</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/components/Processor/TypeChooser.js</span>",
@@ -135,6 +135,18 @@ window.esdocSearchIndex = [
     "@caldera-labs/processor-ui/src/state/actions.js~addprocessor",
     "function/index.html#static-function-addProcessor",
     "<span>addProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~checkconfigfieldconditionals",
+    "function/index.html#static-function-checkConfigFieldConditionals",
+    "<span>checkConfigFieldConditionals</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/factories/util.js~checkconfigfieldsconditionals",
+    "function/index.html#static-function-checkConfigFieldsConditionals",
+    "<span>checkConfigFieldsConditionals</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
     "function"
   ],
   [
@@ -198,6 +210,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@caldera-labs/processor-ui/src/state/selectors.js~getprocessortype",
+    "function/index.html#static-function-getProcessorType",
+    "<span>getProcessorType</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
+    "function"
+  ],
+  [
     "@caldera-labs/processor-ui/src/state/selectors.js~getprocessorvalue",
     "function/index.html#static-function-getProcessorValue",
     "<span>getProcessorValue</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/selectors.js</span>",
@@ -258,6 +276,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "@caldera-labs/processor-ui/src/state/reducers.js~processortypesreducer",
+    "function/index.html#static-function-processorTypesReducer",
+    "<span>processorTypesReducer</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "function"
+  ],
+  [
     "@caldera-labs/processor-ui/src/state/reducers.js~processorsreducer",
     "function/index.html#static-function-processorsReducer",
     "<span>processorsReducer</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
@@ -270,6 +294,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "@caldera-labs/processor-ui/src/factories/util.js~reduceconfigfieldstovalues",
+    "function/index.html#static-function-reduceConfigFieldsToValues",
+    "<span>reduceConfigFieldsToValues</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/util.js</span>",
+    "function"
+  ],
+  [
     "@caldera-labs/processor-ui/src/state/actions.js~removeprocessor",
     "function/index.html#static-function-removeProcessor",
     "<span>removeProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
@@ -279,6 +309,12 @@ window.esdocSearchIndex = [
     "@caldera-labs/processor-ui/src/state/actions.js~setformforprocessor",
     "function/index.html#static-function-setFormForProcessor",
     "<span>setFormForProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~setprocessortype",
+    "function/index.html#static-function-setProcessorType",
+    "<span>setProcessorType</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
     "function"
   ],
   [
@@ -613,14 +649,20 @@ window.esdocSearchIndex = [
   ],
   [
     "src/components/processor/editor.js~editor#configfields",
-    "class/src/components/Processor/Editor.js~Editor.html#instance-method-prepareConfigFields",
-    "src/components/Processor/Editor.js~Editor#prepareConfigFields",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-configFields",
+    "src/components/Processor/Editor.js~Editor#configFields",
     "method"
   ],
   [
     "src/components/processor/editor.js~editor#constructor",
     "class/src/components/Processor/Editor.js~Editor.html#instance-constructor-constructor",
     "src/components/Processor/Editor.js~Editor#constructor",
+    "method"
+  ],
+  [
+    "src/components/processor/editor.js~editor#findfieldvalues",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-findFieldValues",
+    "src/components/Processor/Editor.js~Editor#findFieldValues",
     "method"
   ],
   [
@@ -738,6 +780,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/components/processor/typechooser.js~typechooser#getprocessortypes",
+    "class/src/components/Processor/TypeChooser.js~TypeChooser.html#instance-method-getProcessorTypes",
+    "src/components/Processor/TypeChooser.js~TypeChooser#getProcessorTypes",
+    "method"
+  ],
+  [
     "src/components/processor/typechooser.js~typechooser#render",
     "class/src/components/Processor/TypeChooser.js~TypeChooser.html#instance-method-render",
     "src/components/Processor/TypeChooser.js~TypeChooser#render",
@@ -753,6 +801,12 @@ window.esdocSearchIndex = [
     "src/components/processors/list.js~list#constructor",
     "class/src/components/Processors/List.js~List.html#instance-constructor-constructor",
     "src/components/Processors/List.js~List#constructor",
+    "method"
+  ],
+  [
+    "src/components/processors/list.js~list#editor",
+    "class/src/components/Processors/List.js~List.html#instance-method-editor",
+    "src/components/Processors/List.js~List#editor",
     "method"
   ],
   [
@@ -843,12 +897,6 @@ window.esdocSearchIndex = [
     "src/state/actions.js",
     "file/src/state/actions.js.html",
     "src/state/actions.js",
-    "file"
-  ],
-  [
-    "src/state/processorstore.js",
-    "file/src/state/processorStore.js.html",
-    "src/state/processorStore.js",
     "file"
   ],
   [

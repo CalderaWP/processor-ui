@@ -1,7 +1,7 @@
 {
-  "coverage": "69.73%",
-  "expectCount": 76,
-  "actualCount": 53,
+  "coverage": "72.41%",
+  "expectCount": 87,
+  "actualCount": 63,
   "files": {
     "src/CalderaProcessors.js": {
       "expectCount": 2,
@@ -16,13 +16,14 @@
       "undocumentLines": []
     },
     "src/components/Processor/Editor.js": {
-      "expectCount": 10,
+      "expectCount": 11,
       "actualCount": 6,
       "undocumentLines": [
-        6,
-        7,
-        9,
-        105
+        12,
+        13,
+        15,
+        69,
+        129
       ]
     },
     "src/components/Processor/OpenEditorButton.js": {
@@ -46,21 +47,23 @@
       ]
     },
     "src/components/Processor/TypeChooser.js": {
-      "expectCount": 4,
+      "expectCount": 5,
       "actualCount": 1,
       "undocumentLines": [
         6,
         7,
-        31
+        30,
+        37
       ]
     },
     "src/components/Processors/List.js": {
-      "expectCount": 5,
-      "actualCount": 2,
+      "expectCount": 7,
+      "actualCount": 3,
       "undocumentLines": [
-        18,
-        20,
-        48
+        15,
+        34,
+        36,
+        127
       ]
     },
     "src/components/Processors/NewProcessor.js": {
@@ -86,14 +89,15 @@
       ]
     },
     "src/factories/util.js": {
-      "expectCount": 5,
-      "actualCount": 5,
+      "expectCount": 8,
+      "actualCount": 8,
       "undocumentLines": []
     },
     "src/processors/emailDefaultConfigFields.js": {
-      "expectCount": 1,
+      "expectCount": 2,
       "actualCount": 0,
       "undocumentLines": [
+        1,
         2
       ]
     },
@@ -117,36 +121,27 @@
       ]
     },
     "src/state/actions.js": {
-      "expectCount": 15,
-      "actualCount": 14,
-      "undocumentLines": [
-        4
-      ]
-    },
-    "src/state/processorStore.js": {
-      "expectCount": 1,
-      "actualCount": 0,
+      "expectCount": 17,
+      "actualCount": 16,
       "undocumentLines": [
         1
       ]
     },
     "src/state/processorsStore.js": {
       "expectCount": 3,
-      "actualCount": 0,
+      "actualCount": 2,
       "undocumentLines": [
-        20,
-        39,
-        40
+        24
       ]
     },
     "src/state/reducers.js": {
-      "expectCount": 5,
-      "actualCount": 5,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/state/selectors.js": {
-      "expectCount": 6,
-      "actualCount": 6,
+      "expectCount": 7,
+      "actualCount": 7,
       "undocumentLines": []
     }
   }

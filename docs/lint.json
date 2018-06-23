@@ -1,5 +1,75 @@
 [
   {
+    "name": "processorFactory",
+    "filePath": "src/factories/processorFactory.js",
+    "lines": [
+      {
+        "lineNumber": 9,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "line": " * Get the configuration for a processor"
+      },
+      {
+        "lineNumber": 11,
+        "line": " *"
+      },
+      {
+        "lineNumber": 12,
+        "line": " * This will merge in defaults, and set values from supplied configValues."
+      },
+      {
+        "lineNumber": 13,
+        "line": " * Does not provide callback functions for updating those values."
+      },
+      {
+        "lineNumber": 14,
+        "line": " * Those callback functions MUST get added before they are used in the default manner."
+      },
+      {
+        "lineNumber": 15,
+        "line": " *"
+      },
+      {
+        "lineNumber": 16,
+        "line": " * @param {String} ID"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * @param {String} type"
+      },
+      {
+        "lineNumber": 18,
+        "line": " * @param {Map} processorTypes"
+      },
+      {
+        "lineNumber": 19,
+        "line": " * @param {Object} configFields Config fields for processor. Indexed by config ID."
+      },
+      {
+        "lineNumber": 20,
+        "line": " */"
+      },
+      {
+        "lineNumber": 21,
+        "line": "export const processorFactory = ( ID, type, configFields = {}, processorTypes = processorTypesMap ) =>  {"
+      }
+    ],
+    "codeParams": [
+      "ID",
+      "type",
+      "configFields",
+      "processorTypes"
+    ],
+    "docParams": [
+      "ID",
+      "type",
+      "processorTypes",
+      "configFields"
+    ]
+  },
+  {
     "name": "processorsReducer",
     "filePath": "src/state/reducers.js",
     "lines": [
@@ -55,84 +125,6 @@
     "docParams": [
       "{Map}state",
       "action"
-    ]
-  },
-  {
-    "name": "getProcessorsCollection",
-    "filePath": "src/state/selectors.js",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "line": "/**"
-      },
-      {
-        "lineNumber": 2,
-        "line": " * Get all of the procesors in collection"
-      },
-      {
-        "lineNumber": 3,
-        "line": " *"
-      },
-      {
-        "lineNumber": 4,
-        "line": " * @param {Map} state"
-      },
-      {
-        "lineNumber": 5,
-        "line": " * @param {String} processorId"
-      },
-      {
-        "lineNumber": 6,
-        "line": " */"
-      },
-      {
-        "lineNumber": 7,
-        "line": "export const getProcessorsCollection = (state) => {"
-      }
-    ],
-    "codeParams": [
-      "state"
-    ],
-    "docParams": [
-      "state",
-      "processorId"
-    ]
-  },
-  {
-    "name": "getProcessorValue",
-    "filePath": "src/state/selectors.js",
-    "lines": [
-      {
-        "lineNumber": 51,
-        "line": "/**"
-      },
-      {
-        "lineNumber": 52,
-        "line": " * Get the values from the single processor reducer processorReducer"
-      },
-      {
-        "lineNumber": 53,
-        "line": " * @param {Object} state"
-      },
-      {
-        "lineNumber": 54,
-        "line": " * @returns {Object}"
-      },
-      {
-        "lineNumber": 55,
-        "line": " */"
-      },
-      {
-        "lineNumber": 56,
-        "line": "export const getProcessorValue  = (state,configFieldId) => {"
-      }
-    ],
-    "codeParams": [
-      "state",
-      "configFieldId"
-    ],
-    "docParams": [
-      "state"
     ]
   }
 ]
