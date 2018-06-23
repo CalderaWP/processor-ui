@@ -131,7 +131,7 @@ describe('Processor factories', () => {
 			expect( processor.ID ).toEqual( 'cf-s-1' );
 		});
 
-		it( 'Returns object of configFields', () => {
+		it( 'Returns object of prepareConfigFields', () => {
 			const processor = processorFactory( 'cf-s-2', processorTypes.emailProcessorType.TYPE, {
 				fromName: {
 					'value': 'Josh Pollock'

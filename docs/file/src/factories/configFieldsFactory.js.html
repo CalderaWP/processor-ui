@@ -91,15 +91,15 @@
  * Optionally merges with default config fields
  * Optionally sets values from a Map of config values
  *
- * @param {Object} configFields Config fields for processor. Indexed by config ID.
+ * @param {Object} prepareConfigFields Config fields for processor. Indexed by config ID.
  * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.
  * @returns {Object}
  */
-export const configFieldsFactory = (configFields, configFieldsDefaults = {}  ) =&gt; {
-	Object.keys( configFields ).forEach( configFieldId =&gt; {
+export const configFieldsFactory = (prepareConfigFields, configFieldsDefaults = {}  ) =&gt; {
+	Object.keys( prepareConfigFields ).forEach( configFieldId =&gt; {
 		if( configFieldsDefaults.hasOwnProperty(configFieldId)){
-			configFields[configFieldId] = configFieldFactory(
-				configFields[configFieldId],
+			prepareConfigFields[configFieldId] = configFieldFactory(
+				prepareConfigFields[configFieldId],
 				configFieldsDefaults[configFieldId]
 			);
 
@@ -107,17 +107,17 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {}  ) =
 	});
 
 	Object.keys( configFieldsDefaults ).forEach( configDefaultId =&gt; {
-		if( ! configFields.hasOwnProperty(configDefaultId)){
-			configFields[configDefaultId] = configFieldsDefaults[configDefaultId];
+		if( ! prepareConfigFields.hasOwnProperty(configDefaultId)){
+			prepareConfigFields[configDefaultId] = configFieldsDefaults[configDefaultId];
 		}
 	});
 
-	Object.keys( configFields ).forEach(configFieldId  =&gt; {
-		configFields[configFieldId].id = configFieldId;
-		configFields[configFieldId].ID = configFieldId;
+	Object.keys( prepareConfigFields ).forEach(configFieldId  =&gt; {
+		prepareConfigFields[configFieldId].id = configFieldId;
+		prepareConfigFields[configFieldId].ID = configFieldId;
 	});
 
-	return configFields;
+	return prepareConfigFields;
 };
 </code></pre>
 

@@ -5,7 +5,23 @@ import {Editor} from "../Processor/Editor";
 import {OpenEditorButton} from "../Processor/OpenEditorButton";
 import {TypeChooser} from "../Processor/TypeChooser";
 import {ProcessorLabel} from "../Processor/ProcessorLabel";
+import {
+	checkConfigFieldsConditionals,
+	mapKeysToIdProperty,
+	objectToMap,
+	reduceConfigFieldsToValues
+} from "../../factories/util";
 
+const findFieldValues = (processor) => {
+	return reduceConfigFieldsToValues(
+		mapKeysToIdProperty(
+			objectToMap(
+				processor.configFields
+			)
+		)
+	);
+
+}
 /**
  * Displays list of processors
  *
@@ -18,11 +34,14 @@ export class List extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			opened: {}
+			opened: {},
+			processorFieldValues: new Map(),
 		};
 		this.onUpdateProcessor = this.onUpdateProcessor.bind(this);
 
 	}
+
+
 
 	/**
 	 * When processors is updated, do stuff
@@ -40,8 +59,68 @@ export class List extends React.Component{
 		opened[updatedProcessor.ID]=true;
 
 		this.setState({
-			opened
+			opened,
 		});
+
+		if( this.state.processorFieldValues.has( updatedProcessor.ID)){
+			let previousValues = this.state.processorFieldValues.get( updatedProcessor.ID );
+			const conditionalChecks = checkConfigFieldsConditionals(
+				updatedProcessor.configFields,
+				this.state.processorFieldValues.get( updatedProcessor.ID )
+			);
+			Object.keys( updatedProcessor.configFields ).forEach(configFieldId =>{
+				if( ! conditionalChecks[configFieldId]){
+					updatedProcessor.configFields[configFieldId].value = previousValues[configFieldId];
+				}
+			});
+		}
+
+		this.setState({
+			processorFieldValues: this.state.processorFieldValues.set(
+				updatedProcessor.ID,
+				findFieldValues(updatedProcessor)
+			)
+		});
+
+	}
+
+	/**
+	 * Create editor for one processor
+	 *
+	 * Adds the conditional logic to the Editor component
+	 *
+	 * @param {Object} processor
+	 * @param {Boolean} isOpen
+	 * @return {*}
+	 */
+	editor(processor,isOpen){
+		if( 'object' === typeof  processor
+			&& this.props.processors.has(processor.ID ) ){
+			const conditionalChecks = checkConfigFieldsConditionals(
+				processor.configFields,
+				this.state.processorFieldValues.get( processor.ID )
+			);
+			let configFields = {};
+			Object.keys( processor.configFields ).forEach(configFieldId =>{
+				if( conditionalChecks[configFieldId]){
+					configFields[configFieldId]= processor.configFields[configFieldId];
+				}
+			});
+
+			return(
+				<Editor
+					ID={processor.ID}
+					type={processor.type}
+					label={processor.label}
+					configFields={configFields}
+					onUpdateProcessor={this.onUpdateProcessor}
+					form={this.props.form}
+					isOpen={isOpen}
+					getProcessorFromCollection={this.props.getProcessorFromCollection}
+				/>
+			)
+		}
+
 	}
 
 
@@ -57,15 +136,7 @@ export class List extends React.Component{
 							key={key}
 						>
 							{isOpen &&
-								<Editor
-									ID={processor.ID}
-									type={processor.type}
-									label={processor.label}
-									configFields={processor.configFields}
-									onUpdateProcessor={this.onUpdateProcessor}
-									form={this.props.form}
-									isOpen={isOpen}
-								/>
+								<React.Fragment>{this.editor(processor,isOpen)}</React.Fragment>
 							}
 
 							{!isOpen &&

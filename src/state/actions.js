@@ -127,9 +127,9 @@ export const updateProcessorValues = (configValues ) => {
 };
 
 /**
- * Creates an action to update the processor configFields single processor store.
+ * Creates an action to update the processor prepareConfigFields single processor store.
  * @param {Map} configFields New config fields
- * @return {{type: string, configFields: *}}
+ * @return {{type: string, prepareConfigFields: *}}
  */
 export const updateProcessorConfigFields = (configFields ) => {
 	return {

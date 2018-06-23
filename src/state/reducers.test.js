@@ -75,7 +75,7 @@ describe('reducers', () => {
 			expect(typeof store.values().next().value.ID).toEqual('string');
 		});
 
-		it('New processors have empty configFields', () => {
+		it('New processors have empty prepareConfigFields', () => {
 			const action = newProcessor();
 			const store = processorsReducer(new Map(), action);
 			expect(typeof store.values().next().value.configFields).toEqual('object');
@@ -186,7 +186,7 @@ describe('reducers', () => {
 			expect(store.configValues).toEqual(values);
 		});
 
-		it('Updates processor configFields', () => {
+		it('Updates processor prepareConfigFields', () => {
 			//A mock library is needed!
 			const textFieldConfig = {
 				'label': 'Tags',

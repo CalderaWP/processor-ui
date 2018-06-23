@@ -209,14 +209,14 @@ export const updateProcessorValues = (configValues ) =&gt; {
 };
 
 /**
- * Creates an action to update the processor configFields single processor store.
- * @param {Map} configFields New config fields
- * @return {{type: string, configFields: *}}
+ * Creates an action to update the processor prepareConfigFields single processor store.
+ * @param {Map} prepareConfigFields New config fields
+ * @return {{type: string, prepareConfigFields: *}}
  */
-export const updateProcessorConfigFields = (configFields ) =&gt; {
+export const updateProcessorConfigFields = (prepareConfigFields ) =&gt; {
 	return {
 		type: UPDATE_PROCESSOR_CONFIG_FIELDS,
-		configFields
+		prepareConfigFields
 	};
 };
 

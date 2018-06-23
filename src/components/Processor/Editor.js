@@ -21,6 +21,7 @@ export class Editor extends React.PureComponent {
 		this.changeType = this.changeType.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.configFields = this.configFields.bind(this);
+		this.findFieldValues = this.findFieldValues.bind(this);
 		this.labelAs = this.labelAs.bind(this);
 
 	}
@@ -51,13 +52,7 @@ export class Editor extends React.PureComponent {
 
 		let fields = [];
 		if ( 'object' === typeof this.props.configFields ) {
-			let configValues = reduceConfigFieldsToValues(
-					mapKeysToIdProperty(
-						objectToMap(
-							this.props.configFields
-						)
-					)
-			);
+			const configValues = this.findFieldValues();
 			Object.keys(this.props.configFields).forEach(configFieldId => {
 				if( checkConfigFieldConditionals(this.props.configFields[configFieldId],configValues)){
 					fields[configFieldId] = this.props.configFields[configFieldId];
@@ -71,6 +66,16 @@ export class Editor extends React.PureComponent {
 		return fields;
 	}
 
+	findFieldValues() {
+		return reduceConfigFieldsToValues(
+			mapKeysToIdProperty(
+				objectToMap(
+					this.props.configFields
+				)
+			)
+		);
+
+	}
 	/**
 	 * Updates the processor config fields and dispatches the change handler
 	 *
@@ -169,17 +174,16 @@ export class Editor extends React.PureComponent {
 Editor.propTypes = {
 	onUpdateProcessor: PropTypes.func.isRequired,
 	form: PropTypes.object,
-	configFields: PropTypes.oneOfType([
+	configFields: PropTypes.oneOfType(
+		[
 			PropTypes.array,
 			PropTypes.object
-	]
-
+		]
 	),
 	isOpen: PropTypes.bool,
 	ID: PropTypes.string.isRequired,
 	type: PropTypes.string,
 	label: PropTypes.string,
-
 };
 
 Editor.defaultProps = {

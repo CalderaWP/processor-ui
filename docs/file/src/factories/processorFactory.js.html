@@ -102,13 +102,13 @@ Object.values(processorTypes).forEach( type =&gt;{
  *
  * @param {String} ID
  * @param {String} type
- * @param {Object} configFields Config fields for processor. Indexed by config ID.
+ * @param {Object} prepareConfigFields Config fields for processor. Indexed by config ID.
  */
-export const processorFactory = ( ID, type, configFields = {} ) =&gt;  {
+export const processorFactory = ( ID, type, prepareConfigFields = {} ) =&gt;  {
 	let processor = {
 		ID,
 		type,
-		configFields
+		prepareConfigFields
 	};
 	if( processorTypesMap.has( type ) ){
 		const configFieldDefaults =
@@ -116,7 +116,7 @@ export const processorFactory = ( ID, type, configFields = {} ) =&gt;  {
 				? processorTypesMap.get( type ).defaultConfigFields
 				: {};
 
-		processor.configFields = configFieldsFactory(configFields,configFieldDefaults);
+		processor.prepareConfigFields = configFieldsFactory(prepareConfigFields,configFieldDefaults);
 
 	}
 	return processor;

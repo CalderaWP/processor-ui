@@ -173,7 +173,7 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 			//@TODO replace with generateId util function
 			state.set( ID, {
 				ID,
-				configFields: {}
+				prepareConfigFields: {}
 			} );
 			break;
 		case ADD_PROCESSOR:
@@ -186,12 +186,12 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 		return clone(state);
 	case UPDATE_PROCESSOR:
 		if( action.processor.type !== state.get( action.processor.ID ).type ){
-			action.processor.configFields = {};
+			action.processor.prepareConfigFields = {};
 		}
 		return state.set( action.processor.ID, processorFactory(
 			action.processor.ID,
 			action.processor.type,
-			action.processor.configFields,
+			action.processor.prepareConfigFields,
 		));
 
 	case  REMOVE_PROCESSOR:
@@ -214,7 +214,7 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
 	form: {},
 	processor:  {},
-	configFields: {},
+	prepareConfigFields: {},
 	configValues: new Map()
 	/* @TODO conditionals for processors */
 };
@@ -242,7 +242,7 @@ export const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_S
 	case UPDATE_PROCESSOR_CONFIG_FIELDS: {
 		return {
 			...state,
-			configFields:action.configFields
+			prepareConfigFields:action.prepareConfigFields
 		};
 	}
 

@@ -613,8 +613,8 @@ window.esdocSearchIndex = [
   ],
   [
     "src/components/processor/editor.js~editor#configfields",
-    "class/src/components/Processor/Editor.js~Editor.html#instance-method-configFields",
-    "src/components/Processor/Editor.js~Editor#configFields",
+    "class/src/components/Processor/Editor.js~Editor.html#instance-method-prepareConfigFields",
+    "src/components/Processor/Editor.js~Editor#prepareConfigFields",
     "method"
   ],
   [

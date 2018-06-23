@@ -235,6 +235,7 @@ describe('Processor components', () => {
 					configFields={emailProcessor.configFields}
 					type={emailProcessor.type}
 					onUpdateProcessor={() => {}}
+					getProcessorFromCollection={() => {}}
 					form={form}
 				/>
 			);
@@ -248,6 +249,7 @@ describe('Processor components', () => {
 						ID={'p22'}
 						configFields={{}}
 						onUpdateProcessor={() => {}}
+						getProcessorFromCollection={() => {}}
 						form={form}
 					/>
 				);
@@ -273,6 +275,7 @@ describe('Processor components', () => {
 						type={'email'}
 						configFields={{}}
 						onUpdateProcessor={() => {}}
+						getProcessorFromCollection={() => {}}
 						form={form}
 					/>
 				);
@@ -299,6 +302,7 @@ describe('Processor components', () => {
 						configFields={{}}
 						onUpdateProcessor={() => {}}
 						form={form}
+						getProcessorFromCollection={() => {}}
 					/>
 				);
 				expect( wrapper.find( '.processor-label').text() ).toBe('Email To Roy');
@@ -314,6 +318,7 @@ describe('Processor components', () => {
 					type={emailProcessor.type}
 					onUpdateProcessor={handler}
 					form={form}
+					getProcessorFromCollection={() => {}}
 				/>
 			);
 			expect(component.toJSON()).toMatchSnapshot();
@@ -327,6 +332,7 @@ describe('Processor components', () => {
 					type={emailProcessor.type}
 					form={form}
 					onUpdateProcessor={handler}
+					getProcessorFromCollection={() => {}}
 				/>
 			);
 			expect(wrapper.find('.processor-type').length).toBe(1);
@@ -340,6 +346,7 @@ describe('Processor components', () => {
 					type={redirectProcessorType.TYPE}
 					form={form}
 					onUpdateProcessor={handler}
+					getProcessorFromCollection={() => {}}
 				/>
 			);
 			expect(wrapper.find('.processor-type').text()).toBe(redirectProcessorType.TYPE);
@@ -347,7 +354,7 @@ describe('Processor components', () => {
 
 
 
-		it( 'Outputs the configFields', () => {
+		it( 'Outputs the prepareConfigFields', () => {
 
 			function changeHandler(updateProcessor) {
 
@@ -360,6 +367,7 @@ describe('Processor components', () => {
 					type={redirectProcessorType.TYPE}
 					form={form}
 					onUpdateProcessor={changeHandler}
+					getProcessorFromCollection={() => {}}
 				/>
 			);
 			expect(wrapper.find('.processor-editor').children().length ).toBe(1);

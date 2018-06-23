@@ -100,7 +100,7 @@ export class Editor extends React.PureComponent {
 		this.mouseLeave = this.mouseLeave.bind(this);
 		this.changeType = this.changeType.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-		this.configFields = this.configFields.bind(this);
+		this.prepareConfigFields = this.prepareConfigFields.bind(this);
 		this.labelAs = this.labelAs.bind(this);
 
 	}
@@ -124,15 +124,15 @@ export class Editor extends React.PureComponent {
 	 *
 	 * @return {Array}
 	 */
-	configFields(){
-		if( Array.isArray( this.props.configFields ) ) {
-			return this.props.configFields;
+	prepareConfigFields(){
+		if( Array.isArray( this.props.prepareConfigFields ) ) {
+			return this.props.prepareConfigFields;
 		}
 
 		let fields = [];
-		if ( &apos;object&apos; === typeof this.props.configFields ) {
-			Object.keys(this.props.configFields).forEach(configFieldId =&gt; {
-				fields[configFieldId] = this.props.configFields[configFieldId];
+		if ( &apos;object&apos; === typeof this.props.prepareConfigFields ) {
+			Object.keys(this.props.prepareConfigFields).forEach(configFieldId =&gt; {
+				fields[configFieldId] = this.props.prepareConfigFields[configFieldId];
 				fields[configFieldId].onValueChange = (newValue) =&gt; {
 					this.handleChange(configFieldId, newValue);
 				};
@@ -148,16 +148,16 @@ export class Editor extends React.PureComponent {
 	 * @param {String|Array|Number} newValue The new value
 	 */
 	handleChange(configFieldId,newValue){
-		let configFields = this.props.configFields;
-		configFields[configFieldId] = {
-			...configFields[configFieldId],
+		let prepareConfigFields = this.props.prepareConfigFields;
+		prepareConfigFields[configFieldId] = {
+			...prepareConfigFields[configFieldId],
 			value:newValue
 		};
 		this.props.onUpdateProcessor({
 			ID: this.props.ID,
 			type: this.props.type,
 			label: this.props.label,
-			configFields
+			prepareConfigFields
 		});
 	}
 
@@ -171,7 +171,7 @@ export class Editor extends React.PureComponent {
 			ID: this.props.ID,
 			label: this.props.label,
 			type: event.target.value,
-			configFields: this.props.configFields
+			prepareConfigFields: this.props.prepareConfigFields
 		});
 	}
 
@@ -220,7 +220,7 @@ export class Editor extends React.PureComponent {
 					&gt;
 						&lt;CalderaComponents.RenderGroup
 							className={&apos;caldera-forms-processor-config&apos;}
-							configFields={this.configFields()}
+							prepareConfigFields={this.prepareConfigFields()}
 						/&gt;
 					&lt;/div&gt;
 				}
@@ -232,12 +232,12 @@ export class Editor extends React.PureComponent {
 
 /**
  * Prop definitions for Editor Property
- * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}
+ * @type {{processor: *, onUpdateProcessor: *, form: *, prepareConfigFields: shim}}
  */
 Editor.propTypes = {
 	onUpdateProcessor: PropTypes.func.isRequired,
 	form: PropTypes.object,
-	configFields: PropTypes.oneOfType([
+	prepareConfigFields: PropTypes.oneOfType([
 			PropTypes.array,
 			PropTypes.object
 	]
@@ -252,7 +252,7 @@ Editor.propTypes = {
 
 Editor.defaultProps = {
 	isOpen: false,
-	configFields: {}
+	prepareConfigFields: {}
 };</code></pre>
 
 </div>

@@ -247,7 +247,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-configFieldsFactory">configFieldsFactory</a></span></span><span class="code" data-ice="signature">(configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, configFieldsDefaults: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-configFieldsFactory">configFieldsFactory</a></span></span><span class="code" data-ice="signature">(prepareConfigFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, configFieldsDefaults: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
         </p>
       </div>
       <div>
@@ -624,7 +624,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-processorFactory">processorFactory</a></span></span><span class="code" data-ice="signature">(ID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-processorFactory">processorFactory</a></span></span><span class="code" data-ice="signature">(ID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, prepareConfigFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -798,13 +798,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-updateProcessorConfigFields">updateProcessorConfigFields</a></span></span><span class="code" data-ice="signature">(configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>): {type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, configFields: <span>*</span>}</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-updateProcessorConfigFields">updateProcessorConfigFields</a></span></span><span class="code" data-ice="signature">(prepareConfigFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>): {type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, prepareConfigFields: <span>*</span>}</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Creates an action to update the processor configFields single processor store.</p>
+        <div data-ice="description"><p>Creates an action to update the processor prepareConfigFields single processor store.</p>
 </div>
       </div>
     </td>
@@ -1228,7 +1228,7 @@ To add a new empty processor use newProcessor action creator.</p>
     
     
     
-    <span class="code" data-ice="name">configFieldsFactory</span><span class="code" data-ice="signature">(configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, configFieldsDefaults: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+    <span class="code" data-ice="name">configFieldsFactory</span><span class="code" data-ice="signature">(prepareConfigFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, configFieldsDefaults: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
     <span class="right-info">
       
       
@@ -1255,7 +1255,7 @@ Optionally sets values from a Map of config values</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">configFields</td>
+      <td data-ice="name" class="code" data-depth="0">prepareConfigFields</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Config fields for processor. Indexed by config ID.</p>
@@ -2175,7 +2175,7 @@ Optionally sets values from a Map of config values</p>
     
     
     
-    <span class="code" data-ice="name">processorFactory</span><span class="code" data-ice="signature">(ID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>*</span></span>
+    <span class="code" data-ice="name">processorFactory</span><span class="code" data-ice="signature">(ID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, prepareConfigFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
@@ -2215,7 +2215,7 @@ Those callback functions MUST get added before they are used in the default mann
       <td data-ice="description"></td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">configFields</td>
+      <td data-ice="name" class="code" data-depth="0">prepareConfigFields</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Config fields for processor. Indexed by config ID.</p>
@@ -2641,7 +2641,7 @@ Processor is a Map()</p>
     
     
     
-    <span class="code" data-ice="name">updateProcessorConfigFields</span><span class="code" data-ice="signature">(configFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>): {type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, configFields: <span>*</span>}</span>
+    <span class="code" data-ice="name">updateProcessorConfigFields</span><span class="code" data-ice="signature">(prepareConfigFields: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>): {type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, prepareConfigFields: <span>*</span>}</span>
     <span class="right-info">
       
       
@@ -2652,7 +2652,7 @@ Processor is a Map()</p>
   <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {updateProcessorConfigFields} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber130">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Creates an action to update the processor configFields single processor store.</p>
+  <div data-ice="description"><p>Creates an action to update the processor prepareConfigFields single processor store.</p>
 </div>
 
   
@@ -2666,7 +2666,7 @@ Processor is a Map()</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">configFields</td>
+      <td data-ice="name" class="code" data-depth="0">prepareConfigFields</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>New config fields</p>
@@ -2682,7 +2682,7 @@ Processor is a Map()</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType">{type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, configFields: <span>*</span>}</td>
+          <td class="return-type code" data-ice="returnType">{type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, prepareConfigFields: <span>*</span>}</td>
           
         </tr>
       </tbody>

@@ -42,7 +42,7 @@ export class ProcessorLabel extends React.PureComponent {
 
 /**
  * Prop definitions for ProcessorLabel Property
- * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}
+ * @type {{processor: *, onUpdateProcessor: *, form: *, prepareConfigFields: shim}}
  *
  * @type {{ID: *, type: shim, label: shim}}
  */
