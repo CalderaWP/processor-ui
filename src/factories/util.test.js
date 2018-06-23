@@ -3,7 +3,8 @@ import {
 	getConfigFieldDefaultValue,
 	getConfigFieldValueOrDefault,
 	objectToMap,
-	mapKeysToIdProperty
+	mapKeysToIdProperty,
+	checkConfigFieldConditionals
 } from './util';
 
 describe( 'Util functions for factories', () => {
@@ -82,5 +83,59 @@ describe( 'Util functions for factories', () => {
 
 		expect( map.get( 'fld1' ).ID ).toBe('fld1');
 		expect( map.get( 'fld2' ).ID ).toEqual('fld2');
+	});
+
+	describe( 'checking conditionals', () => {
+		const field4 = {
+			ID: 'fld4',
+			type: 'email'
+		};
+		it( 'returns true if no conditionals', () => {
+			expect( checkConfigFieldConditionals(field4)).toBe( true );
+		});
+		it( 'returns true if one rule that should return true', () => {
+			expect( checkConfigFieldConditionals({
+				...field4,
+				conditionals: [
+					() => {return true;}
+				]
+			})).toBe( true );
+		});
+		it( 'returns false if one rule that should return false', () => {
+			expect( checkConfigFieldConditionals({
+				...field4,
+				conditionals: [
+					() => {return false;}
+				]
+			})).toBe( false );
+
+		});
+		it( 'returns false if one rule that should return true and one rule that should be false', () => {
+			expect( checkConfigFieldConditionals({
+				...field4,
+				conditionals: [
+					() => {return true;},
+					() => {return false;}
+				]
+			})).toBe( false );
+
+		});
+		it( 'Passes values correctly', () => {
+			const values = {
+				a: 1,
+				b:2
+			};
+			let testValues = null;
+			checkConfigFieldConditionals({
+				...field4,
+				conditionals: [
+					(valuesPassed) => {
+						testValues = valuesPassed;
+					}
+				]
+			},values);
+
+			expect( testValues ).toEqual( values );
+		});
 	});
 });

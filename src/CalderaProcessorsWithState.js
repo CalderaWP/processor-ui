@@ -6,10 +6,15 @@ import {CALDERA_FORMS_PROCESSORS_STORE_SLUG } from "./state/processorsStore";
  * Main processors UI container wrapped with Redux(-like) state management
  */
 const CalderaProcessorsWithState =  withSelect( (select, ownProps ) => {
-	const {getProcessorsCollection, getProcessorTypes } = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);
+	const {
+		getProcessorsCollection,
+		getProcessorTypes,
+		getProcessorFromCollection
+	} = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);
 	const processors = getProcessorsCollection();
 	const processorTypes = getProcessorTypes();
 	return {
+		getProcessorFromCollection,
 		processors,
 		processorTypes,
 		form: ownProps.form

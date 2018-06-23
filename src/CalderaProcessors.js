@@ -19,6 +19,7 @@ class CalderaProcessors extends React.PureComponent {
 					processors={this.props.processors}
 					onUpdateProcessor={this.props.onUpdateProcessor}
 					onRemoveProcessor={this.props.onRemoveProcessor}
+					getProcessorFromCollection={this.props.getProcessorFromCollection}
 				/>
 				<NewProcessor
 					onNewProcessor={this.props.onNewProcessor}
@@ -42,7 +43,8 @@ CalderaProcessors.propTypes = {
 	onNewProcessor: PropTypes.func.isRequired,
 	onRemoveProcessor: PropTypes.func.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired,
-	onUpdateProcessorType: PropTypes.func.isRequired
+	onUpdateProcessorType: PropTypes.func.isRequired,
+	getProcessorFromCollection: PropTypes.func.isRequired,
 };
 
 /**
@@ -52,6 +54,7 @@ CalderaProcessors.propTypes = {
  */
 CalderaProcessors.defaultProps = {
 	processors: new Map(),
+	processorTypes: new Map(),
 };
 
 export default CalderaProcessors;

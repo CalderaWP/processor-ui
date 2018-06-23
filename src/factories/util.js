@@ -67,5 +67,21 @@ export const mapKeysToIdProperty = (theMap) => {
 };
 
 
+export const checkConfigFieldConditionals = (configField,fieldValues = {}) => {
+	if( ! configField.hasOwnProperty('conditionals') || ! Array.isArray(configField.conditionals) ){
+		return true;
+	}
+
+	let allRulesPassed = true;
+	configField.conditionals.forEach( conditional => {
+		if( false === conditional.call(null,fieldValues)){
+			allRulesPassed = false;
+			return false;
+		}
+	});
+
+	return allRulesPassed;
+
+};
 
 

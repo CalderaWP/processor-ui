@@ -35,6 +35,7 @@ describe( 'Processor UI components', () => {
 					processors={processors}
 					onRemoveProcessor={() => {}}
 					onUpdateProcessor={() => {}}
+					getProcessorFromCollection={() => {}}
 				/>
 			);
 			expect( component.toJSON( ) ).toMatchSnapshot();
@@ -55,6 +56,7 @@ describe( 'Processor UI components', () => {
 					processors={processors}
 					onRemoveProcessor={() => {}}
 					onUpdateProcessor={() => {}}
+					getProcessorFromCollection={() => {}}
 				/>
 			);
 			expect( component.toJSON( ) ).toMatchSnapshot();

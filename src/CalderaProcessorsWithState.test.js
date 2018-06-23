@@ -19,6 +19,7 @@ describe( 'CalderaProcessors component', () => {
 			onUpdateProcessor={handler}
 			processorTypes={new Map()}
 			onUpdateProcessorType={() => {}}
+			getProcessorFromCollection={() => {}}
 		/>, div);
 	});
 	it('renders with state without crashing', () => {

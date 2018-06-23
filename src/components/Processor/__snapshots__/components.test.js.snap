@@ -87,7 +87,7 @@ exports[`Processor components Editor Renders with props 1`] = `
         >
           <option
             className="caldera-config-option"
-            value="HTML"
+            value="html"
           >
             HTML
           </option>
@@ -103,6 +103,30 @@ exports[`Processor components Editor Renders with props 1`] = `
           id="contentType-description"
         >
           HTML or plain text?
+        </p>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <label
+          htmlFor="bodyPadding"
+        >
+          Message Body Padding
+        </label>
+        <input
+          aria-describedby="bodyPadding-description"
+          className="field-config caldera-config-group field-config"
+          id="bodyPadding"
+          onChange={[Function]}
+          required={false}
+          type="number"
+          value={undefined}
+        />
+        <p
+          className="description"
+          id="bodyPadding-description"
+        >
+          How much space to add around message body
         </p>
       </div>
     </div>
@@ -197,7 +221,7 @@ exports[`Processor components Editor renders with props 1`] = `
         >
           <option
             className="caldera-config-option"
-            value="HTML"
+            value="html"
           >
             HTML
           </option>
@@ -213,6 +237,30 @@ exports[`Processor components Editor renders with props 1`] = `
           id="contentType-description"
         >
           HTML or plain text?
+        </p>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <label
+          htmlFor="bodyPadding"
+        >
+          Message Body Padding
+        </label>
+        <input
+          aria-describedby="bodyPadding-description"
+          className="field-config caldera-config-group field-config"
+          id="bodyPadding"
+          onChange={[Function]}
+          required={false}
+          type="text"
+          value={undefined}
+        />
+        <p
+          className="description"
+          id="bodyPadding-description"
+        >
+          How much space to add around message body
         </p>
       </div>
     </div>

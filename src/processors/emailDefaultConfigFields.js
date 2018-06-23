@@ -1,4 +1,4 @@
-
+const contentTypeHtmlValueIdentifier = 'html';
 export const emailDefaultConfigFields = {
 	fromName: {
 		'label': 'From Name',
@@ -17,7 +17,7 @@ export const emailDefaultConfigFields = {
 		'type': 'select',
 		'options': [
 			{
-				value: 'HTML',
+				value: contentTypeHtmlValueIdentifier,
 				label: 'HTML',
 			},
 			{
@@ -26,7 +26,17 @@ export const emailDefaultConfigFields = {
 			}
 		],
 		default: 'HTML'
-	}
+	},
+	bodyPadding: {
+		'label': 'Message Body Padding',
+		'desc': 'How much space to add around message body',
+		'type': 'number',
+		'conditionals' : [
+			(values) => {
+				return contentTypeHtmlValueIdentifier === values.contentType;
+			}
+		]
+	},
 };
 
 Object.keys( emailDefaultConfigFields ).forEach( key => {

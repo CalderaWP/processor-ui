@@ -11,6 +11,7 @@ import {
 	removeProcessor,
 	updateProcessor,
 	setProcessorType
+	,
 } from './actions';
 
 import {
