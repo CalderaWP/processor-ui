@@ -7,6 +7,7 @@ export class TypeChooser extends React.PureComponent {
 	constructor(props) {
 		super(props);
 		this.changeType = this.changeType.bind(this);
+		this.getProcessorTypes = this.getProcessorTypes.bind(this);
 
 
 	}
@@ -26,9 +27,15 @@ export class TypeChooser extends React.PureComponent {
 		});
 	}
 
-
+	getProcessorTypes(){
+		if( 'function' === typeof this.props.getProcessorTypes){
+			return this.props.getProcessorTypes();
+		}
+		return processorTypesMap;
+	}
 
 	render() {
+
 		return (
 			<select
 				className={'processor-type-chooser'}
@@ -36,7 +43,7 @@ export class TypeChooser extends React.PureComponent {
 				value={this.props.type}
 			>
 				<option/>
-				{Array.from(processorTypesMap).map(option => {
+				{Array.from(this.getProcessorTypes()).map(option => {
 						return (
 							<option
 								key={option[1].TYPE}
@@ -62,6 +69,6 @@ TypeChooser.propTypes = {
 	ID: PropTypes.string.isRequired,
 	type: PropTypes.string,
 	label: PropTypes.string,
-
+	getProcessorTypes: PropTypes.func
 };
 

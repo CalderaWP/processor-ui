@@ -9,7 +9,7 @@ const CalderaProcessorsWithState =  withSelect( (select, ownProps ) => {
 	const {
 		getProcessorsCollection,
 		getProcessorTypes,
-		getProcessorFromCollection
+		getProcessorFromCollection,
 	} = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);
 	const processors = getProcessorsCollection();
 	const processorTypes = getProcessorTypes();
@@ -17,6 +17,7 @@ const CalderaProcessorsWithState =  withSelect( (select, ownProps ) => {
 		getProcessorFromCollection,
 		processors,
 		processorTypes,
+		getProcessorTypes,
 		form: ownProps.form
 	};
 } )( withDispatch( ( dispatch ) => {

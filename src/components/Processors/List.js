@@ -170,6 +170,7 @@ export class List extends React.Component{
 								<TypeChooser
 									onUpdateProcessor={this.onUpdateProcessor}
 									ID={processor.ID}
+									getProcessorTypes={this.props.getProcessorTypes}
 								/>
 
 							}
@@ -194,5 +195,6 @@ List.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
 	onRemoveProcessor: PropTypes.func.isRequired,
 	onUpdateProcessor: PropTypes.func.isRequired,
-	getProcessorFromCollection: PropTypes.func.isRequired,
+	getProcessorFromCollection: PropTypes.func,
+	getProcessorTypes: PropTypes.func
 };

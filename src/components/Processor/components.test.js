@@ -414,6 +414,34 @@ describe('Processor components', () => {
 			expect(type ).toEqual( redirectProcessorType.TYPE);
 
 		});
+
+		it ( 'Can get processorTypes', () => {
+			const processors = new Map()
+				.set( 'p1', {
+					TYPE: 'p1',
+					LABEL: 'P1'
+				})
+				.set( 'p2', {
+					TYPE: 'p2',
+					LABEL: 'P2'
+				})
+				.set( 'p3', {
+					TYPE: 'p3',
+					LABEL: 'P3'
+				});
+			const wrapper = mount(
+				<TypeChooser
+					onUpdateProcessor={()=>{}}
+					ID={'p12345'}
+					type={emailProcessorType.TYPE}
+					getProcessorTypes={() => {
+						return processors;
+					}}
+				/>
+			);
+			expect(wrapper.find( 'select option').length ).toEqual( processors.size + 1 );
+
+		});
 	});
 
 });
