@@ -1,8 +1,8 @@
 
 /**
- * Get all of the procesors in collection
+ * Get all of the processors in collection
  *
- * @param {Map} state
+ * @param {Map} state Current state.
  * @param {String} processorId
  */
 export const getProcessorsCollection = (state) => {
@@ -23,7 +23,7 @@ export const getProcessorFromCollection = (state, processorId) => {
 
 /**
  * Get the processor from the single processor reducer processorReducer
- * @param state
+ * @param {Map} state Current state.
  * @returns {Map}
  */
 export const getProcessor = (state ) => {
@@ -33,7 +33,7 @@ export const getProcessor = (state ) => {
 
 /**
  * Get the form from the single processor reducer processorReducer
- * @param state
+ * @param {Map} state Current state.
  * @returns {Object}
  */
 export const getFormForProcessor = ( state ) => {
@@ -42,7 +42,7 @@ export const getFormForProcessor = ( state ) => {
 
 /**
  * Get the values from the single processor reducer processorReducer
- * @param state
+ * @param {Map} state Current state.
  * @returns {Object}
  */
 export const getProcessorValues  = (state) => {
@@ -51,11 +51,24 @@ export const getProcessorValues  = (state) => {
 
 /**
  * Get the values from the single processor reducer processorReducer
- * @param {Object} state
+ * @param {Map} state Current state.
+ * @param {String} configFieldId ID to search for.
  * @returns {Object}
  */
 export const getProcessorValue  = (state,configFieldId) => {
 	return state.configValues.has(configFieldId)
 		? state.configValues.get(configFieldId)
+		: null;
+};
+
+/**
+ * Get a processor type definition from the processorTypes map
+ * @param {Map} state Current state.
+ * @param {String} processorTypeIdentifier ID of processor type to search by
+ * @returns {Object|null}
+ */
+export const getProcessorType = (state,processorTypeIdentifier) => {
+	return state.has( processorTypeIdentifier )
+		? state.get( processorTypeIdentifier )
 		: null;
 };

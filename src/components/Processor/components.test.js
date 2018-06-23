@@ -365,48 +365,6 @@ describe('Processor components', () => {
 			expect(wrapper.find('.processor-editor').children().length ).toBe(1);
 		});
 
-		it( 'has the config fields', () => {
-			let type = redirectProcessorType.TYPE;
-
-			function changeHandler(updateProcessor) {
-				type = updateProcessor.type;
-			}
-
-			const wrapper = shallow(
-				<Editor
-					ID={'p129'}
-					configFields={processorFactory('p129',type).configFields}
-					type={type}
-					form={form}
-					onUpdateProcessor={changeHandler}
-				/>
-			);
-			expect(wrapper.find( '.processor-editor' ).children().find( '.caldera-forms-processor-config').length ).toBe( 1 );
-		});
-
-		const fieldConfig = {
-			'ID': 'contentType',
-			'type': 'dropdown',
-			'label': 'Content type',
-			'description': 'Choose content type, default is HTML',
-			options: [
-				{
-					label: 'HTML',
-					value: 'html'
-				},
-				{
-					label: 'Plain Text',
-					value: 'plain'
-				}
-			],
-			value: 'html',
-			onValueChange: (newValue) => {
-				return newValue;
-			}
-		};
-
-
-
 	});
 
 	describe( 'TypeChooser', () => {

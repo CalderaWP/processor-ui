@@ -17,7 +17,7 @@ import {
 } from './selectors';
 
 
-const config = {
+let config = {
 	actions: {
 		addProcessor,
 		newProcessor,

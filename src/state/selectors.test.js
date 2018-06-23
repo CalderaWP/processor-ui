@@ -4,7 +4,7 @@ import {
 	getProcessor,
 	getProcessorFromCollection,
 	getProcessorValues,
-	getProcessorValue,
+	getProcessorValue, getProcessorType,
 } from './selectors';
 
 describe('selector functions',  () =>{
@@ -83,6 +83,27 @@ describe('selector functions',  () =>{
 				configValues: values
 			};
 			expect( getProcessorValue( thisMockState,'field2')).toEqual(null);
+		});
+	});
+
+	describe( 'processor type reducer selectors', () => {
+		const type2 =  {
+			TYPE: 'type2'
+		};
+		const mockProcessorTypes = new Map();
+		mockProcessorTypes.set( 'type1', {
+			TYPE: 'type1'
+		} );
+		mockProcessorTypes.set( 'type2', type2 );
+		mockProcessorTypes.set( 'type3', {
+			TYPE: 'type3'
+		} );
+		it( 'selects by type identifier', () => {
+			expect( getProcessorType( mockProcessorTypes,'type2')).toEqual(type2);
+		});
+
+		it( 'returns null for non-existant type identifier', () => {
+			expect( getProcessorType( mockProcessorTypes,'type5')).toEqual(null);
 		});
 	});
 

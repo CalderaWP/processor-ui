@@ -1,6 +1,6 @@
 //import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from "./processorsStore";
 import {CALDERA_FORMS_PROCESSOR_STORE_SLUG} from './processorStore';
-
+import {CALDERA_FORMS_PROCESSOR_TYPES_STORE_SLUG} from './processorTypesStore';
 const CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';
 
 
@@ -48,6 +48,13 @@ export const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UP
  * @type {string}
  */
 export const UPDATE_PROCESSOR_CONFIG_FIELDS = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_CONFIG_FIELDS`;
+
+/**
+ * The name of the action to set a processorType definition for a processor type in the processorType reducer
+ *
+ * @type {string}
+ */
+export const SET_PROCESSOR_TYPE = `${CALDERA_FORMS_PROCESSOR_TYPES_STORE_SLUG}/SET_PROCESSOR_TYPE`;
 
 /**
  * Creates an action to add a processor with config to the collection
@@ -134,3 +141,17 @@ export const updateProcessorConfigFields = (configFields ) => {
 	};
 };
 
+/**
+ * Set or remove a processorType in processorType reducer
+ * @param {Object} processorType The processor type definition
+ * @param {String} processorTypeIdentifier Unique identifier for processor type
+ *
+ * @return {{type: string, processorType: *, processorTypeIdentifier: *}}
+ */
+export const setProcessorType = (processorType, processorTypeIdentifier ) => {
+	return{
+		type: SET_PROCESSOR_TYPE,
+		processorType,
+		processorTypeIdentifier
+	};
+};

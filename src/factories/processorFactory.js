@@ -16,18 +16,19 @@ Object.values(processorTypes).forEach( type =>{
  *
  * @param {String} ID
  * @param {String} type
+ * @param {Map} processorTypes
  * @param {Object} configFields Config fields for processor. Indexed by config ID.
  */
-export const processorFactory = ( ID, type, configFields = {} ) =>  {
+export const processorFactory = ( ID, type, configFields = {}, processorTypes = processorTypesMap ) =>  {
 	let processor = {
 		ID,
 		type,
 		configFields
 	};
-	if( processorTypesMap.has( type ) ){
+	if( processorTypes.has( type ) ){
 		const configFieldDefaults =
-			processorTypesMap.get( type ).hasOwnProperty( 'defaultConfigFields' )
-				? processorTypesMap.get( type ).defaultConfigFields
+			processorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )
+				? processorTypes.get( type ).defaultConfigFields
 				: {};
 
 		processor.configFields = configFieldsFactory(configFields,configFieldDefaults);

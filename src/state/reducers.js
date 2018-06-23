@@ -6,9 +6,10 @@ import {
 	//processor
 	UPDATE_PROCESSOR,
 	SET_FORM_FOR_PROCESSOR,
-	UPDATE_PROCESSOR_VALUES, UPDATE_PROCESSOR_CONFIG_FIELDS
+	UPDATE_PROCESSOR_VALUES,
+	UPDATE_PROCESSOR_CONFIG_FIELDS, SET_PROCESSOR_TYPE
 } from './actions';
-import {processorFactory} from '../factories/processorFactory';
+import {processorFactory, processorTypesMap} from '../factories/processorFactory';
 
 /**
  * Clone an object of various types
@@ -65,8 +66,6 @@ export function clone(obj) {
 export const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();
 
 
-
-
 /**
  * Reducer for managing a collection of processors
  *
@@ -116,6 +115,31 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 	}
 
 };
+
+
+/**
+ * Reducer for processor Types
+ *
+ *
+ * @param state
+ * @param action
+ * @return {Map<any, any>}
+ */
+export const processorTypesReducer = (state = processorTypesMap, action) => {
+	switch( action.type ){
+	case SET_PROCESSOR_TYPE:
+		return state.set(
+			action.processorTypeIdentifier,
+			action.processorType
+		);
+	default:
+		return state;
+	}
+
+};
+
+
+
 
 /**
  * Default processor state.

@@ -12,8 +12,10 @@ import {
 	SET_FORM_FOR_PROCESSOR,
 	UPDATE_PROCESSOR,
 	UPDATE_PROCESSOR_VALUES,
-	UPDATE_PROCESSOR_CONFIG_FIELDS
+	UPDATE_PROCESSOR_CONFIG_FIELDS, setProcessorType, SET_PROCESSOR_TYPE
 } from './actions';
+import {EMAIL_PROCESSOR_TYPE} from '../processors/emailProcessorType';
+import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
 
 describe( 'action creators', () => {
 	const processorId = 'p11';
@@ -95,6 +97,33 @@ describe( 'action creators', () => {
 		it( 'updateProcessorConfigFields action creator create the right payload', () =>{
 			const action = updateProcessorConfigFields(configFields);
 			expect( action.configFields ).toBe( configFields );
+		});
+	});
+
+	describe( 'Actions for processorTypes reducer', () => {
+		const processorIdentifier = 'CUSTOM_PROCESSOR';
+		const processorType = {
+			TYPE: processorIdentifier,
+			LABEL: 'My fancy custom processor',
+			defaultConfigFields: {
+				...emailDefaultConfigFields,
+				extraSetting: {
+					'label': 'Value for custom field',
+					'type': 'text',
+				}
+			}
+		};
+		it( 'creates setProcessorType action with right type', () => {
+			const action = setProcessorType(processorType, processorIdentifier );
+			expect( action.type ).toBe( SET_PROCESSOR_TYPE );
+		});
+		it( 'creates setProcessorType action with right processorIdentifier', () => {
+			const action = setProcessorType(processorType, processorIdentifier );
+			expect( action.processorTypeIdentifier ).toBe( processorIdentifier );
+		});
+		it( 'creates setProcessorType action with right processor type definition', () => {
+			const action = setProcessorType(processorType, processorIdentifier );
+			expect( action.processorType ).toBe( processorType );
 		});
 	});
 });
