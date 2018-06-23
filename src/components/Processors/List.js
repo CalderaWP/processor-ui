@@ -50,19 +50,6 @@ export class List extends React.Component{
 		return (
 			<div>
 				{processors.map(processor => {
-					if( 'string' === typeof processor.ID ){
-						let processorId = processor.ID;
-						processor = this.props.getProcessorFromCollection(
-							processorId
-
-						);
-					}
-
-					const validProcessor = 'object' === typeof processor;
-					if( ! validProcessor ){
-						return;
-					}
-
 					let isOpen = this.state.opened.hasOwnProperty(processor.ID) && true === this.state.opened[processor.ID];
 					const key = processor.type ? `${processor.type}-${processor.ID}` : processor.ID;
 					return (

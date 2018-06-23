@@ -4,7 +4,7 @@
  * @returns {String|Number|Array|null}
  */
 export const getConfigFieldValue = (configField) => {
-	return 'object'=== typeof configField && configField.hasOwnProperty('value')
+	return 'object' === typeof configField && configField.hasOwnProperty('value')
 		? configField.value
 		: null;
 };
@@ -15,7 +15,7 @@ export const getConfigFieldValue = (configField) => {
  * @returns {String|Number|Array|null}
  */
 export const getConfigFieldDefaultValue = (configField) => {
-	return 'object'=== typeof configField && configField.hasOwnProperty('default')
+	return 'object' === typeof configField && configField.hasOwnProperty('default')
 		? configField.default
 		: null;
 };
@@ -25,7 +25,7 @@ export const getConfigFieldDefaultValue = (configField) => {
  * @param {Object} configField Config field to search for value or defualt in
  * @returns {String|Number|Array|null}
  */
-export const getConfigFieldValueOrDefault = (configField ) => {
+export const getConfigFieldValueOrDefault = (configField) => {
 	return null !== getConfigFieldValue(configField)
 		? getConfigFieldValue(configField)
 		: null !== getConfigFieldDefaultValue(configField)
@@ -53,8 +53,8 @@ export const objectToMap = (object) => {
 export const mapKeysToIdProperty = (theMap) => {
 	theMap
 		.forEach((value, key, map) => {
-			if( 'object' === typeof  value ){
-				map.set( key, {
+			if ('object' === typeof  value) {
+				map.set(key, {
 					...value,
 					ID: key,
 					id: key
@@ -67,14 +67,24 @@ export const mapKeysToIdProperty = (theMap) => {
 };
 
 
-export const checkConfigFieldConditionals = (configField,fieldValues = {}) => {
-	if( ! configField.hasOwnProperty('conditionals') || ! Array.isArray(configField.conditionals) ){
+/**
+ * Check configField conditionals.
+ *
+ * Returns false if any conditionals fail.
+ * Returns true if no conditionals fail, or there are no conditionals.
+ *
+ * @param {Object} configField The field to check the conditionals of.
+ * @param {Object} fieldValues Optional. Data to pass to conditional rule callbacks
+ * @return {boolean}
+ */
+export const checkConfigFieldConditionals = (configField, fieldValues = {}) => {
+	if (!configField.hasOwnProperty('conditionals') || !Array.isArray(configField.conditionals)) {
 		return true;
 	}
 
 	let allRulesPassed = true;
-	configField.conditionals.forEach( conditional => {
-		if( false === conditional.call(null,fieldValues)){
+	configField.conditionals.forEach(conditional => {
+		if ('function' === typeof conditional && false === conditional.call(null, fieldValues)) {
 			allRulesPassed = false;
 			return false;
 		}
@@ -84,4 +94,19 @@ export const checkConfigFieldConditionals = (configField,fieldValues = {}) => {
 
 };
 
-
+/**
+ * Get the current values for configFields
+ *
+ * @param configFields
+ */
+export const reduceConfigFieldsToValues = (configFields) => {
+	let values = {};
+	 configFields.forEach(field => {
+	 		values[field.ID] = field.value
+			? field.value
+			: field.default
+				? field.default
+				: null;
+	 });
+	 return values;
+};

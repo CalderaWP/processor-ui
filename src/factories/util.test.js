@@ -4,7 +4,7 @@ import {
 	getConfigFieldValueOrDefault,
 	objectToMap,
 	mapKeysToIdProperty,
-	checkConfigFieldConditionals
+	checkConfigFieldConditionals, reduceConfigFieldsToValues
 } from './util';
 
 describe( 'Util functions for factories', () => {
@@ -137,5 +137,79 @@ describe( 'Util functions for factories', () => {
 
 			expect( testValues ).toEqual( values );
 		});
+	});
+
+	describe( 'reducing config fields to values', () => {
+		const configFields = [
+			{
+				ID: 'fld44',
+				value: 5
+			},
+			{
+				ID: 'fld41',
+				value: 2
+			}
+
+		];
+		it( 'returns only values', () =>{
+			expect(reduceConfigFieldsToValues(configFields) ).toEqual(
+				{
+					fld44: 5,
+					fld41: 2
+				}
+			);
+		});
+
+		it( 'returns null if no value', () =>{
+			expect(reduceConfigFieldsToValues([
+				...configFields,
+				{
+					ID: 'fld45',
+				}
+			]
+			) ).toEqual(
+				{
+					fld44: 5,
+					fld41: 2,
+					fld45: null
+				}
+			);
+		});
+
+		it( 'Returns default if has default and no value', () => {
+			expect(reduceConfigFieldsToValues([
+				...configFields,
+				{
+					ID: 'fld47',
+					default: 'Roy',
+				}
+			]
+			) ).toEqual(
+				{
+					fld44: 5,
+					fld41: 2,
+					fld47: 'Roy'
+				}
+			);
+		});
+
+		it( 'Returns value if has default and  value', () => {
+			expect(reduceConfigFieldsToValues([
+				...configFields,
+				{
+					ID: 'fld48',
+					default: 'Roy',
+					value: 'Mike',
+				}
+			]
+			) ).toEqual(
+				{
+					fld44: 5,
+					fld41: 2,
+					fld48: 'Mike'
+				}
+			);
+		});
+
 	});
 });

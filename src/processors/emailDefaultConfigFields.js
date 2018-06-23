@@ -25,7 +25,7 @@ export const emailDefaultConfigFields = {
 				label: 'Plain Text',
 			}
 		],
-		default: 'HTML'
+		default: contentTypeHtmlValueIdentifier
 	},
 	bodyPadding: {
 		'label': 'Message Body Padding',

@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as CalderaComponents from '@caldera-labs/components';
 import classNames from 'classnames'
+import {
+	checkConfigFieldConditionals,
+	mapKeysToIdProperty,
+	objectToMap,
+	reduceConfigFieldsToValues
+} from "../../factories/util";
 
 export class Editor extends React.PureComponent {
 	constructor(props) {
@@ -45,13 +51,23 @@ export class Editor extends React.PureComponent {
 
 		let fields = [];
 		if ( 'object' === typeof this.props.configFields ) {
+			let configValues = reduceConfigFieldsToValues(
+					mapKeysToIdProperty(
+						objectToMap(
+							this.props.configFields
+						)
+					)
+			);
 			Object.keys(this.props.configFields).forEach(configFieldId => {
-				fields[configFieldId] = this.props.configFields[configFieldId];
-				fields[configFieldId].onValueChange = (newValue) => {
-					this.handleChange(configFieldId, newValue);
-				};
+				if( checkConfigFieldConditionals(this.props.configFields[configFieldId],configValues)){
+					fields[configFieldId] = this.props.configFields[configFieldId];
+					fields[configFieldId].onValueChange = (newValue) => {
+						this.handleChange(configFieldId, newValue);
+					};
+				}
 			});
 		}
+
 		return fields;
 	}
 
@@ -62,6 +78,9 @@ export class Editor extends React.PureComponent {
 	 * @param {String|Array|Number} newValue The new value
 	 */
 	handleChange(configFieldId,newValue){
+		if( 'object' === typeof  newValue){
+			newValue = newValue.target.value;
+		}
 		let configFields = this.props.configFields;
 		configFields[configFieldId] = {
 			...configFields[configFieldId],
@@ -110,7 +129,6 @@ export class Editor extends React.PureComponent {
 		if ( this.state.hovered){
 			removeStyle.opacity = 1
 		}
-
 
 		return (
 			<div

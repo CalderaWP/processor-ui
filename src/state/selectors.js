@@ -1,4 +1,3 @@
-
 /**
  * Get all of the processors in collection
  *
@@ -22,6 +21,7 @@ export const getProcessorFromCollection = (state, processorId) => {
 	}
 	return null;
 };
+
 
 /**
  * Get the processor from the single processor reducer processorReducer
