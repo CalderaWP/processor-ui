@@ -3,10 +3,12 @@
  * Get all of the processors in collection
  *
  * @param {Map} state Current state.
- * @param {String} processorId
  */
 export const getProcessorsCollection = (state) => {
-	return state;
+	const isMap = state instanceof Map;
+	return isMap
+		? state
+		: new Map(state);
 };
 
 /**
@@ -72,3 +74,4 @@ export const getProcessorType = (state,processorTypeIdentifier) => {
 		? state.get( processorTypeIdentifier )
 		: null;
 };
+

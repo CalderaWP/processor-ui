@@ -1,6 +1,3 @@
-//import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from "./processorsStore";
-import {CALDERA_FORMS_PROCESSOR_STORE_SLUG} from './processorStore';
-import {CALDERA_FORMS_PROCESSOR_TYPES_STORE_SLUG} from './processorTypesStore';
 const CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';
 
 
@@ -27,7 +24,7 @@ export const REMOVE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/REMOVE_P
  *
  * @type {string}
  */
-export const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/SET_FORM_FOR_PROCESSOR`;
+export const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/SET_FORM_FOR_PROCESSOR`;
 /**
  * The name of the action to update the processor in collection.
  *
@@ -40,21 +37,21 @@ export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_P
  *
  * @type {string}
  */
-export const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_VALUES`;
+export const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR_VALUES`;
 
 /**
  * The name of the action to update the processor values in the single processor store
  *
  * @type {string}
  */
-export const UPDATE_PROCESSOR_CONFIG_FIELDS = `${CALDERA_FORMS_PROCESSOR_STORE_SLUG}/UPDATE_PROCESSOR_CONFIG_FIELDS`;
+export const UPDATE_PROCESSOR_CONFIG_FIELDS = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR_CONFIG_FIELDS`;
 
 /**
  * The name of the action to set a processorType definition for a processor type in the processorType reducer
  *
  * @type {string}
  */
-export const SET_PROCESSOR_TYPE = `${CALDERA_FORMS_PROCESSOR_TYPES_STORE_SLUG}/SET_PROCESSOR_TYPE`;
+export const SET_PROCESSOR_TYPE = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/SET_PROCESSOR_TYPE`;
 
 /**
  * Creates an action to add a processor with config to the collection

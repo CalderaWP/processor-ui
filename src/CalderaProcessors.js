@@ -36,11 +36,13 @@ class CalderaProcessors extends React.PureComponent {
  */
 CalderaProcessors.propTypes = {
 	processors: PropTypes.instanceOf(Map).isRequired,
+	processorTypes: PropTypes.instanceOf(Map).isRequired,
 	form: PropTypes.object,
 	onAddProcessor: PropTypes.func.isRequired,
 	onNewProcessor: PropTypes.func.isRequired,
 	onRemoveProcessor: PropTypes.func.isRequired,
-	onUpdateProcessor: PropTypes.func.isRequired
+	onUpdateProcessor: PropTypes.func.isRequired,
+	onUpdateProcessorType: PropTypes.func.isRequired
 };
 
 /**

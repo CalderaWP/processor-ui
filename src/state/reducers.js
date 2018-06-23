@@ -9,6 +9,7 @@ import {
 	UPDATE_PROCESSOR_VALUES,
 	UPDATE_PROCESSOR_CONFIG_FIELDS, SET_PROCESSOR_TYPE
 } from './actions';
+
 import {processorFactory, processorTypesMap} from '../factories/processorFactory';
 
 /**
@@ -101,6 +102,7 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
 		if( action.processor.type !== state.get( action.processor.ID ).type ){
 			action.processor.configFields = {};
 		}
+
 		return state.set( action.processor.ID, processorFactory(
 			action.processor.ID,
 			action.processor.type,
