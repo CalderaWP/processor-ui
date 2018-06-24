@@ -94,11 +94,37 @@
 /*eslint-env node*/
 import CalderaProcessors from &apos;./CalderaProcessors&apos;;
 import CalderaProcessorsWithState from &apos;./CalderaProcessorsWithState&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
+import {
+	processorsStore,
+	CALDERA_FORMS_PROCESSORS_STORE_SLUG
+} from &apos;./state/processorsStore&apos;;
+
+import {
+	addProcessor,
+	newProcessor,
+	removeProcessor,
+	setFormForProcessor,
+	updateProcessor,
+	updateProcessorValues,
+	updateProcessorConfigFields,
+	setProcessorType
+} from &quot;./state/actions&quot;;
+
 export default  {
 	CalderaProcessors,
 	CalderaProcessorsWithState,
-	processorsStore
+	processorsStore,
+	CALDERA_FORMS_PROCESSORS_STORE_SLUG,
+	actions: {
+		addProcessor,
+		newProcessor,
+		removeProcessor,
+		setFormForProcessor,
+		updateProcessor,
+		updateProcessorValues,
+		updateProcessorConfigFields,
+		setProcessorType
+	}
 }
 </code></pre>
 

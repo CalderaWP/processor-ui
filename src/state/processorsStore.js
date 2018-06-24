@@ -29,7 +29,6 @@ let options = {
 		updateProcessor,
 		setProcessorType
 	},
-
 	selectors: {
 		getProcessorsCollection(state){
 			return getProcessorsCollection( state.processorsReducer );

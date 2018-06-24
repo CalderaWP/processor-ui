@@ -8,17 +8,55 @@ Caldera Forms processor user interface generator and components.
 🌋 👀 [Documentation](https://calderalabs.org/caldera-npm-module-boilerplate/)
 
 ### Usage
-Example of how to use module:
 
 ```js
-import * as calderaWhatever from '@caldera-labs/caldera-npm-module-boilerplate';
-console.log( calderaWhatever.hiRoy() );
+import React, {Component} from 'react';
+import './App.css';
+import CalderaProcessorsUI from '@caldera-labs/processor-ui';
+import {Provider} from 'react-redux';
+
+class App extends Component {
+
+	constructor(props){
+		super(props);
+		this.state = {
+			store: CalderaProcessorsUI.processorsStore
+		}
+	}
+	componentDidMount() {
+		//Add processors from remote API or local json or hard code like in this example
+		//dispatch() is documented at https://www.npmjs.com/package/@wordpress/data#dispatch-storename-string--object
+		this.state.store.dispatch(
+			//setProcessorType() is documented at https://calderalabs.org/processor-ui/function/index.html#static-function-setProcessorType
+			CalderaProcessorsUI.actions.setProcessorType(
+				//processorType definition
+				{
+                    TYPE: 'superProcessor', //identifier for processor
+                    LABEL: 'Super ', //Human readable label for processor
+                    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema 
+			    },
+			    'superProcessor' //identifier for processor
+			)
+		);
+
+	}
+
+	render() {
+		return (
+			<div className="caldera-forms-processors">
+				<Provider store={this.state.store}>
+					<CalderaProcessorsUI.CalderaProcessorsWithState/>
+				</Provider>
+
+			</div>
+		);
+	}
+}
 ```
 
-See: [http://calderalabs.org/caldera-npm-module-boilerplate/manual/overview.html#usage](http://calderalabs.org/caldera-npm-module-boilerplatw/manual/overview.html#usage)
 
 ## Install
-`npm i -D @caldera-labs/caldera-npm-module-boilerplate`
+`npm i -D @caldera-labs/prcoessors-ui`
 
 ### Development Requirements
 * [npm](https://www.npmjs.com/get-npm)

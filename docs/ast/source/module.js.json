@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 316,
+  "end": 776,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 11,
+      "line": 37,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 316,
+    "end": 776,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 11,
+        "line": 37,
         "column": 0
       }
     },
@@ -205,44 +205,44 @@
       {
         "type": "ImportDeclaration",
         "start": 173,
-        "end": 229,
+        "end": 270,
         "loc": {
           "start": {
             "line": 5,
             "column": 0
           },
           "end": {
-            "line": 5,
-            "column": 56
+            "line": 8,
+            "column": 33
           }
         },
         "specifiers": [
           {
             "type": "ImportSpecifier",
-            "start": 181,
-            "end": 196,
+            "start": 183,
+            "end": 198,
             "loc": {
               "start": {
-                "line": 5,
-                "column": 8
+                "line": 6,
+                "column": 1
               },
               "end": {
-                "line": 5,
-                "column": 23
+                "line": 6,
+                "column": 16
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 181,
-              "end": 196,
+              "start": 183,
+              "end": 198,
               "loc": {
                 "start": {
-                  "line": 5,
-                  "column": 8
+                  "line": 6,
+                  "column": 1
                 },
                 "end": {
-                  "line": 5,
-                  "column": 23
+                  "line": 6,
+                  "column": 16
                 },
                 "identifierName": "processorsStore"
               },
@@ -250,35 +250,84 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 181,
-              "end": 196,
+              "start": 183,
+              "end": 198,
               "loc": {
                 "start": {
-                  "line": 5,
-                  "column": 8
+                  "line": 6,
+                  "column": 1
                 },
                 "end": {
-                  "line": 5,
-                  "column": 23
+                  "line": 6,
+                  "column": 16
                 },
                 "identifierName": "processorsStore"
               },
               "name": "processorsStore"
             }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 201,
+            "end": 236,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 1
+              },
+              "end": {
+                "line": 7,
+                "column": 36
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 201,
+              "end": 236,
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 1
+                },
+                "end": {
+                  "line": 7,
+                  "column": 36
+                },
+                "identifierName": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+              },
+              "name": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 201,
+              "end": 236,
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 1
+                },
+                "end": {
+                  "line": 7,
+                  "column": 36
+                },
+                "identifierName": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+              },
+              "name": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+            }
           }
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 203,
-          "end": 228,
+          "start": 244,
+          "end": 269,
           "loc": {
             "start": {
-              "line": 5,
-              "column": 30
+              "line": 8,
+              "column": 7
             },
             "end": {
-              "line": 5,
-              "column": 55
+              "line": 8,
+              "column": 32
             }
           },
           "extra": {
@@ -289,45 +338,474 @@
         }
       },
       {
-        "type": "ExportDefaultDeclaration",
-        "start": 230,
-        "end": 315,
+        "type": "ImportDeclaration",
+        "start": 272,
+        "end": 466,
         "loc": {
           "start": {
-            "line": 6,
+            "line": 10,
             "column": 0
           },
           "end": {
-            "line": 10,
+            "line": 19,
+            "column": 25
+          }
+        },
+        "specifiers": [
+          {
+            "type": "ImportSpecifier",
+            "start": 282,
+            "end": 294,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 1
+              },
+              "end": {
+                "line": 11,
+                "column": 13
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 282,
+              "end": 294,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 1
+                },
+                "end": {
+                  "line": 11,
+                  "column": 13
+                },
+                "identifierName": "addProcessor"
+              },
+              "name": "addProcessor"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 282,
+              "end": 294,
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 1
+                },
+                "end": {
+                  "line": 11,
+                  "column": 13
+                },
+                "identifierName": "addProcessor"
+              },
+              "name": "addProcessor"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 297,
+            "end": 309,
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 1
+              },
+              "end": {
+                "line": 12,
+                "column": 13
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 297,
+              "end": 309,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 1
+                },
+                "end": {
+                  "line": 12,
+                  "column": 13
+                },
+                "identifierName": "newProcessor"
+              },
+              "name": "newProcessor"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 297,
+              "end": 309,
+              "loc": {
+                "start": {
+                  "line": 12,
+                  "column": 1
+                },
+                "end": {
+                  "line": 12,
+                  "column": 13
+                },
+                "identifierName": "newProcessor"
+              },
+              "name": "newProcessor"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 312,
+            "end": 327,
+            "loc": {
+              "start": {
+                "line": 13,
+                "column": 1
+              },
+              "end": {
+                "line": 13,
+                "column": 16
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 312,
+              "end": 327,
+              "loc": {
+                "start": {
+                  "line": 13,
+                  "column": 1
+                },
+                "end": {
+                  "line": 13,
+                  "column": 16
+                },
+                "identifierName": "removeProcessor"
+              },
+              "name": "removeProcessor"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 312,
+              "end": 327,
+              "loc": {
+                "start": {
+                  "line": 13,
+                  "column": 1
+                },
+                "end": {
+                  "line": 13,
+                  "column": 16
+                },
+                "identifierName": "removeProcessor"
+              },
+              "name": "removeProcessor"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 330,
+            "end": 349,
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 1
+              },
+              "end": {
+                "line": 14,
+                "column": 20
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 330,
+              "end": 349,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 1
+                },
+                "end": {
+                  "line": 14,
+                  "column": 20
+                },
+                "identifierName": "setFormForProcessor"
+              },
+              "name": "setFormForProcessor"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 330,
+              "end": 349,
+              "loc": {
+                "start": {
+                  "line": 14,
+                  "column": 1
+                },
+                "end": {
+                  "line": 14,
+                  "column": 20
+                },
+                "identifierName": "setFormForProcessor"
+              },
+              "name": "setFormForProcessor"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 352,
+            "end": 367,
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 1
+              },
+              "end": {
+                "line": 15,
+                "column": 16
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 352,
+              "end": 367,
+              "loc": {
+                "start": {
+                  "line": 15,
+                  "column": 1
+                },
+                "end": {
+                  "line": 15,
+                  "column": 16
+                },
+                "identifierName": "updateProcessor"
+              },
+              "name": "updateProcessor"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 352,
+              "end": 367,
+              "loc": {
+                "start": {
+                  "line": 15,
+                  "column": 1
+                },
+                "end": {
+                  "line": 15,
+                  "column": 16
+                },
+                "identifierName": "updateProcessor"
+              },
+              "name": "updateProcessor"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 370,
+            "end": 391,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 1
+              },
+              "end": {
+                "line": 16,
+                "column": 22
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 370,
+              "end": 391,
+              "loc": {
+                "start": {
+                  "line": 16,
+                  "column": 1
+                },
+                "end": {
+                  "line": 16,
+                  "column": 22
+                },
+                "identifierName": "updateProcessorValues"
+              },
+              "name": "updateProcessorValues"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 370,
+              "end": 391,
+              "loc": {
+                "start": {
+                  "line": 16,
+                  "column": 1
+                },
+                "end": {
+                  "line": 16,
+                  "column": 22
+                },
+                "identifierName": "updateProcessorValues"
+              },
+              "name": "updateProcessorValues"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 394,
+            "end": 421,
+            "loc": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 17,
+                "column": 28
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 394,
+              "end": 421,
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 1
+                },
+                "end": {
+                  "line": 17,
+                  "column": 28
+                },
+                "identifierName": "updateProcessorConfigFields"
+              },
+              "name": "updateProcessorConfigFields"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 394,
+              "end": 421,
+              "loc": {
+                "start": {
+                  "line": 17,
+                  "column": 1
+                },
+                "end": {
+                  "line": 17,
+                  "column": 28
+                },
+                "identifierName": "updateProcessorConfigFields"
+              },
+              "name": "updateProcessorConfigFields"
+            }
+          },
+          {
+            "type": "ImportSpecifier",
+            "start": 424,
+            "end": 440,
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 1
+              },
+              "end": {
+                "line": 18,
+                "column": 17
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 424,
+              "end": 440,
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 1
+                },
+                "end": {
+                  "line": 18,
+                  "column": 17
+                },
+                "identifierName": "setProcessorType"
+              },
+              "name": "setProcessorType"
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 424,
+              "end": 440,
+              "loc": {
+                "start": {
+                  "line": 18,
+                  "column": 1
+                },
+                "end": {
+                  "line": 18,
+                  "column": 17
+                },
+                "identifierName": "setProcessorType"
+              },
+              "name": "setProcessorType"
+            }
+          }
+        ],
+        "source": {
+          "type": "StringLiteral",
+          "start": 448,
+          "end": 465,
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 7
+            },
+            "end": {
+              "line": 19,
+              "column": 24
+            }
+          },
+          "extra": {
+            "rawValue": "./state/actions",
+            "raw": "\"./state/actions\""
+          },
+          "value": "./state/actions"
+        }
+      },
+      {
+        "type": "ExportDefaultDeclaration",
+        "start": 468,
+        "end": 775,
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 0
+          },
+          "end": {
+            "line": 36,
             "column": 1
           }
         },
         "declaration": {
           "type": "ObjectExpression",
-          "start": 246,
-          "end": 315,
+          "start": 484,
+          "end": 775,
           "loc": {
             "start": {
-              "line": 6,
+              "line": 21,
               "column": 16
             },
             "end": {
-              "line": 10,
+              "line": 36,
               "column": 1
             }
           },
           "properties": [
             {
               "type": "ObjectProperty",
-              "start": 249,
-              "end": 266,
+              "start": 487,
+              "end": 504,
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 22,
                   "column": 1
                 },
                 "end": {
-                  "line": 7,
+                  "line": 22,
                   "column": 18
                 }
               },
@@ -336,15 +814,15 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 249,
-                "end": 266,
+                "start": 487,
+                "end": 504,
                 "loc": {
                   "start": {
-                    "line": 7,
+                    "line": 22,
                     "column": 1
                   },
                   "end": {
-                    "line": 7,
+                    "line": 22,
                     "column": 18
                   },
                   "identifierName": "CalderaProcessors"
@@ -353,15 +831,15 @@
               },
               "value": {
                 "type": "Identifier",
-                "start": 249,
-                "end": 266,
+                "start": 487,
+                "end": 504,
                 "loc": {
                   "start": {
-                    "line": 7,
+                    "line": 22,
                     "column": 1
                   },
                   "end": {
-                    "line": 7,
+                    "line": 22,
                     "column": 18
                   },
                   "identifierName": "CalderaProcessors"
@@ -374,15 +852,15 @@
             },
             {
               "type": "ObjectProperty",
-              "start": 269,
-              "end": 295,
+              "start": 507,
+              "end": 533,
               "loc": {
                 "start": {
-                  "line": 8,
+                  "line": 23,
                   "column": 1
                 },
                 "end": {
-                  "line": 8,
+                  "line": 23,
                   "column": 27
                 }
               },
@@ -391,15 +869,15 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 269,
-                "end": 295,
+                "start": 507,
+                "end": 533,
                 "loc": {
                   "start": {
-                    "line": 8,
+                    "line": 23,
                     "column": 1
                   },
                   "end": {
-                    "line": 8,
+                    "line": 23,
                     "column": 27
                   },
                   "identifierName": "CalderaProcessorsWithState"
@@ -408,15 +886,15 @@
               },
               "value": {
                 "type": "Identifier",
-                "start": 269,
-                "end": 295,
+                "start": 507,
+                "end": 533,
                 "loc": {
                   "start": {
-                    "line": 8,
+                    "line": 23,
                     "column": 1
                   },
                   "end": {
-                    "line": 8,
+                    "line": 23,
                     "column": 27
                   },
                   "identifierName": "CalderaProcessorsWithState"
@@ -429,15 +907,15 @@
             },
             {
               "type": "ObjectProperty",
-              "start": 298,
-              "end": 313,
+              "start": 536,
+              "end": 551,
               "loc": {
                 "start": {
-                  "line": 9,
+                  "line": 24,
                   "column": 1
                 },
                 "end": {
-                  "line": 9,
+                  "line": 24,
                   "column": 16
                 }
               },
@@ -446,15 +924,15 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 298,
-                "end": 313,
+                "start": 536,
+                "end": 551,
                 "loc": {
                   "start": {
-                    "line": 9,
+                    "line": 24,
                     "column": 1
                   },
                   "end": {
-                    "line": 9,
+                    "line": 24,
                     "column": 16
                   },
                   "identifierName": "processorsStore"
@@ -463,15 +941,15 @@
               },
               "value": {
                 "type": "Identifier",
-                "start": 298,
-                "end": 313,
+                "start": 536,
+                "end": 551,
                 "loc": {
                   "start": {
-                    "line": 9,
+                    "line": 24,
                     "column": 1
                   },
                   "end": {
-                    "line": 9,
+                    "line": 24,
                     "column": 16
                   },
                   "identifierName": "processorsStore"
@@ -480,6 +958,553 @@
               },
               "extra": {
                 "shorthand": true
+              }
+            },
+            {
+              "type": "ObjectProperty",
+              "start": 554,
+              "end": 589,
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 1
+                },
+                "end": {
+                  "line": 25,
+                  "column": 36
+                }
+              },
+              "method": false,
+              "shorthand": true,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 554,
+                "end": 589,
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 1
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 36
+                  },
+                  "identifierName": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+                },
+                "name": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+              },
+              "value": {
+                "type": "Identifier",
+                "start": 554,
+                "end": 589,
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 1
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 36
+                  },
+                  "identifierName": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+                },
+                "name": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
+              },
+              "extra": {
+                "shorthand": true
+              }
+            },
+            {
+              "type": "ObjectProperty",
+              "start": 592,
+              "end": 773,
+              "loc": {
+                "start": {
+                  "line": 26,
+                  "column": 1
+                },
+                "end": {
+                  "line": 35,
+                  "column": 2
+                }
+              },
+              "method": false,
+              "shorthand": false,
+              "computed": false,
+              "key": {
+                "type": "Identifier",
+                "start": 592,
+                "end": 599,
+                "loc": {
+                  "start": {
+                    "line": 26,
+                    "column": 1
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 8
+                  },
+                  "identifierName": "actions"
+                },
+                "name": "actions"
+              },
+              "value": {
+                "type": "ObjectExpression",
+                "start": 601,
+                "end": 773,
+                "loc": {
+                  "start": {
+                    "line": 26,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 35,
+                    "column": 2
+                  }
+                },
+                "properties": [
+                  {
+                    "type": "ObjectProperty",
+                    "start": 605,
+                    "end": 617,
+                    "loc": {
+                      "start": {
+                        "line": 27,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 27,
+                        "column": 14
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 605,
+                      "end": 617,
+                      "loc": {
+                        "start": {
+                          "line": 27,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 27,
+                          "column": 14
+                        },
+                        "identifierName": "addProcessor"
+                      },
+                      "name": "addProcessor"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 605,
+                      "end": 617,
+                      "loc": {
+                        "start": {
+                          "line": 27,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 27,
+                          "column": 14
+                        },
+                        "identifierName": "addProcessor"
+                      },
+                      "name": "addProcessor"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 621,
+                    "end": 633,
+                    "loc": {
+                      "start": {
+                        "line": 28,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 28,
+                        "column": 14
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 621,
+                      "end": 633,
+                      "loc": {
+                        "start": {
+                          "line": 28,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 28,
+                          "column": 14
+                        },
+                        "identifierName": "newProcessor"
+                      },
+                      "name": "newProcessor"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 621,
+                      "end": 633,
+                      "loc": {
+                        "start": {
+                          "line": 28,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 28,
+                          "column": 14
+                        },
+                        "identifierName": "newProcessor"
+                      },
+                      "name": "newProcessor"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 637,
+                    "end": 652,
+                    "loc": {
+                      "start": {
+                        "line": 29,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 29,
+                        "column": 17
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 637,
+                      "end": 652,
+                      "loc": {
+                        "start": {
+                          "line": 29,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 29,
+                          "column": 17
+                        },
+                        "identifierName": "removeProcessor"
+                      },
+                      "name": "removeProcessor"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 637,
+                      "end": 652,
+                      "loc": {
+                        "start": {
+                          "line": 29,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 29,
+                          "column": 17
+                        },
+                        "identifierName": "removeProcessor"
+                      },
+                      "name": "removeProcessor"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 656,
+                    "end": 675,
+                    "loc": {
+                      "start": {
+                        "line": 30,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 21
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 656,
+                      "end": 675,
+                      "loc": {
+                        "start": {
+                          "line": 30,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 30,
+                          "column": 21
+                        },
+                        "identifierName": "setFormForProcessor"
+                      },
+                      "name": "setFormForProcessor"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 656,
+                      "end": 675,
+                      "loc": {
+                        "start": {
+                          "line": 30,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 30,
+                          "column": 21
+                        },
+                        "identifierName": "setFormForProcessor"
+                      },
+                      "name": "setFormForProcessor"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 679,
+                    "end": 694,
+                    "loc": {
+                      "start": {
+                        "line": 31,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 31,
+                        "column": 17
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 679,
+                      "end": 694,
+                      "loc": {
+                        "start": {
+                          "line": 31,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 31,
+                          "column": 17
+                        },
+                        "identifierName": "updateProcessor"
+                      },
+                      "name": "updateProcessor"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 679,
+                      "end": 694,
+                      "loc": {
+                        "start": {
+                          "line": 31,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 31,
+                          "column": 17
+                        },
+                        "identifierName": "updateProcessor"
+                      },
+                      "name": "updateProcessor"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 698,
+                    "end": 719,
+                    "loc": {
+                      "start": {
+                        "line": 32,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 32,
+                        "column": 23
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 698,
+                      "end": 719,
+                      "loc": {
+                        "start": {
+                          "line": 32,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 32,
+                          "column": 23
+                        },
+                        "identifierName": "updateProcessorValues"
+                      },
+                      "name": "updateProcessorValues"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 698,
+                      "end": 719,
+                      "loc": {
+                        "start": {
+                          "line": 32,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 32,
+                          "column": 23
+                        },
+                        "identifierName": "updateProcessorValues"
+                      },
+                      "name": "updateProcessorValues"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 723,
+                    "end": 750,
+                    "loc": {
+                      "start": {
+                        "line": 33,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 33,
+                        "column": 29
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 723,
+                      "end": 750,
+                      "loc": {
+                        "start": {
+                          "line": 33,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 33,
+                          "column": 29
+                        },
+                        "identifierName": "updateProcessorConfigFields"
+                      },
+                      "name": "updateProcessorConfigFields"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 723,
+                      "end": 750,
+                      "loc": {
+                        "start": {
+                          "line": 33,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 33,
+                          "column": 29
+                        },
+                        "identifierName": "updateProcessorConfigFields"
+                      },
+                      "name": "updateProcessorConfigFields"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 754,
+                    "end": 770,
+                    "loc": {
+                      "start": {
+                        "line": 34,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 34,
+                        "column": 18
+                      }
+                    },
+                    "method": false,
+                    "shorthand": true,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 754,
+                      "end": 770,
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 18
+                        },
+                        "identifierName": "setProcessorType"
+                      },
+                      "name": "setProcessorType"
+                    },
+                    "value": {
+                      "type": "Identifier",
+                      "start": 754,
+                      "end": 770,
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 18
+                        },
+                        "identifierName": "setProcessorType"
+                      },
+                      "name": "setProcessorType"
+                    },
+                    "extra": {
+                      "shorthand": true
+                    }
+                  }
+                ]
               }
             }
           ],
@@ -889,193 +1914,34 @@
         "binop": null
       },
       "value": "processorsStore",
-      "start": 181,
-      "end": 196,
+      "start": 183,
+      "end": 198,
       "loc": {
         "start": {
-          "line": 5,
-          "column": 8
+          "line": 6,
+          "column": 1
         },
         "end": {
-          "line": 5,
-          "column": 23
+          "line": 6,
+          "column": 16
         }
       }
     },
     {
       "type": {
-        "label": "}",
-        "beforeExpr": false,
+        "label": ",",
+        "beforeExpr": true,
         "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": null
+        "binop": null,
+        "updateContext": null
       },
-      "start": 196,
-      "end": 197,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 23
-        },
-        "end": {
-          "line": 5,
-          "column": 24
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
       "start": 198,
-      "end": 202,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 25
-        },
-        "end": {
-          "line": 5,
-          "column": 29
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "./state/processorsStore",
-      "start": 203,
-      "end": 228,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 30
-        },
-        "end": {
-          "line": 5,
-          "column": 55
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ";",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 228,
-      "end": 229,
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 55
-        },
-        "end": {
-          "line": 5,
-          "column": 56
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "export",
-        "keyword": "export",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "export",
-      "start": 230,
-      "end": 236,
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 0
-        },
-        "end": {
-          "line": 6,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "default",
-        "keyword": "default",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "default",
-      "start": 237,
-      "end": 244,
-      "loc": {
-        "start": {
-          "line": 6,
-          "column": 7
-        },
-        "end": {
-          "line": 6,
-          "column": 14
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "{",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 246,
-      "end": 247,
+      "end": 199,
       "loc": {
         "start": {
           "line": 6,
@@ -1099,9 +1965,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "CalderaProcessors",
-      "start": 249,
-      "end": 266,
+      "value": "CALDERA_FORMS_PROCESSORS_STORE_SLUG",
+      "start": 201,
+      "end": 236,
       "loc": {
         "start": {
           "line": 7,
@@ -1109,6 +1975,764 @@
         },
         "end": {
           "line": 7,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 237,
+      "end": 238,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 239,
+      "end": 243,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 2
+        },
+        "end": {
+          "line": 8,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./state/processorsStore",
+      "start": 244,
+      "end": 269,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 7
+        },
+        "end": {
+          "line": 8,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 269,
+      "end": 270,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 32
+        },
+        "end": {
+          "line": 8,
+          "column": 33
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "import",
+        "keyword": "import",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "import",
+      "start": 272,
+      "end": 278,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 279,
+      "end": 280,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 7
+        },
+        "end": {
+          "line": 10,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "addProcessor",
+      "start": 282,
+      "end": 294,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 294,
+      "end": 295,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 13
+        },
+        "end": {
+          "line": 11,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "newProcessor",
+      "start": 297,
+      "end": 309,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 1
+        },
+        "end": {
+          "line": 12,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 309,
+      "end": 310,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 13
+        },
+        "end": {
+          "line": 12,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "removeProcessor",
+      "start": 312,
+      "end": 327,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 327,
+      "end": 328,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 16
+        },
+        "end": {
+          "line": 13,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "setFormForProcessor",
+      "start": 330,
+      "end": 349,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 1
+        },
+        "end": {
+          "line": 14,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 349,
+      "end": 350,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 20
+        },
+        "end": {
+          "line": 14,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "updateProcessor",
+      "start": 352,
+      "end": 367,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 1
+        },
+        "end": {
+          "line": 15,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 367,
+      "end": 368,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 16
+        },
+        "end": {
+          "line": 15,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "updateProcessorValues",
+      "start": 370,
+      "end": 391,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 1
+        },
+        "end": {
+          "line": 16,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 391,
+      "end": 392,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 22
+        },
+        "end": {
+          "line": 16,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "updateProcessorConfigFields",
+      "start": 394,
+      "end": 421,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 1
+        },
+        "end": {
+          "line": 17,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 421,
+      "end": 422,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 28
+        },
+        "end": {
+          "line": 17,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "setProcessorType",
+      "start": 424,
+      "end": 440,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 1
+        },
+        "end": {
+          "line": 18,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 441,
+      "end": 442,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 443,
+      "end": 447,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 2
+        },
+        "end": {
+          "line": 19,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./state/actions",
+      "start": 448,
+      "end": 465,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 7
+        },
+        "end": {
+          "line": 19,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 465,
+      "end": 466,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 24
+        },
+        "end": {
+          "line": 19,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 468,
+      "end": 474,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 475,
+      "end": 482,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 7
+        },
+        "end": {
+          "line": 21,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 484,
+      "end": 485,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 16
+        },
+        "end": {
+          "line": 21,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "CalderaProcessors",
+      "start": 487,
+      "end": 504,
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 1
+        },
+        "end": {
+          "line": 22,
           "column": 18
         }
       }
@@ -1126,15 +2750,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 266,
-      "end": 267,
+      "start": 504,
+      "end": 505,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 22,
           "column": 18
         },
         "end": {
-          "line": 7,
+          "line": 22,
           "column": 19
         }
       }
@@ -1152,15 +2776,15 @@
         "binop": null
       },
       "value": "CalderaProcessorsWithState",
-      "start": 269,
-      "end": 295,
+      "start": 507,
+      "end": 533,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 23,
           "column": 1
         },
         "end": {
-          "line": 8,
+          "line": 23,
           "column": 27
         }
       }
@@ -1178,15 +2802,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 295,
-      "end": 296,
+      "start": 533,
+      "end": 534,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 23,
           "column": 27
         },
         "end": {
-          "line": 8,
+          "line": 23,
           "column": 28
         }
       }
@@ -1204,16 +2828,561 @@
         "binop": null
       },
       "value": "processorsStore",
-      "start": 298,
-      "end": 313,
+      "start": 536,
+      "end": 551,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 24,
           "column": 1
         },
         "end": {
-          "line": 9,
+          "line": 24,
           "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 551,
+      "end": 552,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 16
+        },
+        "end": {
+          "line": 24,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "CALDERA_FORMS_PROCESSORS_STORE_SLUG",
+      "start": 554,
+      "end": 589,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 1
+        },
+        "end": {
+          "line": 25,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 589,
+      "end": 590,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 36
+        },
+        "end": {
+          "line": 25,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "actions",
+      "start": 592,
+      "end": 599,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 1
+        },
+        "end": {
+          "line": 26,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 599,
+      "end": 600,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 8
+        },
+        "end": {
+          "line": 26,
+          "column": 9
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 601,
+      "end": 602,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 10
+        },
+        "end": {
+          "line": 26,
+          "column": 11
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "addProcessor",
+      "start": 605,
+      "end": 617,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 2
+        },
+        "end": {
+          "line": 27,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 617,
+      "end": 618,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 14
+        },
+        "end": {
+          "line": 27,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "newProcessor",
+      "start": 621,
+      "end": 633,
+      "loc": {
+        "start": {
+          "line": 28,
+          "column": 2
+        },
+        "end": {
+          "line": 28,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 633,
+      "end": 634,
+      "loc": {
+        "start": {
+          "line": 28,
+          "column": 14
+        },
+        "end": {
+          "line": 28,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "removeProcessor",
+      "start": 637,
+      "end": 652,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 2
+        },
+        "end": {
+          "line": 29,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 652,
+      "end": 653,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 17
+        },
+        "end": {
+          "line": 29,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "setFormForProcessor",
+      "start": 656,
+      "end": 675,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 2
+        },
+        "end": {
+          "line": 30,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 675,
+      "end": 676,
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 21
+        },
+        "end": {
+          "line": 30,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "updateProcessor",
+      "start": 679,
+      "end": 694,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 2
+        },
+        "end": {
+          "line": 31,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 694,
+      "end": 695,
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 17
+        },
+        "end": {
+          "line": 31,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "updateProcessorValues",
+      "start": 698,
+      "end": 719,
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 2
+        },
+        "end": {
+          "line": 32,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 719,
+      "end": 720,
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 23
+        },
+        "end": {
+          "line": 32,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "updateProcessorConfigFields",
+      "start": 723,
+      "end": 750,
+      "loc": {
+        "start": {
+          "line": 33,
+          "column": 2
+        },
+        "end": {
+          "line": 33,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 750,
+      "end": 751,
+      "loc": {
+        "start": {
+          "line": 33,
+          "column": 29
+        },
+        "end": {
+          "line": 33,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "setProcessorType",
+      "start": 754,
+      "end": 770,
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 2
+        },
+        "end": {
+          "line": 34,
+          "column": 18
         }
       }
     },
@@ -1229,15 +3398,40 @@
         "postfix": false,
         "binop": null
       },
-      "start": 314,
-      "end": 315,
+      "start": 772,
+      "end": 773,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 35,
+          "column": 1
+        },
+        "end": {
+          "line": 35,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 774,
+      "end": 775,
+      "loc": {
+        "start": {
+          "line": 36,
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 36,
           "column": 1
         }
       }
@@ -1255,15 +3449,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 316,
-      "end": 316,
+      "start": 776,
+      "end": 776,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 37,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 37,
           "column": 0
         }
       }
