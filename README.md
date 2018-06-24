@@ -31,11 +31,11 @@ class App extends Component {
 			CalderaProcessorsUI.actions.setProcessorType(
 				//processorType definition
 				{
-                    TYPE: 'superProcessor', //identifier for processor
-                    LABEL: 'Super ', //Human readable label for processor
-                    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema 
-			    },
-			    'superProcessor' //identifier for processor
+				    TYPE: 'superProcessor', //identifier for processor
+				    LABEL: 'Super ', //Human readable label for processor
+				    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema 
+			    	},
+			    	'superProcessor' //identifier for processor
 			)
 		);
 
