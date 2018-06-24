@@ -29,4 +29,48 @@ Because the `configFieldsFactory` can add in missing values from prepareConfigFi
 `configValues` is a `Map`, indexed by `configField.ID` with the current value of the field. Seperating these values out from `configValues`
 
 
-## Container
+## Example
+```js
+import React, {Component} from 'react';
+import './App.css';
+import CalderaProcessorsUI from '@caldera-labs/processor-ui';
+import {Provider} from 'react-redux';
+
+class App extends Component {
+
+	constructor(props){
+		super(props);
+		this.state = {
+			store: CalderaProcessorsUI.processorsStore
+		}
+	}
+	componentDidMount() {
+		//Add processors from remote API or local json or hard code like in this example
+		//dispatch() is documented at https://www.npmjs.com/package/@wordpress/data#dispatch-storename-string--object
+		this.state.store.dispatch(
+			//setProcessorType() is documented at https://calderalabs.org/processor-ui/function/index.html#static-function-setProcessorType
+			CalderaProcessorsUI.actions.setProcessorType(
+				//processorType definition
+				{
+				    TYPE: 'superProcessor', //identifier for processor
+				    LABEL: 'Super ', //Human readable label for processor
+				    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema 
+			    	},
+			    	'superProcessor' //identifier for processor
+			)
+		);
+
+	}
+
+	render() {
+		return (
+			<div className="caldera-forms-processors">
+				<Provider store={this.state.store}>
+					<CalderaProcessorsUI.CalderaProcessorsWithState/>
+				</Provider>
+
+			</div>
+		);
+	}
+}
+```

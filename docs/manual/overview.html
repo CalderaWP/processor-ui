@@ -34,7 +34,7 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Caldera Processors UI</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#shape-of-a-processor" data-ice="link">Shape Of A Processor</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#prepareconfigfields-vs-configvalues" data-ice="link">prepareConfigFields vs configValues</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#container" data-ice="link">Container</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/overview.html"><a href="manual/overview.html#example" data-ice="link">Example</a></li>
 </ul>
   </div>
 </div>
@@ -63,7 +63,50 @@
 <h2 id="prepareconfigfields-vs-configvalues">prepareConfigFields vs configValues</h2><p><code>prepareConfigFields</code> should represent what has been stored for this processor&apos;s settings. It contains the saved value and the processor configuration, since configuration is itself dynamic. For example, your options for list to subscribe to may change after the value of a separate field for entering an API key has changed.</p>
 <p>Because the <code>configFieldsFactory</code> can add in missing values from prepareConfigFields, it makes sense to remove non-standard values from these objects before persisting them.</p>
 <p><code>configValues</code> is a <code>Map</code>, indexed by <code>configField.ID</code> with the current value of the field. Seperating these values out from <code>configValues</code></p>
-<h2 id="container">Container</h2></div>
+<h2 id="example">Example</h2><pre><code class="lang-js"><code class="source-code prettyprint">import React, {Component} from &apos;react&apos;;
+import &apos;./App.css&apos;;
+import CalderaProcessorsUI from &apos;@caldera-labs/processor-ui&apos;;
+import {Provider} from &apos;react-redux&apos;;
+
+class App extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            store: CalderaProcessorsUI.processorsStore
+        }
+    }
+    componentDidMount() {
+        //Add processors from remote API or local json or hard code like in this example
+        //dispatch() is documented at https://www.npmjs.com/package/@wordpress/data#dispatch-storename-string--object
+        this.state.store.dispatch(
+            //setProcessorType() is documented at https://calderalabs.org/processor-ui/function/index.html#static-function-setProcessorType
+            CalderaProcessorsUI.actions.setProcessorType(
+                //processorType definition
+                {
+                    TYPE: &apos;superProcessor&apos;, //identifier for processor
+                    LABEL: &apos;Super &apos;, //Human readable label for processor
+                    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema 
+                    },
+                    &apos;superProcessor&apos; //identifier for processor
+            )
+        );
+
+    }
+
+    render() {
+        return (
+            &lt;div className=&quot;caldera-forms-processors&quot;&gt;
+                &lt;Provider store={this.state.store}&gt;
+                    &lt;CalderaProcessorsUI.CalderaProcessorsWithState/&gt;
+                &lt;/Provider&gt;
+
+            &lt;/div&gt;
+        );
+    }
+}</code>
+</code></pre>
+</div>
 </div>
 
 <footer class="footer">

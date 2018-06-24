@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ygnr/npm-module-es6-boilerplate.git"
+    "url": "git+https://github.com/CalderaWP/processor-ui"
   },
   "keywords": [
     "es6",
@@ -39,9 +39,9 @@
   "author": "Josh Pollock <Josh@calderawp.com>",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/calderawp/caldera-whatever/issues"
+    "url": "https://github.com/CalderaWP/processor-ui/issues"
   },
-  "homepage": "https://github.com/calderawp/caldera-whatever/#readme",
+  "homepage": "https://calderalabs.org/processor-ui/",
   "dependencies": {
     "@caldera-labs/components": "^0.4",
     "@caldera-labs/state": "^0.7.0",
