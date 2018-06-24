@@ -2,9 +2,12 @@
 Caldera Forms processor user interface generator and components.
 
 [![Build Status](https://travis-ci.org/calderawp/processor-ui.svg?branch=master)](https://travis-ci.org/calderawp/processor-ui)
-[![Coverage Status](https://coveralls.io/repos/github/calderawp/processor-ui/badge.svg?branch=master)](https://coveralls.io/github/calderawp/processor-ui?branch=master)
+
 [![Documentation Status](https://calderalabs.org/processor-ui/badge.svg)](https://calderalabs.org/processor-ui/badge.svg)
 
+|Statements|Lines|Functions|Branches|
+|---|---|---|---|
+|![StatementsCoverage Status](./coverage/badge-statements.svg)|![Lines Coverage Status](./coverage/badge-lines.svg)|![Functions Coverage Status](./coverage/badge-functions.svg)|![Branches Coverage Status](./coverage/badge-branches.svg)|
 🌋 👀 [Documentation](https://calderalabs.org/caldera-npm-module-boilerplate/)
 
 ### Usage

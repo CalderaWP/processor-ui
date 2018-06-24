@@ -16,6 +16,7 @@
     "test": "react-scripts test --env=jsdom",
     "test:once": "CI=true react-scripts test --env=jsdom",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:badges": "npm run test:coverage  && jest-coverage-badges",
     "document": "./node_modules/.bin/esdoc",
     "lint": "eslint src/**/*.js",
     "prepublish": "npm run build",
@@ -75,6 +76,11 @@
     "uglify-js": "^3.4.0"
   },
   "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
