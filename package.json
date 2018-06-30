@@ -46,6 +46,7 @@
     "@caldera-labs/components": "^1.2.0",
     "@caldera-labs/state": "^0.7.0",
     "@wordpress/data": "^1.0.0-alpha.1",
+    "@wordpress/element": "^1.0.0-alpha.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",

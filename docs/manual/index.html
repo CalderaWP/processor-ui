@@ -67,7 +67,7 @@
 </ul>
 </li>
 <li>label: Optional String. A user supplied label unique to the processor.</li>
-<li>prepareConfigFields: Array of config fields as expected by <a href="https://calderalabs.org/caldera-components/manual/components.html#rendergroup">Caldera Components&apos; <code>RenderGroup</code> component</a></li>
+<li>prepareConfigFields: Array of config fields as expected by <a href="https://calderalabs.org/caldera-components/manual/components.html#rendergroup">Caldera Components&apos; <code>RenderGroup</code> componentWithState</a></li>
 <li>configValues: A map of the current field values.</li>
 </ul><h2>prepareConfigFields vs configValues</h2><p><code>prepareConfigFields</code> should represent what has been stored for this processor&apos;s settings. It contains the saved value and the processor configuration, since configuration is itself dynamic. For example, your options for list to subscribe to may change after the value of a separate field for entering an API key has changed.</p><p>Because the <code>configFieldsFactory</code> can add in missing values from prepareConfigFields, it makes sense to remove non-standard values from these objects before persisting them.</p><p><code>configValues</code> is a <code>Map</code>, indexed by <code>configField.ID</code> with the current value of the field. Seperating these values out from <code>configValues</code></p><h2>Example</h2><pre><code class="lang-js"><code class="source-code prettyprint">import React, {Component} from &apos;react&apos;;
 import &apos;./App.css&apos;;

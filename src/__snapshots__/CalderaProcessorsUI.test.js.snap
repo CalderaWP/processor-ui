@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Processor UI factory Renders without crashing 1`] = `
+<div>
+  <div
+    className="caldera-forms-processors"
+  >
+    <div />
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        NewProcessor Processor
+      </button>
+    </div>
+  </div>
+</div>
+`;

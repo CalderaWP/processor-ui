@@ -134,7 +134,7 @@ export class Editor extends React.PureComponent {
 	}
 
 	/**
-	 * Render editor for one component
+	 * Render editor for one componentWithState
 	 *
 	 * @return {*}
 	 */

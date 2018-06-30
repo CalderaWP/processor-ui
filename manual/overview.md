@@ -18,7 +18,7 @@
 * type: String. The type of processors
     - Examples: `email` or `redirect`
 * label: Optional String. A user supplied label unique to the processor.
-* prepareConfigFields: Array of config fields as expected by [Caldera Components' `RenderGroup` component](https://calderalabs.org/caldera-components/manual/components.html#rendergroup)
+* prepareConfigFields: Array of config fields as expected by [Caldera Components' `RenderGroup` componentWithState](https://calderalabs.org/caldera-components/manual/components.html#rendergroup)
 * configValues: A map of the current field values.
 
 ## prepareConfigFields vs configValues

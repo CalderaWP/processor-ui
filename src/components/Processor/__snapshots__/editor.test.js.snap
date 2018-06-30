@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Editor Renders with props 1`] = `
+exports[`Editor componentWithState Renders with props 1`] = `
 <div
   className="processor-has-type caldera-forms-processor not-opened"
 >
@@ -154,7 +154,7 @@ exports[`Editor Renders with props 1`] = `
 </div>
 `;
 
-exports[`Editor renders with props 1`] = `
+exports[`Editor componentWithState renders with props 1`] = `
 <div
   className="processor-has-type caldera-forms-processor not-opened"
 >

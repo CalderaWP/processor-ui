@@ -16,8 +16,7 @@ Enzyme.configure({adapter: new Adapter()});
 function handler() {
 };
 
-
-describe('Editor', () => {
+describe('Editor componentWithState', () => {
 	const emailProcessor = processorFactory('p1', emailProcessorType.TYPE, {});
 	const processors = new Map();
 	processors.set('p1', emailProcessor);
@@ -121,7 +120,7 @@ describe('Editor', () => {
 			expect(wrapper.find('.processor-label').text()).toBe('Email To Roy');
 		});
 
-		describe('Methods of Editor component', () => {
+		describe('Methods of Editor componentWithState', () => {
 			it('mouseEnter updates state', () => {
 				const wrapper = shallow(
 					<Editor
@@ -208,7 +207,7 @@ describe('Editor', () => {
 					}
 			};
 
-			it('Editor component finds field values', () => {
+			it('Editor componentWithState finds field values', () => {
 				const wrapper = shallow(
 					<Editor
 						ID={'configFields-2'}

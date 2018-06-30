@@ -16,6 +16,31 @@ Caldera Forms processor user interface generator and components.
 ## Install
 `npm i -D @caldera-labs/prcoessors-ui`
 
+## Basic Usage Example
+
+### Render UI with state on element with ID of `root`
+```js
+import CalderaProcessorsUI from '?';
+const CalderaProcessors = new CalderaProcessorsUI('root');
+CalderaProcessors.mountOnDOM();
+
+```
+
+### Use component with state, and validation subscription
+```js
+const Something = () => {
+	import CalderaProcessorsUI from '?';
+	const CalderaProcessors = new CalderaProcessorsUI('');
+	return(
+            <div>
+                {CalderaProcessors.componentWithState()}
+            </div>
+	);
+}
+
+```
+
+
 ## [Complete Usage Example](https://calderalabs.org/processor-ui/manual/overview.html#example)
 
 ## Scripts

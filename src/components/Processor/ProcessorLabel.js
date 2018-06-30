@@ -7,7 +7,7 @@ import classNames from 'classnames'
  */
 export class ProcessorLabel extends React.PureComponent {
 	/**
-	 * Create new processor label component
+	 * Create new processor label componentWithState
 	 *
 	 * @param {Object} props
 	 */

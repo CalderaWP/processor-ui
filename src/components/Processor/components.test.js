@@ -318,7 +318,7 @@ describe('Processor components', () => {
 				expect(wrapper.find('.processor-label').text()).toBe('Email To Roy');
 			});
 
-			describe('Methods of Editor component', () => {
+			describe('Methods of Editor componentWithState', () => {
 				it( 'mouseEnter updates state', () => {
 					const wrapper = shallow(
 						<Editor
@@ -399,7 +399,7 @@ describe('Processor components', () => {
 						}
 				};
 
-				it('Editor component finds field values', () => {
+				it('Editor componentWithState finds field values', () => {
 					const wrapper = shallow(
 						<Editor
 							ID={'configFields-2'}

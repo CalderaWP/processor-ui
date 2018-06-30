@@ -42,7 +42,7 @@ export class  RemoveProcessorButton extends React.PureComponent {
 	}
 
 	/**
-	 * Render the RemoveProcessorButton component
+	 * Render the RemoveProcessorButton componentWithState
 	 * @returns {*}
 	 */
 	render(){
@@ -63,7 +63,7 @@ export class  RemoveProcessorButton extends React.PureComponent {
 };
 
 /**
- * Props requirements for RemoveProcessorButton component
+ * Props requirements for RemoveProcessorButton componentWithState
  *
  *
  * @type {{label: shim, labelToConfirm: shim, onClick: *}}

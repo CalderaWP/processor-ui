@@ -20,7 +20,7 @@ exports[`Processor UI components Processor add button Renders with default label
 </div>
 `;
 
-exports[`Processor UI components Processors list component renders with 1 processor 1`] = `
+exports[`Processor UI components Processors list componentWithState renders with 1 processor 1`] = `
 <div>
   <div>
     <div
@@ -60,7 +60,7 @@ exports[`Processor UI components Processors list component renders with 1 proces
 </div>
 `;
 
-exports[`Processor UI components Processors list component renders with 2 processors 1`] = `
+exports[`Processor UI components Processors list componentWithState renders with 2 processors 1`] = `
 <div>
   <div>
     <div

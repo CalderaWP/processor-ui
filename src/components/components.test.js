@@ -26,7 +26,7 @@ describe( 'Processor UI components', () => {
 		}
 	};
 
-	describe( 'Processors list component', () => {
+	describe( 'Processors list componentWithState', () => {
 		it( 'renders with 1 processor', () => {
 			const component = renderer.create(
 				<List

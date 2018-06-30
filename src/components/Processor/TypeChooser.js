@@ -8,7 +8,7 @@ import {processorTypesMap} from "../../factories/processorFactory";
  */
 export class TypeChooser extends React.PureComponent {
 	/**
-	 * Create a new TypeChooser component
+	 * Create a new TypeChooser componentWithState
 	 *
 	 * @param {object} props
 	 */
@@ -75,7 +75,7 @@ export class TypeChooser extends React.PureComponent {
 }
 
 /**
- * Prop definitions for TypeChooser component
+ * Prop definitions for TypeChooser componentWithState
 
  * @type {{onUpdateProcessor: *, ID: *, type: shim, label: shim}}
  */

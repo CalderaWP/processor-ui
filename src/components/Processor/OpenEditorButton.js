@@ -28,7 +28,7 @@ export const OpenEditorButton = (props) => {
 };
 
 /**
- * Props requirements for OpenEditorButton component
+ * Props requirements for OpenEditorButton componentWithState
  *
  * @type {{isOpen: *, labelToOpen: shim, labelToClose: shim, onClick: *}}
  */

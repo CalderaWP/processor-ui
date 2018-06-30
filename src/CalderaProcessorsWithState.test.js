@@ -5,7 +5,7 @@ import CalderaProcessorsWithState from './CalderaProcessorsWithState';
 import { Provider } from 'react-redux';
 import {processorsStore} from './state/processorsStore';
 
-describe( 'CalderaProcessors component', () => {
+describe( 'CalderaProcessors componentWithState', () => {
 	it('renders without crashing', () => {
 		function handler(){}
 
@@ -23,8 +23,9 @@ describe( 'CalderaProcessors component', () => {
 			getProcessorTypes={() => {}}
 		/>, div);
 	});
-	it('renders with state without crashing', () => {
 
+
+	it('renders with state without crashing', () => {
 		ReactDOM.render(
 			<Provider store={processorsStore}>
 				<CalderaProcessorsWithState />

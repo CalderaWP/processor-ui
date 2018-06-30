@@ -162,7 +162,9 @@ export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
 
 
 /**
- * Reducer for managing one processor as it is being editted/
+ * Reducer for managing one processor as it is being editted
+ *
+ * NOTE: NOT USED. Either each processor gets its own container and reducer (this one) or this get removed)
  *
  * Contains the form processor belongs to for field mapping/ magic selecting
  * Processor is a Map()

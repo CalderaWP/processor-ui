@@ -57,7 +57,7 @@
 </ul>
 </li>
 <li>label: Optional String. A user supplied label unique to the processor.</li>
-<li>prepareConfigFields: Array of config fields as expected by <a href="https://calderalabs.org/caldera-components/manual/components.html#rendergroup">Caldera Components&apos; <code>RenderGroup</code> component</a></li>
+<li>prepareConfigFields: Array of config fields as expected by <a href="https://calderalabs.org/caldera-components/manual/components.html#rendergroup">Caldera Components&apos; <code>RenderGroup</code> componentWithState</a></li>
 <li>configValues: A map of the current field values.</li>
 </ul>
 <h2 id="prepareconfigfields-vs-configvalues">prepareConfigFields vs configValues</h2><p><code>prepareConfigFields</code> should represent what has been stored for this processor&apos;s settings. It contains the saved value and the processor configuration, since configuration is itself dynamic. For example, your options for list to subscribe to may change after the value of a separate field for entering an API key has changed.</p>

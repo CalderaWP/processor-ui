@@ -35,7 +35,7 @@ class CalderaProcessors extends React.PureComponent {
 }
 
 /**
- * Prop definitions for CalderaProcessors component
+ * Prop definitions for CalderaProcessors componentWithState
  * @see https://www.npmjs.com/package/prop-types
  *
  * @type {{processors: (shim|*), form: *, onAddProcessor: *, onNewProcessor: *, onRemoveProcessor: *, onUpdateProcessor: *}}
@@ -54,7 +54,7 @@ CalderaProcessors.propTypes = {
 };
 
 /**
- * Default props for CalderaProcessors component
+ * Default props for CalderaProcessors componentWithState
  *
  * @type {{processors: Map<any, any>, form: {ID: string, name: string, fields: {fld12: {ID: string, label: string, type: string}, fld22: {ID: string, label: string, type: string}, fld3: {ID: string, label: string, type: string}}}}}
  */
