@@ -4,7 +4,7 @@ Caldera Forms processor user interface generator and components.
 🌋 👀 [Documentation](https://calderalabs.org/caldera-npm-module-boilerplate/)
 
 [![Build Status](https://api.travis-ci.org/CalderaWP/processor-ui.svg?branch=master)](https://travis-ci.org/CalderaWP/processor-ui)
-[![Documentation Status](https://calderalabs.org/processor-ui/badge.svg)](https://calderalabs.org/processor-ui/badge.svg)
+[![Documentation Status](./docs/badge.svg)](https://calderalabs.org/processor-ui/badge.svg)
 
 |Statements|Lines|Functions|Branches|
 |---|---|---|---|
