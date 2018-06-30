@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Editor Renders with props 1`] = `
+<div
+  className="processor-has-type caldera-forms-processor not-opened"
+>
+  <div
+    className="processor-label"
+  >
+    caldera-forms/procesor/email - p1
+  </div>
+  <div>
+    Type: 
+    <span
+      className="processor-type"
+    >
+      caldera-forms/procesor/email
+    </span>
+  </div>
+  <div
+    className="processor-editor"
+  >
+    <div
+      className="caldera-forms-processor-config"
+    >
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="fromName"
+          >
+            From Name
+          </label>
+          <input
+            aria-describedby="fromName-description"
+            className="field-config field-config"
+            disabled={false}
+            id="fromName"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromName-description"
+          >
+            Who the email is from
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="fromEmail"
+          >
+            From Email
+          </label>
+          <input
+            aria-describedby="fromEmail-description"
+            className="field-config field-config"
+            disabled={false}
+            id="fromEmail"
+            onChange={[Function]}
+            required={false}
+            type="email"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromEmail-description"
+          >
+            Who the email is from
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="contentType"
+          >
+            Content type
+          </label>
+          <select
+            className="field-config field-config"
+            disabled={false}
+            id="contentType"
+            onChange={[Function]}
+            value={undefined}
+          >
+            <option
+              className="caldera-config-option"
+              value="html"
+            >
+              HTML
+            </option>
+            <option
+              className="caldera-config-option"
+              value="plain"
+            >
+              Plain Text
+            </option>
+          </select>
+          <p
+            className="description"
+            id="contentType-description"
+          >
+            HTML or plain text?
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="bodyPadding"
+          >
+            Message Body Padding
+          </label>
+          <input
+            aria-describedby="bodyPadding-description"
+            className="field-config field-config"
+            disabled={false}
+            id="bodyPadding"
+            onChange={[Function]}
+            required={false}
+            type="number"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="bodyPadding-description"
+          >
+            How much space to add around message body
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Editor renders with props 1`] = `
+<div
+  className="processor-has-type caldera-forms-processor not-opened"
+>
+  <div
+    className="processor-label"
+  >
+    caldera-forms/procesor/email - p1
+  </div>
+  <div>
+    Type: 
+    <span
+      className="processor-type"
+    >
+      caldera-forms/procesor/email
+    </span>
+  </div>
+  <div
+    className="processor-editor"
+  >
+    <div
+      className="caldera-forms-processor-config"
+    >
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="fromName"
+          >
+            From Name
+          </label>
+          <input
+            aria-describedby="fromName-description"
+            className="field-config field-config"
+            disabled={false}
+            id="fromName"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromName-description"
+          >
+            Who the email is from
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="fromEmail"
+          >
+            From Email
+          </label>
+          <input
+            aria-describedby="fromEmail-description"
+            className="field-config field-config"
+            disabled={false}
+            id="fromEmail"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="fromEmail-description"
+          >
+            Who the email is from
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="contentType"
+          >
+            Content type
+          </label>
+          <select
+            className="field-config field-config"
+            disabled={false}
+            id="contentType"
+            onChange={[Function]}
+            value={undefined}
+          >
+            <option
+              className="caldera-config-option"
+              value="html"
+            >
+              HTML
+            </option>
+            <option
+              className="caldera-config-option"
+              value="plain"
+            >
+              Plain Text
+            </option>
+          </select>
+          <p
+            className="description"
+            id="contentType-description"
+          >
+            HTML or plain text?
+          </p>
+        </div>
+      </div>
+      <div
+        className="caldera-config-group"
+      >
+        <div
+          className="caldera-config-field"
+        >
+          <label
+            htmlFor="bodyPadding"
+          >
+            Message Body Padding
+          </label>
+          <input
+            aria-describedby="bodyPadding-description"
+            className="field-config field-config"
+            disabled={false}
+            id="bodyPadding"
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value={undefined}
+          />
+          <p
+            className="description"
+            id="bodyPadding-description"
+          >
+            How much space to add around message body
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TypeChooser Renders props 1`] = `
+<select
+  className="processor-type-chooser"
+  onChange={[Function]}
+  value={null}
+>
+  <option />
+  <option
+    value="caldera-forms/procesor/email"
+  >
+    Email
+  </option>
+  <option
+    value="caldera-forms/processor/redirect"
+  >
+    Redirect After Form Submission
+  </option>
+</select>
+`;
