@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1280,
+  "end": 1605,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 68,
+      "line": 70,
       "column": 2
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1280,
+    "end": 1605,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 68,
+        "line": 70,
         "column": 2
       }
     },
@@ -716,18 +716,18 @@
         },
         "trailingComments": [
           {
-            "type": "CommentLine",
-            "value": "Create the basic options for the store besides the reducer",
-            "start": 346,
-            "end": 406,
+            "type": "CommentBlock",
+            "value": "*\n * The  options for the Caldera Forms processor store besides the reducer\n * @type {{actions: {addProcessor: addProcessor, newProcessor: newProcessor, removeProcessor: removeProcessor, updateProcessor: updateProcessor, setProcessorType: setProcessorType}, selectors: {getProcessorsCollection(*): *, getProcessorFromCollection(*, *=): *, getProcessorTypes(*): *}, resolvers: {}}}\n ",
+            "start": 345,
+            "end": 731,
             "loc": {
               "start": {
-                "line": 23,
+                "line": 22,
                 "column": 0
               },
               "end": {
-                "line": 23,
-                "column": 60
+                "line": 25,
+                "column": 3
               }
             }
           }
@@ -735,44 +735,44 @@
       },
       {
         "type": "VariableDeclaration",
-        "start": 407,
-        "end": 870,
+        "start": 732,
+        "end": 1195,
         "loc": {
           "start": {
-            "line": 24,
+            "line": 26,
             "column": 0
           },
           "end": {
-            "line": 47,
+            "line": 49,
             "column": 2
           }
         },
         "declarations": [
           {
             "type": "VariableDeclarator",
-            "start": 411,
-            "end": 869,
+            "start": 736,
+            "end": 1194,
             "loc": {
               "start": {
-                "line": 24,
+                "line": 26,
                 "column": 4
               },
               "end": {
-                "line": 47,
+                "line": 49,
                 "column": 1
               }
             },
             "id": {
               "type": "Identifier",
-              "start": 411,
-              "end": 418,
+              "start": 736,
+              "end": 743,
               "loc": {
                 "start": {
-                  "line": 24,
+                  "line": 26,
                   "column": 4
                 },
                 "end": {
-                  "line": 24,
+                  "line": 26,
                   "column": 11
                 },
                 "identifierName": "options"
@@ -782,30 +782,30 @@
             },
             "init": {
               "type": "ObjectExpression",
-              "start": 421,
-              "end": 869,
+              "start": 746,
+              "end": 1194,
               "loc": {
                 "start": {
-                  "line": 24,
+                  "line": 26,
                   "column": 14
                 },
                 "end": {
-                  "line": 47,
+                  "line": 49,
                   "column": 1
                 }
               },
               "properties": [
                 {
                   "type": "ObjectProperty",
-                  "start": 424,
-                  "end": 526,
+                  "start": 749,
+                  "end": 851,
                   "loc": {
                     "start": {
-                      "line": 25,
+                      "line": 27,
                       "column": 1
                     },
                     "end": {
-                      "line": 31,
+                      "line": 33,
                       "column": 2
                     }
                   },
@@ -814,15 +814,15 @@
                   "computed": false,
                   "key": {
                     "type": "Identifier",
-                    "start": 424,
-                    "end": 431,
+                    "start": 749,
+                    "end": 756,
                     "loc": {
                       "start": {
-                        "line": 25,
+                        "line": 27,
                         "column": 1
                       },
                       "end": {
-                        "line": 25,
+                        "line": 27,
                         "column": 8
                       },
                       "identifierName": "actions"
@@ -831,30 +831,30 @@
                   },
                   "value": {
                     "type": "ObjectExpression",
-                    "start": 433,
-                    "end": 526,
+                    "start": 758,
+                    "end": 851,
                     "loc": {
                       "start": {
-                        "line": 25,
+                        "line": 27,
                         "column": 10
                       },
                       "end": {
-                        "line": 31,
+                        "line": 33,
                         "column": 2
                       }
                     },
                     "properties": [
                       {
                         "type": "ObjectProperty",
-                        "start": 437,
-                        "end": 449,
+                        "start": 762,
+                        "end": 774,
                         "loc": {
                           "start": {
-                            "line": 26,
+                            "line": 28,
                             "column": 2
                           },
                           "end": {
-                            "line": 26,
+                            "line": 28,
                             "column": 14
                           }
                         },
@@ -863,15 +863,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 437,
-                          "end": 449,
+                          "start": 762,
+                          "end": 774,
                           "loc": {
                             "start": {
-                              "line": 26,
+                              "line": 28,
                               "column": 2
                             },
                             "end": {
-                              "line": 26,
+                              "line": 28,
                               "column": 14
                             },
                             "identifierName": "addProcessor"
@@ -880,15 +880,15 @@
                         },
                         "value": {
                           "type": "Identifier",
-                          "start": 437,
-                          "end": 449,
+                          "start": 762,
+                          "end": 774,
                           "loc": {
                             "start": {
-                              "line": 26,
+                              "line": 28,
                               "column": 2
                             },
                             "end": {
-                              "line": 26,
+                              "line": 28,
                               "column": 14
                             },
                             "identifierName": "addProcessor"
@@ -901,15 +901,15 @@
                       },
                       {
                         "type": "ObjectProperty",
-                        "start": 453,
-                        "end": 465,
+                        "start": 778,
+                        "end": 790,
                         "loc": {
                           "start": {
-                            "line": 27,
+                            "line": 29,
                             "column": 2
                           },
                           "end": {
-                            "line": 27,
+                            "line": 29,
                             "column": 14
                           }
                         },
@@ -918,15 +918,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 453,
-                          "end": 465,
+                          "start": 778,
+                          "end": 790,
                           "loc": {
                             "start": {
-                              "line": 27,
+                              "line": 29,
                               "column": 2
                             },
                             "end": {
-                              "line": 27,
+                              "line": 29,
                               "column": 14
                             },
                             "identifierName": "newProcessor"
@@ -935,15 +935,15 @@
                         },
                         "value": {
                           "type": "Identifier",
-                          "start": 453,
-                          "end": 465,
+                          "start": 778,
+                          "end": 790,
                           "loc": {
                             "start": {
-                              "line": 27,
+                              "line": 29,
                               "column": 2
                             },
                             "end": {
-                              "line": 27,
+                              "line": 29,
                               "column": 14
                             },
                             "identifierName": "newProcessor"
@@ -956,15 +956,15 @@
                       },
                       {
                         "type": "ObjectProperty",
-                        "start": 469,
-                        "end": 484,
+                        "start": 794,
+                        "end": 809,
                         "loc": {
                           "start": {
-                            "line": 28,
+                            "line": 30,
                             "column": 2
                           },
                           "end": {
-                            "line": 28,
+                            "line": 30,
                             "column": 17
                           }
                         },
@@ -973,15 +973,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 469,
-                          "end": 484,
+                          "start": 794,
+                          "end": 809,
                           "loc": {
                             "start": {
-                              "line": 28,
+                              "line": 30,
                               "column": 2
                             },
                             "end": {
-                              "line": 28,
+                              "line": 30,
                               "column": 17
                             },
                             "identifierName": "removeProcessor"
@@ -990,15 +990,15 @@
                         },
                         "value": {
                           "type": "Identifier",
-                          "start": 469,
-                          "end": 484,
+                          "start": 794,
+                          "end": 809,
                           "loc": {
                             "start": {
-                              "line": 28,
+                              "line": 30,
                               "column": 2
                             },
                             "end": {
-                              "line": 28,
+                              "line": 30,
                               "column": 17
                             },
                             "identifierName": "removeProcessor"
@@ -1011,15 +1011,15 @@
                       },
                       {
                         "type": "ObjectProperty",
-                        "start": 488,
-                        "end": 503,
+                        "start": 813,
+                        "end": 828,
                         "loc": {
                           "start": {
-                            "line": 29,
+                            "line": 31,
                             "column": 2
                           },
                           "end": {
-                            "line": 29,
+                            "line": 31,
                             "column": 17
                           }
                         },
@@ -1028,15 +1028,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 488,
-                          "end": 503,
+                          "start": 813,
+                          "end": 828,
                           "loc": {
                             "start": {
-                              "line": 29,
+                              "line": 31,
                               "column": 2
                             },
                             "end": {
-                              "line": 29,
+                              "line": 31,
                               "column": 17
                             },
                             "identifierName": "updateProcessor"
@@ -1045,15 +1045,15 @@
                         },
                         "value": {
                           "type": "Identifier",
-                          "start": 488,
-                          "end": 503,
+                          "start": 813,
+                          "end": 828,
                           "loc": {
                             "start": {
-                              "line": 29,
+                              "line": 31,
                               "column": 2
                             },
                             "end": {
-                              "line": 29,
+                              "line": 31,
                               "column": 17
                             },
                             "identifierName": "updateProcessor"
@@ -1066,15 +1066,15 @@
                       },
                       {
                         "type": "ObjectProperty",
-                        "start": 507,
-                        "end": 523,
+                        "start": 832,
+                        "end": 848,
                         "loc": {
                           "start": {
-                            "line": 30,
+                            "line": 32,
                             "column": 2
                           },
                           "end": {
-                            "line": 30,
+                            "line": 32,
                             "column": 18
                           }
                         },
@@ -1083,15 +1083,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 507,
-                          "end": 523,
+                          "start": 832,
+                          "end": 848,
                           "loc": {
                             "start": {
-                              "line": 30,
+                              "line": 32,
                               "column": 2
                             },
                             "end": {
-                              "line": 30,
+                              "line": 32,
                               "column": 18
                             },
                             "identifierName": "setProcessorType"
@@ -1100,15 +1100,15 @@
                         },
                         "value": {
                           "type": "Identifier",
-                          "start": 507,
-                          "end": 523,
+                          "start": 832,
+                          "end": 848,
                           "loc": {
                             "start": {
-                              "line": 30,
+                              "line": 32,
                               "column": 2
                             },
                             "end": {
-                              "line": 30,
+                              "line": 32,
                               "column": 18
                             },
                             "identifierName": "setProcessorType"
@@ -1124,15 +1124,15 @@
                 },
                 {
                   "type": "ObjectProperty",
-                  "start": 529,
-                  "end": 846,
+                  "start": 854,
+                  "end": 1171,
                   "loc": {
                     "start": {
-                      "line": 32,
+                      "line": 34,
                       "column": 1
                     },
                     "end": {
-                      "line": 42,
+                      "line": 44,
                       "column": 2
                     }
                   },
@@ -1141,15 +1141,15 @@
                   "computed": false,
                   "key": {
                     "type": "Identifier",
-                    "start": 529,
-                    "end": 538,
+                    "start": 854,
+                    "end": 863,
                     "loc": {
                       "start": {
-                        "line": 32,
+                        "line": 34,
                         "column": 1
                       },
                       "end": {
-                        "line": 32,
+                        "line": 34,
                         "column": 10
                       },
                       "identifierName": "selectors"
@@ -1158,30 +1158,30 @@
                   },
                   "value": {
                     "type": "ObjectExpression",
-                    "start": 540,
-                    "end": 846,
+                    "start": 865,
+                    "end": 1171,
                     "loc": {
                       "start": {
-                        "line": 32,
+                        "line": 34,
                         "column": 12
                       },
                       "end": {
-                        "line": 42,
+                        "line": 44,
                         "column": 2
                       }
                     },
                     "properties": [
                       {
                         "type": "ObjectMethod",
-                        "start": 544,
-                        "end": 641,
+                        "start": 869,
+                        "end": 966,
                         "loc": {
                           "start": {
-                            "line": 33,
+                            "line": 35,
                             "column": 2
                           },
                           "end": {
-                            "line": 35,
+                            "line": 37,
                             "column": 3
                           }
                         },
@@ -1190,15 +1190,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 544,
-                          "end": 567,
+                          "start": 869,
+                          "end": 892,
                           "loc": {
                             "start": {
-                              "line": 33,
+                              "line": 35,
                               "column": 2
                             },
                             "end": {
-                              "line": 33,
+                              "line": 35,
                               "column": 25
                             },
                             "identifierName": "getProcessorsCollection"
@@ -1213,15 +1213,15 @@
                         "params": [
                           {
                             "type": "Identifier",
-                            "start": 568,
-                            "end": 573,
+                            "start": 893,
+                            "end": 898,
                             "loc": {
                               "start": {
-                                "line": 33,
+                                "line": 35,
                                 "column": 26
                               },
                               "end": {
-                                "line": 33,
+                                "line": 35,
                                 "column": 31
                               },
                               "identifierName": "state"
@@ -1231,58 +1231,58 @@
                         ],
                         "body": {
                           "type": "BlockStatement",
-                          "start": 574,
-                          "end": 641,
+                          "start": 899,
+                          "end": 966,
                           "loc": {
                             "start": {
-                              "line": 33,
+                              "line": 35,
                               "column": 32
                             },
                             "end": {
-                              "line": 35,
+                              "line": 37,
                               "column": 3
                             }
                           },
                           "body": [
                             {
                               "type": "ReturnStatement",
-                              "start": 579,
-                              "end": 637,
+                              "start": 904,
+                              "end": 962,
                               "loc": {
                                 "start": {
-                                  "line": 34,
+                                  "line": 36,
                                   "column": 3
                                 },
                                 "end": {
-                                  "line": 34,
+                                  "line": 36,
                                   "column": 61
                                 }
                               },
                               "argument": {
                                 "type": "CallExpression",
-                                "start": 586,
-                                "end": 636,
+                                "start": 911,
+                                "end": 961,
                                 "loc": {
                                   "start": {
-                                    "line": 34,
+                                    "line": 36,
                                     "column": 10
                                   },
                                   "end": {
-                                    "line": 34,
+                                    "line": 36,
                                     "column": 60
                                   }
                                 },
                                 "callee": {
                                   "type": "Identifier",
-                                  "start": 586,
-                                  "end": 609,
+                                  "start": 911,
+                                  "end": 934,
                                   "loc": {
                                     "start": {
-                                      "line": 34,
+                                      "line": 36,
                                       "column": 10
                                     },
                                     "end": {
-                                      "line": 34,
+                                      "line": 36,
                                       "column": 33
                                     },
                                     "identifierName": "getProcessorsCollection"
@@ -1292,29 +1292,29 @@
                                 "arguments": [
                                   {
                                     "type": "MemberExpression",
-                                    "start": 611,
-                                    "end": 634,
+                                    "start": 936,
+                                    "end": 959,
                                     "loc": {
                                       "start": {
-                                        "line": 34,
+                                        "line": 36,
                                         "column": 35
                                       },
                                       "end": {
-                                        "line": 34,
+                                        "line": 36,
                                         "column": 58
                                       }
                                     },
                                     "object": {
                                       "type": "Identifier",
-                                      "start": 611,
-                                      "end": 616,
+                                      "start": 936,
+                                      "end": 941,
                                       "loc": {
                                         "start": {
-                                          "line": 34,
+                                          "line": 36,
                                           "column": 35
                                         },
                                         "end": {
-                                          "line": 34,
+                                          "line": 36,
                                           "column": 40
                                         },
                                         "identifierName": "state"
@@ -1323,15 +1323,15 @@
                                     },
                                     "property": {
                                       "type": "Identifier",
-                                      "start": 617,
-                                      "end": 634,
+                                      "start": 942,
+                                      "end": 959,
                                       "loc": {
                                         "start": {
-                                          "line": 34,
+                                          "line": 36,
                                           "column": 41
                                         },
                                         "end": {
-                                          "line": 34,
+                                          "line": 36,
                                           "column": 58
                                         },
                                         "identifierName": "processorsReducer"
@@ -1349,15 +1349,15 @@
                       },
                       {
                         "type": "ObjectMethod",
-                        "start": 645,
-                        "end": 771,
+                        "start": 970,
+                        "end": 1096,
                         "loc": {
                           "start": {
-                            "line": 36,
+                            "line": 38,
                             "column": 2
                           },
                           "end": {
-                            "line": 38,
+                            "line": 40,
                             "column": 3
                           }
                         },
@@ -1366,15 +1366,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 645,
-                          "end": 671,
+                          "start": 970,
+                          "end": 996,
                           "loc": {
                             "start": {
-                              "line": 36,
+                              "line": 38,
                               "column": 2
                             },
                             "end": {
-                              "line": 36,
+                              "line": 38,
                               "column": 28
                             },
                             "identifierName": "getProcessorFromCollection"
@@ -1389,15 +1389,15 @@
                         "params": [
                           {
                             "type": "Identifier",
-                            "start": 672,
-                            "end": 677,
+                            "start": 997,
+                            "end": 1002,
                             "loc": {
                               "start": {
-                                "line": 36,
+                                "line": 38,
                                 "column": 29
                               },
                               "end": {
-                                "line": 36,
+                                "line": 38,
                                 "column": 34
                               },
                               "identifierName": "state"
@@ -1406,15 +1406,15 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 679,
-                            "end": 690,
+                            "start": 1004,
+                            "end": 1015,
                             "loc": {
                               "start": {
-                                "line": 36,
+                                "line": 38,
                                 "column": 36
                               },
                               "end": {
-                                "line": 36,
+                                "line": 38,
                                 "column": 47
                               },
                               "identifierName": "processorId"
@@ -1424,58 +1424,58 @@
                         ],
                         "body": {
                           "type": "BlockStatement",
-                          "start": 691,
-                          "end": 771,
+                          "start": 1016,
+                          "end": 1096,
                           "loc": {
                             "start": {
-                              "line": 36,
+                              "line": 38,
                               "column": 48
                             },
                             "end": {
-                              "line": 38,
+                              "line": 40,
                               "column": 3
                             }
                           },
                           "body": [
                             {
                               "type": "ReturnStatement",
-                              "start": 696,
-                              "end": 767,
+                              "start": 1021,
+                              "end": 1092,
                               "loc": {
                                 "start": {
-                                  "line": 37,
+                                  "line": 39,
                                   "column": 3
                                 },
                                 "end": {
-                                  "line": 37,
+                                  "line": 39,
                                   "column": 74
                                 }
                               },
                               "argument": {
                                 "type": "CallExpression",
-                                "start": 703,
-                                "end": 766,
+                                "start": 1028,
+                                "end": 1091,
                                 "loc": {
                                   "start": {
-                                    "line": 37,
+                                    "line": 39,
                                     "column": 10
                                   },
                                   "end": {
-                                    "line": 37,
+                                    "line": 39,
                                     "column": 73
                                   }
                                 },
                                 "callee": {
                                   "type": "Identifier",
-                                  "start": 703,
-                                  "end": 729,
+                                  "start": 1028,
+                                  "end": 1054,
                                   "loc": {
                                     "start": {
-                                      "line": 37,
+                                      "line": 39,
                                       "column": 10
                                     },
                                     "end": {
-                                      "line": 37,
+                                      "line": 39,
                                       "column": 36
                                     },
                                     "identifierName": "getProcessorFromCollection"
@@ -1485,29 +1485,29 @@
                                 "arguments": [
                                   {
                                     "type": "MemberExpression",
-                                    "start": 730,
-                                    "end": 753,
+                                    "start": 1055,
+                                    "end": 1078,
                                     "loc": {
                                       "start": {
-                                        "line": 37,
+                                        "line": 39,
                                         "column": 37
                                       },
                                       "end": {
-                                        "line": 37,
+                                        "line": 39,
                                         "column": 60
                                       }
                                     },
                                     "object": {
                                       "type": "Identifier",
-                                      "start": 730,
-                                      "end": 735,
+                                      "start": 1055,
+                                      "end": 1060,
                                       "loc": {
                                         "start": {
-                                          "line": 37,
+                                          "line": 39,
                                           "column": 37
                                         },
                                         "end": {
-                                          "line": 37,
+                                          "line": 39,
                                           "column": 42
                                         },
                                         "identifierName": "state"
@@ -1516,15 +1516,15 @@
                                     },
                                     "property": {
                                       "type": "Identifier",
-                                      "start": 736,
-                                      "end": 753,
+                                      "start": 1061,
+                                      "end": 1078,
                                       "loc": {
                                         "start": {
-                                          "line": 37,
+                                          "line": 39,
                                           "column": 43
                                         },
                                         "end": {
-                                          "line": 37,
+                                          "line": 39,
                                           "column": 60
                                         },
                                         "identifierName": "processorsReducer"
@@ -1535,15 +1535,15 @@
                                   },
                                   {
                                     "type": "Identifier",
-                                    "start": 754,
-                                    "end": 765,
+                                    "start": 1079,
+                                    "end": 1090,
                                     "loc": {
                                       "start": {
-                                        "line": 37,
+                                        "line": 39,
                                         "column": 61
                                       },
                                       "end": {
-                                        "line": 37,
+                                        "line": 39,
                                         "column": 72
                                       },
                                       "identifierName": "processorId"
@@ -1559,15 +1559,15 @@
                       },
                       {
                         "type": "ObjectMethod",
-                        "start": 775,
-                        "end": 843,
+                        "start": 1100,
+                        "end": 1168,
                         "loc": {
                           "start": {
-                            "line": 39,
+                            "line": 41,
                             "column": 2
                           },
                           "end": {
-                            "line": 41,
+                            "line": 43,
                             "column": 3
                           }
                         },
@@ -1576,15 +1576,15 @@
                         "computed": false,
                         "key": {
                           "type": "Identifier",
-                          "start": 775,
-                          "end": 792,
+                          "start": 1100,
+                          "end": 1117,
                           "loc": {
                             "start": {
-                              "line": 39,
+                              "line": 41,
                               "column": 2
                             },
                             "end": {
-                              "line": 39,
+                              "line": 41,
                               "column": 19
                             },
                             "identifierName": "getProcessorTypes"
@@ -1599,15 +1599,15 @@
                         "params": [
                           {
                             "type": "Identifier",
-                            "start": 793,
-                            "end": 798,
+                            "start": 1118,
+                            "end": 1123,
                             "loc": {
                               "start": {
-                                "line": 39,
+                                "line": 41,
                                 "column": 20
                               },
                               "end": {
-                                "line": 39,
+                                "line": 41,
                                 "column": 25
                               },
                               "identifierName": "state"
@@ -1617,58 +1617,58 @@
                         ],
                         "body": {
                           "type": "BlockStatement",
-                          "start": 799,
-                          "end": 843,
+                          "start": 1124,
+                          "end": 1168,
                           "loc": {
                             "start": {
-                              "line": 39,
+                              "line": 41,
                               "column": 26
                             },
                             "end": {
-                              "line": 41,
+                              "line": 43,
                               "column": 3
                             }
                           },
                           "body": [
                             {
                               "type": "ReturnStatement",
-                              "start": 804,
-                              "end": 839,
+                              "start": 1129,
+                              "end": 1164,
                               "loc": {
                                 "start": {
-                                  "line": 40,
+                                  "line": 42,
                                   "column": 3
                                 },
                                 "end": {
-                                  "line": 40,
+                                  "line": 42,
                                   "column": 38
                                 }
                               },
                               "argument": {
                                 "type": "MemberExpression",
-                                "start": 811,
-                                "end": 838,
+                                "start": 1136,
+                                "end": 1163,
                                 "loc": {
                                   "start": {
-                                    "line": 40,
+                                    "line": 42,
                                     "column": 10
                                   },
                                   "end": {
-                                    "line": 40,
+                                    "line": 42,
                                     "column": 37
                                   }
                                 },
                                 "object": {
                                   "type": "Identifier",
-                                  "start": 811,
-                                  "end": 816,
+                                  "start": 1136,
+                                  "end": 1141,
                                   "loc": {
                                     "start": {
-                                      "line": 40,
+                                      "line": 42,
                                       "column": 10
                                     },
                                     "end": {
-                                      "line": 40,
+                                      "line": 42,
                                       "column": 15
                                     },
                                     "identifierName": "state"
@@ -1677,15 +1677,15 @@
                                 },
                                 "property": {
                                   "type": "Identifier",
-                                  "start": 817,
-                                  "end": 838,
+                                  "start": 1142,
+                                  "end": 1163,
                                   "loc": {
                                     "start": {
-                                      "line": 40,
+                                      "line": 42,
                                       "column": 16
                                     },
                                     "end": {
-                                      "line": 40,
+                                      "line": 42,
                                       "column": 37
                                     },
                                     "identifierName": "processorTypesReducer"
@@ -1704,15 +1704,15 @@
                 },
                 {
                   "type": "ObjectProperty",
-                  "start": 850,
-                  "end": 866,
+                  "start": 1175,
+                  "end": 1191,
                   "loc": {
                     "start": {
-                      "line": 44,
+                      "line": 46,
                       "column": 1
                     },
                     "end": {
-                      "line": 46,
+                      "line": 48,
                       "column": 2
                     }
                   },
@@ -1721,15 +1721,15 @@
                   "computed": false,
                   "key": {
                     "type": "Identifier",
-                    "start": 850,
-                    "end": 859,
+                    "start": 1175,
+                    "end": 1184,
                     "loc": {
                       "start": {
-                        "line": 44,
+                        "line": 46,
                         "column": 1
                       },
                       "end": {
-                        "line": 44,
+                        "line": 46,
                         "column": 10
                       },
                       "identifierName": "resolvers"
@@ -1738,15 +1738,15 @@
                   },
                   "value": {
                     "type": "ObjectExpression",
-                    "start": 861,
-                    "end": 866,
+                    "start": 1186,
+                    "end": 1191,
                     "loc": {
                       "start": {
-                        "line": 44,
+                        "line": 46,
                         "column": 12
                       },
                       "end": {
-                        "line": 46,
+                        "line": 48,
                         "column": 2
                       }
                     },
@@ -1761,18 +1761,18 @@
         "kind": "let",
         "leadingComments": [
           {
-            "type": "CommentLine",
-            "value": "Create the basic options for the store besides the reducer",
-            "start": 346,
-            "end": 406,
+            "type": "CommentBlock",
+            "value": "*\n * The  options for the Caldera Forms processor store besides the reducer\n * @type {{actions: {addProcessor: addProcessor, newProcessor: newProcessor, removeProcessor: removeProcessor, updateProcessor: updateProcessor, setProcessorType: setProcessorType}, selectors: {getProcessorsCollection(*): *, getProcessorFromCollection(*, *=): *, getProcessorTypes(*): *}, resolvers: {}}}\n ",
+            "start": 345,
+            "end": 731,
             "loc": {
               "start": {
-                "line": 23,
+                "line": 22,
                 "column": 0
               },
               "end": {
-                "line": 23,
-                "column": 60
+                "line": 25,
+                "column": 3
               }
             }
           }
@@ -1781,15 +1781,15 @@
           {
             "type": "CommentLine",
             "value": "combine the reducers",
-            "start": 872,
-            "end": 894,
+            "start": 1197,
+            "end": 1219,
             "loc": {
               "start": {
-                "line": 49,
+                "line": 51,
                 "column": 0
               },
               "end": {
-                "line": 49,
+                "line": 51,
                 "column": 22
               }
             }
@@ -1798,58 +1798,58 @@
       },
       {
         "type": "ExpressionStatement",
-        "start": 895,
-        "end": 978,
+        "start": 1220,
+        "end": 1303,
         "loc": {
           "start": {
-            "line": 50,
+            "line": 52,
             "column": 0
           },
           "end": {
-            "line": 54,
+            "line": 56,
             "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
-          "start": 895,
-          "end": 977,
+          "start": 1220,
+          "end": 1302,
           "loc": {
             "start": {
-              "line": 50,
+              "line": 52,
               "column": 0
             },
             "end": {
-              "line": 54,
+              "line": 56,
               "column": 1
             }
           },
           "operator": "=",
           "left": {
             "type": "MemberExpression",
-            "start": 895,
-            "end": 910,
+            "start": 1220,
+            "end": 1235,
             "loc": {
               "start": {
-                "line": 50,
+                "line": 52,
                 "column": 0
               },
               "end": {
-                "line": 50,
+                "line": 52,
                 "column": 15
               }
             },
             "object": {
               "type": "Identifier",
-              "start": 895,
-              "end": 902,
+              "start": 1220,
+              "end": 1227,
               "loc": {
                 "start": {
-                  "line": 50,
+                  "line": 52,
                   "column": 0
                 },
                 "end": {
-                  "line": 50,
+                  "line": 52,
                   "column": 7
                 },
                 "identifierName": "options"
@@ -1859,15 +1859,15 @@
             },
             "property": {
               "type": "Identifier",
-              "start": 903,
-              "end": 910,
+              "start": 1228,
+              "end": 1235,
               "loc": {
                 "start": {
-                  "line": 50,
+                  "line": 52,
                   "column": 8
                 },
                 "end": {
-                  "line": 50,
+                  "line": 52,
                   "column": 15
                 },
                 "identifierName": "reducer"
@@ -1879,29 +1879,29 @@
           },
           "right": {
             "type": "CallExpression",
-            "start": 913,
-            "end": 977,
+            "start": 1238,
+            "end": 1302,
             "loc": {
               "start": {
-                "line": 50,
+                "line": 52,
                 "column": 18
               },
               "end": {
-                "line": 54,
+                "line": 56,
                 "column": 1
               }
             },
             "callee": {
               "type": "Identifier",
-              "start": 913,
-              "end": 928,
+              "start": 1238,
+              "end": 1253,
               "loc": {
                 "start": {
-                  "line": 50,
+                  "line": 52,
                   "column": 18
                 },
                 "end": {
-                  "line": 50,
+                  "line": 52,
                   "column": 33
                 },
                 "identifierName": "combineReducers"
@@ -1911,30 +1911,30 @@
             "arguments": [
               {
                 "type": "ObjectExpression",
-                "start": 929,
-                "end": 975,
+                "start": 1254,
+                "end": 1300,
                 "loc": {
                   "start": {
-                    "line": 50,
+                    "line": 52,
                     "column": 34
                   },
                   "end": {
-                    "line": 53,
+                    "line": 55,
                     "column": 1
                   }
                 },
                 "properties": [
                   {
                     "type": "ObjectProperty",
-                    "start": 932,
-                    "end": 949,
+                    "start": 1257,
+                    "end": 1274,
                     "loc": {
                       "start": {
-                        "line": 51,
+                        "line": 53,
                         "column": 1
                       },
                       "end": {
-                        "line": 51,
+                        "line": 53,
                         "column": 18
                       }
                     },
@@ -1943,15 +1943,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 932,
-                      "end": 949,
+                      "start": 1257,
+                      "end": 1274,
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 53,
                           "column": 1
                         },
                         "end": {
-                          "line": 51,
+                          "line": 53,
                           "column": 18
                         },
                         "identifierName": "processorsReducer"
@@ -1960,15 +1960,15 @@
                     },
                     "value": {
                       "type": "Identifier",
-                      "start": 932,
-                      "end": 949,
+                      "start": 1257,
+                      "end": 1274,
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 53,
                           "column": 1
                         },
                         "end": {
-                          "line": 51,
+                          "line": 53,
                           "column": 18
                         },
                         "identifierName": "processorsReducer"
@@ -1981,15 +1981,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 952,
-                    "end": 973,
+                    "start": 1277,
+                    "end": 1298,
                     "loc": {
                       "start": {
-                        "line": 52,
+                        "line": 54,
                         "column": 1
                       },
                       "end": {
-                        "line": 52,
+                        "line": 54,
                         "column": 22
                       }
                     },
@@ -1998,15 +1998,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 952,
-                      "end": 973,
+                      "start": 1277,
+                      "end": 1298,
                       "loc": {
                         "start": {
-                          "line": 52,
+                          "line": 54,
                           "column": 1
                         },
                         "end": {
-                          "line": 52,
+                          "line": 54,
                           "column": 22
                         },
                         "identifierName": "processorTypesReducer"
@@ -2015,15 +2015,15 @@
                     },
                     "value": {
                       "type": "Identifier",
-                      "start": 952,
-                      "end": 973,
+                      "start": 1277,
+                      "end": 1298,
                       "loc": {
                         "start": {
-                          "line": 52,
+                          "line": 54,
                           "column": 1
                         },
                         "end": {
-                          "line": 52,
+                          "line": 54,
                           "column": 22
                         },
                         "identifierName": "processorTypesReducer"
@@ -2044,15 +2044,15 @@
           {
             "type": "CommentLine",
             "value": "combine the reducers",
-            "start": 872,
-            "end": 894,
+            "start": 1197,
+            "end": 1219,
             "loc": {
               "start": {
-                "line": 49,
+                "line": 51,
                 "column": 0
               },
               "end": {
-                "line": 49,
+                "line": 51,
                 "column": 22
               }
             }
@@ -2062,15 +2062,15 @@
           {
             "type": "CommentBlock",
             "value": "*\n * The identifier for the processors store\n * @type {string}\n ",
-            "start": 980,
-            "end": 1048,
+            "start": 1305,
+            "end": 1373,
             "loc": {
               "start": {
-                "line": 56,
+                "line": 58,
                 "column": 0
               },
               "end": {
-                "line": 59,
+                "line": 61,
                 "column": 3
               }
             }
@@ -2079,15 +2079,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 1049,
-        "end": 1133,
+        "start": 1374,
+        "end": 1458,
         "loc": {
           "start": {
-            "line": 60,
+            "line": 62,
             "column": 0
           },
           "end": {
-            "line": 60,
+            "line": 62,
             "column": 84
           }
         },
@@ -2095,44 +2095,44 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 1056,
-          "end": 1133,
+          "start": 1381,
+          "end": 1458,
           "loc": {
             "start": {
-              "line": 60,
+              "line": 62,
               "column": 7
             },
             "end": {
-              "line": 60,
+              "line": 62,
               "column": 84
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 1062,
-              "end": 1132,
+              "start": 1387,
+              "end": 1457,
               "loc": {
                 "start": {
-                  "line": 60,
+                  "line": 62,
                   "column": 13
                 },
                 "end": {
-                  "line": 60,
+                  "line": 62,
                   "column": 83
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 1062,
-                "end": 1097,
+                "start": 1387,
+                "end": 1422,
                 "loc": {
                   "start": {
-                    "line": 60,
+                    "line": 62,
                     "column": 13
                   },
                   "end": {
-                    "line": 60,
+                    "line": 62,
                     "column": 48
                   },
                   "identifierName": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
@@ -2142,15 +2142,15 @@
               },
               "init": {
                 "type": "StringLiteral",
-                "start": 1100,
-                "end": 1132,
+                "start": 1425,
+                "end": 1457,
                 "loc": {
                   "start": {
-                    "line": 60,
+                    "line": 62,
                     "column": 51
                   },
                   "end": {
-                    "line": 60,
+                    "line": 62,
                     "column": 83
                   }
                 },
@@ -2168,15 +2168,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * The identifier for the processors store\n * @type {string}\n ",
-              "start": 980,
-              "end": 1048,
+              "start": 1305,
+              "end": 1373,
               "loc": {
                 "start": {
-                  "line": 56,
+                  "line": 58,
                   "column": 0
                 },
                 "end": {
-                  "line": 59,
+                  "line": 61,
                   "column": 3
                 }
               }
@@ -2186,15 +2186,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * The store for Caldera Forms Processors\n ",
-              "start": 1135,
-              "end": 1184,
+              "start": 1460,
+              "end": 1509,
               "loc": {
                 "start": {
-                  "line": 62,
+                  "line": 64,
                   "column": 0
                 },
                 "end": {
-                  "line": 64,
+                  "line": 66,
                   "column": 3
                 }
               }
@@ -2205,15 +2205,15 @@
           {
             "type": "CommentBlock",
             "value": "*\n * The identifier for the processors store\n * @type {string}\n ",
-            "start": 980,
-            "end": 1048,
+            "start": 1305,
+            "end": 1373,
             "loc": {
               "start": {
-                "line": 56,
+                "line": 58,
                 "column": 0
               },
               "end": {
-                "line": 59,
+                "line": 61,
                 "column": 3
               }
             }
@@ -2223,15 +2223,15 @@
           {
             "type": "CommentBlock",
             "value": "*\n * The store for Caldera Forms Processors\n ",
-            "start": 1135,
-            "end": 1184,
+            "start": 1460,
+            "end": 1509,
             "loc": {
               "start": {
-                "line": 62,
+                "line": 64,
                 "column": 0
               },
               "end": {
-                "line": 64,
+                "line": 66,
                 "column": 3
               }
             }
@@ -2240,15 +2240,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 1185,
-        "end": 1280,
+        "start": 1510,
+        "end": 1605,
         "loc": {
           "start": {
-            "line": 65,
+            "line": 67,
             "column": 0
           },
           "end": {
-            "line": 68,
+            "line": 70,
             "column": 2
           }
         },
@@ -2256,44 +2256,44 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 1192,
-          "end": 1280,
+          "start": 1517,
+          "end": 1605,
           "loc": {
             "start": {
-              "line": 65,
+              "line": 67,
               "column": 7
             },
             "end": {
-              "line": 68,
+              "line": 70,
               "column": 2
             }
           },
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 1198,
-              "end": 1279,
+              "start": 1523,
+              "end": 1604,
               "loc": {
                 "start": {
-                  "line": 65,
+                  "line": 67,
                   "column": 13
                 },
                 "end": {
-                  "line": 68,
+                  "line": 70,
                   "column": 1
                 }
               },
               "id": {
                 "type": "Identifier",
-                "start": 1198,
-                "end": 1213,
+                "start": 1523,
+                "end": 1538,
                 "loc": {
                   "start": {
-                    "line": 65,
+                    "line": 67,
                     "column": 13
                   },
                   "end": {
-                    "line": 65,
+                    "line": 67,
                     "column": 28
                   },
                   "identifierName": "processorsStore"
@@ -2303,29 +2303,29 @@
               },
               "init": {
                 "type": "CallExpression",
-                "start": 1216,
-                "end": 1279,
+                "start": 1541,
+                "end": 1604,
                 "loc": {
                   "start": {
-                    "line": 65,
+                    "line": 67,
                     "column": 31
                   },
                   "end": {
-                    "line": 68,
+                    "line": 70,
                     "column": 1
                   }
                 },
                 "callee": {
                   "type": "Identifier",
-                  "start": 1216,
-                  "end": 1229,
+                  "start": 1541,
+                  "end": 1554,
                   "loc": {
                     "start": {
-                      "line": 65,
+                      "line": 67,
                       "column": 31
                     },
                     "end": {
-                      "line": 65,
+                      "line": 67,
                       "column": 44
                     },
                     "identifierName": "registerStore"
@@ -2335,15 +2335,15 @@
                 "arguments": [
                   {
                     "type": "Identifier",
-                    "start": 1232,
-                    "end": 1267,
+                    "start": 1557,
+                    "end": 1592,
                     "loc": {
                       "start": {
-                        "line": 66,
+                        "line": 68,
                         "column": 1
                       },
                       "end": {
-                        "line": 66,
+                        "line": 68,
                         "column": 36
                       },
                       "identifierName": "CALDERA_FORMS_PROCESSORS_STORE_SLUG"
@@ -2352,15 +2352,15 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 1270,
-                    "end": 1277,
+                    "start": 1595,
+                    "end": 1602,
                     "loc": {
                       "start": {
-                        "line": 67,
+                        "line": 69,
                         "column": 1
                       },
                       "end": {
-                        "line": 67,
+                        "line": 69,
                         "column": 8
                       },
                       "identifierName": "options"
@@ -2377,15 +2377,15 @@
             {
               "type": "CommentBlock",
               "value": "*\n * The store for Caldera Forms Processors\n ",
-              "start": 1135,
-              "end": 1184,
+              "start": 1460,
+              "end": 1509,
               "loc": {
                 "start": {
-                  "line": 62,
+                  "line": 64,
                   "column": 0
                 },
                 "end": {
-                  "line": 64,
+                  "line": 66,
                   "column": 3
                 }
               }
@@ -2397,15 +2397,15 @@
           {
             "type": "CommentBlock",
             "value": "*\n * The store for Caldera Forms Processors\n ",
-            "start": 1135,
-            "end": 1184,
+            "start": 1460,
+            "end": 1509,
             "loc": {
               "start": {
-                "line": 62,
+                "line": 64,
                 "column": 0
               },
               "end": {
-                "line": 64,
+                "line": 66,
                 "column": 3
               }
             }
@@ -2417,33 +2417,33 @@
   },
   "comments": [
     {
-      "type": "CommentLine",
-      "value": "Create the basic options for the store besides the reducer",
-      "start": 346,
-      "end": 406,
+      "type": "CommentBlock",
+      "value": "*\n * The  options for the Caldera Forms processor store besides the reducer\n * @type {{actions: {addProcessor: addProcessor, newProcessor: newProcessor, removeProcessor: removeProcessor, updateProcessor: updateProcessor, setProcessorType: setProcessorType}, selectors: {getProcessorsCollection(*): *, getProcessorFromCollection(*, *=): *, getProcessorTypes(*): *}, resolvers: {}}}\n ",
+      "start": 345,
+      "end": 731,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 22,
           "column": 0
         },
         "end": {
-          "line": 23,
-          "column": 60
+          "line": 25,
+          "column": 3
         }
       }
     },
     {
       "type": "CommentLine",
       "value": "combine the reducers",
-      "start": 872,
-      "end": 894,
+      "start": 1197,
+      "end": 1219,
       "loc": {
         "start": {
-          "line": 49,
+          "line": 51,
           "column": 0
         },
         "end": {
-          "line": 49,
+          "line": 51,
           "column": 22
         }
       }
@@ -2451,15 +2451,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * The identifier for the processors store\n * @type {string}\n ",
-      "start": 980,
-      "end": 1048,
+      "start": 1305,
+      "end": 1373,
       "loc": {
         "start": {
-          "line": 56,
+          "line": 58,
           "column": 0
         },
         "end": {
-          "line": 59,
+          "line": 61,
           "column": 3
         }
       }
@@ -2467,15 +2467,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * The store for Caldera Forms Processors\n ",
-      "start": 1135,
-      "end": 1184,
+      "start": 1460,
+      "end": 1509,
       "loc": {
         "start": {
-          "line": 62,
+          "line": 64,
           "column": 0
         },
         "end": {
-          "line": 64,
+          "line": 66,
           "column": 3
         }
       }
@@ -3631,18 +3631,18 @@
       }
     },
     {
-      "type": "CommentLine",
-      "value": "Create the basic options for the store besides the reducer",
-      "start": 346,
-      "end": 406,
+      "type": "CommentBlock",
+      "value": "*\n * The  options for the Caldera Forms processor store besides the reducer\n * @type {{actions: {addProcessor: addProcessor, newProcessor: newProcessor, removeProcessor: removeProcessor, updateProcessor: updateProcessor, setProcessorType: setProcessorType}, selectors: {getProcessorsCollection(*): *, getProcessorFromCollection(*, *=): *, getProcessorTypes(*): *}, resolvers: {}}}\n ",
+      "start": 345,
+      "end": 731,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 22,
           "column": 0
         },
         "end": {
-          "line": 23,
-          "column": 60
+          "line": 25,
+          "column": 3
         }
       }
     },
@@ -3661,15 +3661,15 @@
         "updateContext": null
       },
       "value": "let",
-      "start": 407,
-      "end": 410,
+      "start": 732,
+      "end": 735,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 26,
           "column": 0
         },
         "end": {
-          "line": 24,
+          "line": 26,
           "column": 3
         }
       }
@@ -3687,15 +3687,15 @@
         "binop": null
       },
       "value": "options",
-      "start": 411,
-      "end": 418,
+      "start": 736,
+      "end": 743,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 26,
           "column": 4
         },
         "end": {
-          "line": 24,
+          "line": 26,
           "column": 11
         }
       }
@@ -3714,15 +3714,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 419,
-      "end": 420,
+      "start": 744,
+      "end": 745,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 26,
           "column": 12
         },
         "end": {
-          "line": 24,
+          "line": 26,
           "column": 13
         }
       }
@@ -3739,15 +3739,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 421,
-      "end": 422,
+      "start": 746,
+      "end": 747,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 26,
           "column": 14
         },
         "end": {
-          "line": 24,
+          "line": 26,
           "column": 15
         }
       }
@@ -3765,15 +3765,15 @@
         "binop": null
       },
       "value": "actions",
-      "start": 424,
-      "end": 431,
+      "start": 749,
+      "end": 756,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 1
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 8
         }
       }
@@ -3791,15 +3791,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 431,
-      "end": 432,
+      "start": 756,
+      "end": 757,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 8
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 9
         }
       }
@@ -3816,15 +3816,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 433,
-      "end": 434,
+      "start": 758,
+      "end": 759,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 27,
           "column": 10
         },
         "end": {
-          "line": 25,
+          "line": 27,
           "column": 11
         }
       }
@@ -3842,15 +3842,15 @@
         "binop": null
       },
       "value": "addProcessor",
-      "start": 437,
-      "end": 449,
+      "start": 762,
+      "end": 774,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 28,
           "column": 2
         },
         "end": {
-          "line": 26,
+          "line": 28,
           "column": 14
         }
       }
@@ -3868,15 +3868,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 449,
-      "end": 450,
+      "start": 774,
+      "end": 775,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 28,
           "column": 14
         },
         "end": {
-          "line": 26,
+          "line": 28,
           "column": 15
         }
       }
@@ -3894,15 +3894,15 @@
         "binop": null
       },
       "value": "newProcessor",
-      "start": 453,
-      "end": 465,
+      "start": 778,
+      "end": 790,
       "loc": {
         "start": {
-          "line": 27,
+          "line": 29,
           "column": 2
         },
         "end": {
-          "line": 27,
+          "line": 29,
           "column": 14
         }
       }
@@ -3920,15 +3920,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 465,
-      "end": 466,
+      "start": 790,
+      "end": 791,
       "loc": {
         "start": {
-          "line": 27,
+          "line": 29,
           "column": 14
         },
         "end": {
-          "line": 27,
+          "line": 29,
           "column": 15
         }
       }
@@ -3946,15 +3946,15 @@
         "binop": null
       },
       "value": "removeProcessor",
-      "start": 469,
-      "end": 484,
+      "start": 794,
+      "end": 809,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 30,
           "column": 2
         },
         "end": {
-          "line": 28,
+          "line": 30,
           "column": 17
         }
       }
@@ -3972,15 +3972,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 484,
-      "end": 485,
+      "start": 809,
+      "end": 810,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 30,
           "column": 17
         },
         "end": {
-          "line": 28,
+          "line": 30,
           "column": 18
         }
       }
@@ -3998,15 +3998,15 @@
         "binop": null
       },
       "value": "updateProcessor",
-      "start": 488,
-      "end": 503,
+      "start": 813,
+      "end": 828,
       "loc": {
         "start": {
-          "line": 29,
+          "line": 31,
           "column": 2
         },
         "end": {
-          "line": 29,
+          "line": 31,
           "column": 17
         }
       }
@@ -4024,15 +4024,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 503,
-      "end": 504,
+      "start": 828,
+      "end": 829,
       "loc": {
         "start": {
-          "line": 29,
+          "line": 31,
           "column": 17
         },
         "end": {
-          "line": 29,
+          "line": 31,
           "column": 18
         }
       }
@@ -4050,15 +4050,15 @@
         "binop": null
       },
       "value": "setProcessorType",
-      "start": 507,
-      "end": 523,
+      "start": 832,
+      "end": 848,
       "loc": {
         "start": {
-          "line": 30,
+          "line": 32,
           "column": 2
         },
         "end": {
-          "line": 30,
+          "line": 32,
           "column": 18
         }
       }
@@ -4075,15 +4075,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 525,
-      "end": 526,
+      "start": 850,
+      "end": 851,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 33,
           "column": 1
         },
         "end": {
-          "line": 31,
+          "line": 33,
           "column": 2
         }
       }
@@ -4101,15 +4101,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 526,
-      "end": 527,
+      "start": 851,
+      "end": 852,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 33,
           "column": 2
         },
         "end": {
-          "line": 31,
+          "line": 33,
           "column": 3
         }
       }
@@ -4127,15 +4127,15 @@
         "binop": null
       },
       "value": "selectors",
-      "start": 529,
-      "end": 538,
+      "start": 854,
+      "end": 863,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 34,
           "column": 1
         },
         "end": {
-          "line": 32,
+          "line": 34,
           "column": 10
         }
       }
@@ -4153,15 +4153,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 538,
-      "end": 539,
+      "start": 863,
+      "end": 864,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 34,
           "column": 10
         },
         "end": {
-          "line": 32,
+          "line": 34,
           "column": 11
         }
       }
@@ -4178,15 +4178,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 540,
-      "end": 541,
+      "start": 865,
+      "end": 866,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 34,
           "column": 12
         },
         "end": {
-          "line": 32,
+          "line": 34,
           "column": 13
         }
       }
@@ -4204,15 +4204,15 @@
         "binop": null
       },
       "value": "getProcessorsCollection",
-      "start": 544,
-      "end": 567,
+      "start": 869,
+      "end": 892,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 35,
           "column": 2
         },
         "end": {
-          "line": 33,
+          "line": 35,
           "column": 25
         }
       }
@@ -4229,15 +4229,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 567,
-      "end": 568,
+      "start": 892,
+      "end": 893,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 35,
           "column": 25
         },
         "end": {
-          "line": 33,
+          "line": 35,
           "column": 26
         }
       }
@@ -4255,15 +4255,15 @@
         "binop": null
       },
       "value": "state",
-      "start": 568,
-      "end": 573,
+      "start": 893,
+      "end": 898,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 35,
           "column": 26
         },
         "end": {
-          "line": 33,
+          "line": 35,
           "column": 31
         }
       }
@@ -4280,15 +4280,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 573,
-      "end": 574,
+      "start": 898,
+      "end": 899,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 35,
           "column": 31
         },
         "end": {
-          "line": 33,
+          "line": 35,
           "column": 32
         }
       }
@@ -4305,15 +4305,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 574,
-      "end": 575,
+      "start": 899,
+      "end": 900,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 35,
           "column": 32
         },
         "end": {
-          "line": 33,
+          "line": 35,
           "column": 33
         }
       }
@@ -4333,15 +4333,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 579,
-      "end": 585,
+      "start": 904,
+      "end": 910,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 3
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 9
         }
       }
@@ -4359,15 +4359,15 @@
         "binop": null
       },
       "value": "getProcessorsCollection",
-      "start": 586,
-      "end": 609,
+      "start": 911,
+      "end": 934,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 10
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 33
         }
       }
@@ -4384,15 +4384,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 609,
-      "end": 610,
+      "start": 934,
+      "end": 935,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 33
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 34
         }
       }
@@ -4410,15 +4410,15 @@
         "binop": null
       },
       "value": "state",
-      "start": 611,
-      "end": 616,
+      "start": 936,
+      "end": 941,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 35
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 40
         }
       }
@@ -4436,15 +4436,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 616,
-      "end": 617,
+      "start": 941,
+      "end": 942,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 40
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 41
         }
       }
@@ -4462,15 +4462,15 @@
         "binop": null
       },
       "value": "processorsReducer",
-      "start": 617,
-      "end": 634,
+      "start": 942,
+      "end": 959,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 41
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 58
         }
       }
@@ -4487,15 +4487,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 635,
-      "end": 636,
+      "start": 960,
+      "end": 961,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 59
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 60
         }
       }
@@ -4513,15 +4513,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 636,
-      "end": 637,
+      "start": 961,
+      "end": 962,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 36,
           "column": 60
         },
         "end": {
-          "line": 34,
+          "line": 36,
           "column": 61
         }
       }
@@ -4538,15 +4538,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 640,
-      "end": 641,
+      "start": 965,
+      "end": 966,
       "loc": {
         "start": {
-          "line": 35,
+          "line": 37,
           "column": 2
         },
         "end": {
-          "line": 35,
+          "line": 37,
           "column": 3
         }
       }
@@ -4564,15 +4564,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 641,
-      "end": 642,
+      "start": 966,
+      "end": 967,
       "loc": {
         "start": {
-          "line": 35,
+          "line": 37,
           "column": 3
         },
         "end": {
-          "line": 35,
+          "line": 37,
           "column": 4
         }
       }
@@ -4590,15 +4590,15 @@
         "binop": null
       },
       "value": "getProcessorFromCollection",
-      "start": 645,
-      "end": 671,
+      "start": 970,
+      "end": 996,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 2
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 28
         }
       }
@@ -4615,15 +4615,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 671,
-      "end": 672,
+      "start": 996,
+      "end": 997,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 28
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 29
         }
       }
@@ -4641,15 +4641,15 @@
         "binop": null
       },
       "value": "state",
-      "start": 672,
-      "end": 677,
+      "start": 997,
+      "end": 1002,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 29
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 34
         }
       }
@@ -4667,15 +4667,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 677,
-      "end": 678,
+      "start": 1002,
+      "end": 1003,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 34
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 35
         }
       }
@@ -4693,15 +4693,15 @@
         "binop": null
       },
       "value": "processorId",
-      "start": 679,
-      "end": 690,
+      "start": 1004,
+      "end": 1015,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 36
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 47
         }
       }
@@ -4718,15 +4718,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 690,
-      "end": 691,
+      "start": 1015,
+      "end": 1016,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 47
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 48
         }
       }
@@ -4743,15 +4743,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 691,
-      "end": 692,
+      "start": 1016,
+      "end": 1017,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 38,
           "column": 48
         },
         "end": {
-          "line": 36,
+          "line": 38,
           "column": 49
         }
       }
@@ -4771,15 +4771,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 696,
-      "end": 702,
+      "start": 1021,
+      "end": 1027,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 3
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 9
         }
       }
@@ -4797,15 +4797,15 @@
         "binop": null
       },
       "value": "getProcessorFromCollection",
-      "start": 703,
-      "end": 729,
+      "start": 1028,
+      "end": 1054,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 10
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 36
         }
       }
@@ -4822,15 +4822,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 729,
-      "end": 730,
+      "start": 1054,
+      "end": 1055,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 36
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 37
         }
       }
@@ -4848,15 +4848,15 @@
         "binop": null
       },
       "value": "state",
-      "start": 730,
-      "end": 735,
+      "start": 1055,
+      "end": 1060,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 37
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 42
         }
       }
@@ -4874,15 +4874,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 735,
-      "end": 736,
+      "start": 1060,
+      "end": 1061,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 42
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 43
         }
       }
@@ -4900,15 +4900,15 @@
         "binop": null
       },
       "value": "processorsReducer",
-      "start": 736,
-      "end": 753,
+      "start": 1061,
+      "end": 1078,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 43
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 60
         }
       }
@@ -4926,15 +4926,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 753,
-      "end": 754,
+      "start": 1078,
+      "end": 1079,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 60
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 61
         }
       }
@@ -4952,15 +4952,15 @@
         "binop": null
       },
       "value": "processorId",
-      "start": 754,
-      "end": 765,
+      "start": 1079,
+      "end": 1090,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 61
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 72
         }
       }
@@ -4977,15 +4977,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 765,
-      "end": 766,
+      "start": 1090,
+      "end": 1091,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 72
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 73
         }
       }
@@ -5003,15 +5003,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 766,
-      "end": 767,
+      "start": 1091,
+      "end": 1092,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 39,
           "column": 73
         },
         "end": {
-          "line": 37,
+          "line": 39,
           "column": 74
         }
       }
@@ -5028,15 +5028,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 770,
-      "end": 771,
+      "start": 1095,
+      "end": 1096,
       "loc": {
         "start": {
-          "line": 38,
+          "line": 40,
           "column": 2
         },
         "end": {
-          "line": 38,
+          "line": 40,
           "column": 3
         }
       }
@@ -5054,15 +5054,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 771,
-      "end": 772,
+      "start": 1096,
+      "end": 1097,
       "loc": {
         "start": {
-          "line": 38,
+          "line": 40,
           "column": 3
         },
         "end": {
-          "line": 38,
+          "line": 40,
           "column": 4
         }
       }
@@ -5080,15 +5080,15 @@
         "binop": null
       },
       "value": "getProcessorTypes",
-      "start": 775,
-      "end": 792,
+      "start": 1100,
+      "end": 1117,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 41,
           "column": 2
         },
         "end": {
-          "line": 39,
+          "line": 41,
           "column": 19
         }
       }
@@ -5105,15 +5105,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 792,
-      "end": 793,
+      "start": 1117,
+      "end": 1118,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 41,
           "column": 19
         },
         "end": {
-          "line": 39,
+          "line": 41,
           "column": 20
         }
       }
@@ -5131,15 +5131,15 @@
         "binop": null
       },
       "value": "state",
-      "start": 793,
-      "end": 798,
+      "start": 1118,
+      "end": 1123,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 41,
           "column": 20
         },
         "end": {
-          "line": 39,
+          "line": 41,
           "column": 25
         }
       }
@@ -5156,15 +5156,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 798,
-      "end": 799,
+      "start": 1123,
+      "end": 1124,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 41,
           "column": 25
         },
         "end": {
-          "line": 39,
+          "line": 41,
           "column": 26
         }
       }
@@ -5181,15 +5181,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 799,
-      "end": 800,
+      "start": 1124,
+      "end": 1125,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 41,
           "column": 26
         },
         "end": {
-          "line": 39,
+          "line": 41,
           "column": 27
         }
       }
@@ -5209,15 +5209,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 804,
-      "end": 810,
+      "start": 1129,
+      "end": 1135,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 42,
           "column": 3
         },
         "end": {
-          "line": 40,
+          "line": 42,
           "column": 9
         }
       }
@@ -5235,15 +5235,15 @@
         "binop": null
       },
       "value": "state",
-      "start": 811,
-      "end": 816,
+      "start": 1136,
+      "end": 1141,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 42,
           "column": 10
         },
         "end": {
-          "line": 40,
+          "line": 42,
           "column": 15
         }
       }
@@ -5261,15 +5261,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 816,
-      "end": 817,
+      "start": 1141,
+      "end": 1142,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 42,
           "column": 15
         },
         "end": {
-          "line": 40,
+          "line": 42,
           "column": 16
         }
       }
@@ -5287,15 +5287,15 @@
         "binop": null
       },
       "value": "processorTypesReducer",
-      "start": 817,
-      "end": 838,
+      "start": 1142,
+      "end": 1163,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 42,
           "column": 16
         },
         "end": {
-          "line": 40,
+          "line": 42,
           "column": 37
         }
       }
@@ -5313,15 +5313,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 838,
-      "end": 839,
+      "start": 1163,
+      "end": 1164,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 42,
           "column": 37
         },
         "end": {
-          "line": 40,
+          "line": 42,
           "column": 38
         }
       }
@@ -5338,15 +5338,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 842,
-      "end": 843,
+      "start": 1167,
+      "end": 1168,
       "loc": {
         "start": {
-          "line": 41,
+          "line": 43,
           "column": 2
         },
         "end": {
-          "line": 41,
+          "line": 43,
           "column": 3
         }
       }
@@ -5363,15 +5363,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 845,
-      "end": 846,
+      "start": 1170,
+      "end": 1171,
       "loc": {
         "start": {
-          "line": 42,
+          "line": 44,
           "column": 1
         },
         "end": {
-          "line": 42,
+          "line": 44,
           "column": 2
         }
       }
@@ -5389,15 +5389,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 846,
-      "end": 847,
+      "start": 1171,
+      "end": 1172,
       "loc": {
         "start": {
-          "line": 42,
+          "line": 44,
           "column": 2
         },
         "end": {
-          "line": 42,
+          "line": 44,
           "column": 3
         }
       }
@@ -5415,15 +5415,15 @@
         "binop": null
       },
       "value": "resolvers",
-      "start": 850,
-      "end": 859,
+      "start": 1175,
+      "end": 1184,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 46,
           "column": 1
         },
         "end": {
-          "line": 44,
+          "line": 46,
           "column": 10
         }
       }
@@ -5441,15 +5441,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 859,
-      "end": 860,
+      "start": 1184,
+      "end": 1185,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 46,
           "column": 10
         },
         "end": {
-          "line": 44,
+          "line": 46,
           "column": 11
         }
       }
@@ -5466,15 +5466,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 861,
-      "end": 862,
+      "start": 1186,
+      "end": 1187,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 46,
           "column": 12
         },
         "end": {
-          "line": 44,
+          "line": 46,
           "column": 13
         }
       }
@@ -5491,15 +5491,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 865,
-      "end": 866,
+      "start": 1190,
+      "end": 1191,
       "loc": {
         "start": {
-          "line": 46,
+          "line": 48,
           "column": 1
         },
         "end": {
-          "line": 46,
+          "line": 48,
           "column": 2
         }
       }
@@ -5517,15 +5517,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 866,
-      "end": 867,
+      "start": 1191,
+      "end": 1192,
       "loc": {
         "start": {
-          "line": 46,
+          "line": 48,
           "column": 2
         },
         "end": {
-          "line": 46,
+          "line": 48,
           "column": 3
         }
       }
@@ -5542,15 +5542,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 868,
-      "end": 869,
+      "start": 1193,
+      "end": 1194,
       "loc": {
         "start": {
-          "line": 47,
+          "line": 49,
           "column": 0
         },
         "end": {
-          "line": 47,
+          "line": 49,
           "column": 1
         }
       }
@@ -5568,15 +5568,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 869,
-      "end": 870,
+      "start": 1194,
+      "end": 1195,
       "loc": {
         "start": {
-          "line": 47,
+          "line": 49,
           "column": 1
         },
         "end": {
-          "line": 47,
+          "line": 49,
           "column": 2
         }
       }
@@ -5584,15 +5584,15 @@
     {
       "type": "CommentLine",
       "value": "combine the reducers",
-      "start": 872,
-      "end": 894,
+      "start": 1197,
+      "end": 1219,
       "loc": {
         "start": {
-          "line": 49,
+          "line": 51,
           "column": 0
         },
         "end": {
-          "line": 49,
+          "line": 51,
           "column": 22
         }
       }
@@ -5610,15 +5610,15 @@
         "binop": null
       },
       "value": "options",
-      "start": 895,
-      "end": 902,
+      "start": 1220,
+      "end": 1227,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 0
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 7
         }
       }
@@ -5636,15 +5636,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 902,
-      "end": 903,
+      "start": 1227,
+      "end": 1228,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 7
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 8
         }
       }
@@ -5662,15 +5662,15 @@
         "binop": null
       },
       "value": "reducer",
-      "start": 903,
-      "end": 910,
+      "start": 1228,
+      "end": 1235,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 8
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 15
         }
       }
@@ -5689,15 +5689,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 911,
-      "end": 912,
+      "start": 1236,
+      "end": 1237,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 16
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 17
         }
       }
@@ -5715,15 +5715,15 @@
         "binop": null
       },
       "value": "combineReducers",
-      "start": 913,
-      "end": 928,
+      "start": 1238,
+      "end": 1253,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 18
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 33
         }
       }
@@ -5740,15 +5740,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 928,
-      "end": 929,
+      "start": 1253,
+      "end": 1254,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 33
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 34
         }
       }
@@ -5765,15 +5765,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 929,
-      "end": 930,
+      "start": 1254,
+      "end": 1255,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 52,
           "column": 34
         },
         "end": {
-          "line": 50,
+          "line": 52,
           "column": 35
         }
       }
@@ -5791,15 +5791,15 @@
         "binop": null
       },
       "value": "processorsReducer",
-      "start": 932,
-      "end": 949,
+      "start": 1257,
+      "end": 1274,
       "loc": {
         "start": {
-          "line": 51,
+          "line": 53,
           "column": 1
         },
         "end": {
-          "line": 51,
+          "line": 53,
           "column": 18
         }
       }
@@ -5817,15 +5817,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 949,
-      "end": 950,
+      "start": 1274,
+      "end": 1275,
       "loc": {
         "start": {
-          "line": 51,
+          "line": 53,
           "column": 18
         },
         "end": {
-          "line": 51,
+          "line": 53,
           "column": 19
         }
       }
@@ -5843,15 +5843,15 @@
         "binop": null
       },
       "value": "processorTypesReducer",
-      "start": 952,
-      "end": 973,
+      "start": 1277,
+      "end": 1298,
       "loc": {
         "start": {
-          "line": 52,
+          "line": 54,
           "column": 1
         },
         "end": {
-          "line": 52,
+          "line": 54,
           "column": 22
         }
       }
@@ -5868,15 +5868,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 974,
-      "end": 975,
+      "start": 1299,
+      "end": 1300,
       "loc": {
         "start": {
-          "line": 53,
+          "line": 55,
           "column": 0
         },
         "end": {
-          "line": 53,
+          "line": 55,
           "column": 1
         }
       }
@@ -5893,15 +5893,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 976,
-      "end": 977,
+      "start": 1301,
+      "end": 1302,
       "loc": {
         "start": {
-          "line": 54,
+          "line": 56,
           "column": 0
         },
         "end": {
-          "line": 54,
+          "line": 56,
           "column": 1
         }
       }
@@ -5919,15 +5919,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 977,
-      "end": 978,
+      "start": 1302,
+      "end": 1303,
       "loc": {
         "start": {
-          "line": 54,
+          "line": 56,
           "column": 1
         },
         "end": {
-          "line": 54,
+          "line": 56,
           "column": 2
         }
       }
@@ -5935,15 +5935,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * The identifier for the processors store\n * @type {string}\n ",
-      "start": 980,
-      "end": 1048,
+      "start": 1305,
+      "end": 1373,
       "loc": {
         "start": {
-          "line": 56,
+          "line": 58,
           "column": 0
         },
         "end": {
-          "line": 59,
+          "line": 61,
           "column": 3
         }
       }
@@ -5963,15 +5963,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 1049,
-      "end": 1055,
+      "start": 1374,
+      "end": 1380,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 62,
           "column": 0
         },
         "end": {
-          "line": 60,
+          "line": 62,
           "column": 6
         }
       }
@@ -5991,15 +5991,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 1056,
-      "end": 1061,
+      "start": 1381,
+      "end": 1386,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 62,
           "column": 7
         },
         "end": {
-          "line": 60,
+          "line": 62,
           "column": 12
         }
       }
@@ -6017,15 +6017,15 @@
         "binop": null
       },
       "value": "CALDERA_FORMS_PROCESSORS_STORE_SLUG",
-      "start": 1062,
-      "end": 1097,
+      "start": 1387,
+      "end": 1422,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 62,
           "column": 13
         },
         "end": {
-          "line": 60,
+          "line": 62,
           "column": 48
         }
       }
@@ -6044,15 +6044,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 1098,
-      "end": 1099,
+      "start": 1423,
+      "end": 1424,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 62,
           "column": 49
         },
         "end": {
-          "line": 60,
+          "line": 62,
           "column": 50
         }
       }
@@ -6071,15 +6071,15 @@
         "updateContext": null
       },
       "value": "CALDERA_FORMS_PROCESSORS_STORE",
-      "start": 1100,
-      "end": 1132,
+      "start": 1425,
+      "end": 1457,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 62,
           "column": 51
         },
         "end": {
-          "line": 60,
+          "line": 62,
           "column": 83
         }
       }
@@ -6097,15 +6097,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1132,
-      "end": 1133,
+      "start": 1457,
+      "end": 1458,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 62,
           "column": 83
         },
         "end": {
-          "line": 60,
+          "line": 62,
           "column": 84
         }
       }
@@ -6113,15 +6113,15 @@
     {
       "type": "CommentBlock",
       "value": "*\n * The store for Caldera Forms Processors\n ",
-      "start": 1135,
-      "end": 1184,
+      "start": 1460,
+      "end": 1509,
       "loc": {
         "start": {
-          "line": 62,
+          "line": 64,
           "column": 0
         },
         "end": {
-          "line": 64,
+          "line": 66,
           "column": 3
         }
       }
@@ -6141,15 +6141,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 1185,
-      "end": 1191,
+      "start": 1510,
+      "end": 1516,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 67,
           "column": 0
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 6
         }
       }
@@ -6169,15 +6169,15 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 1192,
-      "end": 1197,
+      "start": 1517,
+      "end": 1522,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 67,
           "column": 7
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 12
         }
       }
@@ -6195,15 +6195,15 @@
         "binop": null
       },
       "value": "processorsStore",
-      "start": 1198,
-      "end": 1213,
+      "start": 1523,
+      "end": 1538,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 67,
           "column": 13
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 28
         }
       }
@@ -6222,15 +6222,15 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 1214,
-      "end": 1215,
+      "start": 1539,
+      "end": 1540,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 67,
           "column": 29
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 30
         }
       }
@@ -6248,15 +6248,15 @@
         "binop": null
       },
       "value": "registerStore",
-      "start": 1216,
-      "end": 1229,
+      "start": 1541,
+      "end": 1554,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 67,
           "column": 31
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 44
         }
       }
@@ -6273,15 +6273,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1229,
-      "end": 1230,
+      "start": 1554,
+      "end": 1555,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 67,
           "column": 44
         },
         "end": {
-          "line": 65,
+          "line": 67,
           "column": 45
         }
       }
@@ -6299,15 +6299,15 @@
         "binop": null
       },
       "value": "CALDERA_FORMS_PROCESSORS_STORE_SLUG",
-      "start": 1232,
-      "end": 1267,
+      "start": 1557,
+      "end": 1592,
       "loc": {
         "start": {
-          "line": 66,
+          "line": 68,
           "column": 1
         },
         "end": {
-          "line": 66,
+          "line": 68,
           "column": 36
         }
       }
@@ -6325,15 +6325,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1267,
-      "end": 1268,
+      "start": 1592,
+      "end": 1593,
       "loc": {
         "start": {
-          "line": 66,
+          "line": 68,
           "column": 36
         },
         "end": {
-          "line": 66,
+          "line": 68,
           "column": 37
         }
       }
@@ -6351,15 +6351,15 @@
         "binop": null
       },
       "value": "options",
-      "start": 1270,
-      "end": 1277,
+      "start": 1595,
+      "end": 1602,
       "loc": {
         "start": {
-          "line": 67,
+          "line": 69,
           "column": 1
         },
         "end": {
-          "line": 67,
+          "line": 69,
           "column": 8
         }
       }
@@ -6376,15 +6376,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1278,
-      "end": 1279,
+      "start": 1603,
+      "end": 1604,
       "loc": {
         "start": {
-          "line": 68,
+          "line": 70,
           "column": 0
         },
         "end": {
-          "line": 68,
+          "line": 70,
           "column": 1
         }
       }
@@ -6402,15 +6402,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1279,
-      "end": 1280,
+      "start": 1604,
+      "end": 1605,
       "loc": {
         "start": {
-          "line": 68,
+          "line": 70,
           "column": 1
         },
         "end": {
-          "line": 68,
+          "line": 70,
           "column": 2
         }
       }
@@ -6428,15 +6428,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1280,
-      "end": 1280,
+      "start": 1605,
+      "end": 1605,
       "loc": {
         "start": {
-          "line": 68,
+          "line": 70,
           "column": 2
         },
         "end": {
-          "line": 68,
+          "line": 70,
           "column": 2
         }
       }

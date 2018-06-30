@@ -90,7 +90,8 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/factories/util.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {conditionals} from &apos;@caldera-labs/components&apos;;
+/**
  * Finds value property of config field or config field default
  * @param {Object} configField Config field to search for default in
  * @returns {String|Number|Array|null}
@@ -170,20 +171,7 @@ export const mapKeysToIdProperty = (theMap) =&gt; {
  * @return {boolean}
  */
 export const checkConfigFieldConditionals = (configField, fieldValues = {}) =&gt; {
-	if (!configField.hasOwnProperty(&apos;conditionals&apos;) || !Array.isArray(configField.conditionals)) {
-		return true;
-	}
-
-	let allRulesPassed = true;
-	configField.conditionals.forEach(conditional =&gt; {
-		if (&apos;function&apos; === typeof conditional &amp;&amp; false === conditional.call(null, fieldValues)) {
-			allRulesPassed = false;
-			return false;
-		}
-	});
-
-	return allRulesPassed;
-
+	return conditionals.checkConfigFieldConditionals(configField,fieldValues);
 };
 
 /**
@@ -197,12 +185,7 @@ export const checkConfigFieldConditionals = (configField, fieldValues = {}) =&gt
  * @return {boolean}
  */
 export const checkConfigFieldsConditionals = (configFields, fieldValues = {}) =&gt; {
-	let results = {};
-	Object.values( configFields ).forEach(configField =&gt; {
-		results[configField.ID] = checkConfigFieldConditionals(configField,fieldValues);
-	});
-	return results;
-
+	return conditionals.checkConfigFieldsConditionals(configFields,fieldValues);
 };
 
 /**
@@ -211,15 +194,8 @@ export const checkConfigFieldsConditionals = (configFields, fieldValues = {}) =&
  * @param configFields
  */
 export const reduceConfigFieldsToValues = (configFields) =&gt; {
-	let values = {};
-	 configFields.forEach(field =&gt; {
-	 		values[field.ID] = field.value
-			? field.value
-			: field.default
-				? field.default
-				: null;
-	 });
-	 return values;
+	return conditionals.reduceConfigFieldsToValues(configFields);
+
 };
 </code></pre>
 

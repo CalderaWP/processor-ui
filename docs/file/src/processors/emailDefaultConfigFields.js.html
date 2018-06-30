@@ -90,7 +90,17 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/processors/emailDefaultConfigFields.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const contentTypeHtmlValueIdentifier = &apos;html&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * The identifier for the value for the content type option that represents HTML emails
+ *
+ * @type {string}
+ */
+const contentTypeHtmlValueIdentifier = &apos;html&apos;;
+/**
+ * The default fields for email processors
+ *
+ * @type {{fromName: {label: string, desc: string, type: string, default: string}, fromEmail: {label: string, desc: string, type: string}, contentType: {label: string, desc: string, type: string, options: *[], default: string}, bodyPadding: {label: string, desc: string, type: string, conditionals: *[]}}}
+ */
 export const emailDefaultConfigFields = {
 	fromName: {
 		&apos;label&apos;: &apos;From Name&apos;,

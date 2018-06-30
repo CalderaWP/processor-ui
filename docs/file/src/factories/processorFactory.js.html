@@ -93,7 +93,15 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {configFieldsFactory} from &apos;./configFieldsFactory&apos;;
 import {processorTypes} from &apos;../processors/processorTypes&apos;;
 
+/**
+ * Global map of all processor types
+ *
+ * @todo remove this
+ *
+ * @type {Map&lt;any, any&gt;}
+ */
 export const processorTypesMap = new Map();
+
 Object.values(processorTypes).forEach( type =&gt;{
 	processorTypesMap.set(type.TYPE, type);
 });

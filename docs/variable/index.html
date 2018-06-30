@@ -512,13 +512,14 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span><span class="code" data-ice="signature">: {&quot;fromName&quot;: <span>*</span>, &quot;fromEmail&quot;: <span>*</span>, &quot;contentType&quot;: <span>*</span>, &quot;bodyPadding&quot;: <span>*</span>}</span>
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span><span class="code" data-ice="signature">: {fromName: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, default: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, fromEmail: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, contentType: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, options: <span><span>*</span><span>[]</span></span>, default: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, bodyPadding: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, conditionals: <span><span>*</span><span>[]</span></span>}}</span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>The default fields for email processors</p>
+</div>
       </div>
     </td>
     <td>
@@ -569,13 +570,14 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-processorTypesMap">processorTypesMap</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>&lt;<span>any</span>, <span>any</span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Global map of all processor types</p>
+</div>
       </div>
     </td>
     <td>
@@ -629,11 +631,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber12">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ADD_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber8">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ADD_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber12">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to add a processor to collection</p>
@@ -718,11 +720,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber60">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber62">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber60">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber62">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The identifier for the processors store</p>
@@ -895,11 +897,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber18">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {NEW_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber14">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {NEW_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber18">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to create a new, empty processor and add it to the collection</p>
@@ -982,11 +984,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber20">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber24">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {REMOVE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber20">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {REMOVE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber24">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to remove a processor from the collection</p>
@@ -1026,11 +1028,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber27">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_FORM_FOR_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber27">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_FORM_FOR_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber31">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to set the form in the processor collection</p>
@@ -1070,11 +1072,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber54">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber58">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_PROCESSOR_TYPE} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber54">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_PROCESSOR_TYPE} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber58">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to set a processorType definition for a processor type in the processorType reducer</p>
@@ -1114,11 +1116,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber33">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber37">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber33">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber37">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to update the processor in collection.</p>
@@ -1158,11 +1160,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber47">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber51">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_CONFIG_FIELDS} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber47">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_CONFIG_FIELDS} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber51">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to update the processor values in the single processor store</p>
@@ -1202,11 +1204,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber40">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber44">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_VALUES} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber40">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_VALUES} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber44">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to update the processor values in the single processor store</p>
@@ -1242,18 +1244,19 @@ Contains the processor config as a Map()</p>
     
     
     
-    <span class="code" data-ice="name">emailDefaultConfigFields</span><span class="code" data-ice="signature">: {&quot;fromName&quot;: <span>*</span>, &quot;fromEmail&quot;: <span>*</span>, &quot;contentType&quot;: <span>*</span>, &quot;bodyPadding&quot;: <span>*</span>}</span>
+    <span class="code" data-ice="name">emailDefaultConfigFields</span><span class="code" data-ice="signature">: {fromName: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, default: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, fromEmail: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, contentType: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, options: <span><span>*</span><span>[]</span></span>, default: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, bodyPadding: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, conditionals: <span><span>*</span><span>[]</span></span>}}</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/processors/emailDefaultConfigFields.js.html#lineNumber2">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/processors/emailDefaultConfigFields.js.html#lineNumber12">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {emailDefaultConfigFields} from &apos;<span><a href="file/src/processors/emailDefaultConfigFields.js.html#lineNumber2">@caldera-labs/processor-ui/src/processors/emailDefaultConfigFields.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {emailDefaultConfigFields} from &apos;<span><a href="file/src/processors/emailDefaultConfigFields.js.html#lineNumber12">@caldera-labs/processor-ui/src/processors/emailDefaultConfigFields.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>The default fields for email processors</p>
+</div>
 
   
 
@@ -1329,18 +1332,19 @@ Contains the processor config as a Map()</p>
     
     
     
-    <span class="code" data-ice="name">processorTypesMap</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="code" data-ice="name">processorTypesMap</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></span>&lt;<span>any</span>, <span>any</span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/factories/processorFactory.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/factories/processorFactory.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorTypesMap} from &apos;<span><a href="file/src/factories/processorFactory.js.html#lineNumber4">@caldera-labs/processor-ui/src/factories/processorFactory.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorTypesMap} from &apos;<span><a href="file/src/factories/processorFactory.js.html#lineNumber11">@caldera-labs/processor-ui/src/factories/processorFactory.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Global map of all processor types</p>
+</div>
 
   
 
@@ -1362,7 +1366,7 @@ Contains the processor config as a Map()</p>
   
 
   
-  
+  <div data-ice="todo"><h4>TODO:</h4><ul><li><span>remove this</span></li></ul></div>
 </div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-variable-processorsStore">
@@ -1376,11 +1380,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber65">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber67">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorsStore} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber65">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorsStore} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber67">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The store for Caldera Forms Processors</p>

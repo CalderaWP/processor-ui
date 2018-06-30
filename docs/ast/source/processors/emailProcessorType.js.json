@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 250,
+  "end": 286,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 8,
+      "line": 11,
       "column": 2
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 250,
+    "end": 286,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 8,
+        "line": 11,
         "column": 2
       }
     },
@@ -199,50 +199,85 @@
             }
           ],
           "kind": "const",
-          "leadingComments": [],
-          "trailingComments": []
-        }
+          "trailingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * The email processor type\n ",
+              "start": 138,
+              "end": 173,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 0
+                },
+                "end": {
+                  "line": 6,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "leadingComments": []
+        },
+        "trailingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * The email processor type\n ",
+            "start": 138,
+            "end": 173,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 6,
+                "column": 3
+              }
+            }
+          }
+        ]
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 138,
-        "end": 250,
+        "start": 174,
+        "end": 286,
         "loc": {
           "start": {
-            "line": 4,
+            "line": 7,
             "column": 0
           },
           "end": {
-            "line": 8,
+            "line": 11,
             "column": 2
           }
         },
         "declaration": {
           "type": "ObjectExpression",
-          "start": 153,
-          "end": 249,
+          "start": 189,
+          "end": 285,
           "loc": {
             "start": {
-              "line": 4,
+              "line": 7,
               "column": 15
             },
             "end": {
-              "line": 8,
+              "line": 11,
               "column": 1
             }
           },
           "properties": [
             {
               "type": "ObjectProperty",
-              "start": 156,
-              "end": 182,
+              "start": 192,
+              "end": 218,
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 8,
                   "column": 1
                 },
                 "end": {
-                  "line": 5,
+                  "line": 8,
                   "column": 27
                 }
               },
@@ -251,50 +286,52 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 156,
-                "end": 160,
+                "start": 192,
+                "end": 196,
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 8,
                     "column": 1
                   },
                   "end": {
-                    "line": 5,
+                    "line": 8,
                     "column": 5
                   },
                   "identifierName": "TYPE"
                 },
-                "name": "TYPE"
+                "name": "TYPE",
+                "leadingComments": null
               },
               "value": {
                 "type": "Identifier",
-                "start": 162,
-                "end": 182,
+                "start": 198,
+                "end": 218,
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 8,
                     "column": 7
                   },
                   "end": {
-                    "line": 5,
+                    "line": 8,
                     "column": 27
                   },
                   "identifierName": "EMAIL_PROCESSOR_TYPE"
                 },
                 "name": "EMAIL_PROCESSOR_TYPE"
-              }
+              },
+              "leadingComments": null
             },
             {
               "type": "ObjectProperty",
-              "start": 185,
-              "end": 199,
+              "start": 221,
+              "end": 235,
               "loc": {
                 "start": {
-                  "line": 6,
+                  "line": 9,
                   "column": 1
                 },
                 "end": {
-                  "line": 6,
+                  "line": 9,
                   "column": 15
                 }
               },
@@ -303,15 +340,15 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 185,
-                "end": 190,
+                "start": 221,
+                "end": 226,
                 "loc": {
                   "start": {
-                    "line": 6,
+                    "line": 9,
                     "column": 1
                   },
                   "end": {
-                    "line": 6,
+                    "line": 9,
                     "column": 6
                   },
                   "identifierName": "LABEL"
@@ -320,15 +357,15 @@
               },
               "value": {
                 "type": "StringLiteral",
-                "start": 192,
-                "end": 199,
+                "start": 228,
+                "end": 235,
                 "loc": {
                   "start": {
-                    "line": 6,
+                    "line": 9,
                     "column": 8
                   },
                   "end": {
-                    "line": 6,
+                    "line": 9,
                     "column": 15
                   }
                 },
@@ -341,15 +378,15 @@
             },
             {
               "type": "ObjectProperty",
-              "start": 202,
-              "end": 247,
+              "start": 238,
+              "end": 283,
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 10,
                   "column": 1
                 },
                 "end": {
-                  "line": 7,
+                  "line": 10,
                   "column": 46
                 }
               },
@@ -358,15 +395,15 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 202,
-                "end": 221,
+                "start": 238,
+                "end": 257,
                 "loc": {
                   "start": {
-                    "line": 7,
+                    "line": 10,
                     "column": 1
                   },
                   "end": {
-                    "line": 7,
+                    "line": 10,
                     "column": 20
                   },
                   "identifierName": "defaultConfigFields"
@@ -375,15 +412,15 @@
               },
               "value": {
                 "type": "Identifier",
-                "start": 223,
-                "end": 247,
+                "start": 259,
+                "end": 283,
                 "loc": {
                   "start": {
-                    "line": 7,
+                    "line": 10,
                     "column": 22
                   },
                   "end": {
-                    "line": 7,
+                    "line": 10,
                     "column": 46
                   },
                   "identifierName": "emailDefaultConfigFields"
@@ -392,14 +429,66 @@
               }
             }
           ],
-          "leadingComments": [],
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * The email processor type\n ",
+              "start": 138,
+              "end": 173,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 0
+                },
+                "end": {
+                  "line": 6,
+                  "column": 3
+                }
+              }
+            }
+          ],
           "trailingComments": []
-        }
+        },
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * The email processor type\n ",
+            "start": 138,
+            "end": 173,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 6,
+                "column": 3
+              }
+            }
+          }
+        ]
       }
     ],
     "directives": []
   },
-  "comments": [],
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * The email processor type\n ",
+      "start": 138,
+      "end": 173,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 3
+        }
+      }
+    }
+  ],
   "tokens": [
     {
       "type": {
@@ -747,6 +836,22 @@
       }
     },
     {
+      "type": "CommentBlock",
+      "value": "*\n * The email processor type\n ",
+      "start": 138,
+      "end": 173,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 3
+        }
+      }
+    },
+    {
       "type": {
         "label": "export",
         "keyword": "export",
@@ -761,15 +866,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 138,
-      "end": 144,
+      "start": 174,
+      "end": 180,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 7,
           "column": 0
         },
         "end": {
-          "line": 4,
+          "line": 7,
           "column": 6
         }
       }
@@ -789,15 +894,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 145,
-      "end": 152,
+      "start": 181,
+      "end": 188,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 7,
           "column": 7
         },
         "end": {
-          "line": 4,
+          "line": 7,
           "column": 14
         }
       }
@@ -814,15 +919,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 153,
-      "end": 154,
+      "start": 189,
+      "end": 190,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 7,
           "column": 15
         },
         "end": {
-          "line": 4,
+          "line": 7,
           "column": 16
         }
       }
@@ -840,15 +945,15 @@
         "binop": null
       },
       "value": "TYPE",
-      "start": 156,
-      "end": 160,
+      "start": 192,
+      "end": 196,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 1
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 5
         }
       }
@@ -866,15 +971,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 160,
-      "end": 161,
+      "start": 196,
+      "end": 197,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 5
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 6
         }
       }
@@ -892,15 +997,15 @@
         "binop": null
       },
       "value": "EMAIL_PROCESSOR_TYPE",
-      "start": 162,
-      "end": 182,
+      "start": 198,
+      "end": 218,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 7
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 27
         }
       }
@@ -918,15 +1023,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 182,
-      "end": 183,
+      "start": 218,
+      "end": 219,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 27
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 28
         }
       }
@@ -944,15 +1049,15 @@
         "binop": null
       },
       "value": "LABEL",
-      "start": 185,
-      "end": 190,
+      "start": 221,
+      "end": 226,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 9,
           "column": 1
         },
         "end": {
-          "line": 6,
+          "line": 9,
           "column": 6
         }
       }
@@ -970,15 +1075,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 190,
-      "end": 191,
+      "start": 226,
+      "end": 227,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 9,
           "column": 6
         },
         "end": {
-          "line": 6,
+          "line": 9,
           "column": 7
         }
       }
@@ -997,15 +1102,15 @@
         "updateContext": null
       },
       "value": "Email",
-      "start": 192,
-      "end": 199,
+      "start": 228,
+      "end": 235,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 9,
           "column": 8
         },
         "end": {
-          "line": 6,
+          "line": 9,
           "column": 15
         }
       }
@@ -1023,15 +1128,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 199,
-      "end": 200,
+      "start": 235,
+      "end": 236,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 9,
           "column": 15
         },
         "end": {
-          "line": 6,
+          "line": 9,
           "column": 16
         }
       }
@@ -1049,15 +1154,15 @@
         "binop": null
       },
       "value": "defaultConfigFields",
-      "start": 202,
-      "end": 221,
+      "start": 238,
+      "end": 257,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 10,
           "column": 1
         },
         "end": {
-          "line": 7,
+          "line": 10,
           "column": 20
         }
       }
@@ -1075,15 +1180,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 221,
-      "end": 222,
+      "start": 257,
+      "end": 258,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 10,
           "column": 20
         },
         "end": {
-          "line": 7,
+          "line": 10,
           "column": 21
         }
       }
@@ -1101,15 +1206,15 @@
         "binop": null
       },
       "value": "emailDefaultConfigFields",
-      "start": 223,
-      "end": 247,
+      "start": 259,
+      "end": 283,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 10,
           "column": 22
         },
         "end": {
-          "line": 7,
+          "line": 10,
           "column": 46
         }
       }
@@ -1126,15 +1231,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 248,
-      "end": 249,
+      "start": 284,
+      "end": 285,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 11,
           "column": 0
         },
         "end": {
-          "line": 8,
+          "line": 11,
           "column": 1
         }
       }
@@ -1152,15 +1257,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 249,
-      "end": 250,
+      "start": 285,
+      "end": 286,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 11,
           "column": 1
         },
         "end": {
-          "line": 8,
+          "line": 11,
           "column": 2
         }
       }
@@ -1178,15 +1283,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 250,
-      "end": 250,
+      "start": 286,
+      "end": 286,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 11,
           "column": 2
         },
         "end": {
-          "line": 8,
+          "line": 11,
           "column": 2
         }
       }
