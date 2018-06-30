@@ -6,8 +6,10 @@ import {processorsStore} from './state/processorsStore';
 import {validationSubscriber} from "./state/validationSubscriber";
 
 /**
+ * Manages a single instance of the Caldera Processor UI with state and validation.
  *
- * @param elementId
+ * @param {String} elementId ID of element UI gets mounted on.
+ *
  * @constructor
  */
 export default function CalderaProcessorsUI(elementId){
@@ -21,14 +23,23 @@ export default function CalderaProcessorsUI(elementId){
 		return processorsStore;
 	};
 
+	/**
+	 * Add subscriber to store used for validation
+	 * @return {boolean}
+	 */
 	this.subscribeForValidation = () => {
 		validationSubscriptionUnsubscribe = processorsStore.subscribe(validationSubscriber);
-		if( 'function' === typeof  validationSubscriptionUnsubscribe ){
-			return true;
-		}
-		return false;
+		return 'function' === typeof validationSubscriptionUnsubscribe
+			? true
+			: false;
+
 	};
 
+	/**
+	 * Unsubscribe the validation subscriber
+	 *
+	 * @return {boolean}
+	 */
 	this.unSubscribeToProcessorValidation = () => {
 		if( 'function' === typeof  validationSubscriptionUnsubscribe ){
 			validationSubscriptionUnsubscribe();
@@ -47,7 +58,7 @@ export default function CalderaProcessorsUI(elementId){
 			<Provider store={processorsStore}>
 				<CalderaProcessorsWithState />
 			</Provider>
-		)
+		);
 	};
 
 	/**
@@ -59,7 +70,7 @@ export default function CalderaProcessorsUI(elementId){
 			this.componentWithState(),
 			document.getElementById(elementId)
 		);
-	}
+	};
 
 }
 
