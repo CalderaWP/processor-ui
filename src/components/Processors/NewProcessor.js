@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  * @returns {*}
  * @constructor
  */
-export  const NewProcessor = (props) => {
+export const NewProcessor = (props) => {
 	function handler(event){
 		props.onNewProcessor(event.target.value);
 	}

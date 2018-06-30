@@ -37,6 +37,7 @@ exports[`Processor components Editor Renders with props 1`] = `
           <input
             aria-describedby="fromName-description"
             className="field-config field-config"
+            disabled={false}
             id="fromName"
             onChange={[Function]}
             required={false}
@@ -65,6 +66,7 @@ exports[`Processor components Editor Renders with props 1`] = `
           <input
             aria-describedby="fromEmail-description"
             className="field-config field-config"
+            disabled={false}
             id="fromEmail"
             onChange={[Function]}
             required={false}
@@ -92,6 +94,7 @@ exports[`Processor components Editor Renders with props 1`] = `
           </label>
           <select
             className="field-config field-config"
+            disabled={false}
             id="contentType"
             onChange={[Function]}
             value={undefined}
@@ -131,6 +134,7 @@ exports[`Processor components Editor Renders with props 1`] = `
           <input
             aria-describedby="bodyPadding-description"
             className="field-config field-config"
+            disabled={false}
             id="bodyPadding"
             onChange={[Function]}
             required={false}
@@ -187,6 +191,7 @@ exports[`Processor components Editor renders with props 1`] = `
           <input
             aria-describedby="fromName-description"
             className="field-config field-config"
+            disabled={false}
             id="fromName"
             onChange={[Function]}
             required={false}
@@ -215,6 +220,7 @@ exports[`Processor components Editor renders with props 1`] = `
           <input
             aria-describedby="fromEmail-description"
             className="field-config field-config"
+            disabled={false}
             id="fromEmail"
             onChange={[Function]}
             required={false}
@@ -242,6 +248,7 @@ exports[`Processor components Editor renders with props 1`] = `
           </label>
           <select
             className="field-config field-config"
+            disabled={false}
             id="contentType"
             onChange={[Function]}
             value={undefined}
@@ -281,6 +288,7 @@ exports[`Processor components Editor renders with props 1`] = `
           <input
             aria-describedby="bodyPadding-description"
             className="field-config field-config"
+            disabled={false}
             id="bodyPadding"
             onChange={[Function]}
             required={false}
@@ -385,6 +393,7 @@ exports[`Using RenderGroup RenderGroup snapshot 1`] = `
       </label>
       <select
         className="field-config field-config"
+        disabled={false}
         id="cf-something-select-id"
         onChange={[Function]}
         value="html"

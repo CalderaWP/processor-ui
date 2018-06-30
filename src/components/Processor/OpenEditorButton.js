@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 /**
  * Displays button to open or close processor editor
  *

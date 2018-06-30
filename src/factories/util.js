@@ -1,3 +1,4 @@
+import {conditionals} from '@caldera-labs/components';
 /**
  * Finds value property of config field or config field default
  * @param {Object} configField Config field to search for default in
@@ -78,20 +79,7 @@ export const mapKeysToIdProperty = (theMap) => {
  * @return {boolean}
  */
 export const checkConfigFieldConditionals = (configField, fieldValues = {}) => {
-	if (!configField.hasOwnProperty('conditionals') || !Array.isArray(configField.conditionals)) {
-		return true;
-	}
-
-	let allRulesPassed = true;
-	configField.conditionals.forEach(conditional => {
-		if ('function' === typeof conditional && false === conditional.call(null, fieldValues)) {
-			allRulesPassed = false;
-			return false;
-		}
-	});
-
-	return allRulesPassed;
-
+	return conditionals.checkConfigFieldConditionals(configField,fieldValues);
 };
 
 /**
@@ -105,12 +93,7 @@ export const checkConfigFieldConditionals = (configField, fieldValues = {}) => {
  * @return {boolean}
  */
 export const checkConfigFieldsConditionals = (configFields, fieldValues = {}) => {
-	let results = {};
-	Object.values( configFields ).forEach(configField => {
-		results[configField.ID] = checkConfigFieldConditionals(configField,fieldValues);
-	});
-	return results;
-
+	return conditionals.checkConfigFieldsConditionals(configFields,fieldValues);
 };
 
 /**
@@ -119,13 +102,6 @@ export const checkConfigFieldsConditionals = (configFields, fieldValues = {}) =>
  * @param configFields
  */
 export const reduceConfigFieldsToValues = (configFields) => {
-	let values = {};
-	 configFields.forEach(field => {
-	 		values[field.ID] = field.value
-			? field.value
-			: field.default
-				? field.default
-				: null;
-	 });
-	 return values;
+	return conditionals.reduceConfigFieldsToValues(configFields);
+
 };

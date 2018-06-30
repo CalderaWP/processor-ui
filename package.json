@@ -43,14 +43,14 @@
   },
   "homepage": "https://calderalabs.org/processor-ui/",
   "dependencies": {
-    "@caldera-labs/components": "^0.4",
+    "@caldera-labs/components": "^1.2.0",
     "@caldera-labs/state": "^0.7.0",
     "@wordpress/data": "^1.0.0-alpha.1",
+    "classnames": "^2.2.6",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-compose": "^2.0.0",
-    "react-redux": "^5.0.7",
-    "classnames": "^2.2.6"
+    "react-redux": "^5.0.7"
   },
   "devDependencies": {
     "react-dom": "^16.4.0",

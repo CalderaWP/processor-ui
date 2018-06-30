@@ -47,5 +47,4 @@ const CalderaProcessorsWithState =  withSelect( (select, ownProps ) => {
 	};
 } )( CalderaProcessors ) );
 
-
 export default CalderaProcessorsWithState;

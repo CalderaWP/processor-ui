@@ -21,7 +21,8 @@ const findFieldValues = (processor) => {
 		)
 	);
 
-}
+};
+
 /**
  * Displays list of processors
  *
