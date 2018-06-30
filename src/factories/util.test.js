@@ -263,6 +263,7 @@ describe('Util functions for factories', () => {
 	});
 });
 describe('using @caldera-labs/components.conditionals', () => {
+
 	it('imports the conditional logic system', () => {
 		expect(typeof conditionals).toEqual('object');
 	});
