@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3667fff2-8480-411f-84f9-63b9c6d29702" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/util.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/util.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,23 +18,32 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-290">
-                <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+              <first_editor relative-caret-position="345">
+                <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="util.test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/factories/util.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
+            <state relative-caret-position="480">
+              <caret line="282" column="32" lean-forward="true" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
               <folding>
                 <element signature="e#0#234#0" expanded="true" />
                 <element signature="e#339#5187#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -143,7 +151,6 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/state/processorsStore.js" />
         <option value="$PROJECT_DIR$/src/module.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/manual/index.md" />
         <option value="$PROJECT_DIR$/manual/overview.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -154,8 +161,9 @@
         <option value="$PROJECT_DIR$/src/components/Processors/List.js" />
         <option value="$PROJECT_DIR$/src/factories/util.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/factories/util.test.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -184,7 +192,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="141" />
     <option name="y" value="23" />
-    <option name="width" value="1779" />
+    <option name="width" value="1715" />
     <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -209,49 +217,12 @@
             <path>
               <item name="processors" type="b2602c69:ProjectViewProjectNode" />
               <item name="processors" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="processors" type="462c0819:PsiDirectoryNode" />
               <item name="manual" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="processors" type="b2602c69:ProjectViewProjectNode" />
               <item name="processors" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="processors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="processors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Processor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="processors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Processors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="processors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="processors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="processors" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="state" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -317,15 +288,15 @@
       <workItem from="1530234989312" duration="786000" />
       <workItem from="1530294063133" duration="511000" />
       <workItem from="1530306103881" duration="2590000" />
-      <workItem from="1530366517628" duration="6178000" />
+      <workItem from="1530366517628" duration="6642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159063000" />
+    <option name="totallyTimeSpent" value="159527000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="141" y="23" width="1779" height="877" extended-state="0" />
+    <frame x="141" y="23" width="1715" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -335,7 +306,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.50416666" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info active="true" anchor="bottom" x="0" y="45" width="834" height="846" id="Terminal" order="7" type="WINDOWED" visible="true" weight="0.26875" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8966443" visible="true" weight="0.2308578" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8966443" visible="true" weight="0.23968919" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.0" />
@@ -641,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Processor/TypeChooser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -741,23 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-290">
-            <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@caldera-labs/components/dist/conditional-logic/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -770,12 +717,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/factories/util.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
+        <state relative-caret-position="480">
+          <caret line="282" column="32" lean-forward="true" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
           <folding>
             <element signature="e#0#234#0" expanded="true" />
             <element signature="e#339#5187#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="345">
+            <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
         </state>
       </provider>
     </entry>

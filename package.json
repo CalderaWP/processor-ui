@@ -15,7 +15,7 @@
     "hack:for:dist": "unlink dist/index.js && mv dist/module.js dist/index.js",
     "test": "react-scripts test --env=jsdom",
     "test:once": "CI=true react-scripts test --env=jsdom",
-    "test:coverage": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:coverage": "npm test -- --coverage",
     "test:badges": "npm run test:coverage  && jest-coverage-badges",
     "document": "./node_modules/.bin/esdoc",
     "lint": "eslint src/**/*.js",
@@ -53,8 +53,6 @@
     "react-redux": "^5.0.7"
   },
   "devDependencies": {
-    "react-dom": "^16.4.0",
-    "react-wp-scripts": "0.2.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
@@ -73,6 +71,9 @@
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
+    "istanbul-lib-coverage": "^1.2.0",
+    "react-dom": "^16.4.0",
+    "react-wp-scripts": "0.2.0",
     "uglify-js": "^3.4.0"
   },
   "jest": {
@@ -86,10 +87,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 90,
-        "branches": 90,
-        "functions": 90,
-        "lines": 90
+        "statements": 75,
+        "branches": 65,
+        "functions": 75,
+        "lines": 75
       }
     }
   }
