@@ -1,4 +1,14 @@
+/**
+ * The identifier for the value for the content type option that represents HTML emails
+ *
+ * @type {string}
+ */
 const contentTypeHtmlValueIdentifier = 'html';
+/**
+ * The default fields for email processors
+ *
+ * @type {{fromName: {label: string, desc: string, type: string, default: string}, fromEmail: {label: string, desc: string, type: string}, contentType: {label: string, desc: string, type: string, options: *[], default: string}, bodyPadding: {label: string, desc: string, type: string, conditionals: *[]}}}
+ */
 export const emailDefaultConfigFields = {
 	fromName: {
 		'label': 'From Name',

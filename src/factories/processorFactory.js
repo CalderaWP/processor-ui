@@ -1,7 +1,15 @@
 import {configFieldsFactory} from './configFieldsFactory';
 import {processorTypes} from '../processors/processorTypes';
 
+/**
+ * Global map of all processor types
+ *
+ * @todo remove this
+ *
+ * @type {Map<any, any>}
+ */
 export const processorTypesMap = new Map();
+
 Object.values(processorTypes).forEach( type =>{
 	processorTypesMap.set(type.TYPE, type);
 });

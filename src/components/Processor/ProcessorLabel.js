@@ -6,6 +6,11 @@ import classNames from 'classnames'
  * Encapsulates displaying the label of a processor
  */
 export class ProcessorLabel extends React.PureComponent {
+	/**
+	 * Create new processor label component
+	 *
+	 * @param {Object} props
+	 */
 	constructor(props) {
 		super(props);
 		this.labelAs = this.labelAs.bind(this);
@@ -22,6 +27,10 @@ export class ProcessorLabel extends React.PureComponent {
 				: this.props.ID;
 	}
 
+	/**
+	 * Redner the label of a processor
+	 * @return {*}
+	 */
 	render() {
 		return(
 			<div

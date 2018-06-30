@@ -9,6 +9,9 @@ import {
 	reduceConfigFieldsToValues
 } from "../../factories/util";
 
+/**
+ * Encapsulates the editor for one processor
+ */
 export class Editor extends React.PureComponent {
 	constructor(props) {
 		super(props);
@@ -66,6 +69,11 @@ export class Editor extends React.PureComponent {
 		return fields;
 	}
 
+	/**
+	 * Find field values of this processor
+	 *
+	 * @return {*}
+	 */
 	findFieldValues() {
 		return reduceConfigFieldsToValues(
 			mapKeysToIdProperty(
@@ -125,7 +133,11 @@ export class Editor extends React.PureComponent {
 				: this.props.ID;
 	}
 
-
+	/**
+	 * Render editor for one component
+	 *
+	 * @return {*}
+	 */
 	render() {
 		let removeStyle = {
 			//opacity: 0.1

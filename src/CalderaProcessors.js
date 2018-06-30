@@ -11,6 +11,10 @@ import {NewProcessor} from "./components/Processors/NewProcessor";
  * @constructor
  */
 class CalderaProcessors extends React.PureComponent {
+	/**
+	 * Render processor UI
+	 * @return {*}
+	 */
 	render() {
 		return(
 			<div className="caldera-forms-processors">

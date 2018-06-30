@@ -1,3 +1,7 @@
+/**
+ * Prefix for all actions of the Caldera Forms processors store
+ * @type {string}
+ */
 const CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';
 
 

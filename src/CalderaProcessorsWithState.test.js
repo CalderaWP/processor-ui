@@ -32,5 +32,6 @@ describe( 'CalderaProcessors component', () => {
 			document.createElement('section')
 		);
 	});
+
 });
 

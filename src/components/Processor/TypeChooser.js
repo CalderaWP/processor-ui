@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 
 import {processorTypesMap} from "../../factories/processorFactory";
 
+/**
+ * Encapsulates the UI for choosing the type of processor a processor is or will be.
+ */
 export class TypeChooser extends React.PureComponent {
+	/**
+	 * Create a new TypeChooser component
+	 *
+	 * @param {object} props
+	 */
 	constructor(props) {
 		super(props);
 		this.changeType = this.changeType.bind(this);
@@ -11,7 +19,6 @@ export class TypeChooser extends React.PureComponent {
 
 
 	}
-
 
 	/**
 	 * Dispatch a change in processor type
@@ -27,6 +34,9 @@ export class TypeChooser extends React.PureComponent {
 		});
 	}
 
+	/**
+	 * Get the processor type options
+	 */
 	getProcessorTypes(){
 		if( 'function' === typeof this.props.getProcessorTypes){
 			return this.props.getProcessorTypes();
@@ -34,6 +44,11 @@ export class TypeChooser extends React.PureComponent {
 		return processorTypesMap;
 	}
 
+	/**
+	 * Renders the UI for choosing the type of processor a processor is or will be.
+	 *
+	 * @return {*}
+	 */
 	render() {
 
 		return (

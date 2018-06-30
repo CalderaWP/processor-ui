@@ -19,8 +19,10 @@ import {
 	getProcessorFromCollection,
 } from './selectors';
 
-
-//Create the basic options for the store besides the reducer
+/**
+ * The  options for the Caldera Forms processor store besides the reducer
+ * @type {{actions: {addProcessor: addProcessor, newProcessor: newProcessor, removeProcessor: removeProcessor, updateProcessor: updateProcessor, setProcessorType: setProcessorType}, selectors: {getProcessorsCollection(*): *, getProcessorFromCollection(*, *=): *, getProcessorTypes(*): *}, resolvers: {}}}
+ */
 let options = {
 	actions: {
 		addProcessor,
