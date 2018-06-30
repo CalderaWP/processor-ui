@@ -211,11 +211,11 @@ describe('Util functions for factories', () => {
 
 		it('returns null if no value', () => {
 			expect(reduceConfigFieldsToValues([
-					...configFields,
-					{
-						ID: 'fld45',
-					}
-				]
+				...configFields,
+				{
+					ID: 'fld45',
+				}
+			]
 			)).toEqual(
 				{
 					fld44: 5,
@@ -227,12 +227,12 @@ describe('Util functions for factories', () => {
 
 		it('Returns default if has default and no value', () => {
 			expect(reduceConfigFieldsToValues([
-					...configFields,
-					{
-						ID: 'fld47',
-						default: 'Roy',
-					}
-				]
+				...configFields,
+				{
+					ID: 'fld47',
+					default: 'Roy',
+				}
+			]
 			)).toEqual(
 				{
 					fld44: 5,
@@ -244,13 +244,13 @@ describe('Util functions for factories', () => {
 
 		it('Returns value if has default and  value', () => {
 			expect(reduceConfigFieldsToValues([
-					...configFields,
-					{
-						ID: 'fld48',
-						default: 'Roy',
-						value: 'Mike',
-					}
-				]
+				...configFields,
+				{
+					ID: 'fld48',
+					default: 'Roy',
+					value: 'Mike',
+				}
+			]
 			)).toEqual(
 				{
 					fld44: 5,
