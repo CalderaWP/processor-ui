@@ -138,6 +138,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "@caldera-labs/processor-ui/src/state/actions.js~validate_processor",
+    "variable/index.html#static-variable-VALIDATE_PROCESSOR",
+    "<span>VALIDATE_PROCESSOR</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "variable"
+  ],
+  [
     "@caldera-labs/processor-ui/src/state/actions.js~addprocessor",
     "function/index.html#static-function-addProcessor",
     "<span>addProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
@@ -351,6 +357,12 @@ window.esdocSearchIndex = [
     "@caldera-labs/processor-ui/src/state/actions.js~updateprocessorvalues",
     "function/index.html#static-function-updateProcessorValues",
     "<span>updateProcessorValues</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/actions.js~validateprocessor",
+    "function/index.html#static-function-validateProcessor",
+    "<span>validateProcessor</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
     "function"
   ],
   [

@@ -74,47 +74,47 @@
     "filePath": "src/state/reducers.js",
     "lines": [
       {
-        "lineNumber": 69,
+        "lineNumber": 71,
         "line": "/**"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 72,
         "line": " * Reducer for managing a collection of processors"
       },
       {
-        "lineNumber": 71,
-        "line": " *"
-      },
-      {
-        "lineNumber": 72,
-        "line": " * State is the processors collection, as a map."
-      },
-      {
         "lineNumber": 73,
-        "line": " * ^^ Might be a mistake."
+        "line": " *"
       },
       {
         "lineNumber": 74,
-        "line": " *"
+        "line": " * State is the processors collection, as a map."
       },
       {
         "lineNumber": 75,
-        "line": " * @param {Map}state"
+        "line": " * ^^ Might be a mistake."
       },
       {
         "lineNumber": 76,
-        "line": " * @param {Object} action"
+        "line": " *"
       },
       {
         "lineNumber": 77,
-        "line": " * @returns {Map<any, any>}"
+        "line": " * @param {Map}state"
       },
       {
         "lineNumber": 78,
-        "line": " */"
+        "line": " * @param {Object} action"
       },
       {
         "lineNumber": 79,
+        "line": " * @returns {Map<any, any>}"
+      },
+      {
+        "lineNumber": 80,
+        "line": " */"
+      },
+      {
+        "lineNumber": 81,
         "line": "export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) => {"
       }
     ],

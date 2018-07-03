@@ -1,6 +1,6 @@
 {
-  "coverage": "87.36%",
-  "expectCount": 95,
+  "coverage": "86.45%",
+  "expectCount": 96,
   "actualCount": 83,
   "files": {
     "src/CalderaProcessors.js": {
@@ -115,8 +115,8 @@
       ]
     },
     "src/state/actions.js": {
-      "expectCount": 17,
-      "actualCount": 17,
+      "expectCount": 19,
+      "actualCount": 19,
       "undocumentLines": []
     },
     "src/state/processorDispatchers.js": {
@@ -147,10 +147,11 @@
       "undocumentLines": []
     },
     "src/state/validationSubscriber.js": {
-      "expectCount": 4,
-      "actualCount": 3,
+      "expectCount": 3,
+      "actualCount": 1,
       "undocumentLines": [
-        33
+        6,
+        7
       ]
     }
   }

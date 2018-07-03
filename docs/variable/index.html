@@ -63,6 +63,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateProcessor">updateProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateProcessorConfigFields">updateProcessorConfigFields</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateProcessorValues">updateProcessorValues</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-validateProcessor">validateProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-processorDispatchers">processorDispatchers</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-processorSelectors">processorSelectors</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span></li>
@@ -85,6 +86,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_PROCESSOR">UPDATE_PROCESSOR</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_PROCESSOR_CONFIG_FIELDS">UPDATE_PROCESSOR_CONFIG_FIELDS</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_PROCESSOR_VALUES">UPDATE_PROCESSOR_VALUES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VALIDATE_PROCESSOR">VALIDATE_PROCESSOR</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CALDERA_FORMS_PROCESSORS_STORE_SLUG">CALDERA_FORMS_PROCESSORS_STORE_SLUG</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-processorsStore">processorsStore</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE">CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE</a></span></span></li>
@@ -516,6 +518,35 @@
           
           
           
+          <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-VALIDATE_PROCESSOR">VALIDATE_PROCESSOR</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The name of the action to validate a a processor in collection.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
           <span class="code" data-ice="name"><span><a href="variable/index.html#static-variable-emailDefaultConfigFields">emailDefaultConfigFields</a></span></span><span class="code" data-ice="signature">: {fromName: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, default: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, fromEmail: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, contentType: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, options: <span><span>*</span><span>[]</span></span>, default: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>}, bodyPadding: {label: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, desc: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, conditionals: <span><span>*</span><span>[]</span></span>}}</span>
         </p>
       </div>
@@ -635,11 +666,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber12">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ADD_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber12">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {ADD_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber11">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to add a processor to collection</p>
@@ -679,11 +710,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/reducers.js.html#lineNumber67">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/reducers.js.html#lineNumber69">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE} from &apos;<span><a href="file/src/state/reducers.js.html#lineNumber67">@caldera-labs/processor-ui/src/state/reducers.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE} from &apos;<span><a href="file/src/state/reducers.js.html#lineNumber69">@caldera-labs/processor-ui/src/state/reducers.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Default processors collection state</p>
@@ -724,11 +755,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber62">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber64">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber62">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber64">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The identifier for the processors store</p>
@@ -768,11 +799,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/reducers.js.html#lineNumber154">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/reducers.js.html#lineNumber196">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE} from &apos;<span><a href="file/src/state/reducers.js.html#lineNumber154">@caldera-labs/processor-ui/src/state/reducers.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE} from &apos;<span><a href="file/src/state/reducers.js.html#lineNumber196">@caldera-labs/processor-ui/src/state/reducers.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Default processor state.</p>
@@ -901,11 +932,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber18">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber17">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {NEW_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber18">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {NEW_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber17">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to create a new, empty processor and add it to the collection</p>
@@ -988,11 +1019,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {REMOVE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber24">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {REMOVE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber23">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to remove a processor from the collection</p>
@@ -1032,11 +1063,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber31">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_FORM_FOR_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber31">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_FORM_FOR_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber30">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to set the form in the processor collection</p>
@@ -1076,11 +1107,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber58">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber63">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_PROCESSOR_TYPE} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber58">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {SET_PROCESSOR_TYPE} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber63">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to set a processorType definition for a processor type in the processorType reducer</p>
@@ -1120,11 +1151,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber36">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber37">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber36">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to update the processor in collection.</p>
@@ -1164,11 +1195,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber51">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber56">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_CONFIG_FIELDS} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber51">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_CONFIG_FIELDS} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber56">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to update the processor values in the single processor store</p>
@@ -1208,14 +1239,58 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber44">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber49">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_VALUES} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber44">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {UPDATE_PROCESSOR_VALUES} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber49">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The name of the action to update the processor values in the single processor store</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-VALIDATE_PROCESSOR">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">VALIDATE_PROCESSOR</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/state/actions.js.html#lineNumber43">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {VALIDATE_PROCESSOR} from &apos;<span><a href="file/src/state/actions.js.html#lineNumber43">@caldera-labs/processor-ui/src/state/actions.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>The name of the action to validate a a processor in collection.</p>
 </div>
 
   
@@ -1384,11 +1459,11 @@ Contains the processor config as a Map()</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber67">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/state/processorsStore.js.html#lineNumber69">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorsStore} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber67">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {processorsStore} from &apos;<span><a href="file/src/state/processorsStore.js.html#lineNumber69">@caldera-labs/processor-ui/src/state/processorsStore.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>The store for Caldera Forms Processors</p>
