@@ -36,10 +36,12 @@ exports[`Processor components Editor Renders with props 1`] = `
           </label>
           <input
             aria-describedby="fromName-description"
-            className="field-config field-config"
+            className="required field-config field-config"
             disabled={false}
             id="fromName"
+            onBlur={undefined}
             onChange={[Function]}
+            onFocus={undefined}
             required={false}
             type="text"
             value={undefined}
@@ -65,12 +67,14 @@ exports[`Processor components Editor Renders with props 1`] = `
           </label>
           <input
             aria-describedby="fromEmail-description"
-            className="field-config field-config"
+            className="required field-config field-config"
             disabled={false}
             id="fromEmail"
+            onBlur={undefined}
             onChange={[Function]}
+            onFocus={undefined}
             required={false}
-            type="email"
+            type="text"
             value={undefined}
           />
           <p
@@ -136,7 +140,9 @@ exports[`Processor components Editor Renders with props 1`] = `
             className="field-config field-config"
             disabled={false}
             id="bodyPadding"
+            onBlur={undefined}
             onChange={[Function]}
+            onFocus={undefined}
             required={false}
             type="number"
             value={undefined}
@@ -190,10 +196,12 @@ exports[`Processor components Editor renders with props 1`] = `
           </label>
           <input
             aria-describedby="fromName-description"
-            className="field-config field-config"
+            className="required field-config field-config"
             disabled={false}
             id="fromName"
+            onBlur={undefined}
             onChange={[Function]}
+            onFocus={undefined}
             required={false}
             type="text"
             value={undefined}
@@ -219,10 +227,12 @@ exports[`Processor components Editor renders with props 1`] = `
           </label>
           <input
             aria-describedby="fromEmail-description"
-            className="field-config field-config"
+            className="required field-config field-config"
             disabled={false}
             id="fromEmail"
+            onBlur={undefined}
             onChange={[Function]}
+            onFocus={undefined}
             required={false}
             type="text"
             value={undefined}
@@ -290,7 +300,9 @@ exports[`Processor components Editor renders with props 1`] = `
             className="field-config field-config"
             disabled={false}
             id="bodyPadding"
+            onBlur={undefined}
             onChange={[Function]}
+            onFocus={undefined}
             required={false}
             type="text"
             value={undefined}

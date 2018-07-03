@@ -13,13 +13,17 @@ export const emailDefaultConfigFields = {
 	fromName: {
 		'label': 'From Name',
 		'desc': 'Who the email is from',
-		'type': 'text',
-		'default': 'Roy Sivan'
+		'type': 'input',
+		'inputType': 'text',
+		'default': 'Roy Sivan',
+		isRequired: true,
 	},
 	fromEmail: {
 		'label': 'From Email',
 		'desc': 'Who the email is from',
-		'type': 'email',
+		'type': 'input',
+		'inputType': 'email',
+		isRequired: true,
 	},
 	contentType: {
 		'label': 'Content type',

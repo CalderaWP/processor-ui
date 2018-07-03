@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/components/Processor/Editor.js | Caldera Processor UI</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/state/validationSubscriber.js | Caldera Processor UI</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -93,210 +93,52 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/components/Processor/Editor.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import PropTypes from &apos;prop-types&apos;;
-import * as CalderaComponents from &apos;@caldera-labs/components&apos;;
-import classNames from &apos;classnames&apos;
-import {
-	checkConfigFieldConditionals,
-	mapKeysToIdProperty,
-	objectToMap,
-	reduceConfigFieldsToValues
-} from &quot;../../factories/util&quot;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/state/validationSubscriber.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {processorSelectors} from &quot;./processorSelectors&quot;;
+import {select} from &apos;@wordpress/data&apos;;
+import {getConfigFieldValue} from &quot;../factories/util&quot;;
+import {validation} from &apos;@caldera-labs/components&apos;;
 
 /**
- * Encapsulates the editor for one processor
+ * The configFields for all processors, indexed by processorId
+ * @type {Object}
  */
-export class Editor extends React.PureComponent {
-	constructor(props) {
-		super(props);
-		this.state = {
-			opacity: 1,
-			hovered: false,
-		};
-		this.mouseEnter = this.mouseEnter.bind(this);
-		this.mouseLeave = this.mouseLeave.bind(this);
-		this.changeType = this.changeType.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.configFields = this.configFields.bind(this);
-		this.findFieldValues = this.findFieldValues.bind(this);
-		this.labelAs = this.labelAs.bind(this);
+let processorsConfigFields = {};
 
-	}
+/**
+ * The fieldValues for all processors, indexed by processorId
+ * @type {Object}
+ */
+let fieldValues = {};
 
-	/**
-	 * Handler for the mouse enter event
-	 */
-	mouseEnter() {
-		this.setState({hovered: true})
-	}
-
-	/**
-	 * Handler for the mouse leave event
-	 */
-	mouseLeave() {
-		this.setState({hovered: false})
-	}
-
-	/**
-	 * Prepares config fields for CalderaComponents.RenderGroup
-	 *
-	 * @return {Array}
-	 */
-	configFields(){
-		if( Array.isArray( this.props.configFields ) ) {
-			return this.props.configFields;
-		}
-
-		let fields = [];
-		if ( &apos;object&apos; === typeof this.props.configFields ) {
-			const configValues = this.findFieldValues();
-			Object.keys(this.props.configFields).forEach(configFieldId =&gt; {
-				if( checkConfigFieldConditionals(this.props.configFields[configFieldId],configValues)){
-					fields[configFieldId] = this.props.configFields[configFieldId];
-					fields[configFieldId].onValueChange = (newValue) =&gt; {
-						this.handleChange(configFieldId, newValue);
-					};
-				}
-			});
-		}
-
-		return fields;
-	}
-
-	/**
-	 * Find field values of this processor
-	 *
-	 * @return {*}
-	 */
-	findFieldValues() {
-		return reduceConfigFieldsToValues(
-			mapKeysToIdProperty(
-				objectToMap(
-					this.props.configFields
-				)
-			)
-		);
-
-	}
-	/**
-	 * Updates the processor config fields and dispatches the change handler
-	 *
-	 * @param {String} configFieldId Id of configuration field to update.
-	 * @param {String|Array|Number} newValue The new value
-	 */
-	handleChange(configFieldId,newValue){
-		if( &apos;object&apos; === typeof  newValue){
-			newValue = newValue.target.value;
-		}
-		let configFields = this.props.configFields;
-		configFields[configFieldId] = {
-			...configFields[configFieldId],
-			value:newValue
-		};
-		this.props.onUpdateProcessor({
-			ID: this.props.ID,
-			type: this.props.type,
-			label: this.props.label,
-			configFields
+/**
+ *
+ * @param {Map} processors
+ */
+function updateConfigValues(processors) {
+	processors.forEach( (value, processorId, processorsMap ) =&gt; {
+		fieldValues[processorId] = {};
+		processorsConfigFields[processorId] = value.configFields;
+		Object.values( value.configFields ).forEach(field =&gt; {
+			fieldValues[processorId][field.ID] = getConfigFieldValue(field)
 		});
-	}
 
-	/**
-	 * Dispatch a change in processor type
-	 *
-	 * @param {*} event
-	 */
-	changeType(event){
-		this.props.onUpdateProcessor({
-			ID: this.props.ID,
-			label: this.props.label,
-			type: event.target.value,
-			configFields: this.props.configFields
-		});
-	}
-
-	/**
-	 * Find the label to show for a processor
-	 * @return {string}
-	 */
-	labelAs(){
-		return this.props.label
-			? this.props.label
-			: this.props.type
-				? `${this.props.type} - ${this.props.ID}`
-				: this.props.ID;
-	}
-
-	/**
-	 * Render editor for one componentWithState
-	 *
-	 * @return {*}
-	 */
-	render() {
-		let removeStyle = {
-			//opacity: 0.1
-			opacity: 1
-		};
-		if ( this.state.hovered){
-			removeStyle.opacity = 1
-		}
-
-		return (
-			&lt;div
-				className={ classNames(this.props.className, {
-						&apos;processor-has-type&apos; : &apos;string&apos; === typeof this.props.type,
-						&apos;caldera-forms-processor&apos; : true,
-						&apos;not-opened&apos;: !this.props.isOpen,
-						&apos;is-opened&apos;: this.props.isOpen
-					})
-				}
-				//onMouseEnter={this.mouseEnter}
-				//onMouseLeave={this.mouseLeave}
-			&gt;
-				&lt;div className={&apos;processor-label&apos;}&gt;{this.labelAs()}&lt;/div&gt;
-				&lt;div&gt;
-					Type: &lt;span className={&apos;processor-type&apos;}&gt;{this.props.type}&lt;/span&gt;
-				&lt;/div&gt;
-				{this.props.type &amp;&amp;
-					&lt;div
-						className={&apos;processor-editor&apos;}
-					&gt;
-						&lt;CalderaComponents.RenderGroup
-							className={&apos;caldera-forms-processor-config&apos;}
-							configFields={this.configFields()}
-						/&gt;
-					&lt;/div&gt;
-				}
-
-			&lt;/div&gt;
-		)
-	}
+	});
 }
 
-/**
- * Prop definitions for Editor Property
- * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}
- */
-Editor.propTypes = {
-	onUpdateProcessor: PropTypes.func.isRequired,
-	form: PropTypes.object,
-	configFields: PropTypes.oneOfType(
-		[
-			PropTypes.array,
-			PropTypes.object
-		]
-	),
-	isOpen: PropTypes.bool,
-	ID: PropTypes.string.isRequired,
-	type: PropTypes.string,
-	label: PropTypes.string,
-};
+export const validationSubscriber = () =&gt; {
+	const form = {};
+	const ownProps = {
+		form
+	};
+	let results = {};
+	const processors = processorSelectors(select,ownProps).processors;
+	updateConfigValues(processors);
+	processors.forEach( (procesor, processorId, processorsMap ) =&gt; {
+		results[processorId] =validation.checkValidatorsForConfigFields(processorsConfigFields[processorId],fieldValues[processorId]);
+	});
+	console.log(results);
 
-Editor.defaultProps = {
-	isOpen: false,
-	configFields: {}
 };</code></pre>
 
 </div>

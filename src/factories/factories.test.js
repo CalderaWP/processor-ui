@@ -54,6 +54,7 @@ describe('Processor factories', () => {
 			).label).toEqual('Sequence ID');
 		});
 
+
 	});
 
 	describe('configFieldsFactory', () => {
@@ -69,7 +70,7 @@ describe('Processor factories', () => {
 
 		it( 'sets the defaults', () =>{
 			expect(
-				configFieldsFactory(
+				JSON.stringify(configFieldsFactory(
 					{
 						fromName: {
 							value: 'Roy'
@@ -81,16 +82,8 @@ describe('Processor factories', () => {
 							type: 'email'
 						}
 					}
-				)
-			).toEqual( {
-				fromName : {
-					id: 'fromName',
-					ID: 'fromName',
-					value: 'Roy',
-					label: 'From Name',
-					type: 'email'
-				}
-			});
+				))
+			).toMatchSnapshot();
 		});
 
 		it( 'Add defaults for email processors', () => {
@@ -109,6 +102,41 @@ describe('Processor factories', () => {
 
 			expect( typeof processor.configFields.fromName.label ).toBe( 'string' );
 		});
+
+		it( 'Add automatic validators for email processors', () => {
+			const processor = processorFactory('p_l1', processorTypes.emailProcessorType.TYPE,{
+				fromName: {
+					'value': 'Josh Pollock'
+				},
+				fromEmail: {
+					'value': 'Josh@calderaWP.com'
+
+				},
+				contentType: {
+					value: 'plain',
+				}
+			});
+
+			expect( Array.isArray( processor.configFields.fromName.validators )).toBe( true );
+		});
+
+		it( 'Add automatic validators for email processors', () => {
+			const processor = processorFactory('p_l1', processorTypes.emailProcessorType.TYPE,{
+				fromName: {
+					'value': 'Josh Pollock'
+				},
+				fromEmail: {
+					'value': 'Josh@calderaWP.com'
+
+				},
+				contentType: {
+					value: 'plain',
+				}
+			});
+
+			expect( Array.isArray( processor.configFields.fromName.validators )).toBe( true );
+		});
+
 
 	});
 

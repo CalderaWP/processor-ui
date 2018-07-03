@@ -5,7 +5,6 @@ import {
 	CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE,
 	processorTypesReducer
 } from './reducers';
-
 import {
 	addProcessor,
 	newProcessor,
@@ -13,11 +12,24 @@ import {
 	setFormForProcessor,
 	updateProcessor,
 	updateProcessorValues,
-	updateProcessorConfigFields, setProcessorType
+	updateProcessorConfigFields,
+	setProcessorType,
+	validateProcessor
 } from './actions';
 import emailProcessorType from '../processors/emailProcessorType';
 import redirectProcessorType from '../processors/redirectProcessorType';
 import {processorTypesMap} from '../factories/processorFactory';
+
+
+import {validation} from '@caldera-labs/components';
+import {configFieldFactory} from "../factories/configFieldFactory";
+import {configFieldsFactory} from "../factories/configFieldsFactory";
+validation.addAutomaticValidators({
+	ID: 'fld1',
+	type: 'input',
+	inputType: 'url',
+	isRequired: false,
+})
 
 describe('reducers', () => {
 	const initAction = {type: 'init'};
@@ -32,6 +44,45 @@ describe('reducers', () => {
 		name: 'Contact Form',
 		fields: {}
 	};
+
+	describe( 'validating processor', () => {
+		const processorId = 'p71a';
+		let configFields = emailProcessorType.defaultConfigFields;
+		Object.keys( configFields ).forEach(configFieldId => {
+			configFields[configFieldId] = validation.addAutomaticValidators(configFields[configFieldId]);
+			configFields[configFieldId].value = 'roy';
+		});
+
+		configFields = configFieldsFactory(configFields);
+		const processor = {
+			...emailProcessor,
+			ID: processorId,
+			configFields: emailProcessorType.defaultConfigFields
+		};
+
+		it( 'adds validation results when validating', () => {
+			const store = processorsReducer(new Map().set( processorId,processor), validateProcessor(processorId));
+			expect(typeof store.get( processorId ).validationResults ).toEqual('object');
+		});
+
+		it( 'adds message object when validating', () => {
+			const store = processorsReducer(new Map().set( processorId,processor), validateProcessor(processorId));
+			expect(typeof store.get( processorId ).configFields.fromEmail.message ).toEqual('object');
+		});
+
+		it( 'adds an error message object when validating and there is an error', () => {
+			const store = processorsReducer(new Map().set( processorId,processor), validateProcessor(processorId));
+			expect( store.get( processorId ).configFields.fromEmail.message.error ).toEqual(true);
+		});
+
+		it( 'adds the right error message object when validating and there is an error', () => {
+			const store = processorsReducer(new Map().set( processorId,processor), validateProcessor(processorId));
+			expect( store.get( processorId ).configFields.fromEmail.message.message ).toEqual('This value should be a valid email.');
+		});
+
+
+	});
+
 
 
 	describe('Processors collection reducer', () => {

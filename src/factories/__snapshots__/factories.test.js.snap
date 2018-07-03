@@ -1,0 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Processor factories configFieldsFactory sets the defaults 1`] =
+`"{\\"fromName\\":{\\"label\\":\\"From Name\\",\\"type\\":\\"email\\",\\"value\\":\\"Roy\\",\\"id\\":\\"fromName\\",\\"ID\\":\\"fromName\\",\\"validators\\":[]}}"`;

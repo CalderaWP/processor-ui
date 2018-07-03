@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/CalderaProcessors.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport {List} from \"./components/Processors/List\";\nimport {NewProcessor} from \"./components/Processors/NewProcessor\";\n\n/**\n * Encapsulates the entire processor UI\n *\n * @param {Object}props\n * @returns {*}\n * @constructor\n */\nclass CalderaProcessors extends React.PureComponent {\n\t/**\n\t * Render processor UI\n\t * @return {*}\n\t */\n\trender() {\n\t\treturn(\n\t\t\t<div className=\"caldera-forms-processors\">\n\t\t\t\t<List\n\t\t\t\t\tform={this.props.form}\n\t\t\t\t\tprocessors={this.props.processors}\n\t\t\t\t\tonUpdateProcessor={this.props.onUpdateProcessor}\n\t\t\t\t\tonRemoveProcessor={this.props.onRemoveProcessor}\n\t\t\t\t\tgetProcessorFromCollection={this.props.getProcessorFromCollection}\n\t\t\t\t\tgetProcessorTypes={this.props.getProcessorTypes}\n\t\t\t\t/>\n\t\t\t\t<NewProcessor\n\t\t\t\t\tonNewProcessor={this.props.onNewProcessor}\n\t\t\t\t/>\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n/**\n * Prop definitions for CalderaProcessors component\n * @see https://www.npmjs.com/package/prop-types\n *\n * @type {{processors: (shim|*), form: *, onAddProcessor: *, onNewProcessor: *, onRemoveProcessor: *, onUpdateProcessor: *}}\n */\nCalderaProcessors.propTypes = {\n\tprocessors: PropTypes.instanceOf(Map).isRequired,\n\tprocessorTypes: PropTypes.instanceOf(Map).isRequired,\n\tform: PropTypes.object,\n\tonAddProcessor: PropTypes.func.isRequired,\n\tonNewProcessor: PropTypes.func.isRequired,\n\tonRemoveProcessor: PropTypes.func.isRequired,\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tonUpdateProcessorType: PropTypes.func.isRequired,\n\tgetProcessorFromCollection: PropTypes.func.isRequired,\n\tgetProcessorTypes: PropTypes.func.isRequired,\n};\n\n/**\n * Default props for CalderaProcessors component\n *\n * @type {{processors: Map<any, any>, form: {ID: string, name: string, fields: {fld12: {ID: string, label: string, type: string}, fld22: {ID: string, label: string, type: string}, fld3: {ID: string, label: string, type: string}}}}}\n */\nCalderaProcessors.defaultProps = {\n\tprocessors: new Map(),\n\tprocessorTypes: new Map(),\n};\n\nexport default CalderaProcessors;",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport {List} from \"./components/Processors/List\";\nimport {NewProcessor} from \"./components/Processors/NewProcessor\";\n\n/**\n * Encapsulates the entire processor UI\n *\n * @param {Object}props\n * @returns {*}\n * @constructor\n */\nclass CalderaProcessors extends React.PureComponent {\n\t/**\n\t * Render processor UI\n\t * @return {*}\n\t */\n\trender() {\n\t\treturn(\n\t\t\t<div className=\"caldera-forms-processors\">\n\t\t\t\t<List\n\t\t\t\t\tform={this.props.form}\n\t\t\t\t\tprocessors={this.props.processors}\n\t\t\t\t\tonUpdateProcessor={this.props.onUpdateProcessor}\n\t\t\t\t\tonRemoveProcessor={this.props.onRemoveProcessor}\n\t\t\t\t\tgetProcessorFromCollection={this.props.getProcessorFromCollection}\n\t\t\t\t\tgetProcessorTypes={this.props.getProcessorTypes}\n\t\t\t\t/>\n\t\t\t\t<NewProcessor\n\t\t\t\t\tonNewProcessor={this.props.onNewProcessor}\n\t\t\t\t/>\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n/**\n * Prop definitions for CalderaProcessors componentWithState\n * @see https://www.npmjs.com/package/prop-types\n *\n * @type {{processors: (shim|*), form: *, onAddProcessor: *, onNewProcessor: *, onRemoveProcessor: *, onUpdateProcessor: *}}\n */\nCalderaProcessors.propTypes = {\n\tprocessors: PropTypes.instanceOf(Map).isRequired,\n\tprocessorTypes: PropTypes.instanceOf(Map).isRequired,\n\tform: PropTypes.object,\n\tonAddProcessor: PropTypes.func.isRequired,\n\tonNewProcessor: PropTypes.func.isRequired,\n\tonRemoveProcessor: PropTypes.func.isRequired,\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tonUpdateProcessorType: PropTypes.func.isRequired,\n\tgetProcessorFromCollection: PropTypes.func.isRequired,\n\tgetProcessorTypes: PropTypes.func.isRequired,\n};\n\n/**\n * Default props for CalderaProcessors componentWithState\n *\n * @type {{processors: Map<any, any>, form: {ID: string, name: string, fields: {fld12: {ID: string, label: string, type: string}, fld22: {ID: string, label: string, type: string}, fld3: {ID: string, label: string, type: string}}}}}\n */\nCalderaProcessors.defaultProps = {\n\tprocessors: new Map(),\n\tprocessorTypes: new Map(),\n};\n\nexport default CalderaProcessors;",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/CalderaProcessors.js",
     "access": "public",
@@ -647,8 +647,54 @@
   {
     "__docId__": 51,
     "kind": "file",
+    "name": "src/CalderaProcessorsUI.js",
+    "content": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport CalderaProcessorsWithState from './CalderaProcessorsWithState';\nimport { Provider } from 'react-redux';\nimport {processorsStore} from './state/processorsStore';\nimport {validationSubscriber} from \"./state/validationSubscriber\";\n\n/**\n * Manages a single instance of the Caldera Processor UI with state and validation.\n *\n * @param {String} elementId ID of element UI gets mounted on.\n *\n * @constructor\n */\nexport default function CalderaProcessorsUI(elementId){\n\tlet validationSubscriptionUnsubscribe = null;\n\t/**\n\t * Get the processor store\n\t *\n\t * @return {Object}\n\t */\n\tthis.getProcessorStore =() => {\n\t\treturn processorsStore;\n\t};\n\n\t/**\n\t * Add subscriber to store used for validation\n\t * @return {boolean}\n\t */\n\tthis.subscribeForValidation = () => {\n\t\tvalidationSubscriptionUnsubscribe = processorsStore.subscribe(validationSubscriber);\n\t\treturn 'function' === typeof validationSubscriptionUnsubscribe\n\t\t\t? true\n\t\t\t: false;\n\n\t};\n\n\t/**\n\t * Unsubscribe the validation subscriber\n\t *\n\t * @return {boolean}\n\t */\n\tthis.unSubscribeToProcessorValidation = () => {\n\t\tif( 'function' === typeof  validationSubscriptionUnsubscribe ){\n\t\t\tvalidationSubscriptionUnsubscribe();\n\t\t\tvalidationSubscriptionUnsubscribe = null;\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t};\n\n\t/**\n\t * Creates the processors componentWithState with state setup properly\n\t * @return {*}\n\t */\n\tthis.componentWithState = () => {\n\t\treturn(\n\t\t\t<Provider store={processorsStore}>\n\t\t\t\t<CalderaProcessorsWithState />\n\t\t\t</Provider>\n\t\t);\n\t};\n\n\t/**\n\t * Mounts the component, with state, on the element whose ID was passed in constructor\n\t */\n\tthis.mountOnDOM = () => {\n\t\tthis.subscribeForValidation();\n\t\tReactDOM.render(\n\t\t\tthis.componentWithState(),\n\t\t\tdocument.getElementById(elementId)\n\t\t);\n\t};\n\n}\n\n\n",
+    "static": true,
+    "longname": "/Users/josh/caldera-js/processors/src/CalderaProcessorsUI.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "CalderaProcessorsUI",
+    "memberof": "src/CalderaProcessorsUI.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/CalderaProcessorsUI.js~CalderaProcessorsUI",
+    "access": "public",
+    "export": true,
+    "importPath": "@caldera-labs/processor-ui/src/CalderaProcessorsUI.js",
+    "importStyle": "CalderaProcessorsUI",
+    "description": "Manages a single instance of the Caldera Processor UI with state and validation.",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "elementId",
+        "description": "ID of element UI gets mounted on."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
     "name": "src/CalderaProcessorsWithState.js",
-    "content": "import CalderaProcessors from './CalderaProcessors';\nimport {withSelect,withDispatch} from '@wordpress/data';\nimport {CALDERA_FORMS_PROCESSORS_STORE_SLUG } from \"./state/processorsStore\";\n\n/**\n * Main processors UI container wrapped with Redux(-like) state management\n */\nconst CalderaProcessorsWithState =  withSelect( (select, ownProps ) => {\n\tconst {\n\t\tgetProcessorsCollection,\n\t\tgetProcessorTypes,\n\t\tgetProcessorFromCollection,\n\t} = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);\n\tconst processors = getProcessorsCollection();\n\tconst processorTypes = getProcessorTypes();\n\treturn {\n\t\tgetProcessorFromCollection,\n\t\tprocessors,\n\t\tprocessorTypes,\n\t\tgetProcessorTypes,\n\t\tform: ownProps.form\n\t};\n} )( withDispatch( ( dispatch ) => {\n\tconst {\n\t\taddProcessor,\n\t\tnewProcessor,\n\t\tremoveProcessor,\n\t\tupdateProcessor,\n\t\tsetProcessorType\n\t} = dispatch( CALDERA_FORMS_PROCESSORS_STORE_SLUG );\n\treturn {\n\t\tonAddProcessor(processorConfig) {\n\t\t\taddProcessor( processorConfig );\n\t\t},\n\t\tonNewProcessor(){\n\t\t\tnewProcessor()\n\t\t},\n\t\tonRemoveProcessor(processorId){\n\t\t\tremoveProcessor(processorId);\n\t\t},\n\t\tonUpdateProcessor(processor){\n\t\t\tupdateProcessor(processor);\n\t\t},\n\t\tonUpdateProcessorType(processorType, processorTypeIdentifier){\n\t\t\tsetProcessorType(processorType, processorTypeIdentifier)\n\t\t}\n\t};\n} )( CalderaProcessors ) );\n\nexport default CalderaProcessorsWithState;\n",
+    "content": "import CalderaProcessors from './CalderaProcessors';\nimport {withSelect, withDispatch} from '@wordpress/data';\nimport {processorSelectors} from \"./state/processorSelectors\";\nimport {processorDispatchers} from \"./state/processorDispatchers\";\n\n/**\n * Main processors UI container wrapped with Redux(-like) state management\n */\nconst CalderaProcessorsWithState =\n\twithSelect(processorSelectors)(withDispatch(processorDispatchers)(CalderaProcessors));\n\nexport default CalderaProcessorsWithState;\n",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/CalderaProcessorsWithState.js",
     "access": "public",
@@ -656,7 +702,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 52,
+    "__docId__": 54,
     "kind": "variable",
     "name": "CalderaProcessorsWithState",
     "memberof": "src/CalderaProcessorsWithState.js",
@@ -667,7 +713,7 @@
     "importPath": "@caldera-labs/processor-ui/src/CalderaProcessorsWithState.js",
     "importStyle": "CalderaProcessorsWithState",
     "description": "Main processors UI container wrapped with Redux(-like) state management",
-    "lineNumber": 8,
+    "lineNumber": 9,
     "type": {
       "types": [
         "*"
@@ -675,10 +721,10 @@
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 55,
     "kind": "file",
     "name": "src/components/Processor/Editor.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport * as CalderaComponents from '@caldera-labs/components';\nimport classNames from 'classnames'\nimport {\n\tcheckConfigFieldConditionals,\n\tmapKeysToIdProperty,\n\tobjectToMap,\n\treduceConfigFieldsToValues\n} from \"../../factories/util\";\n\n/**\n * Encapsulates the editor for one processor\n */\nexport class Editor extends React.PureComponent {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\topacity: 1,\n\t\t\thovered: false,\n\t\t};\n\t\tthis.mouseEnter = this.mouseEnter.bind(this);\n\t\tthis.mouseLeave = this.mouseLeave.bind(this);\n\t\tthis.changeType = this.changeType.bind(this);\n\t\tthis.handleChange = this.handleChange.bind(this);\n\t\tthis.configFields = this.configFields.bind(this);\n\t\tthis.findFieldValues = this.findFieldValues.bind(this);\n\t\tthis.labelAs = this.labelAs.bind(this);\n\n\t}\n\n\t/**\n\t * Handler for the mouse enter event\n\t */\n\tmouseEnter() {\n\t\tthis.setState({hovered: true})\n\t}\n\n\t/**\n\t * Handler for the mouse leave event\n\t */\n\tmouseLeave() {\n\t\tthis.setState({hovered: false})\n\t}\n\n\t/**\n\t * Prepares config fields for CalderaComponents.RenderGroup\n\t *\n\t * @return {Array}\n\t */\n\tconfigFields(){\n\t\tif( Array.isArray( this.props.configFields ) ) {\n\t\t\treturn this.props.configFields;\n\t\t}\n\n\t\tlet fields = [];\n\t\tif ( 'object' === typeof this.props.configFields ) {\n\t\t\tconst configValues = this.findFieldValues();\n\t\t\tObject.keys(this.props.configFields).forEach(configFieldId => {\n\t\t\t\tif( checkConfigFieldConditionals(this.props.configFields[configFieldId],configValues)){\n\t\t\t\t\tfields[configFieldId] = this.props.configFields[configFieldId];\n\t\t\t\t\tfields[configFieldId].onValueChange = (newValue) => {\n\t\t\t\t\t\tthis.handleChange(configFieldId, newValue);\n\t\t\t\t\t};\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\n\t\treturn fields;\n\t}\n\n\t/**\n\t * Find field values of this processor\n\t *\n\t * @return {*}\n\t */\n\tfindFieldValues() {\n\t\treturn reduceConfigFieldsToValues(\n\t\t\tmapKeysToIdProperty(\n\t\t\t\tobjectToMap(\n\t\t\t\t\tthis.props.configFields\n\t\t\t\t)\n\t\t\t)\n\t\t);\n\n\t}\n\t/**\n\t * Updates the processor config fields and dispatches the change handler\n\t *\n\t * @param {String} configFieldId Id of configuration field to update.\n\t * @param {String|Array|Number} newValue The new value\n\t */\n\thandleChange(configFieldId,newValue){\n\t\tif( 'object' === typeof  newValue){\n\t\t\tnewValue = newValue.target.value;\n\t\t}\n\t\tlet configFields = this.props.configFields;\n\t\tconfigFields[configFieldId] = {\n\t\t\t...configFields[configFieldId],\n\t\t\tvalue:newValue\n\t\t};\n\t\tthis.props.onUpdateProcessor({\n\t\t\tID: this.props.ID,\n\t\t\ttype: this.props.type,\n\t\t\tlabel: this.props.label,\n\t\t\tconfigFields\n\t\t});\n\t}\n\n\t/**\n\t * Dispatch a change in processor type\n\t *\n\t * @param {*} event\n\t */\n\tchangeType(event){\n\t\tthis.props.onUpdateProcessor({\n\t\t\tID: this.props.ID,\n\t\t\tlabel: this.props.label,\n\t\t\ttype: event.target.value,\n\t\t\tconfigFields: this.props.configFields\n\t\t});\n\t}\n\n\t/**\n\t * Find the label to show for a processor\n\t * @return {string}\n\t */\n\tlabelAs(){\n\t\treturn this.props.label\n\t\t\t? this.props.label\n\t\t\t: this.props.type\n\t\t\t\t? `${this.props.type} - ${this.props.ID}`\n\t\t\t\t: this.props.ID;\n\t}\n\n\t/**\n\t * Render editor for one component\n\t *\n\t * @return {*}\n\t */\n\trender() {\n\t\tlet removeStyle = {\n\t\t\t//opacity: 0.1\n\t\t\topacity: 1\n\t\t};\n\t\tif ( this.state.hovered){\n\t\t\tremoveStyle.opacity = 1\n\t\t}\n\n\t\treturn (\n\t\t\t<div\n\t\t\t\tclassName={ classNames(this.props.className, {\n\t\t\t\t\t\t'processor-has-type' : 'string' === typeof this.props.type,\n\t\t\t\t\t\t'caldera-forms-processor' : true,\n\t\t\t\t\t\t'not-opened': !this.props.isOpen,\n\t\t\t\t\t\t'is-opened': this.props.isOpen\n\t\t\t\t\t})\n\t\t\t\t}\n\t\t\t\t//onMouseEnter={this.mouseEnter}\n\t\t\t\t//onMouseLeave={this.mouseLeave}\n\t\t\t>\n\t\t\t\t<div className={'processor-label'}>{this.labelAs()}</div>\n\t\t\t\t<div>\n\t\t\t\t\tType: <span className={'processor-type'}>{this.props.type}</span>\n\t\t\t\t</div>\n\t\t\t\t{this.props.type &&\n\t\t\t\t\t<div\n\t\t\t\t\t\tclassName={'processor-editor'}\n\t\t\t\t\t>\n\t\t\t\t\t\t<CalderaComponents.RenderGroup\n\t\t\t\t\t\t\tclassName={'caldera-forms-processor-config'}\n\t\t\t\t\t\t\tconfigFields={this.configFields()}\n\t\t\t\t\t\t/>\n\t\t\t\t\t</div>\n\t\t\t\t}\n\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n/**\n * Prop definitions for Editor Property\n * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}\n */\nEditor.propTypes = {\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tform: PropTypes.object,\n\tconfigFields: PropTypes.oneOfType(\n\t\t[\n\t\t\tPropTypes.array,\n\t\t\tPropTypes.object\n\t\t]\n\t),\n\tisOpen: PropTypes.bool,\n\tID: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tlabel: PropTypes.string,\n};\n\nEditor.defaultProps = {\n\tisOpen: false,\n\tconfigFields: {}\n};",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport * as CalderaComponents from '@caldera-labs/components';\nimport classNames from 'classnames'\nimport {\n\tcheckConfigFieldConditionals,\n\tmapKeysToIdProperty,\n\tobjectToMap,\n\treduceConfigFieldsToValues\n} from \"../../factories/util\";\n\n/**\n * Encapsulates the editor for one processor\n */\nexport class Editor extends React.PureComponent {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\topacity: 1,\n\t\t\thovered: false,\n\t\t};\n\t\tthis.mouseEnter = this.mouseEnter.bind(this);\n\t\tthis.mouseLeave = this.mouseLeave.bind(this);\n\t\tthis.changeType = this.changeType.bind(this);\n\t\tthis.handleChange = this.handleChange.bind(this);\n\t\tthis.configFields = this.configFields.bind(this);\n\t\tthis.findFieldValues = this.findFieldValues.bind(this);\n\t\tthis.labelAs = this.labelAs.bind(this);\n\n\t}\n\n\t/**\n\t * Handler for the mouse enter event\n\t */\n\tmouseEnter() {\n\t\tthis.setState({hovered: true})\n\t}\n\n\t/**\n\t * Handler for the mouse leave event\n\t */\n\tmouseLeave() {\n\t\tthis.setState({hovered: false})\n\t}\n\n\t/**\n\t * Prepares config fields for CalderaComponents.RenderGroup\n\t *\n\t * @return {Array}\n\t */\n\tconfigFields(){\n\t\tif( Array.isArray( this.props.configFields ) ) {\n\t\t\treturn this.props.configFields;\n\t\t}\n\n\t\tlet fields = [];\n\t\tif ( 'object' === typeof this.props.configFields ) {\n\t\t\tconst configValues = this.findFieldValues();\n\t\t\tObject.keys(this.props.configFields).forEach(configFieldId => {\n\t\t\t\tif( checkConfigFieldConditionals(this.props.configFields[configFieldId],configValues)){\n\t\t\t\t\tfields[configFieldId] = this.props.configFields[configFieldId];\n\t\t\t\t\tfields[configFieldId].onValueChange = (newValue) => {\n\t\t\t\t\t\tthis.handleChange(configFieldId, newValue);\n\t\t\t\t\t};\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\n\t\treturn fields;\n\t}\n\n\t/**\n\t * Find field values of this processor\n\t *\n\t * @return {*}\n\t */\n\tfindFieldValues() {\n\t\treturn reduceConfigFieldsToValues(\n\t\t\tmapKeysToIdProperty(\n\t\t\t\tobjectToMap(\n\t\t\t\t\tthis.props.configFields\n\t\t\t\t)\n\t\t\t)\n\t\t);\n\n\t}\n\t/**\n\t * Updates the processor config fields and dispatches the change handler\n\t *\n\t * @param {String} configFieldId Id of configuration field to update.\n\t * @param {String|Array|Number} newValue The new value\n\t */\n\thandleChange(configFieldId,newValue){\n\t\tif( 'object' === typeof  newValue){\n\t\t\tnewValue = newValue.target.value;\n\t\t}\n\t\tlet configFields = this.props.configFields;\n\t\tconfigFields[configFieldId] = {\n\t\t\t...configFields[configFieldId],\n\t\t\tvalue:newValue\n\t\t};\n\t\tthis.props.onUpdateProcessor({\n\t\t\tID: this.props.ID,\n\t\t\ttype: this.props.type,\n\t\t\tlabel: this.props.label,\n\t\t\tconfigFields\n\t\t});\n\t}\n\n\t/**\n\t * Dispatch a change in processor type\n\t *\n\t * @param {*} event\n\t */\n\tchangeType(event){\n\t\tthis.props.onUpdateProcessor({\n\t\t\tID: this.props.ID,\n\t\t\tlabel: this.props.label,\n\t\t\ttype: event.target.value,\n\t\t\tconfigFields: this.props.configFields\n\t\t});\n\t}\n\n\t/**\n\t * Find the label to show for a processor\n\t * @return {string}\n\t */\n\tlabelAs(){\n\t\treturn this.props.label\n\t\t\t? this.props.label\n\t\t\t: this.props.type\n\t\t\t\t? `${this.props.type} - ${this.props.ID}`\n\t\t\t\t: this.props.ID;\n\t}\n\n\t/**\n\t * Render editor for one componentWithState\n\t *\n\t * @return {*}\n\t */\n\trender() {\n\t\tlet removeStyle = {\n\t\t\t//opacity: 0.1\n\t\t\topacity: 1\n\t\t};\n\t\tif ( this.state.hovered){\n\t\t\tremoveStyle.opacity = 1\n\t\t}\n\n\t\treturn (\n\t\t\t<div\n\t\t\t\tclassName={ classNames(this.props.className, {\n\t\t\t\t\t\t'processor-has-type' : 'string' === typeof this.props.type,\n\t\t\t\t\t\t'caldera-forms-processor' : true,\n\t\t\t\t\t\t'not-opened': !this.props.isOpen,\n\t\t\t\t\t\t'is-opened': this.props.isOpen\n\t\t\t\t\t})\n\t\t\t\t}\n\t\t\t\t//onMouseEnter={this.mouseEnter}\n\t\t\t\t//onMouseLeave={this.mouseLeave}\n\t\t\t>\n\t\t\t\t<div className={'processor-label'}>{this.labelAs()}</div>\n\t\t\t\t<div>\n\t\t\t\t\tType: <span className={'processor-type'}>{this.props.type}</span>\n\t\t\t\t</div>\n\t\t\t\t{this.props.type &&\n\t\t\t\t\t<div\n\t\t\t\t\t\tclassName={'processor-editor'}\n\t\t\t\t\t>\n\t\t\t\t\t\t<CalderaComponents.RenderGroup\n\t\t\t\t\t\t\tclassName={'caldera-forms-processor-config'}\n\t\t\t\t\t\t\tconfigFields={this.configFields()}\n\t\t\t\t\t\t/>\n\t\t\t\t\t</div>\n\t\t\t\t}\n\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n/**\n * Prop definitions for Editor Property\n * @type {{processor: *, onUpdateProcessor: *, form: *, configFields: shim}}\n */\nEditor.propTypes = {\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tform: PropTypes.object,\n\tconfigFields: PropTypes.oneOfType(\n\t\t[\n\t\t\tPropTypes.array,\n\t\t\tPropTypes.object\n\t\t]\n\t),\n\tisOpen: PropTypes.bool,\n\tID: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tlabel: PropTypes.string,\n};\n\nEditor.defaultProps = {\n\tisOpen: false,\n\tconfigFields: {}\n};",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/components/Processor/Editor.js",
     "access": "public",
@@ -686,7 +732,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 54,
+    "__docId__": 56,
     "kind": "class",
     "name": "Editor",
     "memberof": "src/components/Processor/Editor.js",
@@ -704,7 +750,7 @@
     ]
   },
   {
-    "__docId__": 55,
+    "__docId__": 57,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -718,7 +764,7 @@
     "undocument": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 58,
     "kind": "member",
     "name": "state",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -735,7 +781,7 @@
     }
   },
   {
-    "__docId__": 64,
+    "__docId__": 66,
     "kind": "method",
     "name": "mouseEnter",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -750,7 +796,7 @@
     "return": null
   },
   {
-    "__docId__": 65,
+    "__docId__": 67,
     "kind": "method",
     "name": "mouseLeave",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -765,7 +811,7 @@
     "return": null
   },
   {
-    "__docId__": 66,
+    "__docId__": 68,
     "kind": "method",
     "name": "configFields",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -787,7 +833,7 @@
     "params": []
   },
   {
-    "__docId__": 67,
+    "__docId__": 69,
     "kind": "method",
     "name": "findFieldValues",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -809,7 +855,7 @@
     "params": []
   },
   {
-    "__docId__": 68,
+    "__docId__": 70,
     "kind": "method",
     "name": "handleChange",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -847,7 +893,7 @@
     "return": null
   },
   {
-    "__docId__": 69,
+    "__docId__": 71,
     "kind": "method",
     "name": "changeType",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -873,7 +919,7 @@
     "return": null
   },
   {
-    "__docId__": 70,
+    "__docId__": 72,
     "kind": "method",
     "name": "labelAs",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -895,7 +941,7 @@
     "params": []
   },
   {
-    "__docId__": 71,
+    "__docId__": 73,
     "kind": "method",
     "name": "render",
     "memberof": "src/components/Processor/Editor.js~Editor",
@@ -904,7 +950,7 @@
     "static": false,
     "longname": "src/components/Processor/Editor.js~Editor#render",
     "access": "public",
-    "description": "Render editor for one component",
+    "description": "Render editor for one componentWithState",
     "lineNumber": 141,
     "return": {
       "nullable": null,
@@ -917,10 +963,10 @@
     "params": []
   },
   {
-    "__docId__": 72,
+    "__docId__": 74,
     "kind": "file",
     "name": "src/components/Processor/OpenEditorButton.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n/**\n * Displays button to open or close processor editor\n *\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport const OpenEditorButton = (props) => {\n\treturn (\n\n\t\t\t<button\n\t\t\t\tstyle={props.style}\n\t\t\t\tclassName={props.className}\n\t\t\t\tonClick={props.onClick}\n\t\t\t>\n\t\t\t\t{!props.isOpen &&\n\t\t\t\t\t<span>{props.labelToOpen}</span>\n\t\t\t\t}\n\t\t\t\t{props.isOpen &&\n\t\t\t\t\t<span>{props.labelToClose}</span>\n\t\t\t\t}\n\t\t\t</button>\n\n\t)\n\n};\n\n/**\n * Props requirements for OpenEditorButton component\n *\n * @type {{isOpen: *, labelToOpen: shim, labelToClose: shim, onClick: *}}\n */\nOpenEditorButton.propTypes = {\n\tisOpen: PropTypes.bool.isRequired,\n\tlabelToOpen: PropTypes.string,\n\tlabelToClose: PropTypes.string,\n\tonClick: PropTypes.func.isRequired,\n};\n\n/**\n * Default props for OpenEditorButton\n *\n * @type {{labelToOpen: string, labelToClose: string}}\n */\nOpenEditorButton.defaultProps = {\n\tlabelToOpen: 'Edit Settings',\n\tlabelToClose: 'Close Editor',\n};\n",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n/**\n * Displays button to open or close processor editor\n *\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport const OpenEditorButton = (props) => {\n\treturn (\n\n\t\t\t<button\n\t\t\t\tstyle={props.style}\n\t\t\t\tclassName={props.className}\n\t\t\t\tonClick={props.onClick}\n\t\t\t>\n\t\t\t\t{!props.isOpen &&\n\t\t\t\t\t<span>{props.labelToOpen}</span>\n\t\t\t\t}\n\t\t\t\t{props.isOpen &&\n\t\t\t\t\t<span>{props.labelToClose}</span>\n\t\t\t\t}\n\t\t\t</button>\n\n\t)\n\n};\n\n/**\n * Props requirements for OpenEditorButton componentWithState\n *\n * @type {{isOpen: *, labelToOpen: shim, labelToClose: shim, onClick: *}}\n */\nOpenEditorButton.propTypes = {\n\tisOpen: PropTypes.bool.isRequired,\n\tlabelToOpen: PropTypes.string,\n\tlabelToClose: PropTypes.string,\n\tonClick: PropTypes.func.isRequired,\n};\n\n/**\n * Default props for OpenEditorButton\n *\n * @type {{labelToOpen: string, labelToClose: string}}\n */\nOpenEditorButton.defaultProps = {\n\tlabelToOpen: 'Edit Settings',\n\tlabelToClose: 'Close Editor',\n};\n",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/components/Processor/OpenEditorButton.js",
     "access": "public",
@@ -928,7 +974,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 73,
+    "__docId__": 75,
     "kind": "function",
     "name": "OpenEditorButton",
     "memberof": "src/components/Processor/OpenEditorButton.js",
@@ -974,10 +1020,10 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 76,
     "kind": "file",
     "name": "src/components/Processor/ProcessorLabel.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport classNames from 'classnames'\n\n/**\n * Encapsulates displaying the label of a processor\n */\nexport class ProcessorLabel extends React.PureComponent {\n\t/**\n\t * Create new processor label component\n\t *\n\t * @param {Object} props\n\t */\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.labelAs = this.labelAs.bind(this);\n\t}\n\t/**\n\t * Find the label to show for a processor\n\t * @return {string}\n\t */\n\tlabelAs(){\n\t\treturn this.props.label\n\t\t\t? this.props.label\n\t\t\t: this.props.type\n\t\t\t\t? `${this.props.type} - ${this.props.ID}`\n\t\t\t\t: this.props.ID;\n\t}\n\n\t/**\n\t * Redner the label of a processor\n\t * @return {*}\n\t */\n\trender() {\n\t\treturn(\n\t\t\t<div\n\t\t\t\tclassName={ classNames(this.props.className, {\n\n\t\t\t\t\t})\n\t\t\t\t}\n\n\t\t\t>\n\t\t\t\t<div className={'processor-label'}>{this.labelAs()}</div>\n\t\t\t\t<div>\n\t\t\t\t\tType: <span className={'processor-type'}>{this.props.type}</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n/**\n * Prop definitions for ProcessorLabel Property\n * @type {{processor: *, onUpdateProcessor: *, form: *, prepareConfigFields: shim}}\n *\n * @type {{ID: *, type: shim, label: shim}}\n */\nProcessorLabel.propTypes = {\n\tID: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tlabel: PropTypes.string,\n\n};\n\n;",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport classNames from 'classnames'\n\n/**\n * Encapsulates displaying the label of a processor\n */\nexport class ProcessorLabel extends React.PureComponent {\n\t/**\n\t * Create new processor label componentWithState\n\t *\n\t * @param {Object} props\n\t */\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.labelAs = this.labelAs.bind(this);\n\t}\n\t/**\n\t * Find the label to show for a processor\n\t * @return {string}\n\t */\n\tlabelAs(){\n\t\treturn this.props.label\n\t\t\t? this.props.label\n\t\t\t: this.props.type\n\t\t\t\t? `${this.props.type} - ${this.props.ID}`\n\t\t\t\t: this.props.ID;\n\t}\n\n\t/**\n\t * Redner the label of a processor\n\t * @return {*}\n\t */\n\trender() {\n\t\treturn(\n\t\t\t<div\n\t\t\t\tclassName={ classNames(this.props.className, {\n\n\t\t\t\t\t})\n\t\t\t\t}\n\n\t\t\t>\n\t\t\t\t<div className={'processor-label'}>{this.labelAs()}</div>\n\t\t\t\t<div>\n\t\t\t\t\tType: <span className={'processor-type'}>{this.props.type}</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n/**\n * Prop definitions for ProcessorLabel Property\n * @type {{processor: *, onUpdateProcessor: *, form: *, prepareConfigFields: shim}}\n *\n * @type {{ID: *, type: shim, label: shim}}\n */\nProcessorLabel.propTypes = {\n\tID: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tlabel: PropTypes.string,\n\n};\n\n;",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/components/Processor/ProcessorLabel.js",
     "access": "public",
@@ -985,7 +1031,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 75,
+    "__docId__": 77,
     "kind": "class",
     "name": "ProcessorLabel",
     "memberof": "src/components/Processor/ProcessorLabel.js",
@@ -1003,7 +1049,7 @@
     ]
   },
   {
-    "__docId__": 76,
+    "__docId__": 78,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/components/Processor/ProcessorLabel.js~ProcessorLabel",
@@ -1012,7 +1058,7 @@
     "static": false,
     "longname": "src/components/Processor/ProcessorLabel.js~ProcessorLabel#constructor",
     "access": "public",
-    "description": "Create new processor label component",
+    "description": "Create new processor label componentWithState",
     "lineNumber": 14,
     "params": [
       {
@@ -1028,7 +1074,7 @@
     ]
   },
   {
-    "__docId__": 78,
+    "__docId__": 80,
     "kind": "method",
     "name": "labelAs",
     "memberof": "src/components/Processor/ProcessorLabel.js~ProcessorLabel",
@@ -1050,7 +1096,7 @@
     "params": []
   },
   {
-    "__docId__": 79,
+    "__docId__": 81,
     "kind": "method",
     "name": "render",
     "memberof": "src/components/Processor/ProcessorLabel.js~ProcessorLabel",
@@ -1072,10 +1118,10 @@
     "params": []
   },
   {
-    "__docId__": 80,
+    "__docId__": 82,
     "kind": "file",
     "name": "src/components/Processor/RemoveProcessorButton.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\n/**\n * Displays button to open or close processor editor\n *\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport class  RemoveProcessorButton extends React.PureComponent {\n\n\t/**\n\t * Constructor for RemoveProcessorButton\n\t *\n\t * @param {object} props\n\t */\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\tmessage: props.label,\n\t\t\tinConfirm: false\n\t\t};\n\t\tthis.handleClick = this.handleClick.bind(this);\n\t}\n\n\t/**\n\t * Handle button clicks\n\t *\n\t * On first click, change to confirm message,\n\t * On second click, call onClick prop\n\t */\n\thandleClick(){\n\t\tif (false === this.state.inConfirm) {\n\t\t\tthis.setState({\n\t\t\t\tmessage: this.props.labelToConfirm,\n\t\t\t\tinConfirm:true\n\t\t\t})\n\t\t} else {\n\t\t\tthis.props.onClick();\n\t\t}\n\t}\n\n\t/**\n\t * Render the RemoveProcessorButton component\n\t * @returns {*}\n\t */\n\trender(){\n\t\treturn (\n\n\t\t\t<button\n\t\t\t\tstyle={this.props.style}\n\t\t\t\tclassName={this.props.className}\n\t\t\t\tonClick={this.handleClick}\n\t\t\t>\n\t\t\t\t<span>{this.state.message}</span>\n\t\t\t</button>\n\n\t\t)\n\t}\n\n\n};\n\n/**\n * Props requirements for RemoveProcessorButton component\n *\n *\n * @type {{label: shim, labelToConfirm: shim, onClick: *}}\n */\nRemoveProcessorButton.propTypes = {\n\tlabel: PropTypes.string,\n\tlabelToConfirm: PropTypes.string,\n\tonClick: PropTypes.func.isRequired,\n};\n\n/**\n * Default props for RemoveProcessorButton\n *\n * @type {{labelToOpen: string, labelToConfirm: string}}\n */\nRemoveProcessorButton.defaultProps = {\n\tlabel: 'Remove Processor',\n\tlabelToConfirm: 'Are you sure?',\n};\n",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\n/**\n * Displays button to open or close processor editor\n *\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport class  RemoveProcessorButton extends React.PureComponent {\n\n\t/**\n\t * Constructor for RemoveProcessorButton\n\t *\n\t * @param {object} props\n\t */\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\tmessage: props.label,\n\t\t\tinConfirm: false\n\t\t};\n\t\tthis.handleClick = this.handleClick.bind(this);\n\t}\n\n\t/**\n\t * Handle button clicks\n\t *\n\t * On first click, change to confirm message,\n\t * On second click, call onClick prop\n\t */\n\thandleClick(){\n\t\tif (false === this.state.inConfirm) {\n\t\t\tthis.setState({\n\t\t\t\tmessage: this.props.labelToConfirm,\n\t\t\t\tinConfirm:true\n\t\t\t})\n\t\t} else {\n\t\t\tthis.props.onClick();\n\t\t}\n\t}\n\n\t/**\n\t * Render the RemoveProcessorButton componentWithState\n\t * @returns {*}\n\t */\n\trender(){\n\t\treturn (\n\n\t\t\t<button\n\t\t\t\tstyle={this.props.style}\n\t\t\t\tclassName={this.props.className}\n\t\t\t\tonClick={this.handleClick}\n\t\t\t>\n\t\t\t\t<span>{this.state.message}</span>\n\t\t\t</button>\n\n\t\t)\n\t}\n\n\n};\n\n/**\n * Props requirements for RemoveProcessorButton componentWithState\n *\n *\n * @type {{label: shim, labelToConfirm: shim, onClick: *}}\n */\nRemoveProcessorButton.propTypes = {\n\tlabel: PropTypes.string,\n\tlabelToConfirm: PropTypes.string,\n\tonClick: PropTypes.func.isRequired,\n};\n\n/**\n * Default props for RemoveProcessorButton\n *\n * @type {{labelToOpen: string, labelToConfirm: string}}\n */\nRemoveProcessorButton.defaultProps = {\n\tlabel: 'Remove Processor',\n\tlabelToConfirm: 'Are you sure?',\n};\n",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/components/Processor/RemoveProcessorButton.js",
     "access": "public",
@@ -1083,7 +1129,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 81,
+    "__docId__": 83,
     "kind": "class",
     "name": "RemoveProcessorButton",
     "memberof": "src/components/Processor/RemoveProcessorButton.js",
@@ -1131,7 +1177,7 @@
     ]
   },
   {
-    "__docId__": 82,
+    "__docId__": 84,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton",
@@ -1156,7 +1202,7 @@
     ]
   },
   {
-    "__docId__": 83,
+    "__docId__": 85,
     "kind": "member",
     "name": "state",
     "memberof": "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton",
@@ -1173,7 +1219,7 @@
     }
   },
   {
-    "__docId__": 85,
+    "__docId__": 87,
     "kind": "method",
     "name": "handleClick",
     "memberof": "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton",
@@ -1188,7 +1234,7 @@
     "return": null
   },
   {
-    "__docId__": 86,
+    "__docId__": 88,
     "kind": "method",
     "name": "render",
     "memberof": "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton",
@@ -1197,7 +1243,7 @@
     "static": false,
     "longname": "src/components/Processor/RemoveProcessorButton.js~RemoveProcessorButton#render",
     "access": "public",
-    "description": "Render the RemoveProcessorButton component",
+    "description": "Render the RemoveProcessorButton componentWithState",
     "lineNumber": 48,
     "unknown": [
       {
@@ -1216,10 +1262,10 @@
     "params": []
   },
   {
-    "__docId__": 87,
+    "__docId__": 89,
     "kind": "file",
     "name": "src/components/Processor/TypeChooser.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nimport {processorTypesMap} from \"../../factories/processorFactory\";\n\n/**\n * Encapsulates the UI for choosing the type of processor a processor is or will be.\n */\nexport class TypeChooser extends React.PureComponent {\n\t/**\n\t * Create a new TypeChooser component\n\t *\n\t * @param {object} props\n\t */\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.changeType = this.changeType.bind(this);\n\t\tthis.getProcessorTypes = this.getProcessorTypes.bind(this);\n\n\n\t}\n\n\t/**\n\t * Dispatch a change in processor type\n\t *\n\t * @param {*} event\n\t */\n\tchangeType(event){\n\t\tthis.props.onUpdateProcessor({\n\t\t\tID: this.props.ID,\n\t\t\tlabel: this.props.label,\n\t\t\ttype: event.target.value,\n\t\t\tconfigFields: {}\n\t\t});\n\t}\n\n\t/**\n\t * Get the processor type options\n\t */\n\tgetProcessorTypes(){\n\t\tif( 'function' === typeof this.props.getProcessorTypes){\n\t\t\treturn this.props.getProcessorTypes();\n\t\t}\n\t\treturn processorTypesMap;\n\t}\n\n\t/**\n\t * Renders the UI for choosing the type of processor a processor is or will be.\n\t *\n\t * @return {*}\n\t */\n\trender() {\n\n\t\treturn (\n\t\t\t<select\n\t\t\t\tclassName={'processor-type-chooser'}\n\t\t\t\tonChange={this.changeType}\n\t\t\t\tvalue={this.props.type}\n\t\t\t>\n\t\t\t\t<option/>\n\t\t\t\t{Array.from(this.getProcessorTypes()).map(option => {\n\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\tkey={option[1].TYPE}\n\t\t\t\t\t\t\t\tvalue={option[1].TYPE}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t{option[1].LABEL}\n\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t);\n\t\t\t\t\t}\n\t\t\t\t)}\n\t\t\t</select>\n\t\t)\n\t}\n}\n\n/**\n * Prop definitions for TypeChooser component\n\n * @type {{onUpdateProcessor: *, ID: *, type: shim, label: shim}}\n */\nTypeChooser.propTypes = {\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tID: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tlabel: PropTypes.string,\n\tgetProcessorTypes: PropTypes.func\n};\n\n",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nimport {processorTypesMap} from \"../../factories/processorFactory\";\n\n/**\n * Encapsulates the UI for choosing the type of processor a processor is or will be.\n */\nexport class TypeChooser extends React.PureComponent {\n\t/**\n\t * Create a new TypeChooser componentWithState\n\t *\n\t * @param {object} props\n\t */\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.changeType = this.changeType.bind(this);\n\t\tthis.getProcessorTypes = this.getProcessorTypes.bind(this);\n\n\n\t}\n\n\t/**\n\t * Dispatch a change in processor type\n\t *\n\t * @param {*} event\n\t */\n\tchangeType(event){\n\t\tthis.props.onUpdateProcessor({\n\t\t\tID: this.props.ID,\n\t\t\tlabel: this.props.label,\n\t\t\ttype: event.target.value,\n\t\t\tconfigFields: {}\n\t\t});\n\t}\n\n\t/**\n\t * Get the processor type options\n\t */\n\tgetProcessorTypes(){\n\t\tif( 'function' === typeof this.props.getProcessorTypes){\n\t\t\treturn this.props.getProcessorTypes();\n\t\t}\n\t\treturn processorTypesMap;\n\t}\n\n\t/**\n\t * Renders the UI for choosing the type of processor a processor is or will be.\n\t *\n\t * @return {*}\n\t */\n\trender() {\n\n\t\treturn (\n\t\t\t<select\n\t\t\t\tclassName={'processor-type-chooser'}\n\t\t\t\tonChange={this.changeType}\n\t\t\t\tvalue={this.props.type}\n\t\t\t>\n\t\t\t\t<option/>\n\t\t\t\t{Array.from(this.getProcessorTypes()).map(option => {\n\t\t\t\t\t\treturn (\n\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\tkey={option[1].TYPE}\n\t\t\t\t\t\t\t\tvalue={option[1].TYPE}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t{option[1].LABEL}\n\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t);\n\t\t\t\t\t}\n\t\t\t\t)}\n\t\t\t</select>\n\t\t)\n\t}\n}\n\n/**\n * Prop definitions for TypeChooser componentWithState\n\n * @type {{onUpdateProcessor: *, ID: *, type: shim, label: shim}}\n */\nTypeChooser.propTypes = {\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tID: PropTypes.string.isRequired,\n\ttype: PropTypes.string,\n\tlabel: PropTypes.string,\n\tgetProcessorTypes: PropTypes.func\n};\n\n",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/components/Processor/TypeChooser.js",
     "access": "public",
@@ -1227,7 +1273,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 88,
+    "__docId__": 90,
     "kind": "class",
     "name": "TypeChooser",
     "memberof": "src/components/Processor/TypeChooser.js",
@@ -1245,7 +1291,7 @@
     ]
   },
   {
-    "__docId__": 89,
+    "__docId__": 91,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/components/Processor/TypeChooser.js~TypeChooser",
@@ -1254,7 +1300,7 @@
     "static": false,
     "longname": "src/components/Processor/TypeChooser.js~TypeChooser#constructor",
     "access": "public",
-    "description": "Create a new TypeChooser component",
+    "description": "Create a new TypeChooser componentWithState",
     "lineNumber": 15,
     "params": [
       {
@@ -1270,7 +1316,7 @@
     ]
   },
   {
-    "__docId__": 92,
+    "__docId__": 94,
     "kind": "method",
     "name": "changeType",
     "memberof": "src/components/Processor/TypeChooser.js~TypeChooser",
@@ -1296,7 +1342,7 @@
     "return": null
   },
   {
-    "__docId__": 93,
+    "__docId__": 95,
     "kind": "method",
     "name": "getProcessorTypes",
     "memberof": "src/components/Processor/TypeChooser.js~TypeChooser",
@@ -1315,7 +1361,7 @@
     }
   },
   {
-    "__docId__": 94,
+    "__docId__": 96,
     "kind": "method",
     "name": "render",
     "memberof": "src/components/Processor/TypeChooser.js~TypeChooser",
@@ -1337,10 +1383,10 @@
     "params": []
   },
   {
-    "__docId__": 95,
+    "__docId__": 97,
     "kind": "file",
     "name": "src/components/Processors/List.js",
-    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport {RemoveProcessorButton} from \"../Processor/RemoveProcessorButton\";\nimport {Editor} from \"../Processor/Editor\";\nimport {OpenEditorButton} from \"../Processor/OpenEditorButton\";\nimport {TypeChooser} from \"../Processor/TypeChooser\";\nimport {ProcessorLabel} from \"../Processor/ProcessorLabel\";\nimport {\n\tcheckConfigFieldsConditionals,\n\tmapKeysToIdProperty,\n\tobjectToMap,\n\treduceConfigFieldsToValues\n} from \"../../factories/util\";\n\nconst findFieldValues = (processor) => {\n\treturn reduceConfigFieldsToValues(\n\t\tmapKeysToIdProperty(\n\t\t\tobjectToMap(\n\t\t\t\tprocessor.configFields\n\t\t\t)\n\t\t)\n\t);\n\n};\n\n/**\n * Displays list of processors\n *\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport class List extends React.Component{\n\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\topened: {},\n\t\t\tprocessorFieldValues: new Map(),\n\t\t};\n\t\tthis.onUpdateProcessor = this.onUpdateProcessor.bind(this);\n\n\t}\n\n\n\n\t/**\n\t * When processors is updated, do stuff\n\t *\n\t * @todo animations\n\t * @param {Object} updatedProcessor The processor config that has been updated\n\t */\n\tonUpdateProcessor(updatedProcessor){\n\t\tlet opened = this.state.opened;\n\t\topened[updatedProcessor.ID]=false;\n\t\tthis.setState({\n\t\t\topened\n\t\t});\n\t\tthis.props.onUpdateProcessor(updatedProcessor);\n\t\topened[updatedProcessor.ID]=true;\n\n\t\tthis.setState({\n\t\t\topened,\n\t\t});\n\n\t\tif( this.state.processorFieldValues.has( updatedProcessor.ID)){\n\t\t\tlet previousValues = this.state.processorFieldValues.get( updatedProcessor.ID );\n\t\t\tconst conditionalChecks = checkConfigFieldsConditionals(\n\t\t\t\tupdatedProcessor.configFields,\n\t\t\t\tthis.state.processorFieldValues.get( updatedProcessor.ID )\n\t\t\t);\n\t\t\tObject.keys( updatedProcessor.configFields ).forEach(configFieldId =>{\n\t\t\t\tif( ! conditionalChecks[configFieldId]){\n\t\t\t\t\tupdatedProcessor.configFields[configFieldId].value = previousValues[configFieldId];\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\n\t\tthis.setState({\n\t\t\tprocessorFieldValues: this.state.processorFieldValues.set(\n\t\t\t\tupdatedProcessor.ID,\n\t\t\t\tfindFieldValues(updatedProcessor)\n\t\t\t)\n\t\t});\n\n\t}\n\n\t/**\n\t * Create editor for one processor\n\t *\n\t * Adds the conditional logic to the Editor component\n\t *\n\t * @param {Object} processor\n\t * @param {Boolean} isOpen\n\t * @return {*}\n\t */\n\teditor(processor,isOpen){\n\t\tif( 'object' === typeof  processor\n\t\t\t&& this.props.processors.has(processor.ID ) ){\n\t\t\tconst conditionalChecks = checkConfigFieldsConditionals(\n\t\t\t\tprocessor.configFields,\n\t\t\t\tthis.state.processorFieldValues.get( processor.ID )\n\t\t\t);\n\t\t\tlet configFields = {};\n\t\t\tObject.keys( processor.configFields ).forEach(configFieldId =>{\n\t\t\t\tif( conditionalChecks[configFieldId]){\n\t\t\t\t\tconfigFields[configFieldId]= processor.configFields[configFieldId];\n\t\t\t\t}\n\t\t\t});\n\n\t\t\treturn(\n\t\t\t\t<Editor\n\t\t\t\t\tID={processor.ID}\n\t\t\t\t\ttype={processor.type}\n\t\t\t\t\tlabel={processor.label}\n\t\t\t\t\tconfigFields={configFields}\n\t\t\t\t\tonUpdateProcessor={this.onUpdateProcessor}\n\t\t\t\t\tform={this.props.form}\n\t\t\t\t\tisOpen={isOpen}\n\t\t\t\t\tgetProcessorFromCollection={this.props.getProcessorFromCollection}\n\t\t\t\t/>\n\t\t\t)\n\t\t}\n\n\t}\n\n\n\trender() {\n\t\tconst processors = Array.from( this.props.processors.values() );\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t{processors.map(processor => {\n\t\t\t\t\tlet isOpen = this.state.opened.hasOwnProperty(processor.ID) && true === this.state.opened[processor.ID];\n\t\t\t\t\tconst key = processor.type ? `${processor.type}-${processor.ID}` : processor.ID;\n\t\t\t\t\treturn (\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t\tkey={key}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t{isOpen &&\n\t\t\t\t\t\t\t\t<React.Fragment>{this.editor(processor,isOpen)}</React.Fragment>\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t{!isOpen &&\n\t\t\t\t\t\t\t\t<ProcessorLabel\n\t\t\t\t\t\t\t\t\tID={processor.ID}\n\t\t\t\t\t\t\t\t\tlabel={processor.label}\n\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t{processor.type &&\n\t\t\t\t\t\t\t\t<OpenEditorButton\n\t\t\t\t\t\t\t\t\tisOpen={isOpen}\n\t\t\t\t\t\t\t\t\tonClick={() =>{\n\t\t\t\t\t\t\t\t\t\tlet opened = this.state.opened;\n\t\t\t\t\t\t\t\t\t\tif( ! opened.hasOwnProperty(processor.ID) ){\n\t\t\t\t\t\t\t\t\t\t\topened[processor.ID]=true;\n\t\t\t\t\t\t\t\t\t\t}else{\n\t\t\t\t\t\t\t\t\t\t\topened[processor.ID] = !opened[processor.ID];\n\t\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t\t\tthis.setState({\n\t\t\t\t\t\t\t\t\t\t\topened\n\t\t\t\t\t\t\t\t\t\t})\n\t\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t\t/>\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t{! processor.type &&\n\t\t\t\t\t\t\t\t<TypeChooser\n\t\t\t\t\t\t\t\t\tonUpdateProcessor={this.onUpdateProcessor}\n\t\t\t\t\t\t\t\t\tID={processor.ID}\n\t\t\t\t\t\t\t\t\tgetProcessorTypes={this.props.getProcessorTypes}\n\t\t\t\t\t\t\t\t/>\n\n\t\t\t\t\t\t\t}\n\n\n\t\t\t\t\t\t\t<RemoveProcessorButton\n\t\t\t\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\t\t\t\tthis.props.onRemoveProcessor(processor.ID);\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t);\n\t\t\t\t})}\n\t\t\t</div>\n\t\t)\n\t}\n\n};\n\nList.propTypes = {\n\tform: PropTypes.object,\n\tprocessors: PropTypes.instanceOf(Map).isRequired,\n\tonRemoveProcessor: PropTypes.func.isRequired,\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tgetProcessorFromCollection: PropTypes.func,\n\tgetProcessorTypes: PropTypes.func\n};\n",
+    "content": "import React from 'react';\nimport PropTypes from 'prop-types';\nimport {RemoveProcessorButton} from \"../Processor/RemoveProcessorButton\";\nimport {Editor} from \"../Processor/Editor\";\nimport {OpenEditorButton} from \"../Processor/OpenEditorButton\";\nimport {TypeChooser} from \"../Processor/TypeChooser\";\nimport {ProcessorLabel} from \"../Processor/ProcessorLabel\";\nimport {\n\tcheckConfigFieldsConditionals,\n\tmapKeysToIdProperty,\n\tobjectToMap,\n\treduceConfigFieldsToValues\n} from \"../../factories/util\";\n\nconst findFieldValues = (processor) => {\n\treturn reduceConfigFieldsToValues(\n\t\tmapKeysToIdProperty(\n\t\t\tobjectToMap(\n\t\t\t\tprocessor.configFields\n\t\t\t)\n\t\t)\n\t);\n\n};\n\n/**\n * Displays list of processors\n *\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport class List extends React.Component{\n\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\topened: {},\n\t\t\tprocessorFieldValues: new Map(),\n\t\t};\n\t\tthis.onUpdateProcessor = this.onUpdateProcessor.bind(this);\n\n\t}\n\n\n\n\t/**\n\t * When processors is updated, do stuff\n\t *\n\t * @todo animations\n\t * @param {Object} updatedProcessor The processor config that has been updated\n\t */\n\tonUpdateProcessor(updatedProcessor){\n\t\tlet opened = this.state.opened;\n\t\topened[updatedProcessor.ID]=false;\n\t\tthis.setState({\n\t\t\topened\n\t\t});\n\t\tthis.props.onUpdateProcessor(updatedProcessor);\n\t\topened[updatedProcessor.ID]=true;\n\n\t\tthis.setState({\n\t\t\topened,\n\t\t});\n\n\t\tif( this.state.processorFieldValues.has( updatedProcessor.ID)){\n\t\t\tlet previousValues = this.state.processorFieldValues.get( updatedProcessor.ID );\n\t\t\tconst conditionalChecks = checkConfigFieldsConditionals(\n\t\t\t\tupdatedProcessor.configFields,\n\t\t\t\tthis.state.processorFieldValues.get( updatedProcessor.ID )\n\t\t\t);\n\t\t\tObject.keys( updatedProcessor.configFields ).forEach(configFieldId =>{\n\t\t\t\tif( ! conditionalChecks[configFieldId]){\n\t\t\t\t\tupdatedProcessor.configFields[configFieldId].value = previousValues[configFieldId];\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\n\t\tthis.setState({\n\t\t\tprocessorFieldValues: this.state.processorFieldValues.set(\n\t\t\t\tupdatedProcessor.ID,\n\t\t\t\tfindFieldValues(updatedProcessor)\n\t\t\t)\n\t\t});\n\n\t}\n\n\t/**\n\t * Create editor for one processor\n\t *\n\t * Adds the conditional logic to the Editor componentWithState\n\t *\n\t * @param {Object} processor\n\t * @param {Boolean} isOpen\n\t * @return {*}\n\t */\n\teditor(processor,isOpen){\n\t\tif( 'object' === typeof  processor\n\t\t\t&& this.props.processors.has(processor.ID ) ){\n\t\t\tconst conditionalChecks = checkConfigFieldsConditionals(\n\t\t\t\tprocessor.configFields,\n\t\t\t\tthis.state.processorFieldValues.get( processor.ID )\n\t\t\t);\n\t\t\tlet configFields = {};\n\t\t\tObject.keys( processor.configFields ).forEach(configFieldId =>{\n\t\t\t\tif( conditionalChecks[configFieldId]){\n\t\t\t\t\tconfigFields[configFieldId]= processor.configFields[configFieldId];\n\t\t\t\t}\n\t\t\t});\n\n\t\t\treturn(\n\t\t\t\t<Editor\n\t\t\t\t\tID={processor.ID}\n\t\t\t\t\ttype={processor.type}\n\t\t\t\t\tlabel={processor.label}\n\t\t\t\t\tconfigFields={configFields}\n\t\t\t\t\tonUpdateProcessor={this.onUpdateProcessor}\n\t\t\t\t\tform={this.props.form}\n\t\t\t\t\tisOpen={isOpen}\n\t\t\t\t\tgetProcessorFromCollection={this.props.getProcessorFromCollection}\n\t\t\t\t/>\n\t\t\t)\n\t\t}\n\n\t}\n\n\n\trender() {\n\t\tconst processors = Array.from( this.props.processors.values() );\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t{processors.map(processor => {\n\t\t\t\t\tlet isOpen = this.state.opened.hasOwnProperty(processor.ID) && true === this.state.opened[processor.ID];\n\t\t\t\t\tconst key = processor.type ? `${processor.type}-${processor.ID}` : processor.ID;\n\t\t\t\t\treturn (\n\t\t\t\t\t\t<div\n\t\t\t\t\t\t\tkey={key}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t{isOpen &&\n\t\t\t\t\t\t\t\t<React.Fragment>{this.editor(processor,isOpen)}</React.Fragment>\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t{!isOpen &&\n\t\t\t\t\t\t\t\t<ProcessorLabel\n\t\t\t\t\t\t\t\t\tID={processor.ID}\n\t\t\t\t\t\t\t\t\tlabel={processor.label}\n\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t{processor.type &&\n\t\t\t\t\t\t\t\t<OpenEditorButton\n\t\t\t\t\t\t\t\t\tisOpen={isOpen}\n\t\t\t\t\t\t\t\t\tonClick={() =>{\n\t\t\t\t\t\t\t\t\t\tlet opened = this.state.opened;\n\t\t\t\t\t\t\t\t\t\tif( ! opened.hasOwnProperty(processor.ID) ){\n\t\t\t\t\t\t\t\t\t\t\topened[processor.ID]=true;\n\t\t\t\t\t\t\t\t\t\t}else{\n\t\t\t\t\t\t\t\t\t\t\topened[processor.ID] = !opened[processor.ID];\n\t\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t\t\tthis.setState({\n\t\t\t\t\t\t\t\t\t\t\topened\n\t\t\t\t\t\t\t\t\t\t})\n\t\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t\t/>\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t{! processor.type &&\n\t\t\t\t\t\t\t\t<TypeChooser\n\t\t\t\t\t\t\t\t\tonUpdateProcessor={this.onUpdateProcessor}\n\t\t\t\t\t\t\t\t\tID={processor.ID}\n\t\t\t\t\t\t\t\t\tgetProcessorTypes={this.props.getProcessorTypes}\n\t\t\t\t\t\t\t\t/>\n\n\t\t\t\t\t\t\t}\n\n\n\t\t\t\t\t\t\t<RemoveProcessorButton\n\t\t\t\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\t\t\t\tthis.props.onRemoveProcessor(processor.ID);\n\t\t\t\t\t\t\t\t}}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t);\n\t\t\t\t})}\n\t\t\t</div>\n\t\t)\n\t}\n\n};\n\nList.propTypes = {\n\tform: PropTypes.object,\n\tprocessors: PropTypes.instanceOf(Map).isRequired,\n\tonRemoveProcessor: PropTypes.func.isRequired,\n\tonUpdateProcessor: PropTypes.func.isRequired,\n\tgetProcessorFromCollection: PropTypes.func,\n\tgetProcessorTypes: PropTypes.func\n};\n",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/components/Processors/List.js",
     "access": "public",
@@ -1348,7 +1394,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 96,
+    "__docId__": 98,
     "kind": "function",
     "name": "findFieldValues",
     "memberof": "src/components/Processors/List.js",
@@ -1379,7 +1425,7 @@
     "ignore": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 99,
     "kind": "class",
     "name": "List",
     "memberof": "src/components/Processors/List.js",
@@ -1427,7 +1473,7 @@
     ]
   },
   {
-    "__docId__": 98,
+    "__docId__": 100,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/components/Processors/List.js~List",
@@ -1441,7 +1487,7 @@
     "undocument": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 101,
     "kind": "member",
     "name": "state",
     "memberof": "src/components/Processors/List.js~List",
@@ -1458,7 +1504,7 @@
     }
   },
   {
-    "__docId__": 101,
+    "__docId__": 103,
     "kind": "method",
     "name": "onUpdateProcessor",
     "memberof": "src/components/Processors/List.js~List",
@@ -1487,7 +1533,7 @@
     "return": null
   },
   {
-    "__docId__": 102,
+    "__docId__": 104,
     "kind": "method",
     "name": "editor",
     "memberof": "src/components/Processors/List.js~List",
@@ -1496,7 +1542,7 @@
     "static": false,
     "longname": "src/components/Processors/List.js~List#editor",
     "access": "public",
-    "description": "Create editor for one processor\n\nAdds the conditional logic to the Editor component",
+    "description": "Create editor for one processor\n\nAdds the conditional logic to the Editor componentWithState",
     "lineNumber": 97,
     "params": [
       {
@@ -1530,7 +1576,7 @@
     }
   },
   {
-    "__docId__": 103,
+    "__docId__": 105,
     "kind": "method",
     "name": "render",
     "memberof": "src/components/Processors/List.js~List",
@@ -1550,7 +1596,7 @@
     }
   },
   {
-    "__docId__": 104,
+    "__docId__": 106,
     "kind": "file",
     "name": "src/components/Processors/NewProcessor.js",
     "content": "import React from 'react';\nimport PropTypes from 'prop-types';\n\n/**\n * Button to add new processor with\n * @param {Object} props\n * @returns {*}\n * @constructor\n */\nexport const NewProcessor = (props) => {\n\tfunction handler(event){\n\t\tprops.onNewProcessor(event.target.value);\n\t}\n\n\treturn(\n\t\t<div>\n\t\t\t<button\n\t\t\t\tonClick={handler}\n\t\t\t>\n\t\t\t\t{props.label}\n\t\t\t</button>\n\t\t</div>\n\t)\n};\n\nNewProcessor.propTypes = {\n\tonNewProcessor: PropTypes.func.isRequired,\n\tlabel: PropTypes.string\n};\n\nNewProcessor.defaultProps = {\n\tlabel: 'NewProcessor Processor'\n};",
@@ -1561,7 +1607,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 105,
+    "__docId__": 107,
     "kind": "function",
     "name": "NewProcessor",
     "memberof": "src/components/Processors/NewProcessor.js",
@@ -1607,7 +1653,7 @@
     }
   },
   {
-    "__docId__": 106,
+    "__docId__": 108,
     "kind": "file",
     "name": "src/factories/configFieldFactory.js",
     "content": "\n/**\n * Factory for single processor configs\n *\n * @param {Object} configField Config fields for processor config field.\n * @param {Object} configFieldDefaults Optional. Config field defaults for processor config field.\n * @returns {{}}\n */\nexport const configFieldFactory = (configField, configFieldDefaults = {} ) => {\n\treturn {\n\t\t...configFieldDefaults,\n\t\t...configField,\n\t};\n\n};\n",
@@ -1618,7 +1664,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 107,
+    "__docId__": 109,
     "kind": "function",
     "name": "configFieldFactory",
     "memberof": "src/factories/configFieldFactory.js",
@@ -1670,7 +1716,7 @@
     }
   },
   {
-    "__docId__": 108,
+    "__docId__": 110,
     "kind": "file",
     "name": "src/factories/configFieldsFactory.js",
     "content": "import {configFieldFactory} from './configFieldFactory';\n/**\n * Prepare a collection of config fields\n *\n * Optionally merges with default config fields\n * Optionally sets values from a Map of config values\n *\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n * @param {Object} configFieldsDefaults Optional. Config field defaults for processor. Indexed by config ID.\n * @returns {Object}\n */\nexport const configFieldsFactory = (configFields, configFieldsDefaults = {}  ) => {\n\tObject.keys( configFields ).forEach( configFieldId => {\n\t\tif( configFieldsDefaults.hasOwnProperty(configFieldId)){\n\t\t\tconfigFields[configFieldId] = configFieldFactory(\n\t\t\t\tconfigFields[configFieldId],\n\t\t\t\tconfigFieldsDefaults[configFieldId]\n\t\t\t);\n\n\t\t}\n\t});\n\n\tObject.keys( configFieldsDefaults ).forEach( configDefaultId => {\n\t\tif( ! configFields.hasOwnProperty(configDefaultId)){\n\t\t\tconfigFields[configDefaultId] = configFieldsDefaults[configDefaultId];\n\t\t}\n\t});\n\n\tObject.keys( configFields ).forEach(configFieldId  => {\n\t\tconfigFields[configFieldId].id = configFieldId;\n\t\tconfigFields[configFieldId].ID = configFieldId;\n\t});\n\n\treturn configFields;\n};\n",
@@ -1681,7 +1727,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 109,
+    "__docId__": 111,
     "kind": "function",
     "name": "configFieldsFactory",
     "memberof": "src/factories/configFieldsFactory.js",
@@ -1733,7 +1779,7 @@
     }
   },
   {
-    "__docId__": 110,
+    "__docId__": 112,
     "kind": "file",
     "name": "src/factories/processorFactory.js",
     "content": "import {configFieldsFactory} from './configFieldsFactory';\nimport {processorTypes} from '../processors/processorTypes';\n\n/**\n * Global map of all processor types\n *\n * @todo remove this\n *\n * @type {Map<any, any>}\n */\nexport const processorTypesMap = new Map();\n\nObject.values(processorTypes).forEach( type =>{\n\tprocessorTypesMap.set(type.TYPE, type);\n});\n\n\n/**\n * Get the configuration for a processor\n *\n * This will merge in defaults, and set values from supplied configValues.\n * Does not provide callback functions for updating those values.\n * Those callback functions MUST get added before they are used in the default manner.\n *\n * @param {String} ID\n * @param {String} type\n * @param {Map} processorTypes\n * @param {Object} configFields Config fields for processor. Indexed by config ID.\n */\nexport const processorFactory = ( ID, type, configFields = {}, processorTypes = processorTypesMap ) =>  {\n\tlet processor = {\n\t\tID,\n\t\ttype,\n\t\tconfigFields\n\t};\n\tif( processorTypes.has( type ) ){\n\t\tconst configFieldDefaults =\n\t\t\tprocessorTypes.get( type ).hasOwnProperty( 'defaultConfigFields' )\n\t\t\t\t? processorTypes.get( type ).defaultConfigFields\n\t\t\t\t: {};\n\n\t\tprocessor.configFields = configFieldsFactory(configFields,configFieldDefaults);\n\n\t}\n\treturn processor;\n\n};",
@@ -1744,7 +1790,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 111,
+    "__docId__": 113,
     "kind": "variable",
     "name": "processorTypesMap",
     "memberof": "src/factories/processorFactory.js",
@@ -1769,7 +1815,7 @@
     }
   },
   {
-    "__docId__": 112,
+    "__docId__": 114,
     "kind": "function",
     "name": "processorFactory",
     "memberof": "src/factories/processorFactory.js",
@@ -1832,7 +1878,7 @@
     }
   },
   {
-    "__docId__": 113,
+    "__docId__": 115,
     "kind": "file",
     "name": "src/factories/util.js",
     "content": "import {conditionals} from '@caldera-labs/components';\n/**\n * Finds value property of config field or config field default\n * @param {Object} configField Config field to search for default in\n * @returns {String|Number|Array|null}\n */\nexport const getConfigFieldValue = (configField) => {\n\treturn 'object' === typeof configField && configField.hasOwnProperty('value')\n\t\t? configField.value\n\t\t: null;\n};\n\n/**\n * Finds default property of config field or config field default\n * @param {Object} configField Config field to search for default in\n * @returns {String|Number|Array|null}\n */\nexport const getConfigFieldDefaultValue = (configField) => {\n\treturn 'object' === typeof configField && configField.hasOwnProperty('default')\n\t\t? configField.default\n\t\t: null;\n};\n\n/**\n * Finds value of config field, falling back to default value\n * @param {Object} configField Config field to search for value or defualt in\n * @returns {String|Number|Array|null}\n */\nexport const getConfigFieldValueOrDefault = (configField) => {\n\treturn null !== getConfigFieldValue(configField)\n\t\t? getConfigFieldValue(configField)\n\t\t: null !== getConfigFieldDefaultValue(configField)\n\t\t\t? getConfigFieldDefaultValue(configField)\n\t\t\t: null;\n};\n\n/**\n * Convert an object (should have meaningful indexes) to a map\n * @param {Object} object Object to convert\n * @return {Map<any, any>}\n */\nexport const objectToMap = (object) => {\n\tconst map = new Map();\n\tObject.keys(object).forEach(key => {\n\t\tmap.set(key, object[key]);\n\t});\n\treturn map;\n};\n\n/**\n * Add an ID prop, to all objects of a Map, using map's key.\n * @param {Map} theMap The map to add key as ID property to values of\n */\nexport const mapKeysToIdProperty = (theMap) => {\n\ttheMap\n\t\t.forEach((value, key, map) => {\n\t\t\tif ('object' === typeof  value) {\n\t\t\t\tmap.set(key, {\n\t\t\t\t\t...value,\n\t\t\t\t\tID: key,\n\t\t\t\t\tid: key\n\t\t\t\t});\n\t\t\t}\n\n\t\t});\n\treturn theMap;\n\n};\n\n\n/**\n * Check configField conditionals.\n *\n * Returns false if any conditionals fail.\n * Returns true if no conditionals fail, or there are no conditionals.\n *\n * @param {Object} configField The field to check the conditionals of.\n * @param {Object} fieldValues Optional. Data to pass to conditional rule callbacks\n * @return {boolean}\n */\nexport const checkConfigFieldConditionals = (configField, fieldValues = {}) => {\n\treturn conditionals.checkConfigFieldConditionals(configField,fieldValues);\n};\n\n/**\n * Check conditionals for a collection of configFields\n *\n * Returns false if any conditionals fail.\n * Returns true if no conditionals fail, or there are no conditionals.\n *\n * @param {Array} configFields The fields to check the conditionals of.\n * @param {Object} fieldValues Optional. Data to pass to conditional rules' callbacks\n * @return {boolean}\n */\nexport const checkConfigFieldsConditionals = (configFields, fieldValues = {}) => {\n\treturn conditionals.checkConfigFieldsConditionals(configFields,fieldValues);\n};\n\n/**\n * Get the current values for prepareConfigFields\n *\n * @param configFields\n */\nexport const reduceConfigFieldsToValues = (configFields) => {\n\treturn conditionals.reduceConfigFieldsToValues(configFields);\n\n};\n",
@@ -1843,7 +1889,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 114,
+    "__docId__": 116,
     "kind": "function",
     "name": "getConfigFieldValue",
     "memberof": "src/factories/util.js",
@@ -1888,7 +1934,7 @@
     }
   },
   {
-    "__docId__": 115,
+    "__docId__": 117,
     "kind": "function",
     "name": "getConfigFieldDefaultValue",
     "memberof": "src/factories/util.js",
@@ -1933,7 +1979,7 @@
     }
   },
   {
-    "__docId__": 116,
+    "__docId__": 118,
     "kind": "function",
     "name": "getConfigFieldValueOrDefault",
     "memberof": "src/factories/util.js",
@@ -1978,7 +2024,7 @@
     }
   },
   {
-    "__docId__": 117,
+    "__docId__": 119,
     "kind": "function",
     "name": "objectToMap",
     "memberof": "src/factories/util.js",
@@ -2014,7 +2060,7 @@
     }
   },
   {
-    "__docId__": 118,
+    "__docId__": 120,
     "kind": "function",
     "name": "mapKeysToIdProperty",
     "memberof": "src/factories/util.js",
@@ -2047,7 +2093,7 @@
     }
   },
   {
-    "__docId__": 119,
+    "__docId__": 121,
     "kind": "function",
     "name": "checkConfigFieldConditionals",
     "memberof": "src/factories/util.js",
@@ -2093,7 +2139,7 @@
     }
   },
   {
-    "__docId__": 120,
+    "__docId__": 122,
     "kind": "function",
     "name": "checkConfigFieldsConditionals",
     "memberof": "src/factories/util.js",
@@ -2139,7 +2185,7 @@
     }
   },
   {
-    "__docId__": 121,
+    "__docId__": 123,
     "kind": "function",
     "name": "reduceConfigFieldsToValues",
     "memberof": "src/factories/util.js",
@@ -2172,10 +2218,10 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 124,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport './index.scss';\nimport CalderaProcessorsWithState from './CalderaProcessorsWithState';\nimport { Provider } from 'react-redux';\nimport {processorsStore} from './state/processorsStore';\nReactDOM.render(\n\t<Provider store={processorsStore}>\n\t\t<CalderaProcessorsWithState />\n\t</Provider>,\n\tdocument.getElementById('root')\n);\n\n\n\n",
+    "content": "import CalderaProcessorsUI from './CalderaProcessorsUI';\nconst CalProcessors = new CalderaProcessorsUI('root');\nCalProcessors.mountOnDOM();",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/index.js",
     "access": "public",
@@ -2183,7 +2229,28 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 123,
+    "__docId__": 125,
+    "kind": "variable",
+    "name": "CalProcessors",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~CalProcessors",
+    "access": "public",
+    "export": false,
+    "importPath": "@caldera-labs/processor-ui/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 126,
     "kind": "file",
     "name": "src/module.js",
     "content": "/*eslint no-undef: \"error\"*/\n/*eslint-env node*/\nimport CalderaProcessors from './CalderaProcessors';\nimport CalderaProcessorsWithState from './CalderaProcessorsWithState';\nimport {\n\tprocessorsStore,\n\tCALDERA_FORMS_PROCESSORS_STORE_SLUG\n} from './state/processorsStore';\n\nimport {\n\taddProcessor,\n\tnewProcessor,\n\tremoveProcessor,\n\tsetFormForProcessor,\n\tupdateProcessor,\n\tupdateProcessorValues,\n\tupdateProcessorConfigFields,\n\tsetProcessorType\n} from \"./state/actions\";\n\nexport default  {\n\tCalderaProcessors,\n\tCalderaProcessorsWithState,\n\tprocessorsStore,\n\tCALDERA_FORMS_PROCESSORS_STORE_SLUG,\n\tactions: {\n\t\taddProcessor,\n\t\tnewProcessor,\n\t\tremoveProcessor,\n\t\tsetFormForProcessor,\n\t\tupdateProcessor,\n\t\tupdateProcessorValues,\n\t\tupdateProcessorConfigFields,\n\t\tsetProcessorType\n\t}\n}\n",
@@ -2194,7 +2261,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 124,
+    "__docId__": 127,
     "kind": "file",
     "name": "src/processors/emailDefaultConfigFields.js",
     "content": "/**\n * The identifier for the value for the content type option that represents HTML emails\n *\n * @type {string}\n */\nconst contentTypeHtmlValueIdentifier = 'html';\n/**\n * The default fields for email processors\n *\n * @type {{fromName: {label: string, desc: string, type: string, default: string}, fromEmail: {label: string, desc: string, type: string}, contentType: {label: string, desc: string, type: string, options: *[], default: string}, bodyPadding: {label: string, desc: string, type: string, conditionals: *[]}}}\n */\nexport const emailDefaultConfigFields = {\n\tfromName: {\n\t\t'label': 'From Name',\n\t\t'desc': 'Who the email is from',\n\t\t'type': 'text',\n\t\t'default': 'Roy Sivan'\n\t},\n\tfromEmail: {\n\t\t'label': 'From Email',\n\t\t'desc': 'Who the email is from',\n\t\t'type': 'email',\n\t},\n\tcontentType: {\n\t\t'label': 'Content type',\n\t\t'desc': 'HTML or plain text?',\n\t\t'type': 'select',\n\t\t'options': [\n\t\t\t{\n\t\t\t\tvalue: contentTypeHtmlValueIdentifier,\n\t\t\t\tlabel: 'HTML',\n\t\t\t},\n\t\t\t{\n\t\t\t\tvalue: 'plain',\n\t\t\t\tlabel: 'Plain Text',\n\t\t\t}\n\t\t],\n\t\tdefault: contentTypeHtmlValueIdentifier\n\t},\n\tbodyPadding: {\n\t\t'label': 'Message Body Padding',\n\t\t'desc': 'How much space to add around message body',\n\t\t'type': 'number',\n\t\t'conditionals' : [\n\t\t\t(values) => {\n\t\t\t\treturn contentTypeHtmlValueIdentifier === values.contentType;\n\t\t\t}\n\t\t]\n\t},\n};\n\nObject.keys( emailDefaultConfigFields ).forEach( key => {\n\temailDefaultConfigFields[key].id = key;\n});",
@@ -2205,7 +2272,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 125,
+    "__docId__": 128,
     "kind": "variable",
     "name": "contentTypeHtmlValueIdentifier",
     "memberof": "src/processors/emailDefaultConfigFields.js",
@@ -2228,7 +2295,7 @@
     "ignore": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 129,
     "kind": "variable",
     "name": "emailDefaultConfigFields",
     "memberof": "src/processors/emailDefaultConfigFields.js",
@@ -2250,7 +2317,7 @@
     }
   },
   {
-    "__docId__": 127,
+    "__docId__": 130,
     "kind": "file",
     "name": "src/processors/emailProcessorType.js",
     "content": "import {emailDefaultConfigFields} from './emailDefaultConfigFields';\nexport const EMAIL_PROCESSOR_TYPE = 'caldera-forms/procesor/email';\n\n/**\n * The email processor type\n */\nexport default {\n\tTYPE: EMAIL_PROCESSOR_TYPE,\n\tLABEL: 'Email',\n\tdefaultConfigFields: emailDefaultConfigFields\n};",
@@ -2261,7 +2328,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 128,
+    "__docId__": 131,
     "kind": "variable",
     "name": "EMAIL_PROCESSOR_TYPE",
     "memberof": "src/processors/emailProcessorType.js",
@@ -2281,7 +2348,7 @@
     }
   },
   {
-    "__docId__": 129,
+    "__docId__": 132,
     "kind": "file",
     "name": "src/processors/processorTypes.js",
     "content": "import emailProcessorType from './emailProcessorType';\nimport redirectProcessorType from './redirectProcessorType';\n\n/**\n * The processorTypesMap\n *\n * @type {{emailProcessorType: {slug, defaultConfigFields}, redirectProcessorType: {slug; defaultConfigFields} | {REDIRECT_PROCESSOR_TYPE: string; default}}}\n */\nexport const processorTypes = {\n\temailProcessorType,\n\tredirectProcessorType\n};\n",
@@ -2292,7 +2359,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 130,
+    "__docId__": 133,
     "kind": "variable",
     "name": "processorTypes",
     "memberof": "src/processors/processorTypes.js",
@@ -2314,7 +2381,7 @@
     }
   },
   {
-    "__docId__": 131,
+    "__docId__": 134,
     "kind": "file",
     "name": "src/processors/redirectProcessorType.js",
     "content": "export const REDIRECT_PROCESSOR_TYPE = 'caldera-forms/processor/redirect';\n\n/**\n * The redirect processor type\n */\nexport default {\n\tTYPE: REDIRECT_PROCESSOR_TYPE,\n\tLABEL: 'Redirect After Form Submission',\n\tdefaultConfigFields: {\n\t\turl: {\n\t\t\t'label': 'Redirect Url',\n\t\t\t'desc': 'URL to redirect to',\n\t\t\t'type': 'text',\n\t\t},\n\t}\n};",
@@ -2325,7 +2392,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 132,
+    "__docId__": 135,
     "kind": "variable",
     "name": "REDIRECT_PROCESSOR_TYPE",
     "memberof": "src/processors/redirectProcessorType.js",
@@ -2345,7 +2412,7 @@
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 136,
     "kind": "file",
     "name": "src/state/actions.js",
     "content": "/**\n * Prefix for all actions of the Caldera Forms processors store\n * @type {string}\n */\nconst CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';\n\n\n/**\n * The name of the action to add a processor to collection\n * @type {string}\n */\nexport const ADD_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/ADD_PROCESSOR`;\n\n/**\n * The name of the action to create a new, empty processor and add it to the collection\n * @type {string}\n */\nexport const NEW_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/NEW_PROCESSOR`;\n\n/**\n * The name of the action to remove a processor from the collection\n * @type {string}\n */\nexport const REMOVE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/REMOVE_PROCESSOR`;\n\n/**\n * The name of the action to set the form in the processor collection\n *\n * @type {string}\n */\nexport const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/SET_FORM_FOR_PROCESSOR`;\n/**\n * The name of the action to update the processor in collection.\n *\n * @type {string}\n */\nexport const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR`;\n\n/**\n * The name of the action to update the processor values in the single processor store\n *\n * @type {string}\n */\nexport const UPDATE_PROCESSOR_VALUES = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR_VALUES`;\n\n/**\n * The name of the action to update the processor values in the single processor store\n *\n * @type {string}\n */\nexport const UPDATE_PROCESSOR_CONFIG_FIELDS = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR_CONFIG_FIELDS`;\n\n/**\n * The name of the action to set a processorType definition for a processor type in the processorType reducer\n *\n * @type {string}\n */\nexport const SET_PROCESSOR_TYPE = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/SET_PROCESSOR_TYPE`;\n\n/**\n * Creates an action to add a processor with config to the collection\n *\n * Use for copying processors or presets.\n * To add a new empty processor use newProcessor action creator.\n * @param {Map} processor Processor config\n * @returns {{type: string, processor: *}}\n */\nexport const addProcessor = (processor) => {\n\treturn {\n\t\ttype: ADD_PROCESSOR,\n\t\tprocessor\n\t};\n};\n\n/**\n * Creates an action to create a new, empty processor and add it to the collection\n * @returns {{type: string}}\n */\nexport const newProcessor = () => {\n\treturn {\n\t\ttype: NEW_PROCESSOR,\n\t};\n};\n\n/**\n * Creates an action to remove a processor from the collection\n * @param {String} processorId Id of processor to remove\n * @returns {{type: string, processorId: *}}\n */\nexport const removeProcessor = (processorId) => {\n\treturn {\n\t\ttype: REMOVE_PROCESSOR,\n\t\tprocessorId\n\t};\n};\n\n/**\n * Creates an action to set the form in the single processor store.\n * @param {Object} form\n * @returns {{type: string, form: *}}\n */\nexport const setFormForProcessor = (form) => {\n\treturn {\n\t\ttype: SET_FORM_FOR_PROCESSOR,\n\t\tform\n\t};\n};\n\n/**\n * Creates an action to update the processor in collection.\n * @param {Map} processor Processor config\n * @returns {{type: string, processor: *}}\n */\nexport const updateProcessor = (processor ) => {\n\treturn {\n\t\ttype: UPDATE_PROCESSOR,\n\t\tprocessor\n\t};\n};\n\n/**\n * Creates an action to update the processor values of the single processor store.\n * @param {Map} configValues New config values\n * @returns {{type: string, configValues: *}}\n */\nexport const updateProcessorValues = (configValues ) => {\n\treturn {\n\t\ttype: UPDATE_PROCESSOR_VALUES,\n\t\tconfigValues\n\t};\n};\n\n/**\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n */\nexport const updateProcessorConfigFields = (configFields ) => {\n\treturn {\n\t\ttype: UPDATE_PROCESSOR_CONFIG_FIELDS,\n\t\tconfigFields\n\t};\n};\n\n/**\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n */\nexport const setProcessorType = (processorType, processorTypeIdentifier ) => {\n\treturn{\n\t\ttype: SET_PROCESSOR_TYPE,\n\t\tprocessorType,\n\t\tprocessorTypeIdentifier\n\t};\n};",
@@ -2356,7 +2423,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 134,
+    "__docId__": 137,
     "kind": "variable",
     "name": "CALDERA_FORMS_PROCESSORS_STORE_SLUG",
     "memberof": "src/state/actions.js",
@@ -2379,7 +2446,7 @@
     "ignore": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 138,
     "kind": "variable",
     "name": "ADD_PROCESSOR",
     "memberof": "src/state/actions.js",
@@ -2401,7 +2468,7 @@
     }
   },
   {
-    "__docId__": 136,
+    "__docId__": 139,
     "kind": "variable",
     "name": "NEW_PROCESSOR",
     "memberof": "src/state/actions.js",
@@ -2423,7 +2490,7 @@
     }
   },
   {
-    "__docId__": 137,
+    "__docId__": 140,
     "kind": "variable",
     "name": "REMOVE_PROCESSOR",
     "memberof": "src/state/actions.js",
@@ -2445,7 +2512,7 @@
     }
   },
   {
-    "__docId__": 138,
+    "__docId__": 141,
     "kind": "variable",
     "name": "SET_FORM_FOR_PROCESSOR",
     "memberof": "src/state/actions.js",
@@ -2467,7 +2534,7 @@
     }
   },
   {
-    "__docId__": 139,
+    "__docId__": 142,
     "kind": "variable",
     "name": "UPDATE_PROCESSOR",
     "memberof": "src/state/actions.js",
@@ -2489,7 +2556,7 @@
     }
   },
   {
-    "__docId__": 140,
+    "__docId__": 143,
     "kind": "variable",
     "name": "UPDATE_PROCESSOR_VALUES",
     "memberof": "src/state/actions.js",
@@ -2511,7 +2578,7 @@
     }
   },
   {
-    "__docId__": 141,
+    "__docId__": 144,
     "kind": "variable",
     "name": "UPDATE_PROCESSOR_CONFIG_FIELDS",
     "memberof": "src/state/actions.js",
@@ -2533,7 +2600,7 @@
     }
   },
   {
-    "__docId__": 142,
+    "__docId__": 145,
     "kind": "variable",
     "name": "SET_PROCESSOR_TYPE",
     "memberof": "src/state/actions.js",
@@ -2555,7 +2622,7 @@
     }
   },
   {
-    "__docId__": 143,
+    "__docId__": 146,
     "kind": "function",
     "name": "addProcessor",
     "memberof": "src/state/actions.js",
@@ -2597,7 +2664,7 @@
     }
   },
   {
-    "__docId__": 144,
+    "__docId__": 147,
     "kind": "function",
     "name": "newProcessor",
     "memberof": "src/state/actions.js",
@@ -2628,7 +2695,7 @@
     "params": []
   },
   {
-    "__docId__": 145,
+    "__docId__": 148,
     "kind": "function",
     "name": "removeProcessor",
     "memberof": "src/state/actions.js",
@@ -2670,7 +2737,7 @@
     }
   },
   {
-    "__docId__": 146,
+    "__docId__": 149,
     "kind": "function",
     "name": "setFormForProcessor",
     "memberof": "src/state/actions.js",
@@ -2712,7 +2779,7 @@
     }
   },
   {
-    "__docId__": 147,
+    "__docId__": 150,
     "kind": "function",
     "name": "updateProcessor",
     "memberof": "src/state/actions.js",
@@ -2754,7 +2821,7 @@
     }
   },
   {
-    "__docId__": 148,
+    "__docId__": 151,
     "kind": "function",
     "name": "updateProcessorValues",
     "memberof": "src/state/actions.js",
@@ -2796,7 +2863,7 @@
     }
   },
   {
-    "__docId__": 149,
+    "__docId__": 152,
     "kind": "function",
     "name": "updateProcessorConfigFields",
     "memberof": "src/state/actions.js",
@@ -2832,7 +2899,7 @@
     }
   },
   {
-    "__docId__": 150,
+    "__docId__": 153,
     "kind": "function",
     "name": "setProcessorType",
     "memberof": "src/state/actions.js",
@@ -2878,7 +2945,105 @@
     }
   },
   {
-    "__docId__": 151,
+    "__docId__": 154,
+    "kind": "file",
+    "name": "src/state/processorDispatchers.js",
+    "content": "import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from \"./processorsStore\";\n\nexport const processorDispatchers = ( dispatch ) => {\n\tconst {\n\t\taddProcessor,\n\t\tnewProcessor,\n\t\tremoveProcessor,\n\t\tupdateProcessor,\n\t\tsetProcessorType\n\t} = dispatch( CALDERA_FORMS_PROCESSORS_STORE_SLUG );\n\treturn {\n\t\tonAddProcessor(processorConfig) {\n\t\t\taddProcessor( processorConfig );\n\t\t},\n\t\tonNewProcessor(){\n\t\t\tnewProcessor()\n\t\t},\n\t\tonRemoveProcessor(processorId){\n\t\t\tremoveProcessor(processorId);\n\t\t},\n\t\tonUpdateProcessor(processor){\n\t\t\tupdateProcessor(processor);\n\t\t},\n\t\tonUpdateProcessorType(processorType, processorTypeIdentifier){\n\t\t\tsetProcessorType(processorType, processorTypeIdentifier)\n\t\t}\n\t};\n}",
+    "static": true,
+    "longname": "/Users/josh/caldera-js/processors/src/state/processorDispatchers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 155,
+    "kind": "function",
+    "name": "processorDispatchers",
+    "memberof": "src/state/processorDispatchers.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/state/processorDispatchers.js~processorDispatchers",
+    "access": "public",
+    "export": true,
+    "importPath": "@caldera-labs/processor-ui/src/state/processorDispatchers.js",
+    "importStyle": "{processorDispatchers}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"onAddProcessor\": function, \"onNewProcessor\": function, \"onRemoveProcessor\": function, \"onUpdateProcessor\": function, \"onUpdateProcessorType\": function}"
+      ]
+    }
+  },
+  {
+    "__docId__": 156,
+    "kind": "file",
+    "name": "src/state/processorSelectors.js",
+    "content": "import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from \"./processorsStore\";\n\n/**\n * Processor related selectors wrapped with select from processor store\n * @param select\n * @param ownProps\n * @return {{getProcessorFromCollection: *, processors: *, processorTypes: *, getProcessorTypes: *, form: *}}\n */\nexport const processorSelectors = (select, ownProps ) => {\n\tconst {\n\t\tgetProcessorsCollection,\n\t\tgetProcessorTypes,\n\t\tgetProcessorFromCollection,\n\t} = select(CALDERA_FORMS_PROCESSORS_STORE_SLUG);\n\tconst processors = getProcessorsCollection();\n\tconst processorTypes = getProcessorTypes();\n\treturn {\n\t\tgetProcessorFromCollection,\n\t\tprocessors,\n\t\tprocessorTypes,\n\t\tgetProcessorTypes,\n\t\tform: 'object' === typeof ownProps.form ? ownProps.form : {}\n\t};\n};",
+    "static": true,
+    "longname": "/Users/josh/caldera-js/processors/src/state/processorSelectors.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 157,
+    "kind": "function",
+    "name": "processorSelectors",
+    "memberof": "src/state/processorSelectors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/state/processorSelectors.js~processorSelectors",
+    "access": "public",
+    "export": true,
+    "importPath": "@caldera-labs/processor-ui/src/state/processorSelectors.js",
+    "importStyle": "{processorSelectors}",
+    "description": "Processor related selectors wrapped with select from processor store",
+    "lineNumber": 9,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "select",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ownProps",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{getProcessorFromCollection: *, processors: *, processorTypes: *, getProcessorTypes: *, form: *}"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 158,
     "kind": "file",
     "name": "src/state/processorsStore.js",
     "content": "import { registerStore, combineReducers } from '@wordpress/data';\n\nimport {\n\tprocessorsReducer,\n\tprocessorTypesReducer\n} from './reducers';\n\nimport {\n\taddProcessor,\n\tnewProcessor,\n\tremoveProcessor,\n\tupdateProcessor,\n\tsetProcessorType\n\t,\n} from './actions';\n\nimport {\n\tgetProcessorsCollection,\n\tgetProcessorFromCollection,\n} from './selectors';\n\n/**\n * The  options for the Caldera Forms processor store besides the reducer\n * @type {{actions: {addProcessor: addProcessor, newProcessor: newProcessor, removeProcessor: removeProcessor, updateProcessor: updateProcessor, setProcessorType: setProcessorType}, selectors: {getProcessorsCollection(*): *, getProcessorFromCollection(*, *=): *, getProcessorTypes(*): *}, resolvers: {}}}\n */\nlet options = {\n\tactions: {\n\t\taddProcessor,\n\t\tnewProcessor,\n\t\tremoveProcessor,\n\t\tupdateProcessor,\n\t\tsetProcessorType\n\t},\n\tselectors: {\n\t\tgetProcessorsCollection(state){\n\t\t\treturn getProcessorsCollection( state.processorsReducer );\n\t\t},\n\t\tgetProcessorFromCollection(state, processorId){\n\t\t\treturn getProcessorFromCollection(state.processorsReducer,processorId);\n\t\t},\n\t\tgetProcessorTypes(state){\n\t\t\treturn state.processorTypesReducer;\n\t\t}\n\t},\n\n\tresolvers: {\n\n\t},\n};\n\n//combine the reducers\noptions.reducer = combineReducers({\n\tprocessorsReducer,\n\tprocessorTypesReducer\n}\n);\n\n/**\n * The identifier for the processors store\n * @type {string}\n */\nexport const CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';\n\n/**\n * The store for Caldera Forms Processors\n */\nexport const processorsStore = registerStore(\n\tCALDERA_FORMS_PROCESSORS_STORE_SLUG,\n\toptions\n);",
@@ -2889,7 +3054,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 152,
+    "__docId__": 159,
     "kind": "variable",
     "name": "options",
     "memberof": "src/state/processorsStore.js",
@@ -2912,7 +3077,7 @@
     "ignore": true
   },
   {
-    "__docId__": 153,
+    "__docId__": 160,
     "kind": "variable",
     "name": "CALDERA_FORMS_PROCESSORS_STORE_SLUG",
     "memberof": "src/state/processorsStore.js",
@@ -2934,7 +3099,7 @@
     }
   },
   {
-    "__docId__": 154,
+    "__docId__": 161,
     "kind": "variable",
     "name": "processorsStore",
     "memberof": "src/state/processorsStore.js",
@@ -2953,10 +3118,10 @@
     }
   },
   {
-    "__docId__": 155,
+    "__docId__": 162,
     "kind": "file",
     "name": "src/state/reducers.js",
-    "content": "import {\n\t//processors collection\n\tNEW_PROCESSOR,\n\tREMOVE_PROCESSOR,\n\tADD_PROCESSOR,\n\t//processor\n\tUPDATE_PROCESSOR,\n\tSET_FORM_FOR_PROCESSOR,\n\tUPDATE_PROCESSOR_VALUES,\n\tUPDATE_PROCESSOR_CONFIG_FIELDS, SET_PROCESSOR_TYPE\n} from './actions';\n\nimport {processorFactory, processorTypesMap} from '../factories/processorFactory';\n\n/**\n * Clone an object of various types\n *\n * Copied from: https://jsfiddle.net/pahund/5qtt2Len/1/\n *\n * @see: http://stackoverflow.com/questions/30626070/shallow-clone-an-es6-map-or-set\n * @param {Object|Map|Set|Date} obj\n * @returns {*}\n */\nexport function clone(obj) {\n\tlet copy;\n\n\tif (obj === null || typeof obj !== 'object') {\n\t\treturn obj;\n\t}\n\n\tif (obj instanceof Date) {\n\t\tcopy = new Date();\n\t\tcopy.setTime(obj.getTime());\n\t\treturn copy;\n\t}\n\n\tif (obj instanceof Map) {\n\t\treturn new Map(clone(Array.from(obj)));\n\t}\n\n\tif (obj instanceof Array) {\n\t\tcopy = [];\n\t\tfor (let i = 0, len = obj.length; i < len; i++) {\n\t\t\tcopy[i] = clone(obj[i]);\n\t\t}\n\t\treturn copy;\n\t}\n\n\tif (obj instanceof Object) {\n\t\tcopy = {};\n\t\tfor (const attr in obj) {\n\t\t\tif (obj.hasOwnProperty(attr)) {\n\t\t\t\tcopy[attr] = clone(obj[attr]);\n\t\t\t}\n\t\t}\n\t\treturn copy;\n\t}\n\tthrow new Error('Unable to copy object! Its type isn\\'t supported');\n}\n\n/**\n * Default processors collection state\n *\n * An empty map, processors state is a Map()\n * @type {Map<any, any>}\n */\nexport const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();\n\n\n/**\n * Reducer for managing a collection of processors\n *\n * State is the processors collection, as a map.\n * ^^ Might be a mistake.\n *\n * @param {Map}state\n * @param {Object} action\n * @returns {Map<any, any>}\n */\nexport const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) => {\n\tswitch( action.type ){\n\tcase NEW_PROCESSOR:\n\tcase ADD_PROCESSOR:\n\t\tswitch( action.type ) {\n\t\tcase NEW_PROCESSOR:\n\t\t\tconst ID = 'p_' + Math.random().toString(36).substring(7);\n\t\t\t//@TODO replace with generateId util function\n\t\t\tstate.set( ID, {\n\t\t\t\tID,\n\t\t\t\tconfigFields: {}\n\t\t\t} );\n\t\t\tbreak;\n\t\tcase ADD_PROCESSOR:\n\t\t\tstate.set( action.processor.ID, action.processor);\n\t\t\tbreak;\n\t\tdefault:\n\t\t\tbreak;\n\t\t}\n\n\t\treturn clone(state);\n\tcase UPDATE_PROCESSOR:\n\t\tif( action.processor.type !== state.get( action.processor.ID ).type ){\n\t\t\taction.processor.configFields = {};\n\t\t}\n\n\t\treturn state.set( action.processor.ID, processorFactory(\n\t\t\taction.processor.ID,\n\t\t\taction.processor.type,\n\t\t\taction.processor.configFields,\n\t\t));\n\n\tcase  REMOVE_PROCESSOR:\n\t\tstate.delete(action.processorId);\n\t\treturn clone(state);\n\tdefault:\n\t\treturn state;\n\t}\n\n};\n\n\n/**\n * Reducer for processor Types\n *\n *\n * @param state\n * @param action\n * @return {Map<any, any>}\n */\nexport const processorTypesReducer = (state = processorTypesMap, action) => {\n\tswitch( action.type ){\n\tcase SET_PROCESSOR_TYPE:\n\t\treturn state.set(\n\t\t\taction.processorTypeIdentifier,\n\t\t\taction.processorType\n\t\t);\n\tdefault:\n\t\treturn state;\n\t}\n\n};\n\n\n\n\n/**\n * Default processor state.\n *\n * Contains the form configuration (for mappings) that should NOT be mutated via this reducer\n * Contains the processor config as a Map()\n *\n * @type {{form: {}, processor: Map<any, any>}}\n */\nexport const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {\n\tform: {},\n\tprocessor:  {},\n\tconfigFields: {},\n\tconfigValues: new Map()\n\t/* @TODO conditionals for processors */\n};\n\n\n\n/**\n * Reducer for managing one processor as it is being editted/\n *\n * Contains the form processor belongs to for field mapping/ magic selecting\n * Processor is a Map()\n *\n * @param {Object} state\n * @param {Object} action\n * @returns {{form: {}, processor: Map<any, any>}}\n */\nexport const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE, action ) =>{\n\tswitch( action.type ){\n\tcase UPDATE_PROCESSOR:\n\t\treturn {\n\t\t\t...state,\n\t\t\tprocessor:action.processor\n\t\t};\n\n\tcase UPDATE_PROCESSOR_CONFIG_FIELDS: {\n\t\treturn {\n\t\t\t...state,\n\t\t\tconfigFields:action.configFields\n\t\t};\n\t}\n\n\tcase SET_FORM_FOR_PROCESSOR:\n\t\treturn {\n\t\t\t...state,\n\t\t\tform: action.form\n\t\t};\n\tcase  UPDATE_PROCESSOR_VALUES:\n\t\treturn {\n\t\t\t...state,\n\t\t\tconfigValues: action.configValues\n\t\t};\n\tdefault:\n\t\treturn state;\n\t}\n};",
+    "content": "import {\n\t//processors collection\n\tNEW_PROCESSOR,\n\tREMOVE_PROCESSOR,\n\tADD_PROCESSOR,\n\t//processor\n\tUPDATE_PROCESSOR,\n\tSET_FORM_FOR_PROCESSOR,\n\tUPDATE_PROCESSOR_VALUES,\n\tUPDATE_PROCESSOR_CONFIG_FIELDS, SET_PROCESSOR_TYPE\n} from './actions';\n\nimport {processorFactory, processorTypesMap} from '../factories/processorFactory';\n\n/**\n * Clone an object of various types\n *\n * Copied from: https://jsfiddle.net/pahund/5qtt2Len/1/\n *\n * @see: http://stackoverflow.com/questions/30626070/shallow-clone-an-es6-map-or-set\n * @param {Object|Map|Set|Date} obj\n * @returns {*}\n */\nexport function clone(obj) {\n\tlet copy;\n\n\tif (obj === null || typeof obj !== 'object') {\n\t\treturn obj;\n\t}\n\n\tif (obj instanceof Date) {\n\t\tcopy = new Date();\n\t\tcopy.setTime(obj.getTime());\n\t\treturn copy;\n\t}\n\n\tif (obj instanceof Map) {\n\t\treturn new Map(clone(Array.from(obj)));\n\t}\n\n\tif (obj instanceof Array) {\n\t\tcopy = [];\n\t\tfor (let i = 0, len = obj.length; i < len; i++) {\n\t\t\tcopy[i] = clone(obj[i]);\n\t\t}\n\t\treturn copy;\n\t}\n\n\tif (obj instanceof Object) {\n\t\tcopy = {};\n\t\tfor (const attr in obj) {\n\t\t\tif (obj.hasOwnProperty(attr)) {\n\t\t\t\tcopy[attr] = clone(obj[attr]);\n\t\t\t}\n\t\t}\n\t\treturn copy;\n\t}\n\tthrow new Error('Unable to copy object! Its type isn\\'t supported');\n}\n\n/**\n * Default processors collection state\n *\n * An empty map, processors state is a Map()\n * @type {Map<any, any>}\n */\nexport const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();\n\n\n/**\n * Reducer for managing a collection of processors\n *\n * State is the processors collection, as a map.\n * ^^ Might be a mistake.\n *\n * @param {Map}state\n * @param {Object} action\n * @returns {Map<any, any>}\n */\nexport const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) => {\n\tswitch( action.type ){\n\tcase NEW_PROCESSOR:\n\tcase ADD_PROCESSOR:\n\t\tswitch( action.type ) {\n\t\tcase NEW_PROCESSOR:\n\t\t\tconst ID = 'p_' + Math.random().toString(36).substring(7);\n\t\t\t//@TODO replace with generateId util function\n\t\t\tstate.set( ID, {\n\t\t\t\tID,\n\t\t\t\tconfigFields: {}\n\t\t\t} );\n\t\t\tbreak;\n\t\tcase ADD_PROCESSOR:\n\t\t\tstate.set( action.processor.ID, action.processor);\n\t\t\tbreak;\n\t\tdefault:\n\t\t\tbreak;\n\t\t}\n\n\t\treturn clone(state);\n\tcase UPDATE_PROCESSOR:\n\t\tif( action.processor.type !== state.get( action.processor.ID ).type ){\n\t\t\taction.processor.configFields = {};\n\t\t}\n\n\t\treturn state.set( action.processor.ID, processorFactory(\n\t\t\taction.processor.ID,\n\t\t\taction.processor.type,\n\t\t\taction.processor.configFields,\n\t\t));\n\n\tcase  REMOVE_PROCESSOR:\n\t\tstate.delete(action.processorId);\n\t\treturn clone(state);\n\tdefault:\n\t\treturn state;\n\t}\n\n};\n\n\n/**\n * Reducer for processor Types\n *\n *\n * @param state\n * @param action\n * @return {Map<any, any>}\n */\nexport const processorTypesReducer = (state = processorTypesMap, action) => {\n\tswitch( action.type ){\n\tcase SET_PROCESSOR_TYPE:\n\t\treturn state.set(\n\t\t\taction.processorTypeIdentifier,\n\t\t\taction.processorType\n\t\t);\n\tdefault:\n\t\treturn state;\n\t}\n\n};\n\n\n\n\n/**\n * Default processor state.\n *\n * Contains the form configuration (for mappings) that should NOT be mutated via this reducer\n * Contains the processor config as a Map()\n *\n * @type {{form: {}, processor: Map<any, any>}}\n */\nexport const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {\n\tform: {},\n\tprocessor:  {},\n\tconfigFields: {},\n\tconfigValues: new Map()\n\t/* @TODO conditionals for processors */\n};\n\n\n\n/**\n * Reducer for managing one processor as it is being editted\n *\n * NOTE: NOT USED. Either each processor gets its own container and reducer (this one) or this get removed)\n *\n * Contains the form processor belongs to for field mapping/ magic selecting\n * Processor is a Map()\n *\n * @param {Object} state\n * @param {Object} action\n * @returns {{form: {}, processor: Map<any, any>}}\n */\nexport const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE, action ) =>{\n\tswitch( action.type ){\n\tcase UPDATE_PROCESSOR:\n\t\treturn {\n\t\t\t...state,\n\t\t\tprocessor:action.processor\n\t\t};\n\n\tcase UPDATE_PROCESSOR_CONFIG_FIELDS: {\n\t\treturn {\n\t\t\t...state,\n\t\t\tconfigFields:action.configFields\n\t\t};\n\t}\n\n\tcase SET_FORM_FOR_PROCESSOR:\n\t\treturn {\n\t\t\t...state,\n\t\t\tform: action.form\n\t\t};\n\tcase  UPDATE_PROCESSOR_VALUES:\n\t\treturn {\n\t\t\t...state,\n\t\t\tconfigValues: action.configValues\n\t\t};\n\tdefault:\n\t\treturn state;\n\t}\n};",
     "static": true,
     "longname": "/Users/josh/caldera-js/processors/src/state/reducers.js",
     "access": "public",
@@ -2964,7 +3129,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 156,
+    "__docId__": 163,
     "kind": "function",
     "name": "clone",
     "memberof": "src/state/reducers.js",
@@ -3009,7 +3174,7 @@
     }
   },
   {
-    "__docId__": 157,
+    "__docId__": 164,
     "kind": "variable",
     "name": "CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE",
     "memberof": "src/state/reducers.js",
@@ -3031,7 +3196,7 @@
     }
   },
   {
-    "__docId__": 158,
+    "__docId__": 165,
     "kind": "function",
     "name": "processorsReducer",
     "memberof": "src/state/reducers.js",
@@ -3083,7 +3248,7 @@
     }
   },
   {
-    "__docId__": 159,
+    "__docId__": 166,
     "kind": "function",
     "name": "processorTypesReducer",
     "memberof": "src/state/reducers.js",
@@ -3129,7 +3294,7 @@
     }
   },
   {
-    "__docId__": 160,
+    "__docId__": 167,
     "kind": "variable",
     "name": "CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE",
     "memberof": "src/state/reducers.js",
@@ -3151,7 +3316,7 @@
     }
   },
   {
-    "__docId__": 161,
+    "__docId__": 168,
     "kind": "function",
     "name": "processorReducer",
     "memberof": "src/state/reducers.js",
@@ -3163,8 +3328,8 @@
     "export": true,
     "importPath": "@caldera-labs/processor-ui/src/state/reducers.js",
     "importStyle": "{processorReducer}",
-    "description": "Reducer for managing one processor as it is being editted/\n\nContains the form processor belongs to for field mapping/ magic selecting\nProcessor is a Map()",
-    "lineNumber": 174,
+    "description": "Reducer for managing one processor as it is being editted\n\nNOTE: NOT USED. Either each processor gets its own container and reducer (this one) or this get removed)\n\nContains the form processor belongs to for field mapping/ magic selecting\nProcessor is a Map()",
+    "lineNumber": 176,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3203,7 +3368,7 @@
     }
   },
   {
-    "__docId__": 162,
+    "__docId__": 169,
     "kind": "file",
     "name": "src/state/selectors.js",
     "content": "/**\n * Get all of the processors in collection\n *\n * @param {Map} state Current state.\n */\nexport const getProcessorsCollection = (state) => {\n\tconst isMap = state instanceof Map;\n\treturn isMap\n\t\t? state\n\t\t: new Map(state);\n};\n\n/**\n * Get one processor from the processors collection reducer processorsReducer\n * @param {Map} state\n * @param {String} processorId\n */\nexport const getProcessorFromCollection = (state, processorId) => {\n\tif( state.has(processorId)){\n\t\treturn state.get( processorId );\n\t}\n\treturn null;\n};\n\n\n/**\n * Get the processor from the single processor reducer processorReducer\n * @param {Map} state Current state.\n * @returns {Map}\n */\nexport const getProcessor = (state ) => {\n\treturn state.processor;\n};\n\n\n/**\n * Get the form from the single processor reducer processorReducer\n * @param {Map} state Current state.\n * @returns {Object}\n */\nexport const getFormForProcessor = ( state ) => {\n\treturn state.form;\n};\n\n/**\n * Get the values from the single processor reducer processorReducer\n * @param {Map} state Current state.\n * @returns {Object}\n */\nexport const getProcessorValues  = (state) => {\n\treturn state.configValues;\n};\n\n/**\n * Get the values from the single processor reducer processorReducer\n * @param {Map} state Current state.\n * @param {String} configFieldId ID to search for.\n * @returns {Object}\n */\nexport const getProcessorValue  = (state,configFieldId) => {\n\treturn state.configValues.has(configFieldId)\n\t\t? state.configValues.get(configFieldId)\n\t\t: null;\n};\n\n/**\n * Get a processor type definition from the processorTypes map\n * @param {Map} state Current state.\n * @param {String} processorTypeIdentifier ID of processor type to search by\n * @returns {Object|null}\n */\nexport const getProcessorType = (state,processorTypeIdentifier) => {\n\treturn state.has( processorTypeIdentifier )\n\t\t? state.get( processorTypeIdentifier )\n\t\t: null;\n};\n\n",
@@ -3214,7 +3379,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 163,
+    "__docId__": 170,
     "kind": "function",
     "name": "getProcessorsCollection",
     "memberof": "src/state/selectors.js",
@@ -3247,7 +3412,7 @@
     }
   },
   {
-    "__docId__": 164,
+    "__docId__": 171,
     "kind": "function",
     "name": "getProcessorFromCollection",
     "memberof": "src/state/selectors.js",
@@ -3290,7 +3455,7 @@
     }
   },
   {
-    "__docId__": 165,
+    "__docId__": 172,
     "kind": "function",
     "name": "getProcessor",
     "memberof": "src/state/selectors.js",
@@ -3332,7 +3497,7 @@
     }
   },
   {
-    "__docId__": 166,
+    "__docId__": 173,
     "kind": "function",
     "name": "getFormForProcessor",
     "memberof": "src/state/selectors.js",
@@ -3374,7 +3539,7 @@
     }
   },
   {
-    "__docId__": 167,
+    "__docId__": 174,
     "kind": "function",
     "name": "getProcessorValues",
     "memberof": "src/state/selectors.js",
@@ -3416,7 +3581,7 @@
     }
   },
   {
-    "__docId__": 168,
+    "__docId__": 175,
     "kind": "function",
     "name": "getProcessorValue",
     "memberof": "src/state/selectors.js",
@@ -3468,7 +3633,7 @@
     }
   },
   {
-    "__docId__": 169,
+    "__docId__": 176,
     "kind": "function",
     "name": "getProcessorType",
     "memberof": "src/state/selectors.js",
@@ -3521,8 +3686,114 @@
     }
   },
   {
+    "__docId__": 177,
+    "kind": "file",
+    "name": "src/state/validationSubscriber.js",
+    "content": "import {processorSelectors} from \"./processorSelectors\";\nimport {select} from '@wordpress/data';\nimport {getConfigFieldValue} from \"../factories/util\";\nimport {validation} from '@caldera-labs/components';\n\n/**\n * The configFields for all processors, indexed by processorId\n * @type {Object}\n */\nlet processorsConfigFields = {};\n\n/**\n * The fieldValues for all processors, indexed by processorId\n * @type {Object}\n */\nlet fieldValues = {};\n\n/**\n *\n * @param {Map} processors\n */\nfunction updateConfigValues(processors) {\n\tprocessors.forEach( (value, processorId, processorsMap ) => {\n\t\tfieldValues[processorId] = {};\n\t\tprocessorsConfigFields[processorId] = value.configFields;\n\t\tObject.values( value.configFields ).forEach(field => {\n\t\t\tfieldValues[processorId][field.ID] = getConfigFieldValue(field)\n\t\t});\n\n\t});\n}\n\nexport const validationSubscriber = () => {\n\tconst form = {};\n\tconst ownProps = {\n\t\tform\n\t};\n\tlet results = {};\n\tconst processors = processorSelectors(select,ownProps).processors;\n\tupdateConfigValues(processors);\n\tprocessors.forEach( (procesor, processorId, processorsMap ) => {\n\t\tresults[processorId] =validation.checkValidatorsForConfigFields(processorsConfigFields[processorId],fieldValues[processorId]);\n\t});\n\tconsole.log(results);\n\n};",
+    "static": true,
+    "longname": "/Users/josh/caldera-js/processors/src/state/validationSubscriber.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 178,
+    "kind": "variable",
+    "name": "processorsConfigFields",
+    "memberof": "src/state/validationSubscriber.js",
+    "static": true,
+    "longname": "src/state/validationSubscriber.js~processorsConfigFields",
+    "access": "public",
+    "export": false,
+    "importPath": "@caldera-labs/processor-ui/src/state/validationSubscriber.js",
+    "importStyle": null,
+    "description": "The configFields for all processors, indexed by processorId",
+    "lineNumber": 10,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 179,
+    "kind": "variable",
+    "name": "fieldValues",
+    "memberof": "src/state/validationSubscriber.js",
+    "static": true,
+    "longname": "src/state/validationSubscriber.js~fieldValues",
+    "access": "public",
+    "export": false,
+    "importPath": "@caldera-labs/processor-ui/src/state/validationSubscriber.js",
+    "importStyle": null,
+    "description": "The fieldValues for all processors, indexed by processorId",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 180,
+    "kind": "function",
+    "name": "updateConfigValues",
+    "memberof": "src/state/validationSubscriber.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/state/validationSubscriber.js~updateConfigValues",
+    "access": "public",
+    "export": false,
+    "importPath": "@caldera-labs/processor-ui/src/state/validationSubscriber.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 22,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Map"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "processors",
+        "description": ""
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 181,
+    "kind": "function",
+    "name": "validationSubscriber",
+    "memberof": "src/state/validationSubscriber.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/state/validationSubscriber.js~validationSubscriber",
+    "access": "public",
+    "export": true,
+    "importPath": "@caldera-labs/processor-ui/src/state/validationSubscriber.js",
+    "importStyle": "{validationSubscriber}",
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
     "kind": "index",
-    "content": "# Caldera Processor UI\nCaldera Forms processor user interface generator and components.\n\n🌋 👀 [Documentation](https://calderalabs.org/caldera-npm-module-boilerplate/)\n\n[![Build Status](https://api.travis-ci.org/CalderaWP/processor-ui.svg?branch=master)](https://travis-ci.org/CalderaWP/processor-ui)\n[![Documentation Status](https://calderalabs.org/processor-ui/badge.svg)](https://calderalabs.org/processor-ui/badge.svg)\n\n|Statements|Lines|Functions|Branches|\n|---|---|---|---|\n|![StatementsCoverage Status](./coverage/badge-statements.svg)|![Lines Coverage Status](./coverage/badge-lines.svg)|![Functions Coverage Status](./coverage/badge-functions.svg)|![Branches Coverage Status](./coverage/badge-branches.svg)|\n\n\n## Usage\n\n## Install\n`npm i -D @caldera-labs/prcoessors-ui`\n\n## [Complete Usage Example](https://calderalabs.org/processor-ui/manual/overview.html#example)\n\n## Scripts\n### Development Requirements\n* [npm](https://www.npmjs.com/get-npm)\n* [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)\n* [Git]()\n\n### Develop\n* `yarn start`\n    - Runs linter and compiles for development\n    - Starts test app server\n\n### Build for release\nThis script is run as part of release commands. There is no need to run it manually most of the time.\n\nThis script calls a pre, compile, and post subcommands.  For consistency, please call other scripts at those three events.\n\n* `yarn build`\n    - Runs tests and compiles.\n    \n\n### Tests\nWe use [Facebook Jest](https://facebook.github.io/jest/) for unit tests. Test go in the directory `__tests__`.\n\n* `yarn test`\n    - Run test watcher\n* `yarn test:once` \n    - Run tests once\n\n\n### Lint Code\nCode style is enforced using [eslint](https://eslint.org/)\n\n* `yarn lint`\n    - Run linter and fixer watch\n* `yarn lint:fix`\n    - Lint and fix code once\n* `yarn lint:once`\n    - Lint code once\n\n\n### Generate Documentation\n* `npm run documentation`\n    - Generates documentation from inline docs\n    - Generates documentation from markdown files in /manual\n\n### Release To npm\nMust be [logged in as project maintainer via npm cli](https://docs.npmjs.com/cli/adduser)\n\n* `yarn release`\n    - Release a patch update\n    - Increments third position of a version. 1.0.1 -> 1.0.2\n* `yarn release:minor`\n    - Release a minor update\n    - Increments second position of a version. 1.0.1 -> 1.1.0 \n* `yarn release:major`\n    - Release a major update\n    - Increments second position of a version. 1.0.1 -> 2.0.0 \n    \nThese commands run the tests and linter, and if they pass, re-compiles source, rebuilds docs, updates the version using [npm version](https://docs.npmjs.com/cli/version), adds a git tag, makes a git commit for the version change and updates the module on npm.\n",
+    "content": "# Caldera Processor UI\nCaldera Forms processor user interface generator and components.\n\n🌋 👀 [Documentation](https://calderalabs.org/caldera-npm-module-boilerplate/)\n\n[![Build Status](https://api.travis-ci.org/CalderaWP/processor-ui.svg?branch=master)](https://travis-ci.org/CalderaWP/processor-ui)\n[![Documentation Status](./docs/badge.svg)](https://calderalabs.org/processor-ui/badge.svg)\n\n|Statements|Lines|Functions|Branches|\n|---|---|---|---|\n|![StatementsCoverage Status](./coverage/badge-statements.svg)|![Lines Coverage Status](./coverage/badge-lines.svg)|![Functions Coverage Status](./coverage/badge-functions.svg)|![Branches Coverage Status](./coverage/badge-branches.svg)|\n\n\n## Usage\n\n## Install\n`npm i -D @caldera-labs/prcoessors-ui`\n\n## Basic Usage Example\n\n### Render UI with state on element with ID of `root`\n```js\nimport CalderaProcessorsUI from '?';\nconst CalderaProcessors = new CalderaProcessorsUI('root');\nCalderaProcessors.mountOnDOM();\n\n```\n\n### Use component with state, and validation subscription\n```js\nconst Something = () => {\n\timport CalderaProcessorsUI from '?';\n\tconst CalderaProcessors = new CalderaProcessorsUI('');\n\treturn(\n            <div>\n                {CalderaProcessors.componentWithState()}\n            </div>\n\t);\n}\n\n```\n\n\n## [Complete Usage Example](https://calderalabs.org/processor-ui/manual/overview.html#example)\n\n## Scripts\n### Development Requirements\n* [npm](https://www.npmjs.com/get-npm)\n* [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)\n* [Git]()\n\n### Develop\n* `yarn start`\n    - Runs linter and compiles for development\n    - Starts test app server\n\n### Build for release\nThis script is run as part of release commands. There is no need to run it manually most of the time.\n\nThis script calls a pre, compile, and post subcommands.  For consistency, please call other scripts at those three events.\n\n* `yarn build`\n    - Runs tests and compiles.\n    \n\n### Tests\nWe use [Facebook Jest](https://facebook.github.io/jest/) for unit tests. Test go in the directory `__tests__`.\n\n* `yarn test`\n    - Run test watcher\n* `yarn test:once` \n    - Run tests once\n\n\n### Lint Code\nCode style is enforced using [eslint](https://eslint.org/)\n\n* `yarn lint`\n    - Run linter and fixer watch\n* `yarn lint:fix`\n    - Lint and fix code once\n* `yarn lint:once`\n    - Lint code once\n\n\n### Generate Documentation\n* `npm run documentation`\n    - Generates documentation from inline docs\n    - Generates documentation from markdown files in /manual\n\n### Release To npm\nMust be [logged in as project maintainer via npm cli](https://docs.npmjs.com/cli/adduser)\n\n* `yarn release`\n    - Release a patch update\n    - Increments third position of a version. 1.0.1 -> 1.0.2\n* `yarn release:minor`\n    - Release a minor update\n    - Increments second position of a version. 1.0.1 -> 1.1.0 \n* `yarn release:major`\n    - Release a major update\n    - Increments second position of a version. 1.0.1 -> 2.0.0 \n    \nThese commands run the tests and linter, and if they pass, re-compiles source, rebuilds docs, updates the version using [npm version](https://docs.npmjs.com/cli/version), adds a git tag, makes a git commit for the version change and updates the module on npm.\n",
     "longname": "/Users/josh/caldera-js/processors/README.md",
     "name": "./README.md",
     "static": true,
@@ -3530,7 +3801,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@caldera-labs/processor-ui\",\n  \"version\": \"0.2.1\",\n  \"description\": \"Does whatever for Caldeera Forms\",\n  \"main\": \"./dist/index.js\",\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"start\": \"react-wp-scripts start\",\n    \"build\": \"npm run build:pre && npm run build:compile && npm run build:post\",\n    \"build:pre\": \"npm run test:once\",\n    \"build:compile\": \"./node_modules/.bin/babel -d dist src/\",\n    \"build:post\": \"npm run document && npm run hack:for:dist \",\n    \"hack:for:dist\": \"unlink dist/index.js && mv dist/module.js dist/index.js\",\n    \"test\": \"react-scripts test --env=jsdom\",\n    \"test:once\": \"CI=true react-scripts test --env=jsdom\",\n    \"test:coverage\": \"npm test -- --coverage\",\n    \"test:badges\": \"npm run test:coverage  && jest-coverage-badges\",\n    \"document\": \"./node_modules/.bin/esdoc\",\n    \"lint\": \"eslint src/**/*.js\",\n    \"prepublish\": \"npm run build\",\n    \"release\": \"npm run release:patch\",\n    \"release:minor\": \"npm version minor -m \\\"version %s\\\" && npm publish\",\n    \"release:major\": \"npm version major -m \\\"version %s\\\" && npm publish\",\n    \"release:patch\": \"npm version patch -m \\\"version %s\\\" && npm publish\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/CalderaWP/processor-ui\"\n  },\n  \"keywords\": [\n    \"es6\",\n    \"boilerplate\",\n    \"npm\",\n    \"module\",\n    \"npm-module\"\n  ],\n  \"author\": \"Josh Pollock <Josh@calderawp.com>\",\n  \"license\": \"GPL-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/CalderaWP/processor-ui/issues\"\n  },\n  \"homepage\": \"https://calderalabs.org/processor-ui/\",\n  \"dependencies\": {\n    \"@caldera-labs/components\": \"^1.2.0\",\n    \"@caldera-labs/state\": \"^0.7.0\",\n    \"@wordpress/data\": \"^1.0.0-alpha.1\",\n    \"classnames\": \"^2.2.6\",\n    \"prop-types\": \"^15.6.1\",\n    \"react\": \"^16.4.0\",\n    \"react-compose\": \"^2.0.0\",\n    \"react-redux\": \"^5.0.7\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-eslint\": \"^8.2.3\",\n    \"babel-preset-env\": \"^1.7.0\",\n    \"babel-preset-react\": \"^6.24.1\",\n    \"babel-preset-stage-3\": \"^6.24.1\",\n    \"coveralls\": \"^2.13.3\",\n    \"enzyme\": \"^3.3.0\",\n    \"enzyme-adapter-react-16\": \"^1.1.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-jsx-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.19.1\",\n    \"eslint-config-airbnb\": \"^16.1.0\",\n    \"eslint-plugin-import\": \"^2.12.0\",\n    \"eslint-plugin-jest\": \"^21.17.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.3\",\n    \"eslint-plugin-react\": \"^7.9.1\",\n    \"istanbul-lib-coverage\": \"^1.2.0\",\n    \"react-dom\": \"^16.4.0\",\n    \"react-wp-scripts\": \"0.2.0\",\n    \"uglify-js\": \"^3.4.0\"\n  },\n  \"jest\": {\n    \"coverageReporters\": [\n      \"json-summary\",\n      \"text\",\n      \"lcov\"\n    ],\n    \"collectCoverageFrom\": [\n      \"src/**/*.js\"\n    ],\n    \"coverageThreshold\": {\n      \"global\": {\n        \"statements\": 75,\n        \"branches\": 65,\n        \"functions\": 75,\n        \"lines\": 75\n      }\n    }\n  }\n}\n",
+    "content": "{\n  \"name\": \"@caldera-labs/processor-ui\",\n  \"version\": \"0.2.1\",\n  \"description\": \"Does whatever for Caldeera Forms\",\n  \"main\": \"./dist/index.js\",\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"start\": \"react-wp-scripts start\",\n    \"build\": \"npm run build:pre && npm run build:compile && npm run build:post\",\n    \"build:pre\": \"npm run test:once\",\n    \"build:compile\": \"./node_modules/.bin/babel -d dist src/\",\n    \"build:post\": \"npm run document && npm run hack:for:dist \",\n    \"hack:for:dist\": \"unlink dist/index.js && mv dist/module.js dist/index.js\",\n    \"test\": \"react-scripts test --env=jsdom\",\n    \"test:once\": \"CI=true react-scripts test --env=jsdom\",\n    \"test:coverage\": \"npm test -- --coverage\",\n    \"test:badges\": \"npm run test:coverage  && jest-coverage-badges\",\n    \"document\": \"./node_modules/.bin/esdoc\",\n    \"lint\": \"eslint src/**/*.js\",\n    \"prepublish\": \"npm run build\",\n    \"release\": \"npm run release:patch\",\n    \"release:minor\": \"npm version minor -m \\\"version %s\\\" && npm publish\",\n    \"release:major\": \"npm version major -m \\\"version %s\\\" && npm publish\",\n    \"release:patch\": \"npm version patch -m \\\"version %s\\\" && npm publish\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/CalderaWP/processor-ui\"\n  },\n  \"keywords\": [\n    \"es6\",\n    \"boilerplate\",\n    \"npm\",\n    \"module\",\n    \"npm-module\"\n  ],\n  \"author\": \"Josh Pollock <Josh@calderawp.com>\",\n  \"license\": \"GPL-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/CalderaWP/processor-ui/issues\"\n  },\n  \"homepage\": \"https://calderalabs.org/processor-ui/\",\n  \"dependencies\": {\n    \"@caldera-labs/components\": \"^1.2.3\",\n    \"@caldera-labs/state\": \"^0.7.0\",\n    \"@wordpress/data\": \"^1.0.0-alpha.1\",\n    \"@wordpress/element\": \"^1.0.0-alpha.1\",\n    \"classnames\": \"^2.2.6\",\n    \"prop-types\": \"^15.6.1\",\n    \"react\": \"^16.4.0\",\n    \"react-compose\": \"^2.0.0\",\n    \"react-redux\": \"^5.0.7\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-eslint\": \"^8.2.3\",\n    \"babel-preset-env\": \"^1.7.0\",\n    \"babel-preset-react\": \"^6.24.1\",\n    \"babel-preset-stage-3\": \"^6.24.1\",\n    \"coveralls\": \"^2.13.3\",\n    \"enzyme\": \"^3.3.0\",\n    \"enzyme-adapter-react-16\": \"^1.1.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-jsx-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.19.1\",\n    \"eslint-config-airbnb\": \"^16.1.0\",\n    \"eslint-plugin-import\": \"^2.12.0\",\n    \"eslint-plugin-jest\": \"^21.17.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.3\",\n    \"eslint-plugin-react\": \"^7.9.1\",\n    \"istanbul-lib-coverage\": \"^1.2.0\",\n    \"react-dom\": \"^16.4.0\",\n    \"react-wp-scripts\": \"0.2.0\",\n    \"uglify-js\": \"^3.4.0\"\n  },\n  \"jest\": {\n    \"coverageReporters\": [\n      \"json-summary\",\n      \"text\",\n      \"lcov\"\n    ],\n    \"collectCoverageFrom\": [\n      \"src/**/*.js\"\n    ],\n    \"coverageThreshold\": {\n      \"global\": {\n        \"statements\": 75,\n        \"branches\": 65,\n        \"functions\": 75,\n        \"lines\": 75\n      }\n    }\n  }\n}\n",
     "longname": "/Users/josh/caldera-js/processors/package.json",
     "name": "package.json",
     "static": true,
@@ -3549,7 +3820,7 @@
     "kind": "manual",
     "longname": "/Users/josh/caldera-js/processors/manual/overview.md",
     "name": "./manual/overview.md",
-    "content": "# Caldera Processors UI\n\n\n## Shape Of A Processor\n\n```\n{\n    ID: String,\n    type: String,\n    label: String\n    prepareConfigFields: Array,\n    configValues: Map\n}\n```\n\n* ID: Alphanumeric ID for config field\n    - Example: For the list ID of an email marketting processor's settings: `cf-fancyemails-list-id`\n* type: String. The type of processors\n    - Examples: `email` or `redirect`\n* label: Optional String. A user supplied label unique to the processor.\n* prepareConfigFields: Array of config fields as expected by [Caldera Components' `RenderGroup` component](https://calderalabs.org/caldera-components/manual/components.html#rendergroup)\n* configValues: A map of the current field values.\n\n## prepareConfigFields vs configValues\n`prepareConfigFields` should represent what has been stored for this processor's settings. It contains the saved value and the processor configuration, since configuration is itself dynamic. For example, your options for list to subscribe to may change after the value of a separate field for entering an API key has changed.\n\nBecause the `configFieldsFactory` can add in missing values from prepareConfigFields, it makes sense to remove non-standard values from these objects before persisting them.\n\n`configValues` is a `Map`, indexed by `configField.ID` with the current value of the field. Seperating these values out from `configValues`\n\n\n## Example\n```js\nimport React, {Component} from 'react';\nimport './App.css';\nimport CalderaProcessorsUI from '@caldera-labs/processor-ui';\nimport {Provider} from 'react-redux';\n\nclass App extends Component {\n\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\tstore: CalderaProcessorsUI.processorsStore\n\t\t}\n\t}\n\tcomponentDidMount() {\n\t\t//Add processors from remote API or local json or hard code like in this example\n\t\t//dispatch() is documented at https://www.npmjs.com/package/@wordpress/data#dispatch-storename-string--object\n\t\tthis.state.store.dispatch(\n\t\t\t//setProcessorType() is documented at https://calderalabs.org/processor-ui/function/index.html#static-function-setProcessorType\n\t\t\tCalderaProcessorsUI.actions.setProcessorType(\n\t\t\t\t//processorType definition\n\t\t\t\t{\n\t\t\t\t    TYPE: 'superProcessor', //identifier for processor\n\t\t\t\t    LABEL: 'Super ', //Human readable label for processor\n\t\t\t\t    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema \n\t\t\t    \t},\n\t\t\t    \t'superProcessor' //identifier for processor\n\t\t\t)\n\t\t);\n\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div className=\"caldera-forms-processors\">\n\t\t\t\t<Provider store={this.state.store}>\n\t\t\t\t\t<CalderaProcessorsUI.CalderaProcessorsWithState/>\n\t\t\t\t</Provider>\n\n\t\t\t</div>\n\t\t);\n\t}\n}\n```",
+    "content": "# Caldera Processors UI\n\n\n## Shape Of A Processor\n\n```\n{\n    ID: String,\n    type: String,\n    label: String\n    prepareConfigFields: Array,\n    configValues: Map\n}\n```\n\n* ID: Alphanumeric ID for config field\n    - Example: For the list ID of an email marketting processor's settings: `cf-fancyemails-list-id`\n* type: String. The type of processors\n    - Examples: `email` or `redirect`\n* label: Optional String. A user supplied label unique to the processor.\n* prepareConfigFields: Array of config fields as expected by [Caldera Components' `RenderGroup` componentWithState](https://calderalabs.org/caldera-components/manual/components.html#rendergroup)\n* configValues: A map of the current field values.\n\n## prepareConfigFields vs configValues\n`prepareConfigFields` should represent what has been stored for this processor's settings. It contains the saved value and the processor configuration, since configuration is itself dynamic. For example, your options for list to subscribe to may change after the value of a separate field for entering an API key has changed.\n\nBecause the `configFieldsFactory` can add in missing values from prepareConfigFields, it makes sense to remove non-standard values from these objects before persisting them.\n\n`configValues` is a `Map`, indexed by `configField.ID` with the current value of the field. Seperating these values out from `configValues`\n\n\n## Example\n```js\nimport React, {Component} from 'react';\nimport './App.css';\nimport CalderaProcessorsUI from '@caldera-labs/processor-ui';\nimport {Provider} from 'react-redux';\n\nclass App extends Component {\n\n\tconstructor(props){\n\t\tsuper(props);\n\t\tthis.state = {\n\t\t\tstore: CalderaProcessorsUI.processorsStore\n\t\t}\n\t}\n\tcomponentDidMount() {\n\t\t//Add processors from remote API or local json or hard code like in this example\n\t\t//dispatch() is documented at https://www.npmjs.com/package/@wordpress/data#dispatch-storename-string--object\n\t\tthis.state.store.dispatch(\n\t\t\t//setProcessorType() is documented at https://calderalabs.org/processor-ui/function/index.html#static-function-setProcessorType\n\t\t\tCalderaProcessorsUI.actions.setProcessorType(\n\t\t\t\t//processorType definition\n\t\t\t\t{\n\t\t\t\t    TYPE: 'superProcessor', //identifier for processor\n\t\t\t\t    LABEL: 'Super ', //Human readable label for processor\n\t\t\t\t    defaultConfigFields: [] //configuration fields. https://calderalabs.org/caldera-components/manual/factories.html#configfield-schema \n\t\t\t    \t},\n\t\t\t    \t'superProcessor' //identifier for processor\n\t\t\t)\n\t\t);\n\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div className=\"caldera-forms-processors\">\n\t\t\t\t<Provider store={this.state.store}>\n\t\t\t\t\t<CalderaProcessorsUI.CalderaProcessorsWithState/>\n\t\t\t\t</Provider>\n\n\t\t\t</div>\n\t\t);\n\t}\n}\n```",
     "static": true,
     "access": "public"
   }

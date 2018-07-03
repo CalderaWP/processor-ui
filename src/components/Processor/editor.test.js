@@ -339,6 +339,28 @@ describe('Editor componentWithState', () => {
 		expect(wrapper.find('.processor-editor').children().length).toBe(1);
 	});
 
+	it('Shows error message', () => {
+		let configFields = processorFactory('p129', emailProcessorType.TYPE).configFields;
+		configFields.fromEmail.message = {
+			message: 'not an email',
+			error: true
+		};
+		const wrapper = mount(
+			<Editor
+				ID={'p139'}
+				configFields={configFields}
+				type={redirectProcessorType.TYPE}
+				form={{
+					ID: 'cf1'
+				}}
+				onUpdateProcessor={handler}
+				getProcessorFromCollection={() => {
+				}}
+			/>
+		);
+		expect(wrapper.find('.caldera-components-message').length).toBe(1);
+	});
+
 });
 
 describe('TypeChooser', () => {
@@ -411,5 +433,7 @@ describe('TypeChooser', () => {
 		expect(wrapper.find('select option').length).toEqual(processors.size + 1);
 
 	});
+
+
 });
 

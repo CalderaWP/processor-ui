@@ -30,6 +30,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@caldera-labs/processor-ui/src/calderaprocessorsui.js~calderaprocessorsui",
+    "function/index.html#static-function-CalderaProcessorsUI",
+    "<span>CalderaProcessorsUI</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessorsUI.js</span>",
+    "function"
+  ],
+  [
     "@caldera-labs/processor-ui/src/calderaprocessorswithstate.js~calderaprocessorswithstate",
     "variable/index.html#static-variable-CalderaProcessorsWithState",
     "<span>CalderaProcessorsWithState</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/CalderaProcessorsWithState.js</span>",
@@ -252,6 +258,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@caldera-labs/processor-ui/src/state/processordispatchers.js~processordispatchers",
+    "function/index.html#static-function-processorDispatchers",
+    "<span>processorDispatchers</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorDispatchers.js</span>",
+    "function"
+  ],
+  [
     "@caldera-labs/processor-ui/src/factories/processorfactory.js~processorfactory",
     "function/index.html#static-function-processorFactory",
     "<span>processorFactory</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/factories/processorFactory.js</span>",
@@ -261,6 +273,12 @@ window.esdocSearchIndex = [
     "@caldera-labs/processor-ui/src/state/reducers.js~processorreducer",
     "function/index.html#static-function-processorReducer",
     "<span>processorReducer</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/reducers.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/processorselectors.js~processorselectors",
+    "function/index.html#static-function-processorSelectors",
+    "<span>processorSelectors</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/processorSelectors.js</span>",
     "function"
   ],
   [
@@ -333,6 +351,12 @@ window.esdocSearchIndex = [
     "@caldera-labs/processor-ui/src/state/actions.js~updateprocessorvalues",
     "function/index.html#static-function-updateProcessorValues",
     "<span>updateProcessorValues</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/actions.js</span>",
+    "function"
+  ],
+  [
+    "@caldera-labs/processor-ui/src/state/validationsubscriber.js~validationsubscriber",
+    "function/index.html#static-function-validationSubscriber",
+    "<span>validationSubscriber</span> <span class=\"search-result-import-path\">@caldera-labs/processor-ui/src/state/validationSubscriber.js</span>",
     "function"
   ],
   [
@@ -630,6 +654,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/calderaprocessorsui.js",
+    "file/src/CalderaProcessorsUI.js.html",
+    "src/CalderaProcessorsUI.js",
+    "file"
+  ],
+  [
     "src/calderaprocessorswithstate.js",
     "file/src/CalderaProcessorsWithState.js.html",
     "src/CalderaProcessorsWithState.js",
@@ -900,6 +930,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/state/processordispatchers.js",
+    "file/src/state/processorDispatchers.js.html",
+    "src/state/processorDispatchers.js",
+    "file"
+  ],
+  [
+    "src/state/processorselectors.js",
+    "file/src/state/processorSelectors.js.html",
+    "src/state/processorSelectors.js",
+    "file"
+  ],
+  [
     "src/state/processorsstore.js",
     "file/src/state/processorsStore.js.html",
     "src/state/processorsStore.js",
@@ -915,6 +957,12 @@ window.esdocSearchIndex = [
     "src/state/selectors.js",
     "file/src/state/selectors.js.html",
     "src/state/selectors.js",
+    "file"
+  ],
+  [
+    "src/state/validationsubscriber.js",
+    "file/src/state/validationSubscriber.js.html",
+    "src/state/validationSubscriber.js",
     "file"
   ]
 ]

@@ -1,4 +1,6 @@
 import {configFieldFactory} from './configFieldFactory';
+import {validation} from '@caldera-labs/components';
+
 /**
  * Prepare a collection of config fields
  *
@@ -29,6 +31,7 @@ export const configFieldsFactory = (configFields, configFieldsDefaults = {}  ) =
 	Object.keys( configFields ).forEach(configFieldId  => {
 		configFields[configFieldId].id = configFieldId;
 		configFields[configFieldId].ID = configFieldId;
+		configFields[configFieldId] = validation.addAutomaticValidators(configFields[configFieldId]);
 	});
 
 	return configFields;

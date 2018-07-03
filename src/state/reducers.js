@@ -5,10 +5,12 @@ import {
 	ADD_PROCESSOR,
 	//processor
 	UPDATE_PROCESSOR,
+	VALIDATE_PROCESSOR,
 	SET_FORM_FOR_PROCESSOR,
 	UPDATE_PROCESSOR_VALUES,
 	UPDATE_PROCESSOR_CONFIG_FIELDS, SET_PROCESSOR_TYPE
 } from './actions';
+import {validation} from '@caldera-labs/components';
 
 import {processorFactory, processorTypesMap} from '../factories/processorFactory';
 
@@ -78,42 +80,84 @@ export const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();
  * @returns {Map<any, any>}
  */
 export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) => {
-	switch( action.type ){
-	case NEW_PROCESSOR:
-	case ADD_PROCESSOR:
-		switch( action.type ) {
+	switch (action.type) {
 		case NEW_PROCESSOR:
-			const ID = 'p_' + Math.random().toString(36).substring(7);
-			//@TODO replace with generateId util function
-			state.set( ID, {
-				ID,
-				configFields: {}
-			} );
-			break;
 		case ADD_PROCESSOR:
-			state.set( action.processor.ID, action.processor);
-			break;
+			switch (action.type) {
+				case NEW_PROCESSOR:
+					const ID = 'p_' + Math.random().toString(36).substring(7);
+					//@TODO replace with generateId util function
+					state.set(ID, {
+						ID,
+						configFields: {}
+					});
+					break;
+				case ADD_PROCESSOR:
+					state.set(action.processor.ID, action.processor);
+					break;
+				default:
+					break;
+			}
+
+			return clone(state);
+		case UPDATE_PROCESSOR:
+			if (action.processor.type !== state.get(action.processor.ID).type) {
+				action.processor.configFields = {};
+			}
+
+			return state.set(action.processor.ID, processorFactory(
+				action.processor.ID,
+				action.processor.type,
+				action.processor.configFields,
+			));
+
+		case VALIDATE_PROCESSOR:
+			let processor = state.get(action.processorId);
+			const configFields = Object.values(processor.configFields);
+			const fieldValues = validation.reduceConfigFieldsToValues(configFields);
+			const validationResults = validation.checkValidatorsForConfigFields(configFields, fieldValues);
+			Object.keys(validationResults).forEach(configFieldId => {
+				let message = {
+					error: false,
+					message: ''
+				};
+				if (!validationResults[configFieldId]) {
+					if (
+						processor.configFields[configFieldId].isRequired
+						&& validation.isEmpty.anything(validationResults[configFieldId])
+					) {
+						message.message = validation.getRequiredMessage('en')
+					} else {
+						switch (processor.configFields[configFieldId].type) {
+							case 'select':
+								message.message = validation.messageStrings.getMessageStringByType('select', 'en');
+								break;
+							case 'input':
+							default:
+								message.message = validation.messageStrings.getMessageStringByType(
+									processor.configFields[configFieldId].inputType,
+									'en'
+								);
+
+							break;
+						}
+
+					}
+					message.error = true;
+				}
+
+				processor.configFields[configFieldId].message = message;
+
+			});
+			return state.set(action.processorId, {
+				...processor,
+				validationResults
+			});
+		case  REMOVE_PROCESSOR:
+			state.delete(action.processorId);
+			return clone(state);
 		default:
-			break;
-		}
-
-		return clone(state);
-	case UPDATE_PROCESSOR:
-		if( action.processor.type !== state.get( action.processor.ID ).type ){
-			action.processor.configFields = {};
-		}
-
-		return state.set( action.processor.ID, processorFactory(
-			action.processor.ID,
-			action.processor.type,
-			action.processor.configFields,
-		));
-
-	case  REMOVE_PROCESSOR:
-		state.delete(action.processorId);
-		return clone(state);
-	default:
-		return state;
+			return state;
 	}
 
 };
@@ -128,19 +172,17 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
  * @return {Map<any, any>}
  */
 export const processorTypesReducer = (state = processorTypesMap, action) => {
-	switch( action.type ){
-	case SET_PROCESSOR_TYPE:
-		return state.set(
-			action.processorTypeIdentifier,
-			action.processorType
-		);
-	default:
-		return state;
+	switch (action.type) {
+		case SET_PROCESSOR_TYPE:
+			return state.set(
+				action.processorTypeIdentifier,
+				action.processorType
+			);
+		default:
+			return state;
 	}
 
 };
-
-
 
 
 /**
@@ -153,12 +195,11 @@ export const processorTypesReducer = (state = processorTypesMap, action) => {
  */
 export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
 	form: {},
-	processor:  {},
+	processor: {},
 	configFields: {},
 	configValues: new Map()
 	/* @TODO conditionals for processors */
 };
-
 
 
 /**
@@ -173,32 +214,32 @@ export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
  * @param {Object} action
  * @returns {{form: {}, processor: Map<any, any>}}
  */
-export const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE, action ) =>{
-	switch( action.type ){
-	case UPDATE_PROCESSOR:
-		return {
-			...state,
-			processor:action.processor
-		};
+export const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE, action) => {
+	switch (action.type) {
+		case UPDATE_PROCESSOR:
+			return {
+				...state,
+				processor: action.processor
+			};
 
-	case UPDATE_PROCESSOR_CONFIG_FIELDS: {
-		return {
-			...state,
-			configFields:action.configFields
-		};
-	}
+		case UPDATE_PROCESSOR_CONFIG_FIELDS: {
+			return {
+				...state,
+				configFields: action.configFields
+			};
+		}
 
-	case SET_FORM_FOR_PROCESSOR:
-		return {
-			...state,
-			form: action.form
-		};
-	case  UPDATE_PROCESSOR_VALUES:
-		return {
-			...state,
-			configValues: action.configValues
-		};
-	default:
-		return state;
+		case SET_FORM_FOR_PROCESSOR:
+			return {
+				...state,
+				form: action.form
+			};
+		case  UPDATE_PROCESSOR_VALUES:
+			return {
+				...state,
+				configValues: action.configValues
+			};
+		default:
+			return state;
 	}
 };

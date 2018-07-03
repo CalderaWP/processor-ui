@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/CalderaProcessors.js~CalderaProcessors.html">CalderaProcessors</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-CalderaProcessorsUI">CalderaProcessorsUI</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CalderaProcessorsWithState">CalderaProcessorsWithState</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-processor">components/Processor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/Editor.js~Editor.html">Editor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Processor/ProcessorLabel.js~ProcessorLabel.html">ProcessorLabel</a></span></span></li>
@@ -62,6 +63,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateProcessor">updateProcessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateProcessorConfigFields">updateProcessorConfigFields</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateProcessorValues">updateProcessorValues</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-processorDispatchers">processorDispatchers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-processorSelectors">processorSelectors</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-processorReducer">processorReducer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-processorTypesReducer">processorTypesReducer</a></span></span></li>
@@ -73,6 +76,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProcessorValue">getProcessorValue</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProcessorValues">getProcessorValues</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getProcessorsCollection">getProcessorsCollection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-validationSubscriber">validationSubscriber</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ADD_PROCESSOR">ADD_PROCESSOR</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NEW_PROCESSOR">NEW_PROCESSOR</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REMOVE_PROCESSOR">REMOVE_PROCESSOR</a></span></span></li>
@@ -90,22 +94,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &apos;react&apos;;
-import ReactDOM from &apos;react-dom&apos;;
-import &apos;./index.scss&apos;;
-import CalderaProcessorsWithState from &apos;./CalderaProcessorsWithState&apos;;
-import { Provider } from &apos;react-redux&apos;;
-import {processorsStore} from &apos;./state/processorsStore&apos;;
-ReactDOM.render(
-	&lt;Provider store={processorsStore}&gt;
-		&lt;CalderaProcessorsWithState /&gt;
-	&lt;/Provider&gt;,
-	document.getElementById(&apos;root&apos;)
-);
-
-
-
-</code></pre>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import CalderaProcessorsUI from &apos;./CalderaProcessorsUI&apos;;
+const CalProcessors = new CalderaProcessorsUI(&apos;root&apos;);
+CalProcessors.mountOnDOM();</code></pre>
 
 </div>
 

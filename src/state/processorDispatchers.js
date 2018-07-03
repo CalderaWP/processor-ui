@@ -6,7 +6,8 @@ export const processorDispatchers = ( dispatch ) => {
 		newProcessor,
 		removeProcessor,
 		updateProcessor,
-		setProcessorType
+		setProcessorType,
+		validateProcessor
 	} = dispatch( CALDERA_FORMS_PROCESSORS_STORE_SLUG );
 	return {
 		onAddProcessor(processorConfig) {
@@ -23,6 +24,9 @@ export const processorDispatchers = ( dispatch ) => {
 		},
 		onUpdateProcessorType(processorType, processorTypeIdentifier){
 			setProcessorType(processorType, processorTypeIdentifier)
+		},
+		validateProcessor(processorId){
+			validateProcessor(processorId);
 		}
 	};
 }

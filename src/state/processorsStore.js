@@ -10,7 +10,8 @@ import {
 	newProcessor,
 	removeProcessor,
 	updateProcessor,
-	setProcessorType
+	setProcessorType,
+	validateProcessor
 	,
 } from './actions';
 
@@ -29,7 +30,8 @@ let options = {
 		newProcessor,
 		removeProcessor,
 		updateProcessor,
-		setProcessorType
+		setProcessorType,
+		validateProcessor
 	},
 	selectors: {
 		getProcessorsCollection(state){

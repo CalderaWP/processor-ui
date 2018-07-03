@@ -6,15 +6,18 @@ import {
 	updateProcessor,
 	updateProcessorValues,
 	updateProcessorConfigFields,
+	validateProcessor,
+	setProcessorType,
 	ADD_PROCESSOR,
 	NEW_PROCESSOR,
 	REMOVE_PROCESSOR,
 	SET_FORM_FOR_PROCESSOR,
 	UPDATE_PROCESSOR,
 	UPDATE_PROCESSOR_VALUES,
-	UPDATE_PROCESSOR_CONFIG_FIELDS, setProcessorType, SET_PROCESSOR_TYPE
+	UPDATE_PROCESSOR_CONFIG_FIELDS,
+	SET_PROCESSOR_TYPE,
+	VALIDATE_PROCESSOR
 } from './actions';
-import {EMAIL_PROCESSOR_TYPE} from '../processors/emailProcessorType';
 import {emailDefaultConfigFields} from '../processors/emailDefaultConfigFields';
 
 describe( 'action creators', () => {
@@ -98,6 +101,18 @@ describe( 'action creators', () => {
 			const action = updateProcessorConfigFields(configFields);
 			expect( action.configFields ).toBe( configFields );
 		});
+
+		const processorId = 'Mk2';
+		it( 'validateProcessor action creator create the right type of action', () =>{
+			const action = validateProcessor(processorId);
+			expect( action.type ).toBe( VALIDATE_PROCESSOR );
+		});
+
+		it( 'validateProcessor action validateProcessor create the right payload', () =>{
+			const action = validateProcessor(processorId);
+			expect( action.processorId ).toBe( processorId );
+		});
+
 	});
 
 	describe( 'Actions for processorTypes reducer', () => {

@@ -4,7 +4,6 @@
  */
 const CALDERA_FORMS_PROCESSORS_STORE_SLUG = 'CALDERA_FORMS_PROCESSORS_STORE';
 
-
 /**
  * The name of the action to add a processor to collection
  * @type {string}
@@ -36,6 +35,12 @@ export const SET_FORM_FOR_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/SE
  */
 export const UPDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/UPDATE_PROCESSOR`;
 
+/**
+ * The name of the action to validate a a processor in collection.
+ *
+ * @type {string}
+ */
+export const VALIDATE_PROCESSOR = `${CALDERA_FORMS_PROCESSORS_STORE_SLUG}/VALIDATE_PROCESSOR`;
 /**
  * The name of the action to update the processor values in the single processor store
  *
@@ -128,6 +133,20 @@ export const updateProcessorValues = (configValues ) => {
 		type: UPDATE_PROCESSOR_VALUES,
 		configValues
 	};
+};
+
+/**
+ * Create an action to indicate that a processor should be validated
+ *
+ * @param {String} processorId Id of processor to be validated
+ *
+ * @return {{type: string, processorId: *}}
+ */
+export const validateProcessor = (processorId) => {
+	return {
+		type: VALIDATE_PROCESSOR,
+		processorId
+	}
 };
 
 /**

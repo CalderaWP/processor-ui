@@ -1,11 +1,16 @@
 {
-  "coverage": "89.65%",
-  "expectCount": 87,
-  "actualCount": 78,
+  "coverage": "87.36%",
+  "expectCount": 95,
+  "actualCount": 83,
   "files": {
     "src/CalderaProcessors.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/CalderaProcessorsUI.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     },
     "src/CalderaProcessorsWithState.js": {
@@ -78,6 +83,13 @@
       "actualCount": 8,
       "undocumentLines": []
     },
+    "src/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
+    },
     "src/processors/emailDefaultConfigFields.js": {
       "expectCount": 2,
       "actualCount": 2,
@@ -107,6 +119,18 @@
       "actualCount": 17,
       "undocumentLines": []
     },
+    "src/state/processorDispatchers.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/state/processorSelectors.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/state/processorsStore.js": {
       "expectCount": 3,
       "actualCount": 3,
@@ -121,6 +145,13 @@
       "expectCount": 7,
       "actualCount": 7,
       "undocumentLines": []
+    },
+    "src/state/validationSubscriber.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        33
+      ]
     }
   }
 }
