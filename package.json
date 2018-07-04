@@ -1,7 +1,7 @@
 {
   "name": "@caldera-labs/processor-ui",
   "version": "0.3.0",
-  "description": "Does whatever for Caldeera Forms",
+  "description": "Processor UI 2.0 For Caldera Forms",
   "main": "./dist/index.js",
   "files": [
     "dist"
