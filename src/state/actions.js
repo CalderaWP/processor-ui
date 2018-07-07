@@ -146,7 +146,7 @@ export const validateProcessor = (processorId) => {
 	return {
 		type: VALIDATE_PROCESSOR,
 		processorId
-	}
+	};
 };
 
 /**

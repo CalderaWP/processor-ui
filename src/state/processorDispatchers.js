@@ -1,4 +1,4 @@
-import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from "./processorsStore";
+import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from './processorsStore';
 
 export const processorDispatchers = ( dispatch ) => {
 	const {
@@ -14,7 +14,7 @@ export const processorDispatchers = ( dispatch ) => {
 			addProcessor( processorConfig );
 		},
 		onNewProcessor(){
-			newProcessor()
+			newProcessor();
 		},
 		onRemoveProcessor(processorId){
 			removeProcessor(processorId);
@@ -23,10 +23,10 @@ export const processorDispatchers = ( dispatch ) => {
 			updateProcessor(processor);
 		},
 		onUpdateProcessorType(processorType, processorTypeIdentifier){
-			setProcessorType(processorType, processorTypeIdentifier)
+			setProcessorType(processorType, processorTypeIdentifier);
 		},
 		validateProcessor(processorId){
 			validateProcessor(processorId);
 		}
 	};
-}
+};

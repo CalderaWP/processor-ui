@@ -1,13 +1,13 @@
 {
   "name": "@caldera-labs/processor-ui",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Processor UI 2.0 For Caldera Forms",
   "main": "./dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "react-wp-scripts start",
+    "start": "react-scripts start",
     "build": "npm run build:pre && npm run build:compile && npm run build:post",
     "build:pre": "npm run test:once",
     "build:compile": "./node_modules/.bin/babel -d dist src/",
@@ -43,7 +43,7 @@
   },
   "homepage": "https://calderalabs.org/processor-ui/",
   "dependencies": {
-    "@caldera-labs/components": "^1.3",
+    "@caldera-labs/components": "^1.4",
     "@caldera-labs/state": "^0.7.0",
     "@wordpress/data": "^1.0.0-alpha.1",
     "@wordpress/element": "^1.0.0-alpha.1",
@@ -75,7 +75,7 @@
     "eslint-plugin-react": "^7.9.1",
     "istanbul-lib-coverage": "^1.2.0",
     "react-dom": "^16.4.0",
-    "react-wp-scripts": "0.2.0",
+    "react-scripts": "1.1.4",
     "uglify-js": "^3.4.0"
   },
   "jest": {

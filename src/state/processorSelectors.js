@@ -1,4 +1,4 @@
-import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from "./processorsStore";
+import {CALDERA_FORMS_PROCESSORS_STORE_SLUG} from './processorsStore';
 
 /**
  * Processor related selectors wrapped with select from processor store

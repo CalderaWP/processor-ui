@@ -19,17 +19,14 @@ import {
 import emailProcessorType from '../processors/emailProcessorType';
 import redirectProcessorType from '../processors/redirectProcessorType';
 import {processorTypesMap} from '../factories/processorFactory';
-
-
 import {validation} from '@caldera-labs/components';
-import {configFieldFactory} from "../factories/configFieldFactory";
-import {configFieldsFactory} from "../factories/configFieldsFactory";
+import {configFieldsFactory} from '../factories/configFieldsFactory';
 validation.addAutomaticValidators({
 	ID: 'fld1',
 	type: 'input',
 	inputType: 'url',
 	isRequired: false,
-})
+});
 
 describe('reducers', () => {
 	const initAction = {type: 'init'};

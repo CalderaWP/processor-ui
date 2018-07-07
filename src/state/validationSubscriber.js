@@ -1,6 +1,6 @@
-import {processorSelectors} from "./processorSelectors";
+import {processorSelectors} from './processorSelectors';
 import {select,dispatch} from '@wordpress/data';
-import {processorDispatchers} from "./processorDispatchers";
+import {processorDispatchers} from './processorDispatchers';
 import isShallowEqual from '@wordpress/is-shallow-equal';
 
 let lastProcessors = new Map();
@@ -16,7 +16,7 @@ export const validationSubscriber = () => {
 	};
 
 	const processors = processorSelectors(select,ownProps).processors;
-	processors.forEach( (procesor, processorId, processorsMap ) => {
+	processors.forEach( (procesor, processorId ) => {
 		if( ! lastProcessors.has( processorId ) ||!  isShallowEqual(procesor,lastProcessors.get(processorId))){
 
 			if( procesor.hasOwnProperty('configFields' ) && Object.keys(procesor.configFields).length ){
