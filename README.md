@@ -10,7 +10,7 @@ Caldera Forms processor user interface generator and components.
 ## Usage
 
 ## Install
-`npm i -D @caldera-labs/prcoessors-ui`
+`npm i @caldera-labs/processor-ui`
 
 ## Basic Usage Example
 
