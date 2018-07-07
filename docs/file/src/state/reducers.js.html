@@ -179,83 +179,83 @@ export const CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE = new Map();
  */
 export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT_STATE, action) =&gt; {
 	switch (action.type) {
+	case NEW_PROCESSOR:
+	case ADD_PROCESSOR:
+		switch (action.type) {
 		case NEW_PROCESSOR:
+			const ID = &apos;p_&apos; + Math.random().toString(36).substring(7);
+			//@TODO replace with generateId util function
+			state.set(ID, {
+				ID,
+				configFields: {}
+			});
+			break;
 		case ADD_PROCESSOR:
-			switch (action.type) {
-				case NEW_PROCESSOR:
-					const ID = &apos;p_&apos; + Math.random().toString(36).substring(7);
-					//@TODO replace with generateId util function
-					state.set(ID, {
-						ID,
-						configFields: {}
-					});
-					break;
-				case ADD_PROCESSOR:
-					state.set(action.processor.ID, action.processor);
-					break;
-				default:
-					break;
-			}
-
-			return clone(state);
-		case UPDATE_PROCESSOR:
-			if (action.processor.type !== state.get(action.processor.ID).type) {
-				action.processor.configFields = {};
-			}
-
-			return state.set(action.processor.ID, processorFactory(
-				action.processor.ID,
-				action.processor.type,
-				action.processor.configFields,
-			));
-
-		case VALIDATE_PROCESSOR:
-			let processor = state.get(action.processorId);
-			const configFields = Object.values(processor.configFields);
-			const fieldValues = validation.reduceConfigFieldsToValues(configFields);
-			const validationResults = validation.checkValidatorsForConfigFields(configFields, fieldValues);
-			Object.keys(validationResults).forEach(configFieldId =&gt; {
-				let message = {
-					error: false,
-					message: &apos;&apos;
-				};
-				if (!validationResults[configFieldId]) {
-					if (
-						processor.configFields[configFieldId].isRequired
-						&amp;&amp; validation.isEmpty.anything(validationResults[configFieldId])
-					) {
-						message.message = validation.getRequiredMessage(&apos;en&apos;)
-					} else {
-						switch (processor.configFields[configFieldId].type) {
-							case &apos;select&apos;:
-								message.message = validation.messageStrings.getMessageStringByType(&apos;select&apos;, &apos;en&apos;);
-								break;
-							case &apos;input&apos;:
-							default:
-								message.message = validation.messageStrings.getMessageStringByType(
-									processor.configFields[configFieldId].inputType,
-									&apos;en&apos;
-								);
-
-							break;
-						}
-
-					}
-					message.error = true;
-				}
-
-				processor.configFields[configFieldId].message = message;
-
-			});
-			return state.set(action.processorId, {
-				...processor,
-				validationResults
-			});
-		case  REMOVE_PROCESSOR:
-			state.delete(action.processorId);
-			return clone(state);
+			state.set(action.processor.ID, action.processor);
+			break;
 		default:
-			return state;
+			break;
+		}
+
+		return clone(state);
+	case UPDATE_PROCESSOR:
+		if (action.processor.type !== state.get(action.processor.ID).type) {
+			action.processor.configFields = {};
+		}
+
+		return state.set(action.processor.ID, processorFactory(
+			action.processor.ID,
+			action.processor.type,
+			action.processor.configFields,
+		));
+
+	case VALIDATE_PROCESSOR:
+		let processor = state.get(action.processorId);
+		const configFields = Object.values(processor.configFields);
+		const fieldValues = validation.reduceConfigFieldsToValues(configFields);
+		const validationResults = validation.checkValidatorsForConfigFields(configFields, fieldValues);
+		Object.keys(validationResults).forEach(configFieldId =&gt; {
+			let message = {
+				error: false,
+				message: &apos;&apos;
+			};
+			if (!validationResults[configFieldId]) {
+				if (
+					processor.configFields[configFieldId].isRequired
+						&amp;&amp; validation.isEmpty.anything(validationResults[configFieldId])
+				) {
+					message.message = validation.getRequiredMessage(&apos;en&apos;);
+				} else {
+					switch (processor.configFields[configFieldId].type) {
+					case &apos;select&apos;:
+						message.message = validation.messageStrings.getMessageStringByType(&apos;select&apos;, &apos;en&apos;);
+						break;
+					case &apos;input&apos;:
+					default:
+						message.message = validation.messageStrings.getMessageStringByType(
+							processor.configFields[configFieldId].inputType,
+							&apos;en&apos;
+						);
+
+						break;
+					}
+
+				}
+				message.error = true;
+			}
+
+			processor.configFields[configFieldId].message = message;
+
+		});
+		return state.set(action.processorId, {
+			...processor,
+			validationResults
+		});
+	case  REMOVE_PROCESSOR:
+		state.delete(action.processorId);
+		return clone(state);
+	default:
+		return state;
 	}
 
 };
@@ -271,13 +271,13 @@ export const processorsReducer = (state = CALDERA_FORMS_PROCESSORS_STORE_DEFAULT
  */
 export const processorTypesReducer = (state = processorTypesMap, action) =&gt; {
 	switch (action.type) {
-		case SET_PROCESSOR_TYPE:
-			return state.set(
-				action.processorTypeIdentifier,
-				action.processorType
-			);
-		default:
-			return state;
+	case SET_PROCESSOR_TYPE:
+		return state.set(
+			action.processorTypeIdentifier,
+			action.processorType
+		);
+	default:
+		return state;
 	}
 
 };
@@ -314,31 +314,31 @@ export const CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE = {
  */
 export const processorReducer = (state = CALDERA_FORMS_PROCESSOR_STORE_DEFAULT_STATE, action) =&gt; {
 	switch (action.type) {
-		case UPDATE_PROCESSOR:
-			return {
-				...state,
-				processor: action.processor
-			};
+	case UPDATE_PROCESSOR:
+		return {
+			...state,
+			processor: action.processor
+		};
 
-		case UPDATE_PROCESSOR_CONFIG_FIELDS: {
-			return {
-				...state,
-				configFields: action.configFields
-			};
-		}
+	case UPDATE_PROCESSOR_CONFIG_FIELDS: {
+		return {
+			...state,
+			configFields: action.configFields
+		};
+	}
 
-		case SET_FORM_FOR_PROCESSOR:
-			return {
-				...state,
-				form: action.form
-			};
-		case  UPDATE_PROCESSOR_VALUES:
-			return {
-				...state,
-				configValues: action.configValues
-			};
-		default:
-			return state;
+	case SET_FORM_FOR_PROCESSOR:
+		return {
+			...state,
+			form: action.form
+		};
+	case  UPDATE_PROCESSOR_VALUES:
+		return {
+			...state,
+			configValues: action.configValues
+		};
+	default:
+		return state;
 	}
 };</code></pre>
 

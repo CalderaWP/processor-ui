@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 4742,
+  "end": 4743,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 4742,
+    "end": 4743,
     "loc": {
       "start": {
         "line": 1,
@@ -4137,7 +4137,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 3847,
-        "end": 3956,
+        "end": 3957,
         "loc": {
           "start": {
             "line": 145,
@@ -4153,7 +4153,7 @@
         "declaration": {
           "type": "VariableDeclaration",
           "start": 3854,
-          "end": 3956,
+          "end": 3957,
           "loc": {
             "start": {
               "line": 145,
@@ -4168,7 +4168,7 @@
             {
               "type": "VariableDeclarator",
               "start": 3860,
-              "end": 3955,
+              "end": 3956,
               "loc": {
                 "start": {
                   "line": 145,
@@ -4200,7 +4200,7 @@
               "init": {
                 "type": "ArrowFunctionExpression",
                 "start": 3880,
-                "end": 3955,
+                "end": 3956,
                 "loc": {
                   "start": {
                     "line": 145,
@@ -4254,7 +4254,7 @@
                 "body": {
                   "type": "BlockStatement",
                   "start": 3897,
-                  "end": 3955,
+                  "end": 3956,
                   "loc": {
                     "start": {
                       "line": 145,
@@ -4269,7 +4269,7 @@
                     {
                       "type": "ReturnStatement",
                       "start": 3900,
-                      "end": 3953,
+                      "end": 3954,
                       "loc": {
                         "start": {
                           "line": 146,
@@ -4277,7 +4277,7 @@
                         },
                         "end": {
                           "line": 149,
-                          "column": 2
+                          "column": 3
                         }
                       },
                       "argument": {
@@ -4435,8 +4435,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n ",
-              "start": 3958,
-              "end": 4153,
+              "start": 3959,
+              "end": 4154,
               "loc": {
                 "start": {
                   "line": 152,
@@ -4472,8 +4472,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n ",
-            "start": 3958,
-            "end": 4153,
+            "start": 3959,
+            "end": 4154,
             "loc": {
               "start": {
                 "line": 152,
@@ -4489,8 +4489,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 4154,
-        "end": 4289,
+        "start": 4155,
+        "end": 4290,
         "loc": {
           "start": {
             "line": 157,
@@ -4505,8 +4505,8 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 4161,
-          "end": 4289,
+          "start": 4162,
+          "end": 4290,
           "loc": {
             "start": {
               "line": 157,
@@ -4520,8 +4520,8 @@
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 4167,
-              "end": 4288,
+              "start": 4168,
+              "end": 4289,
               "loc": {
                 "start": {
                   "line": 157,
@@ -4534,8 +4534,8 @@
               },
               "id": {
                 "type": "Identifier",
-                "start": 4167,
-                "end": 4194,
+                "start": 4168,
+                "end": 4195,
                 "loc": {
                   "start": {
                     "line": 157,
@@ -4552,8 +4552,8 @@
               },
               "init": {
                 "type": "ArrowFunctionExpression",
-                "start": 4197,
-                "end": 4288,
+                "start": 4198,
+                "end": 4289,
                 "loc": {
                   "start": {
                     "line": 157,
@@ -4566,8 +4566,8 @@
                 },
                 "id": {
                   "type": "Identifier",
-                  "start": 4167,
-                  "end": 4194,
+                  "start": 4168,
+                  "end": 4195,
                   "loc": {
                     "start": {
                       "line": 157,
@@ -4588,8 +4588,8 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 4198,
-                    "end": 4210,
+                    "start": 4199,
+                    "end": 4211,
                     "loc": {
                       "start": {
                         "line": 157,
@@ -4606,8 +4606,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 4216,
-                  "end": 4288,
+                  "start": 4217,
+                  "end": 4289,
                   "loc": {
                     "start": {
                       "line": 157,
@@ -4621,8 +4621,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 4219,
-                      "end": 4286,
+                      "start": 4220,
+                      "end": 4287,
                       "loc": {
                         "start": {
                           "line": 158,
@@ -4635,8 +4635,8 @@
                       },
                       "argument": {
                         "type": "ObjectExpression",
-                        "start": 4226,
-                        "end": 4285,
+                        "start": 4227,
+                        "end": 4286,
                         "loc": {
                           "start": {
                             "line": 158,
@@ -4650,8 +4650,8 @@
                         "properties": [
                           {
                             "type": "ObjectProperty",
-                            "start": 4230,
-                            "end": 4266,
+                            "start": 4231,
+                            "end": 4267,
                             "loc": {
                               "start": {
                                 "line": 159,
@@ -4667,8 +4667,8 @@
                             "computed": false,
                             "key": {
                               "type": "Identifier",
-                              "start": 4230,
-                              "end": 4234,
+                              "start": 4231,
+                              "end": 4235,
                               "loc": {
                                 "start": {
                                   "line": 159,
@@ -4684,8 +4684,8 @@
                             },
                             "value": {
                               "type": "Identifier",
-                              "start": 4236,
-                              "end": 4266,
+                              "start": 4237,
+                              "end": 4267,
                               "loc": {
                                 "start": {
                                   "line": 159,
@@ -4702,8 +4702,8 @@
                           },
                           {
                             "type": "ObjectProperty",
-                            "start": 4270,
-                            "end": 4282,
+                            "start": 4271,
+                            "end": 4283,
                             "loc": {
                               "start": {
                                 "line": 160,
@@ -4719,8 +4719,8 @@
                             "computed": false,
                             "key": {
                               "type": "Identifier",
-                              "start": 4270,
-                              "end": 4282,
+                              "start": 4271,
+                              "end": 4283,
                               "loc": {
                                 "start": {
                                   "line": 160,
@@ -4736,8 +4736,8 @@
                             },
                             "value": {
                               "type": "Identifier",
-                              "start": 4270,
-                              "end": 4282,
+                              "start": 4271,
+                              "end": 4283,
                               "loc": {
                                 "start": {
                                   "line": 160,
@@ -4770,8 +4770,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n ",
-              "start": 3958,
-              "end": 4153,
+              "start": 3959,
+              "end": 4154,
               "loc": {
                 "start": {
                   "line": 152,
@@ -4788,8 +4788,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n ",
-              "start": 4291,
-              "end": 4576,
+              "start": 4292,
+              "end": 4577,
               "loc": {
                 "start": {
                   "line": 164,
@@ -4807,8 +4807,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n ",
-            "start": 3958,
-            "end": 4153,
+            "start": 3959,
+            "end": 4154,
             "loc": {
               "start": {
                 "line": 152,
@@ -4825,8 +4825,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n ",
-            "start": 4291,
-            "end": 4576,
+            "start": 4292,
+            "end": 4577,
             "loc": {
               "start": {
                 "line": 164,
@@ -4842,8 +4842,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 4577,
-        "end": 4742,
+        "start": 4578,
+        "end": 4743,
         "loc": {
           "start": {
             "line": 171,
@@ -4858,8 +4858,8 @@
         "source": null,
         "declaration": {
           "type": "VariableDeclaration",
-          "start": 4584,
-          "end": 4742,
+          "start": 4585,
+          "end": 4743,
           "loc": {
             "start": {
               "line": 171,
@@ -4873,8 +4873,8 @@
           "declarations": [
             {
               "type": "VariableDeclarator",
-              "start": 4590,
-              "end": 4741,
+              "start": 4591,
+              "end": 4742,
               "loc": {
                 "start": {
                   "line": 171,
@@ -4887,8 +4887,8 @@
               },
               "id": {
                 "type": "Identifier",
-                "start": 4590,
-                "end": 4606,
+                "start": 4591,
+                "end": 4607,
                 "loc": {
                   "start": {
                     "line": 171,
@@ -4905,8 +4905,8 @@
               },
               "init": {
                 "type": "ArrowFunctionExpression",
-                "start": 4609,
-                "end": 4741,
+                "start": 4610,
+                "end": 4742,
                 "loc": {
                   "start": {
                     "line": 171,
@@ -4919,8 +4919,8 @@
                 },
                 "id": {
                   "type": "Identifier",
-                  "start": 4590,
-                  "end": 4606,
+                  "start": 4591,
+                  "end": 4607,
                   "loc": {
                     "start": {
                       "line": 171,
@@ -4941,8 +4941,8 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 4610,
-                    "end": 4623,
+                    "start": 4611,
+                    "end": 4624,
                     "loc": {
                       "start": {
                         "line": 171,
@@ -4958,8 +4958,8 @@
                   },
                   {
                     "type": "Identifier",
-                    "start": 4625,
-                    "end": 4648,
+                    "start": 4626,
+                    "end": 4649,
                     "loc": {
                       "start": {
                         "line": 171,
@@ -4976,8 +4976,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 4654,
-                  "end": 4741,
+                  "start": 4655,
+                  "end": 4742,
                   "loc": {
                     "start": {
                       "line": 171,
@@ -4991,8 +4991,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 4657,
-                      "end": 4739,
+                      "start": 4658,
+                      "end": 4740,
                       "loc": {
                         "start": {
                           "line": 172,
@@ -5005,8 +5005,8 @@
                       },
                       "argument": {
                         "type": "ObjectExpression",
-                        "start": 4663,
-                        "end": 4738,
+                        "start": 4664,
+                        "end": 4739,
                         "loc": {
                           "start": {
                             "line": 172,
@@ -5020,8 +5020,8 @@
                         "properties": [
                           {
                             "type": "ObjectProperty",
-                            "start": 4667,
-                            "end": 4691,
+                            "start": 4668,
+                            "end": 4692,
                             "loc": {
                               "start": {
                                 "line": 173,
@@ -5037,8 +5037,8 @@
                             "computed": false,
                             "key": {
                               "type": "Identifier",
-                              "start": 4667,
-                              "end": 4671,
+                              "start": 4668,
+                              "end": 4672,
                               "loc": {
                                 "start": {
                                   "line": 173,
@@ -5054,8 +5054,8 @@
                             },
                             "value": {
                               "type": "Identifier",
-                              "start": 4673,
-                              "end": 4691,
+                              "start": 4674,
+                              "end": 4692,
                               "loc": {
                                 "start": {
                                   "line": 173,
@@ -5072,8 +5072,8 @@
                           },
                           {
                             "type": "ObjectProperty",
-                            "start": 4695,
-                            "end": 4708,
+                            "start": 4696,
+                            "end": 4709,
                             "loc": {
                               "start": {
                                 "line": 174,
@@ -5089,8 +5089,8 @@
                             "computed": false,
                             "key": {
                               "type": "Identifier",
-                              "start": 4695,
-                              "end": 4708,
+                              "start": 4696,
+                              "end": 4709,
                               "loc": {
                                 "start": {
                                   "line": 174,
@@ -5106,8 +5106,8 @@
                             },
                             "value": {
                               "type": "Identifier",
-                              "start": 4695,
-                              "end": 4708,
+                              "start": 4696,
+                              "end": 4709,
                               "loc": {
                                 "start": {
                                   "line": 174,
@@ -5127,8 +5127,8 @@
                           },
                           {
                             "type": "ObjectProperty",
-                            "start": 4712,
-                            "end": 4735,
+                            "start": 4713,
+                            "end": 4736,
                             "loc": {
                               "start": {
                                 "line": 175,
@@ -5144,8 +5144,8 @@
                             "computed": false,
                             "key": {
                               "type": "Identifier",
-                              "start": 4712,
-                              "end": 4735,
+                              "start": 4713,
+                              "end": 4736,
                               "loc": {
                                 "start": {
                                   "line": 175,
@@ -5161,8 +5161,8 @@
                             },
                             "value": {
                               "type": "Identifier",
-                              "start": 4712,
-                              "end": 4735,
+                              "start": 4713,
+                              "end": 4736,
                               "loc": {
                                 "start": {
                                   "line": 175,
@@ -5195,8 +5195,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n ",
-              "start": 4291,
-              "end": 4576,
+              "start": 4292,
+              "end": 4577,
               "loc": {
                 "start": {
                   "line": 164,
@@ -5215,8 +5215,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n ",
-            "start": 4291,
-            "end": 4576,
+            "start": 4292,
+            "end": 4577,
             "loc": {
               "start": {
                 "line": 164,
@@ -5509,8 +5509,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n ",
-      "start": 3958,
-      "end": 4153,
+      "start": 3959,
+      "end": 4154,
       "loc": {
         "start": {
           "line": 152,
@@ -5525,8 +5525,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n ",
-      "start": 4291,
-      "end": 4576,
+      "start": 4292,
+      "end": 4577,
       "loc": {
         "start": {
           "line": 164,
@@ -12301,6 +12301,32 @@
     },
     {
       "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 3953,
+      "end": 3954,
+      "loc": {
+        "start": {
+          "line": 149,
+          "column": 2
+        },
+        "end": {
+          "line": 149,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -12311,8 +12337,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3954,
-      "end": 3955,
+      "start": 3955,
+      "end": 3956,
       "loc": {
         "start": {
           "line": 150,
@@ -12337,8 +12363,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3955,
-      "end": 3956,
+      "start": 3956,
+      "end": 3957,
       "loc": {
         "start": {
           "line": 150,
@@ -12353,8 +12379,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Creates an action to update the processor prepareConfigFields single processor store.\n * @param {Map} configFields New config fields\n * @return {{type: string, prepareConfigFields: *}}\n ",
-      "start": 3958,
-      "end": 4153,
+      "start": 3959,
+      "end": 4154,
       "loc": {
         "start": {
           "line": 152,
@@ -12381,8 +12407,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 4154,
-      "end": 4160,
+      "start": 4155,
+      "end": 4161,
       "loc": {
         "start": {
           "line": 157,
@@ -12409,8 +12435,8 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 4161,
-      "end": 4166,
+      "start": 4162,
+      "end": 4167,
       "loc": {
         "start": {
           "line": 157,
@@ -12435,8 +12461,8 @@
         "binop": null
       },
       "value": "updateProcessorConfigFields",
-      "start": 4167,
-      "end": 4194,
+      "start": 4168,
+      "end": 4195,
       "loc": {
         "start": {
           "line": 157,
@@ -12462,8 +12488,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 4195,
-      "end": 4196,
+      "start": 4196,
+      "end": 4197,
       "loc": {
         "start": {
           "line": 157,
@@ -12487,8 +12513,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4197,
-      "end": 4198,
+      "start": 4198,
+      "end": 4199,
       "loc": {
         "start": {
           "line": 157,
@@ -12513,8 +12539,8 @@
         "binop": null
       },
       "value": "configFields",
-      "start": 4198,
-      "end": 4210,
+      "start": 4199,
+      "end": 4211,
       "loc": {
         "start": {
           "line": 157,
@@ -12538,8 +12564,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4211,
-      "end": 4212,
+      "start": 4212,
+      "end": 4213,
       "loc": {
         "start": {
           "line": 157,
@@ -12564,8 +12590,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4213,
-      "end": 4215,
+      "start": 4214,
+      "end": 4216,
       "loc": {
         "start": {
           "line": 157,
@@ -12589,8 +12615,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4216,
-      "end": 4217,
+      "start": 4217,
+      "end": 4218,
       "loc": {
         "start": {
           "line": 157,
@@ -12617,8 +12643,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 4219,
-      "end": 4225,
+      "start": 4220,
+      "end": 4226,
       "loc": {
         "start": {
           "line": 158,
@@ -12642,8 +12668,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4226,
-      "end": 4227,
+      "start": 4227,
+      "end": 4228,
       "loc": {
         "start": {
           "line": 158,
@@ -12668,8 +12694,8 @@
         "binop": null
       },
       "value": "type",
-      "start": 4230,
-      "end": 4234,
+      "start": 4231,
+      "end": 4235,
       "loc": {
         "start": {
           "line": 159,
@@ -12694,8 +12720,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4234,
-      "end": 4235,
+      "start": 4235,
+      "end": 4236,
       "loc": {
         "start": {
           "line": 159,
@@ -12720,8 +12746,8 @@
         "binop": null
       },
       "value": "UPDATE_PROCESSOR_CONFIG_FIELDS",
-      "start": 4236,
-      "end": 4266,
+      "start": 4237,
+      "end": 4267,
       "loc": {
         "start": {
           "line": 159,
@@ -12746,8 +12772,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4266,
-      "end": 4267,
+      "start": 4267,
+      "end": 4268,
       "loc": {
         "start": {
           "line": 159,
@@ -12772,8 +12798,8 @@
         "binop": null
       },
       "value": "configFields",
-      "start": 4270,
-      "end": 4282,
+      "start": 4271,
+      "end": 4283,
       "loc": {
         "start": {
           "line": 160,
@@ -12797,8 +12823,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4284,
-      "end": 4285,
+      "start": 4285,
+      "end": 4286,
       "loc": {
         "start": {
           "line": 161,
@@ -12823,8 +12849,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4285,
-      "end": 4286,
+      "start": 4286,
+      "end": 4287,
       "loc": {
         "start": {
           "line": 161,
@@ -12848,8 +12874,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4287,
-      "end": 4288,
+      "start": 4288,
+      "end": 4289,
       "loc": {
         "start": {
           "line": 162,
@@ -12874,8 +12900,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4288,
-      "end": 4289,
+      "start": 4289,
+      "end": 4290,
       "loc": {
         "start": {
           "line": 162,
@@ -12890,8 +12916,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Set or remove a processorType in processorType reducer\n * @param {Object} processorType The processor type definition\n * @param {String} processorTypeIdentifier Unique identifier for processor type\n *\n * @return {{type: string, processorType: *, processorTypeIdentifier: *}}\n ",
-      "start": 4291,
-      "end": 4576,
+      "start": 4292,
+      "end": 4577,
       "loc": {
         "start": {
           "line": 164,
@@ -12918,8 +12944,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 4577,
-      "end": 4583,
+      "start": 4578,
+      "end": 4584,
       "loc": {
         "start": {
           "line": 171,
@@ -12946,8 +12972,8 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 4584,
-      "end": 4589,
+      "start": 4585,
+      "end": 4590,
       "loc": {
         "start": {
           "line": 171,
@@ -12972,8 +12998,8 @@
         "binop": null
       },
       "value": "setProcessorType",
-      "start": 4590,
-      "end": 4606,
+      "start": 4591,
+      "end": 4607,
       "loc": {
         "start": {
           "line": 171,
@@ -12999,8 +13025,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 4607,
-      "end": 4608,
+      "start": 4608,
+      "end": 4609,
       "loc": {
         "start": {
           "line": 171,
@@ -13024,8 +13050,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4609,
-      "end": 4610,
+      "start": 4610,
+      "end": 4611,
       "loc": {
         "start": {
           "line": 171,
@@ -13050,8 +13076,8 @@
         "binop": null
       },
       "value": "processorType",
-      "start": 4610,
-      "end": 4623,
+      "start": 4611,
+      "end": 4624,
       "loc": {
         "start": {
           "line": 171,
@@ -13076,8 +13102,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4623,
-      "end": 4624,
+      "start": 4624,
+      "end": 4625,
       "loc": {
         "start": {
           "line": 171,
@@ -13102,8 +13128,8 @@
         "binop": null
       },
       "value": "processorTypeIdentifier",
-      "start": 4625,
-      "end": 4648,
+      "start": 4626,
+      "end": 4649,
       "loc": {
         "start": {
           "line": 171,
@@ -13127,8 +13153,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4649,
-      "end": 4650,
+      "start": 4650,
+      "end": 4651,
       "loc": {
         "start": {
           "line": 171,
@@ -13153,8 +13179,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4651,
-      "end": 4653,
+      "start": 4652,
+      "end": 4654,
       "loc": {
         "start": {
           "line": 171,
@@ -13178,8 +13204,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4654,
-      "end": 4655,
+      "start": 4655,
+      "end": 4656,
       "loc": {
         "start": {
           "line": 171,
@@ -13206,8 +13232,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 4657,
-      "end": 4663,
+      "start": 4658,
+      "end": 4664,
       "loc": {
         "start": {
           "line": 172,
@@ -13231,8 +13257,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4663,
-      "end": 4664,
+      "start": 4664,
+      "end": 4665,
       "loc": {
         "start": {
           "line": 172,
@@ -13257,8 +13283,8 @@
         "binop": null
       },
       "value": "type",
-      "start": 4667,
-      "end": 4671,
+      "start": 4668,
+      "end": 4672,
       "loc": {
         "start": {
           "line": 173,
@@ -13283,8 +13309,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4671,
-      "end": 4672,
+      "start": 4672,
+      "end": 4673,
       "loc": {
         "start": {
           "line": 173,
@@ -13309,8 +13335,8 @@
         "binop": null
       },
       "value": "SET_PROCESSOR_TYPE",
-      "start": 4673,
-      "end": 4691,
+      "start": 4674,
+      "end": 4692,
       "loc": {
         "start": {
           "line": 173,
@@ -13335,8 +13361,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4691,
-      "end": 4692,
+      "start": 4692,
+      "end": 4693,
       "loc": {
         "start": {
           "line": 173,
@@ -13361,8 +13387,8 @@
         "binop": null
       },
       "value": "processorType",
-      "start": 4695,
-      "end": 4708,
+      "start": 4696,
+      "end": 4709,
       "loc": {
         "start": {
           "line": 174,
@@ -13387,8 +13413,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4708,
-      "end": 4709,
+      "start": 4709,
+      "end": 4710,
       "loc": {
         "start": {
           "line": 174,
@@ -13413,8 +13439,8 @@
         "binop": null
       },
       "value": "processorTypeIdentifier",
-      "start": 4712,
-      "end": 4735,
+      "start": 4713,
+      "end": 4736,
       "loc": {
         "start": {
           "line": 175,
@@ -13438,8 +13464,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4737,
-      "end": 4738,
+      "start": 4738,
+      "end": 4739,
       "loc": {
         "start": {
           "line": 176,
@@ -13464,8 +13490,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4738,
-      "end": 4739,
+      "start": 4739,
+      "end": 4740,
       "loc": {
         "start": {
           "line": 176,
@@ -13489,8 +13515,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4740,
-      "end": 4741,
+      "start": 4741,
+      "end": 4742,
       "loc": {
         "start": {
           "line": 177,
@@ -13515,8 +13541,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4741,
-      "end": 4742,
+      "start": 4742,
+      "end": 4743,
       "loc": {
         "start": {
           "line": 177,
@@ -13541,8 +13567,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4742,
-      "end": 4742,
+      "start": 4743,
+      "end": 4743,
       "loc": {
         "start": {
           "line": 177,

@@ -96,9 +96,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/state/validationSubscriber.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {processorSelectors} from &quot;./processorSelectors&quot;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {processorSelectors} from &apos;./processorSelectors&apos;;
 import {select,dispatch} from &apos;@wordpress/data&apos;;
-import {processorDispatchers} from &quot;./processorDispatchers&quot;;
+import {processorDispatchers} from &apos;./processorDispatchers&apos;;
 import isShallowEqual from &apos;@wordpress/is-shallow-equal&apos;;
 
 let lastProcessors = new Map();
@@ -114,7 +114,7 @@ export const validationSubscriber = () =&gt; {
 	};
 
 	const processors = processorSelectors(select,ownProps).processors;
-	processors.forEach( (procesor, processorId, processorsMap ) =&gt; {
+	processors.forEach( (procesor, processorId ) =&gt; {
 		if( ! lastProcessors.has( processorId ) ||!  isShallowEqual(procesor,lastProcessors.get(processorId))){
 
 			if( procesor.hasOwnProperty(&apos;configFields&apos; ) &amp;&amp; Object.keys(procesor.configFields).length ){

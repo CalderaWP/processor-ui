@@ -109,7 +109,7 @@
           },
           "extra": {
             "rawValue": "./processorsStore",
-            "raw": "\"./processorsStore\""
+            "raw": "'./processorsStore'"
           },
           "value": "./processorsStore"
         },
