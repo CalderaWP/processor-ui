@@ -252,23 +252,6 @@ describe('Editor componentWithState', () => {
 				);
 				expect(wrapper.instance().configFields()).toEqual(totallyInvalidConfigFields);
 			});
-
-			it.skip('preparing config fields in editor returns proper array if config fields not empty', () => {
-				const wrapper = shallow(
-					<Editor
-						ID={'configFields-2'}
-						type={'email'}
-						label={'Email To Roy'}
-						configFields={{}}
-						onUpdateProcessor={() => {
-						}}
-						form={form}
-						getProcessorFromCollection={() => {
-						}}
-					/>
-				);
-				expect(wrapper.instance().configFields()).toEqual(Object.keys(configFields));
-			});
 		});
 
 	});
